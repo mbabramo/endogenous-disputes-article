@@ -1,0 +1,86 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{patterns, positioning}
+\usetikzlibrary{shapes.misc}
+\usepackage[outline]{contour}
+\contourlength{1.5pt} 
+\usepackage[sfdefault]{ClearSans}
+
+\begin{document}
+\begin{tikzpicture}
+\draw[fill=black] (0,0) rectangle (26.667,15);
+\draw[draw=none,text=white] (0,13.5) rectangle (26.667,15) node[midway] {\huge Costs: 4x; Fee Shift: 0x };
+\draw[fill=green!85,draw=white,very thin] (9.0126,2.5) rectangle (13.333,2.8435);
+\draw[fill=blue!30,draw=white,very thin] (13.333,2.5) rectangle (13.407,3.05);
+\draw[fill=blue!30,draw=white,very thin] (13.407,2.5) rectangle (13.408,3.05);
+\draw[fill=blue!60,draw=white,very thin] (13.407,3.05) rectangle (13.408,3.6);
+\draw[fill=blue!90,draw=white,very thin] (13.407,3.6) rectangle (13.408,5.8);
+\draw[fill=red!75,draw=white,very thin] (13.407,5.8) rectangle (13.408,9.1);
+\draw[fill=yellow!85,draw=white,very thin] (13.408,2.5) rectangle (19.886,5.25);
+\draw[fill=orange!85,draw=white,very thin] (19.886,2.5) rectangle (20.48,5.25);
+\draw[fill=green!85,draw=white,very thin] (20.48,2.5) rectangle (22.034,2.5);
+\draw[fill=yellow!85,draw=white,very thin] (20.48,2.5) rectangle (22.034,5.25);
+\draw[fill=green!85,draw=white,very thin] (22.034,2.5) rectangle (24.418,2.5);
+\draw[fill=orange!85,draw=white,very thin] (22.034,2.5) rectangle (24.418,5.25);
+\draw[fill=yellow!85,draw=white,very thin] (24.418,2.5) rectangle (24.65,5.25);
+\draw[fill=blue!30,draw=white,very thin] (24.418,5.25) rectangle (24.65,5.8);
+\draw[fill=orange!85,draw=white,very thin] (24.65,2.5) rectangle (25.154,5.25);
+\draw[fill=blue!30,draw=white,very thin] (24.65,5.25) rectangle (25.154,5.8);
+\draw[fill=yellow!85,draw=white,very thin] (25.154,2.5) rectangle (25.165,5.25);
+\draw[fill=blue!30,draw=white,very thin] (25.154,5.25) rectangle (25.165,5.8);
+\draw[fill=blue!60,draw=white,very thin] (25.154,5.8) rectangle (25.165,6.35);
+\draw[fill=blue!90,draw=white,very thin] (25.154,6.35) rectangle (25.165,8.55);
+\draw[fill=red!75,draw=white,very thin] (25.154,8.55) rectangle (25.165,11.85);
+\draw[fill=orange!85,draw=white,very thin] (25.165,2.5) rectangle (25.167,5.25);
+\draw[fill=blue!30,draw=white,very thin] (25.165,5.25) rectangle (25.167,5.8);
+\draw[fill=blue!60,draw=white,very thin] (25.165,5.8) rectangle (25.167,6.35);
+\draw[fill=blue!90,draw=white,very thin] (25.165,6.35) rectangle (25.167,8.55);
+\draw[fill=red!75,draw=white,very thin] (25.165,8.55) rectangle (25.167,11.85);
+\draw[white,very thin] (1.5,2.5) -- (1.5,13.5);
+\node[font=\small,rotate=90,text=white, anchor=center] at (1.1, 6.7932) {Cost};
+\draw[white,very thin] (1.45,2.5) -- (1.55,2.5);
+\node[font=\small,text=white, anchor=east] at (1.45, 2.5) {0};
+\draw[white,very thin] (1.45,5.3621) -- (1.55,5.3621);
+\node[font=\small,text=white, anchor=east] at (1.45, 5.3621) {0.0001};
+\draw[white,very thin] (1.45,8.2242) -- (1.55,8.2242);
+\node[font=\small,text=white, anchor=east] at (1.45, 8.2242) {0.0002};
+\draw[white,very thin] (1.45,11.086) -- (1.55,11.086);
+\node[font=\small,text=white, anchor=east] at (1.45, 11.086) {0.0003};
+
+\draw[white,dotted,very thin] (13.333,2.83) -- (13.333,13.17);
+\draw[white,very thin] (25.167,2.5) -- (25.167,13.5);
+\draw[white,very thin] (25.117,2.5) -- (25.217,2.5);
+\node[font=\small,text=white, anchor=west] at (25.117, 2.5) {0};
+\draw[white,very thin] (25.117,5.25) -- (25.217,5.25);
+\node[font=\small,text=white, anchor=west] at (25.117, 5.25) {1};
+\draw[white,very thin] (25.117,8) -- (25.217,8);
+\node[font=\small,text=white, anchor=west] at (25.117, 8) {2};
+\draw[white,very thin] (25.117,10.75) -- (25.217,10.75);
+\node[font=\small,text=white, anchor=west] at (25.117, 10.75) {3};
+\draw[white,very thin] (25.117,13.5) -- (25.217,13.5);
+\node[font=\small,text=white, anchor=west] at (25.117, 13.5) {4};
+
+\draw[white,very thin] (1.5,2.5) -- (25.167,2.5);
+\draw[white,very thin] (1.5,2.45) -- (1.5,2.55);
+\node[font=\small,text=white, anchor=north] at (1.5, 2.45) {0\%};
+\draw[white,very thin] (25.167,2.45) -- (25.167,2.55);
+\node[font=\small,text=white, anchor=north] at (25.167, 2.45) {100\%};
+
+\node[font=\small,text=white,anchor=south] at (7.4167, 1.9) {No\ Dispute\ (99.99\%)};
+\node[font=\small,text=white,anchor=south] at (19.25, 1.9) {Dispute\ (0.01\%)};
+\draw (13.3333,2.5) node (B) {};
+\begin{scope}[align=center]
+\matrix[scale=0.5,draw=white,below=0.5cm of B,nodes={draw},column sep=0.1cm]{
+\node[rectangle,draw,minimum width=0.5cm,minimum height=0.5cm,fill=green!85]{}; & \node[draw=none,font=\small,text=white]{Precaution}; &
+\node[rectangle,draw,minimum width=0.5cm,minimum height=0.5cm,fill=orange!85]{}; & \node[draw=none,font=\small,text=white]{TL Harm}; &
+\node[rectangle,draw,minimum width=0.5cm,minimum height=0.5cm,fill=yellow!85]{}; & \node[draw=none,font=\small,text=white]{TNL Harm}; &
+\node[rectangle,draw,minimum width=0.5cm,minimum height=0.5cm,fill=blue!30]{}; & \node[draw=none,font=\small,text=white]{File}; &
+\node[rectangle,draw,minimum width=0.5cm,minimum height=0.5cm,fill=blue!60]{}; & \node[draw=none,font=\small,text=white]{Answer}; &
+\node[rectangle,draw,minimum width=0.5cm,minimum height=0.5cm,fill=blue!90]{}; & \node[draw=none,font=\small,text=white]{Bargaining}; &
+\node[rectangle,draw,minimum width=0.5cm,minimum height=0.5cm,fill=red!75]{}; & \node[draw=none,font=\small,text=white]{Trial}; \\\\
+};\end{scope}
+
+\end{tikzpicture}
+\end{document}
