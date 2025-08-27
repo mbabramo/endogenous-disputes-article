@@ -1,0 +1,214 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{patterns, positioning}
+\usetikzlibrary{shapes.misc}
+\usepackage[outline]{contour}
+\contourlength{1.5pt} 
+
+
+\begin{document}
+\begin{tikzpicture}
+
+    \draw[color=black] (-42, -15.25) circle (0.4cm) node[draw=none] (N0) {C};
+
+    \draw[color=black] (-36, -13.25) circle (0.4cm) node[draw=none] (N0) {C};
+\draw (-41.6, -15.25) -- (-41.2, -15.25) -- (-41.2, -13.25) -- (-36.4, -13.25) node [midway, above, sloped] (E0) {Precaution Power: 0.25} node [midway, below, sloped] (E1) {Probability: 0.50} ;
+
+
+    \draw[color=black] (-30, -6.25) circle (0.4cm) node[draw=none] (N2) {C};
+\draw (-35.6, -13.25) -- (-35.2, -13.25) -- (-35.2, -6.25) -- (-30.4, -6.25) node [midway, above, sloped] (E2) {Defendant Signal: 0.25} node [midway, below, sloped] (E3) {Probability: 0.88} ;
+
+
+    \draw[color=black] (-24, -2.75) circle (0.4cm) node[draw=none] (N4) {D0};
+\draw (-29.6, -6.25) -- (-29.200000000000003, -6.25) -- (-29.200000000000003, -2.75) -- (-24.4, -2.75) node [midway, above, sloped] (E4) {Plaintiff Signal: 0.25} node [midway, below, sloped] (E5) {Probability: 0.88} ;
+
+
+    \draw[color=black] (-18, -2.25) circle (0.4cm) node[draw=none] (N6) {D1};
+\draw (-23.6, -2.75) -- (-23.200000000000003, -2.75) -- (-23.200000000000003, -2.25) -- (-18.4, -2.25) node [midway, above, sloped] (E6) {Engage in Activity: Yes} node [midway, below, sloped] (E7) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -0.75) circle (0.4cm) node[draw=none] (N8) {C};
+\draw (-17.6, -2.25) -- (-17.200000000000003, -2.25) -- (-17.200000000000003, -0.75) -- (-12.4, -0.75) node [midway, above, sloped] (E8) {Precaution: Level 1} node [midway, below, sloped] (E9) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -0.25) circle (0.4cm) node[draw=none] (N10) {P2};
+\node[draw=none, right=0cm of N10,font=\huge] {...};
+\draw (-11.6, -0.75) -- (-11.2, -0.75) -- (-11.2, -0.25) -- (-0.4, -0.25) node [midway, above, sloped] (E10) {Accident: Yes} node [midway, below, sloped] (E11) {Pr.: $1.10 \times 10^{-4}$} ;
+
+
+    \draw[color=black] (0, -1.25) node[draw=none] (N12) {};
+\node[draw=none, right=-0.45cm of N12] {(10.00, 10.00)};
+\node[draw=none, right=0cm of N12,font=\huge] {...};
+\draw (-11.6, -0.75) -- (-11.2, -0.75) -- (-11.2, -1.25) -- (-0.4, -1.25) node [midway, above, sloped] (E12) {Accident: No} node [midway, below, sloped] (E13) {Pr.: 1 -- $1.10 \times 10^{-4}$} ;
+
+
+    \draw[color=black] (-12, -3.25) circle (0.4cm) node[draw=none] (N14) {C};
+\draw (-17.6, -2.25) -- (-17.200000000000003, -2.25) -- (-17.200000000000003, -3.25) -- (-12.4, -3.25) node [midway, above, sloped] (E14) {Precaution: Level 2} node [midway, below, sloped] (E15) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -2.75) circle (0.4cm) node[draw=none] (N16) {P10};
+\node[draw=none, right=0cm of N16,font=\huge] {...};
+\draw (-11.6, -3.25) -- (-11.2, -3.25) -- (-11.2, -2.75) -- (-6.4, -2.75) node [midway, above, sloped] (E16) {Accident: Yes} node [midway, below, sloped] (E17) {Pr.: $8.12 \times 10^{-5}$} ;
+
+
+    \draw[color=black] (-6, -4.25) node[draw=none] (N18) {};
+\node[draw=none, right=-0.45cm of N18] {(10.00, 10.00)};
+\node[draw=none, right=0cm of N18,font=\huge] {...};
+\draw (-11.6, -3.25) -- (-11.2, -3.25) -- (-11.2, -4.25) -- (-6.4, -4.25) node [midway, above, sloped] (E18) {Accident: No} node [midway, below, sloped] (E19) {Pr.: 1 -- $8.12 \times 10^{-5}$} ;
+
+
+    \draw[color=black] (-18, -5.25) node[draw=none] (N20) {};
+\node[draw=none, right=-0.45cm of N20] {(10.00, 10.00)};
+\draw (-23.6, -2.75) -- (-23.200000000000003, -2.75) -- (-23.200000000000003, -5.25) -- (-18.4, -5.25) node [midway, above, sloped] (E20) {Engage in Activity: No} node [midway, below, sloped] (E21) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-24, -9.25) circle (0.4cm) node[draw=none] (N22) {D0};
+\draw (-29.6, -6.25) -- (-29.200000000000003, -6.25) -- (-29.200000000000003, -9.25) -- (-24.4, -9.25) node [midway, above, sloped] (E22) {Plaintiff Signal: 0.75} node [midway, below, sloped] (E23) {Probability: 0.12} ;
+
+
+    \draw[color=black] (-18, -8.75) circle (0.4cm) node[draw=none] (N24) {D1};
+\draw (-23.6, -9.25) -- (-23.200000000000003, -9.25) -- (-23.200000000000003, -8.75) -- (-18.4, -8.75) node [midway, above, sloped] (E24) {Engage in Activity: Yes} node [midway, below, sloped] (E25) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -7.25) circle (0.4cm) node[draw=none] (N26) {C};
+\draw (-17.6, -8.75) -- (-17.200000000000003, -8.75) -- (-17.200000000000003, -7.25) -- (-12.4, -7.25) node [midway, above, sloped] (E26) {Precaution: Level 1} node [midway, below, sloped] (E27) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-6, -6.75) circle (0.4cm) node[draw=none] (N28) {P18};
+\node[draw=none, right=0cm of N28,font=\huge] {...};
+\draw (-11.6, -7.25) -- (-11.2, -7.25) -- (-11.2, -6.75) -- (-6.4, -6.75) node [midway, above, sloped] (E28) {Accident: Yes} node [midway, below, sloped] (E29) {Pr.: $1.10 \times 10^{-4}$} ;
+
+
+    \draw[color=black] (-6, -8.25) node[draw=none] (N30) {};
+\node[draw=none, right=-0.45cm of N30] {(10.00, 10.00)};
+\node[draw=none, right=0cm of N30,font=\huge] {...};
+\draw (-11.6, -7.25) -- (-11.2, -7.25) -- (-11.2, -8.25) -- (-6.4, -8.25) node [midway, above, sloped] (E30) {Accident: No} node [midway, below, sloped] (E31) {Pr.: 1 -- $1.10 \times 10^{-4}$} ;
+
+
+    \draw[color=black] (-12, -10.25) circle (0.4cm) node[draw=none] (N32) {C};
+\draw (-17.6, -8.75) -- (-17.200000000000003, -8.75) -- (-17.200000000000003, -10.25) -- (-12.4, -10.25) node [midway, above, sloped] (E32) {Precaution: Level 2} node [midway, below, sloped] (E33) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -9.75) circle (0.4cm) node[draw=none] (N34) {P22};
+\node[draw=none, right=0cm of N34,font=\huge] {...};
+\draw (-11.6, -10.25) -- (-11.2, -10.25) -- (-11.2, -9.75) -- (-6.4, -9.75) node [midway, above, sloped] (E34) {Accident: Yes} node [midway, below, sloped] (E35) {Pr.: $8.12 \times 10^{-5}$} ;
+
+
+    \draw[color=black] (-6, -11.25) node[draw=none] (N36) {};
+\node[draw=none, right=-0.45cm of N36] {(10.00, 10.00)};
+\node[draw=none, right=0cm of N36,font=\huge] {...};
+\draw (-11.6, -10.25) -- (-11.2, -10.25) -- (-11.2, -11.25) -- (-6.4, -11.25) node [midway, above, sloped] (E36) {Accident: No} node [midway, below, sloped] (E37) {Pr.: 1 -- $8.12 \times 10^{-5}$} ;
+
+
+    \draw[color=black] (-18, -12.25) node[draw=none] (N38) {};
+\node[draw=none, right=-0.45cm of N38] {(10.00, 10.00)};
+\draw (-23.6, -9.25) -- (-23.200000000000003, -9.25) -- (-23.200000000000003, -12.25) -- (-18.4, -12.25) node [midway, above, sloped] (E38) {Engage in Activity: No} node [midway, below, sloped] (E39) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-30, -19.75) circle (0.4cm) node[draw=none] (N40) {C};
+\draw (-35.6, -13.25) -- (-35.2, -13.25) -- (-35.2, -19.75) -- (-30.4, -19.75) node [midway, above, sloped] (E40) {Defendant Signal: 0.75} node [midway, below, sloped] (E41) {Probability: 0.12} ;
+
+
+    \draw[color=black] (-24, -16.25) circle (0.4cm) node[draw=none] (N42) {D26};
+\draw (-29.6, -19.75) -- (-29.200000000000003, -19.75) -- (-29.200000000000003, -16.25) -- (-24.4, -16.25) node [midway, above, sloped] (E42) {Plaintiff Signal: 0.25} node [midway, below, sloped] (E43) {Probability: 0.88} ;
+
+
+    \draw[color=black] (-18, -15.75) circle (0.4cm) node[draw=none] (N44) {D27};
+\draw (-23.6, -16.25) -- (-23.200000000000003, -16.25) -- (-23.200000000000003, -15.75) -- (-18.4, -15.75) node [midway, above, sloped] (E44) {Engage in Activity: Yes} node [midway, below, sloped] (E45) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -14.25) circle (0.4cm) node[draw=none] (N46) {C};
+\draw (-17.6, -15.75) -- (-17.200000000000003, -15.75) -- (-17.200000000000003, -14.25) -- (-12.4, -14.25) node [midway, above, sloped] (E46) {Precaution: Level 1} node [midway, below, sloped] (E47) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-6, -13.75) circle (0.4cm) node[draw=none] (N48) {P2};
+\node[draw=none, right=0cm of N48,font=\huge] {...};
+\draw (-11.6, -14.25) -- (-11.2, -14.25) -- (-11.2, -13.75) -- (-6.4, -13.75) node [midway, above, sloped] (E48) {Accident: Yes} node [midway, below, sloped] (E49) {Pr.: $1.10 \times 10^{-4}$} ;
+
+
+    \draw[color=black] (-6, -15.25) node[draw=none] (N50) {};
+\node[draw=none, right=-0.45cm of N50] {(10.00, 10.00)};
+\node[draw=none, right=0cm of N50,font=\huge] {...};
+\draw (-11.6, -14.25) -- (-11.2, -14.25) -- (-11.2, -15.25) -- (-6.4, -15.25) node [midway, above, sloped] (E50) {Accident: No} node [midway, below, sloped] (E51) {Pr.: 1 -- $1.10 \times 10^{-4}$} ;
+
+
+    \draw[color=black] (-12, -17.25) circle (0.4cm) node[draw=none] (N52) {C};
+\draw (-17.6, -15.75) -- (-17.200000000000003, -15.75) -- (-17.200000000000003, -17.25) -- (-12.4, -17.25) node [midway, above, sloped] (E52) {Precaution: Level 2} node [midway, below, sloped] (E53) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -16.75) circle (0.4cm) node[draw=none] (N54) {P10};
+\node[draw=none, right=0cm of N54,font=\huge] {...};
+\draw (-11.6, -17.25) -- (-11.2, -17.25) -- (-11.2, -16.75) -- (-6.4, -16.75) node [midway, above, sloped] (E54) {Accident: Yes} node [midway, below, sloped] (E55) {Pr.: $8.12 \times 10^{-5}$} ;
+
+
+    \draw[color=black] (-6, -18.25) node[draw=none] (N56) {};
+\node[draw=none, right=-0.45cm of N56] {(10.00, 10.00)};
+\node[draw=none, right=0cm of N56,font=\huge] {...};
+\draw (-11.6, -17.25) -- (-11.2, -17.25) -- (-11.2, -18.25) -- (-6.4, -18.25) node [midway, above, sloped] (E56) {Accident: No} node [midway, below, sloped] (E57) {Pr.: 1 -- $8.12 \times 10^{-5}$} ;
+
+
+    \draw[color=black] (-18, -19.25) node[draw=none] (N58) {};
+\node[draw=none, right=-0.45cm of N58] {(10.00, 10.00)};
+\draw (-23.6, -16.25) -- (-23.200000000000003, -16.25) -- (-23.200000000000003, -19.25) -- (-18.4, -19.25) node [midway, above, sloped] (E58) {Engage in Activity: No} node [midway, below, sloped] (E59) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-24, -23.25) circle (0.4cm) node[draw=none] (N60) {D26};
+\draw (-29.6, -19.75) -- (-29.200000000000003, -19.75) -- (-29.200000000000003, -23.25) -- (-24.4, -23.25) node [midway, above, sloped] (E60) {Plaintiff Signal: 0.75} node [midway, below, sloped] (E61) {Probability: 0.12} ;
+
+
+    \draw[color=black] (-18, -22.75) circle (0.4cm) node[draw=none] (N62) {D27};
+\draw (-23.6, -23.25) -- (-23.200000000000003, -23.25) -- (-23.200000000000003, -22.75) -- (-18.4, -22.75) node [midway, above, sloped] (E62) {Engage in Activity: Yes} node [midway, below, sloped] (E63) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -21.25) circle (0.4cm) node[draw=none] (N64) {C};
+\draw (-17.6, -22.75) -- (-17.200000000000003, -22.75) -- (-17.200000000000003, -21.25) -- (-12.4, -21.25) node [midway, above, sloped] (E64) {Precaution: Level 1} node [midway, below, sloped] (E65) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-6, -20.75) circle (0.4cm) node[draw=none] (N66) {P18};
+\node[draw=none, right=0cm of N66,font=\huge] {...};
+\draw (-11.6, -21.25) -- (-11.2, -21.25) -- (-11.2, -20.75) -- (-6.4, -20.75) node [midway, above, sloped] (E66) {Accident: Yes} node [midway, below, sloped] (E67) {Pr.: $1.10 \times 10^{-4}$} ;
+
+
+    \draw[color=black] (-6, -22.25) node[draw=none] (N68) {};
+\node[draw=none, right=-0.45cm of N68] {(10.00, 10.00)};
+\node[draw=none, right=0cm of N68,font=\huge] {...};
+\draw (-11.6, -21.25) -- (-11.2, -21.25) -- (-11.2, -22.25) -- (-6.4, -22.25) node [midway, above, sloped] (E68) {Accident: No} node [midway, below, sloped] (E69) {Pr.: 1 -- $1.10 \times 10^{-4}$} ;
+
+
+    \draw[color=black] (-12, -24.25) circle (0.4cm) node[draw=none] (N70) {C};
+\draw (-17.6, -22.75) -- (-17.200000000000003, -22.75) -- (-17.200000000000003, -24.25) -- (-12.4, -24.25) node [midway, above, sloped] (E70) {Precaution: Level 2} node [midway, below, sloped] (E71) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -23.75) circle (0.4cm) node[draw=none] (N72) {P22};
+\node[draw=none, right=0cm of N72,font=\huge] {...};
+\draw (-11.6, -24.25) -- (-11.2, -24.25) -- (-11.2, -23.75) -- (-6.4, -23.75) node [midway, above, sloped] (E72) {Accident: Yes} node [midway, below, sloped] (E73) {Pr.: $8.12 \times 10^{-5}$} ;
+
+
+    \draw[color=black] (-6, -25.25) node[draw=none] (N74) {};
+\node[draw=none, right=-0.45cm of N74] {(10.00, 10.00)};
+\node[draw=none, right=0cm of N74,font=\huge] {...};
+\draw (-11.6, -24.25) -- (-11.2, -24.25) -- (-11.2, -25.25) -- (-6.4, -25.25) node [midway, above, sloped] (E74) {Accident: No} node [midway, below, sloped] (E75) {Pr.: 1 -- $8.12 \times 10^{-5}$} ;
+
+
+    \draw[color=black] (-18, -26.25) node[draw=none] (N76) {};
+\node[draw=none, right=-0.45cm of N76] {(10.00, 10.00)};
+\draw (-23.6, -23.25) -- (-23.200000000000003, -23.25) -- (-23.200000000000003, -26.25) -- (-18.4, -26.25) node [midway, above, sloped] (E76) {Engage in Activity: No} node [midway, below, sloped] (E77) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-36, -28.75) circle (0.4cm) node[draw=none] (N78) {C};
+\draw (-41.6, -15.25) -- (-41.2, -15.25) -- (-41.2, -28.75) -- (-36.4, -28.75) node [midway, above, sloped] (E78) {Precaution Power: 0.75} node [midway, below, sloped] (E79) {Probability: 0.50} ;
+
+
+    \draw[color=black] (-6, -27.75) circle (0.4cm) node[draw=none] (N80) {C};
+\node[draw=none, right=0cm of N80,font=\huge] {...};
+\draw (-35.6, -28.75) -- (-35.2, -28.75) -- (-35.2, -27.75) -- (-6.4, -27.75) node [midway, above, sloped] (E80) {Defendant Signal: 0.25} node [midway, below, sloped] (E81) {Probability: 0.12} ;
+
+
+    \draw[color=black] (-6, -29.75) circle (0.4cm) node[draw=none] (N82) {C};
+\node[draw=none, right=0cm of N82,font=\huge] {...};
+\draw (-35.6, -28.75) -- (-35.2, -28.75) -- (-35.2, -29.75) -- (-6.4, -29.75) node [midway, above, sloped] (E82) {Defendant Signal: 0.75} node [midway, below, sloped] (E83) {Probability: 0.88} ;
+
+
+\end{tikzpicture}
+\end{document}

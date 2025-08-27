@@ -1,0 +1,60 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{patterns, positioning}
+\usetikzlibrary{shapes.misc}
+\usepackage[outline]{contour}
+\contourlength{1.5pt} 
+
+
+\begin{document}
+\begin{tikzpicture}
+
+    \draw[color=black] (-24, -3.75) circle (0.4cm) node[draw=none] (N0) {D3};
+\draw (-29.6, -4.25) -- (-29.200000000000003, -4.25) -- (-29.200000000000003, -3.75) -- (-24.4, -3.75) node [midway, above, sloped] (E0) {P Files: Yes} node [midway, below, sloped] (E1) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -3.25) circle (0.4cm) node[draw=none] (N2) {P4};
+\draw (-23.6, -3.75) -- (-23.200000000000003, -3.75) -- (-23.200000000000003, -3.25) -- (-18.4, -3.25) node [midway, above, sloped] (E2) {D Answers: Yes} node [midway, below, sloped] (E3) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -1.25) circle (0.4cm) node[draw=none] (N4) {D5};
+\draw (-17.6, -3.25) -- (-17.200000000000003, -3.25) -- (-17.200000000000003, -1.25) -- (-12.4, -1.25) node [midway, above, sloped] (E4) {P Abandons: Yes} node [midway, below, sloped] (E5) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-6, -0.25) circle (0.4cm) node[draw=none] (N6) {P6};
+\node[draw=none, right=0cm of N6,font=\huge] {...};
+\draw (-11.6, -1.25) -- (-11.2, -1.25) -- (-11.2, -0.25) -- (-6.4, -0.25) node [midway, above, sloped] (E6) {D Defaults: Yes} node [midway, below, sloped] (E7) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -1.75) circle (0.4cm) node[draw=none] (N8) {P6};
+\node[draw=none, right=0cm of N8,font=\huge] {...};
+\draw (-11.6, -1.25) -- (-11.2, -1.25) -- (-11.2, -1.75) -- (-6.4, -1.75) node [midway, above, sloped] (E8) {D Defaults: No} node [midway, below, sloped] (E9) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-12, -4.75) circle (0.4cm) node[draw=none] (N10) {D5};
+\draw (-17.6, -3.25) -- (-17.200000000000003, -3.25) -- (-17.200000000000003, -4.75) -- (-12.4, -4.75) node [midway, above, sloped] (E10) {P Abandons: No} node [midway, below, sloped] (E11) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -3.75) circle (0.4cm) node[draw=none] (N12) {P9};
+\node[draw=none, right=0cm of N12,font=\huge] {...};
+\draw (-11.6, -4.75) -- (-11.2, -4.75) -- (-11.2, -3.75) -- (-6.4, -3.75) node [midway, above, sloped] (E12) {D Defaults: Yes} node [midway, below, sloped] (E13) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -5.75) circle (0.4cm) node[draw=none] (N14) {P9};
+\node[draw=none, right=0cm of N14,font=\huge] {...};
+\draw (-11.6, -4.75) -- (-11.2, -4.75) -- (-11.2, -5.75) -- (-6.4, -5.75) node [midway, above, sloped] (E14) {D Defaults: No} node [midway, below, sloped] (E15) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-18, -7.25) node[draw=none] (N16) {};
+\node[draw=none, right=-0.45cm of N16] {(9.90, 9.00)};
+\draw (-23.6, -3.75) -- (-23.200000000000003, -3.75) -- (-23.200000000000003, -7.25) -- (-18.4, -7.25) node [midway, above, sloped] (E16) {D Answers: No} node [midway, below, sloped] (E17) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-24, -8.25) node[draw=none] (N18) {};
+\node[draw=none, right=-0.45cm of N18] {(9.00, 10.00)};
+\draw (-29.6, -4.25) -- (-29.200000000000003, -4.25) -- (-29.200000000000003, -8.25) -- (-24.4, -8.25) node [midway, above, sloped] (E18) {P Files: No} node [midway, below, sloped] (E19) {Probability: 0.00} ;
+
+
+\end{tikzpicture}
+\end{document}
