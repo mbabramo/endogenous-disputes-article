@@ -78,25 +78,89 @@ This article's analysis is not limited to fee shifting. It also considers two ot
 
 \section{An Extensive Form Endogenous Litigation Game}
 
-The approach that would be most consistent with Hylton's and indeed the broader literature on the economics of accidents would be to allow the defendant to choose a level of care, aware of the implications of that level of care for the probability that an accident occurs. Though perhaps plausible in some cases, this approach would have a serious drawback: The defendant would necessarily know how much care was exerted and therefore the quality of the lawsuit. The model then becomes a one-sided asymmetric information model. Yet in reality, both plaintiffs and defendants will often be uncertain about the outcome of litigation. Moreover, after initial accumulation and sharing of information, whether through formal discovery or otherwise, it is not obvious that the defendant's knowledge in every case will necessarily be better than the plaintiff's. Such an asymmetry might manifest in many cases, but it would be preferable if that possibility could be explored as one setting of the model. A neutral default setting would be one in which each side has equal insight into litigation quality. 
+The approach that would be most consistent with Hylton's and indeed the broader literature on the economics of accidents would be to allow the defendant to choose a level of care, aware of the implications of that level of care for the probability that an accident occurs. Though perhaps plausible in some cases, this approach would have a serious drawback: The defendant would necessarily know how much care was exerted and therefore the quality of the lawsuit. The model would thus become a one-sided asymmetric information model. Yet in reality, both plaintiffs and defendants will often be uncertain about the outcome of litigation. Moreover, after initial accumulation and sharing of information, whether through formal discovery or otherwise, it is not obvious that the defendant's knowledge in every case will necessarily be better than the plaintiff's. Such an asymmetry might manifest in many cases, but it would be preferable if that possibility could be explored as one setting of the model. A neutral default setting would be one in which each side has equal insight into litigation quality. 
 
-A modeling approach addressing this concern emerges from the recognition that in many real settings, both parties can observe what level of precaution the injurer actually took (for example, whether a machine guard was installed or which safety protocol was followed), and may even have strong information how much such precaution costed. Meanwhile, the parties also may know what precautions the injurer forewent and how much such additional precaution might have cost. Nonetheless, there might still be uncertainty concerning how \emph{effective} the marginal precaution not taken would have been at reducing risk and whether such a risk reduction would have been cost-justified. Effectiveness depends on technological fit, local conditions, and other hidden factors that are not fully verifiable or knowable ex ante or perhaps even after an accident occurs. Disputes in tort cases will thus often concern whether the defendant should have taken a more cautious path than the defendant actually took. To be sure, there may sometimes be debates as well as to what the defendant actually did and as to what a hypothetical precaution would have cost, but even with computation, analytic tractability makes desirable a single source of uncertainty. For the purpose of the model in this article, the fount of uncertainty will thus concern the level of \emph{precaution power}, that is how much expenditures on precaution would have reduced the probability of an accident. Each party knows the \emph{precaution level} but will receive only a signal of precaution power. 
+A modeling approach addressing this concern emerges from the recognition that in many real settings, both parties can observe what level of precaution the injurer actually took (for example, whether a machine guard was installed or which safety protocol was followed), and may even have strong information about the cost of such precautions. Meanwhile, the parties also may know what precautions the injurer forewent and how much such additional precaution might have cost. Nonetheless, there might still be uncertainty concerning how \emph{effective} the marginal precaution not taken would have been at reducing risk and whether such a risk reduction would have been cost-justified. Effectiveness depends on technological fit, local conditions, and other hidden factors that are not fully verifiable or knowable ex ante or perhaps even after an accident occurs. Such questions can be particularly challenging because they are counter-factual. Disputes in tort cases will thus often concern whether the defendant should have taken a more cautious path than the defendant actually took. To be sure, there may sometimes be debates as well as to what the defendant actually did and as to what a hypothetical precaution would have cost, but even with computation, analytic tractability makes desirable focus on a single source of uncertainty. For the purpose of the model in this article, the fount of uncertainty will thus concern the level of \emph{precaution power}, that is the extent to which expenditures on precaution would have reduced the probability of an accident. Each party knows the \emph{precaution level} but will receive only a signal of precaution power. 
 
-This section thus presents a single extensive-form model in which precaution and litigation are determined jointly in equilibrium under a negligence rule with imperfect adjudication and two-sided private information. Chance determines an underlying state that governs how effective precaution is at reducing accident risk. The defendant chooses a discrete precaution level before any accident occurs. If an accident happens, the plaintiff decides whether to file suit, the defendant decides whether to answer or default, the parties engage in a one-shot simultaneous-offers bargaining stage (with acceptance if the defendant’s offer weakly exceeds the plaintiff’s demand). If there is no settlement the case proceeds to trial unless one party decides to quit upon settlement failure. At trial, a court renders a binary liability verdict based on its own noisy signal of precaution power, again assuming knowledge of the precaution level. Payoffs incorporate damages (with an optional multiplier), fee rules, and litigation costs; social welfare accounts for precaution costs, accident losses (including a wrongful-attribution component), and litigation costs. 
+This section thus presents a single extensive-form model in which precaution and litigation are determined jointly in equilibrium under a negligence rule with imperfect adjudication and two-sided private information. Chance determines an underlying state that governs how effective precaution is at reducing accident risk. The defendant chooses a discrete precaution level before any accident occurs. The precaution level and chance then jointly determine whether the defendant causes an accident. If the defendant does not cause an accident, there is nonetheless some chance, unrelated to the level of precaution, that an accident occurs and is wrongly attributed to the defendant. 
+
+Assuming an accident occurs, the plaintiff decides whether to file suit, the defendant decides whether to answer or default, the parties engage in a one-shot simultaneous-offers bargaining stage (with acceptance if the defendant’s offer weakly exceeds the plaintiff’s demand). If there is no settlement the case proceeds to trial unless one party decides to quit upon settlement failure. At trial, a court renders a binary liability verdict based on the liability threshold and on its own noisy signal of precaution power, again assuming knowledge of the precaution level. Payoffs incorporate damages (with an optional multiplier), litigation costs, and fee rules. Social welfare accounts for precaution costs, defendant-caused accident losses, and litigation costs. 
 
 \subsection{Players, timeline, and information}
-\emph{Players and roles.} There are two strategic players and Chance. The \emph{defendant} (potential injurer) chooses whether to engage in the activity and, if so, a discrete precaution level. (The choice of whether to engage in the activity and thus receive the fruits of that activity has little role in the analysis in this paper, but is included both for analytic completeness and as a source for analysis in future work.) The \emph{plaintiff} (victim) decides whether to file, whether to quit before trial if settlement fails, and which demand to submit in simultaneous offers. The defendant also decides whether to answer, whether to quit before trial if settlement fails, and what demand to submit. The \emph{court} is modeled as a chance node that observes a noisy liability signal at trial and returns a binary liability verdict.
+\emph{Players and roles.} An extensive-form game tree can fully capture the formal game summarized above. The game features two strategic players and Chance. The \emph{defendant} (potential injurer) chooses whether to engage in the underlying activity, and, if so, a discrete precaution level. (The choice whether to engage in the activity and thus receive the fruits of that activity has little role in the analysis in this paper, but is included both for analytic completeness and as a source for analysis in future work.) The \emph{plaintiff} (victim) decides whether to file, whether to quit before trial if settlement fails, and which demand to submit in simultaneous offers. The defendant also decides whether to answer, whether to quit before trial if settlement fails, and what demand to submit. The \emph{court} is modeled as a chance node that observes a noisy liability signal at trial and returns a binary liability verdict.
 
-In the baseline calibration used for analysis, the number of hidden precaution-power states is $n_H=8$, the number of discrete precaution levels is $n_K=8$, and each party’s liability signal has $n_{S_P}=n_{S_D}=8$ levels. 
+In the baseline calibration used for analysis, the number of hidden precaution-power states is $n_H=8$, the number of discrete precaution levels is $n_K=8$, and each party’s liability signal has $n_{S_P}=n_{S_D}=8$ levels. For purposes of illustration, however, we set $n_H = n_K = S_P = S_D = 2$ (for the hidden state, precaution levels, and the plaintiff/defendant signals), corresponding to a miniature version of the game, solely to make the figures readable. Figure \ref{fig:smalltree} provides a zoomed-out 
 
-\emph{Timeline.} The game proceeds in three stages that correspond to the diagram panels. For each stage, we first present the technical structure of the game, and then discuss how the corresponding figure illustrates that structure. For purposes of illustration, we set $n_H = n_K = S_P = S_D = 2$ (for the hidden state, precaution levels, and the plaintiff/defendant signals), corresponding to a miniature version of the game, solely to make the figures readable.
+ \begin{figure}[t]
+  \centering
+  \includegraphics[width=0.8\textwidth,height=0.3\textheight]{../Figures/smalltree.pdf}
+  \caption{Zoomed out version of the miniaturized version of the game tree.}
+  \label{fig:smalltree.pdf}
+\end{figure}
+
+\emph{Timeline.} The game proceeds in three stages that correspond to the diagram panels. For each stage, we first present the technical structure of the game, and then discuss how the corresponding figure illustrates that structure. Note that the actual game tree used to compute equilibria is \emph{simplified}, in that the initial plaintiff and defendant signals are not explicitly drawn as chance nodes. Instead, their distributions are reconstructed using Bayesian updating, as explained in the Appendix. The conceptual trees shown here, however, depict the signals explicitly in order to make the strategic structure of the model transparent.
 
 \begin{enumerate}
   \item \textbf{Stage I: Information, activity, and precaution}
 
-Nature draws a hidden precaution--power state $\theta \in \Theta = \{1,\dots,n_H\}$ uniformly at random. Conditional on $\theta$, the defendant privately observes a liability signal $s_D \in \mathcal{S}_D = \{1,\dots,n_{S_D}\}$ and the plaintiff privately observes a liability signal $s_P \in \mathcal{S}_P = \{1,\dots,n_{S_P}\}$. The defendant then decides whether to engage in the activity, which yields a baseline benefit of $1.0 \times 10^{-3}$ if undertaken, and, if he engages, chooses a precaution level $k \in K = \{0,\dots,n_K-1\}$. The accident indicator $A \in \{0,1\}$ is realized with probability $\Pr(A=1 \mid \theta,k)$, which is strictly decreasing in $k$. 
+Nature draws a hidden precaution--power state $\theta \in \Theta = \{1,\dots,n_H\}$ uniformly at random. Conditional on $\theta$, the defendant privately observes a liability signal $s_D \in \mathcal{S}_D = \{1,\dots,n_{S_D}\}$ and the plaintiff privately observes a liability signal $s_P \in \mathcal{S}_P = \{1,\dots,n_{S_P}\}$. The defendant then decides whether to engage in the activity, which yields a baseline benefit of $1.0 \times 10^{-3}$ if undertaken, and, if the defendant engages, chooses a precaution level $k \in K = \{0,\dots,n_K-1\}$. Note that the lowest level here corresponds to no precaution undertaken at all.
 
-Figure \ref{fig:smalltree_beginning.pdf} provides the first stage in the miniature version of the game. The diagram shows the split of hidden states at the top, the branching for defendant and plaintiff signals just below, the defendant’s decision to engage in the activity and select a precaution level, and the accident node at the bottom. The printed probabilities on the accident branches are consistent with increased precaution reducing risk: approximately $1.10 \times 10^{-4}$ at the lower level of precaution versus $8.12 \times 10^{-5}$ at the higher level. (The formulas used to devise these probabilities are discussed below.) These small values are consistent with an environment in which accidents are highly unlikely to occur but quite costly relative to precaution cost in the event that they do occur. An advantage of the model is that it easily accommodates this common feature of tort precaution, instead of requiring a relatively high probability of an accident, as some Monte Carlo computational models would. (Informal experimentation suggests that the results in the paper are generally qualitatively similar if accident is made much more common and precaution cost, correspondingly higher.
+\paragraph{Accident arrival.}
+Let the hidden \emph{precaution–power} state be $\theta\in\{1,\dots,n_H\}$ and the chosen precaution level be $k\in\{0,\dots,K\}$.  We index these on $[0,1]$ via
+\[
+\varphi(\theta) \;=\; \frac{\theta}{\,n_H+1\,}, 
+\qquad
+\tau(k) \;=\; \frac{k}{\,K\,}.
+\]
+The probability that the defendant \emph{causes} an accident depends jointly on the hidden precaution–power $\varphi$ and the precaution level $\tau$.  At $\tau=0$ (no precaution), the probability is $p_{\max}$.  At $\tau=1$ (maximum precaution), the probability approaches a floor that itself depends on $\varphi$, interpolating between $p_{\min}^{\varphi=0}$ when precaution power is weakest and $p_{\min}^{\varphi=1}$ when precaution power is strongest:
+\begin{equation}
+p_{\mathrm{caused}}(\theta,k)
+\;=\;
+p_{\min}\!\bigl(\varphi(\theta)\bigr)
+\;+\;
+\bigl(p_{\max}-p_{\min}\!\bigl(\varphi(\theta)\bigr)\bigr)\,
+\bigl(1-\tau(k)\bigr)^{\,\alpha\!\bigl(\varphi(\theta)\bigr)}.
+\label{eq:pcaused}
+\end{equation}
+with linear schedules
+\[
+p_{\min}(\varphi) \;=\; p_{\min}^{\varphi=0} + \bigl(p_{\min}^{\varphi=1}-p_{\min}^{\varphi=0}\bigr)\varphi,
+\qquad
+\alpha(\varphi) \;=\; \alpha^{\varphi=0} + \bigl(\alpha^{\varphi=1}-\alpha^{\varphi=0}\bigr)\varphi.
+\]
+
+The curvature parameter $\alpha(\varphi)$ plays a crucial role in shaping how the probability of an accident falls as precaution increases. A constant value of $\alpha$ would imply that the “trajectory” of risk reduction is the same regardless of the underlying precaution–power: hidden states would differ only in the ultimate floor $p_{\min}(\varphi)$ that precaution can reach. While this would capture differences in endpoints, it would not capture differences in the path by which those endpoints are approached. Allowing $\alpha$ to vary with $\varphi$ makes it possible for precaution power to affect not only the minimum accident probability but also the pace at which accident risk declines along the way. When $\varphi$ is low, precaution is intrinsically weak, and $\alpha(\varphi)$ is relatively large, so that initial increments of precaution produce noticeable risk reduction but quickly run into diminishing returns. When $\varphi$ is high, precaution is intrinsically strong, and $\alpha(\varphi)$ is smaller, so that precaution remains effective throughout the full range of $\tau$. This difference means that in weak-power environments defendants face a world where “most of the good is done early,” while in strong-power environments additional care continues to yield substantial benefits. In short, varying $\alpha(\varphi)$ allows the model to distinguish between technologies of care that lose effectiveness quickly and those for which precaution remains potent across successive increments, a distinction that would be invisible if $\alpha$ were held constant.
+
+
+
+The total probability that an accident is \emph{observed and attributed to the defendant} adds wrongful attributions with probability $\pi_{\mathrm{wrong}}$, conditional on no caused accident:
+\begin{equation}
+\Pr(A=1\mid \theta,k)
+\;=\;
+p_{\mathrm{caused}}(\theta,k)
+\;+\;
+\bigl(1-p_{\mathrm{caused}}(\theta,k)\bigr)\,\pi_{\mathrm{wrong}}.
+\label{eq:accident-total}
+\end{equation}
+
+\paragraph{Default calibration.}
+Unless otherwise stated, simulations use
+\[
+p_{\max}=10^{-4},\qquad
+p_{\min}^{\varphi=0}=8\times 10^{-5},\qquad
+p_{\min}^{\varphi=1}=2\times 10^{-5},
+\]
+\[
+\alpha^{\varphi=0}=2,\qquad
+\alpha^{\varphi=1}=1.5,\qquad
+\pi_{\mathrm{wrong}}=10^{-5}.
+\]
+
+
+
+If $A=1$, the case proceeds to Stage II.
+
+Figure \ref{fig:smalltree_beginning.pdf} provides the first stage in the miniature version of the game. The diagram shows the split of hidden states at the top, the branching for defendant and plaintiff signals just below, the defendant’s decision to engage in the activity and select a precaution level, and the accident node at the bottom. The printed probabilities on the accident branches are consistent with increased precaution reducing risk: approximately $1.10 \times 10^{-4}$ at the lower level of precaution versus $8.12 \times 10^{-5}$ at the higher level. (The formulas used to devise these probabilities are discussed below.) These small values are consistent with an environment in which accidents are highly unlikely to occur but quite costly relative to precaution cost in the event that they do occur. An advantage of the model is that it easily accommodates this common feature of tort precaution, instead of requiring a relatively high probability of an accident, as some Monte Carlo computational models would. (Informal experimentation suggests that the results in the paper are generally qualitatively similar if accident is made much more common and precaution cost, correspondingly higher.)
 
   \begin{figure}[t]
     \centering
@@ -105,14 +169,12 @@ Figure \ref{fig:smalltree_beginning.pdf} provides the first stage in the miniatu
     \label{fig:smalltree_beginning.pdf}
   \end{figure}
 
+
   \item \textbf{Stage II: Filing and case entry}
 
-If $A=1$, a wrongful--attribution flag $W \in \{0,1\}$ is drawn with probability $\Pr(W=1) = 1.0 \times 10^{-5}$. In that event, the observed accident is not in fact caused by the defendant but is nonetheless causally attributed to him. We assume that such false--positive attributions occur far less frequently than genuine accidents, but their presence is essential: the rare event of wrongful attribution provides a channel through which we can analyze the welfare implications of error and the efficiency of procedural mechanisms. Later in the article, we explore how this source of noise interacts with litigation decisions and modifies the effects of policy interventions. Note that Figure \ref{fig:smalltree_beginning.pdf} does not affect 
+If $A=1$, a wrongful--attribution flag $W \in \{0,1\}$ is drawn with probability $\pi_{\text{wrong}}$. In that event, the observed accident is not in fact caused by the defendant but is nonetheless causally attributed to him. We assume that such false--positive attributions occur far less frequently than genuine accidents, but their presence is essential: the rare event of wrongful attribution provides a channel through which we can analyze the welfare implications of error and the efficiency of procedural mechanisms. Later in the article, we explore how this source of noise interacts with litigation decisions and modifies the effects of policy interventions. 
 
-
-  If an accident occurs, the plaintiff decides whether to file suit after observing her private signal. The defendant then decides whether to answer (contest) or to default. A default ends the case immediately with a damages transfer per the liability rule; answering moves the case into bargaining.
-
-  Figure \ref{fig:smalltree_mid.pdf} illustrates this second stage. The plaintiff’s filing and the defendant’s answer are shown along the equilibrium path, each taken with probability $1.00$ in the diagram. Branches for abandonment and default appear explicitly, indicating where cases can terminate before bargaining. This layout makes clear the sequence of case entry and the early exit options available to both parties.
+If an accident occurs, the plaintiff decides whether to file suit after observing her private signal. The defendant then decides whether to answer (contest) or to default. A default ends the case immediately with a damages transfer per the liability rule; answering moves the case into bargaining.
 
   \begin{figure}[t]
     \centering
@@ -125,8 +187,6 @@ If $A=1$, a wrongful--attribution flag $W \in \{0,1\}$ is drawn with probability
 
   The parties submit one round of simultaneous offers: the plaintiff demands $o_P$ and the defendant offers $o_D$. If $o_D \ge o_P$, settlement occurs at the midpoint; otherwise there is impasse. If there is impasse, the plaintiff may quit; if she proceeds, the defendant may quit before trial. If both proceed, the court observes its own noisy liability signal $s_C \in \mathcal{S}_C = \{1,\dots,n_{S_C}\}$ and returns a binary verdict $V \in \{0,1\}$. A liable verdict transfers damages (possibly multiplied) and assigns fee liability according to the rule; all stage costs are also subtracted from payoffs.
 
-  Figure \ref{fig:smalltree_end.pdf} illustrates this third stage. The simultaneous--offers node is displayed with printed payoffs under accepted offers, such as $(9.05,9.55)$ or $(9.30,9.30)$. The “both quit” branch is included, showing the split between plaintiff abandonment and defendant default. At the end, the binary court decision appears, demonstrating how settlement, last--minute exits, and trial resolution are integrated in the extensive form.
-
   \begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{../Figures/smalltree_end.pdf}
@@ -135,8 +195,8 @@ If $A=1$, a wrongful--attribution flag $W \in \{0,1\}$ is drawn with probability
   \end{figure}
 \end{enumerate}
 
-
 \emph{Information sets.} The plaintiff’s and defendant’s liability signals are private; each party knows the model primitives and distributions but not the other’s realized signal or the hidden state. Actions in the litigation block are observed as they occur (filing, answering, offers, and quits). The court’s internal signal is not observed by the parties; they observe only the binary verdict. Each party has perfect recall, meaning that its own decisions and the signals available to it remain part of its information set throughout the game. 
+
 
 \printbibliography
 \end{document}
