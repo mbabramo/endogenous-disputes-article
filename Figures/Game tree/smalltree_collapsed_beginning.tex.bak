@@ -1,0 +1,64 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{patterns, positioning}
+\usetikzlibrary{shapes.misc}
+\usepackage[outline]{contour}
+\contourlength{1.5pt} 
+
+
+\begin{document}
+\begin{tikzpicture}
+
+    \draw[color=black] (-36, -4.25) circle (0.4cm) node[draw=none] (N0) {C};
+
+    \draw[color=black] (-30, -3.25) circle (0.4cm) node[draw=none] (N0) {D0};
+\draw (-35.6, -4.25) -- (-35.2, -4.25) -- (-35.2, -3.25) -- (-30.4, -3.25) node [midway, above, sloped] (E0) {Defendant Signal: 0.25} node [midway, below, sloped] (E1) {Probability: 0.50} ;
+
+
+    \draw[color=black] (-24, -2.75) circle (0.4cm) node[draw=none] (N2) {D1};
+\draw (-29.6, -3.25) -- (-29.200000000000003, -3.25) -- (-29.200000000000003, -2.75) -- (-24.4, -2.75) node [midway, above, sloped] (E2) {Engage in Activity: Yes} node [midway, below, sloped] (E3) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -1.75) circle (0.4cm) node[draw=none] (N4) {C};
+\draw (-23.6, -2.75) -- (-23.200000000000003, -2.75) -- (-23.200000000000003, -1.75) -- (-18.4, -1.75) node [midway, above, sloped] (E4) {Precaution: Level 1} node [midway, below, sloped] (E5) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-12, -1.25) circle (0.4cm) node[draw=none] (N6) {C};
+\draw (-17.6, -1.75) -- (-17.200000000000003, -1.75) -- (-17.200000000000003, -1.25) -- (-12.4, -1.25) node [midway, above, sloped] (E6) {Accident: Yes} node [midway, below, sloped] (E7) {Pr.: $1.10 \times 10^{-4}$} ;
+
+
+    \draw[color=black] (-6, -0.25) circle (0.4cm) node[draw=none] (N8) {P2};
+\node[draw=none, right=0cm of N8,font=\huge] {...};
+\draw (-11.6, -1.25) -- (-11.2, -1.25) -- (-11.2, -0.25) -- (-6.4, -0.25) node [midway, above, sloped] (E8) {Plaintiff Signal: 0.25} node [midway, below, sloped] (E9) {Probability: 0.79} ;
+
+
+    \draw[color=black] (-6, -1.75) circle (0.4cm) node[draw=none] (N10) {P10};
+\node[draw=none, right=0cm of N10,font=\huge] {...};
+\draw (-11.6, -1.25) -- (-11.2, -1.25) -- (-11.2, -1.75) -- (-6.4, -1.75) node [midway, above, sloped] (E10) {Plaintiff Signal: 0.75} node [midway, below, sloped] (E11) {Probability: 0.21} ;
+
+
+    \draw[color=black] (-12, -3.25) node[draw=none] (N12) {};
+\node[draw=none, right=-0.45cm of N12] {(10.00, 10.00)};
+\node[draw=none, right=0cm of N12,font=\huge] {...};
+\draw (-17.6, -1.75) -- (-17.200000000000003, -1.75) -- (-17.200000000000003, -3.25) -- (-12.4, -3.25) node [midway, above, sloped] (E12) {Accident: No} node [midway, below, sloped] (E13) {Pr.: 1 -- $1.10 \times 10^{-4}$} ;
+
+
+    \draw[color=black] (-18, -4.75) circle (0.4cm) node[draw=none] (N14) {C};
+\node[draw=none, right=0cm of N14,font=\huge] {...};
+\draw (-23.6, -2.75) -- (-23.200000000000003, -2.75) -- (-23.200000000000003, -4.75) -- (-18.4, -4.75) node [midway, above, sloped] (E14) {Precaution: Level 2} node [midway, below, sloped] (E15) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -6.25) node[draw=none] (N16) {};
+\node[draw=none, right=-0.45cm of N16] {(10.00, 10.00)};
+\node[draw=none, right=0cm of N16,font=\huge] {...};
+\draw (-29.6, -3.25) -- (-29.200000000000003, -3.25) -- (-29.200000000000003, -6.25) -- (-24.4, -6.25) node [midway, above, sloped] (E16) {Engage in Activity: No} node [midway, below, sloped] (E17) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-30, -7.75) circle (0.4cm) node[draw=none] (N18) {D26};
+\node[draw=none, right=0cm of N18,font=\huge] {...};
+\draw (-35.6, -4.25) -- (-35.2, -4.25) -- (-35.2, -7.75) -- (-30.4, -7.75) node [midway, above, sloped] (E18) {Defendant Signal: 0.75} node [midway, below, sloped] (E19) {Probability: 0.50} ;
+
+
+\end{tikzpicture}
+\end{document}

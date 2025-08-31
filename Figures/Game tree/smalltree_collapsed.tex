@@ -1,0 +1,1502 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{patterns, positioning}
+\usetikzlibrary{shapes.misc}
+\usepackage[outline]{contour}
+\contourlength{1.5pt} 
+
+
+\begin{document}
+\begin{tikzpicture}
+
+    \draw[color=black] (-72, -82.75) circle (0.4cm) node[draw=none] (N0) {C};
+
+    \draw[color=black] (-66, -41.25) circle (0.4cm) node[draw=none] (N0) {D0};
+\draw (-71.6, -82.75) -- (-71.19999999999999, -82.75) -- (-71.19999999999999, -41.25) -- (-66.4, -41.25) node [midway, above, sloped] (E0) {Defendant Signal: 0.25} node [midway, below, sloped] (E1) {Probability: 0.50} ;
+
+
+    \draw[color=black] (-60, -40.75) circle (0.4cm) node[draw=none] (N2) {D1};
+\draw (-65.6, -41.25) -- (-65.19999999999999, -41.25) -- (-65.19999999999999, -40.75) -- (-60.4, -40.75) node [midway, above, sloped] (E2) {Engage in Activity: Yes} node [midway, below, sloped] (E3) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-54, -20.25) circle (0.4cm) node[draw=none] (N4) {C};
+\draw (-59.6, -40.75) -- (-59.2, -40.75) -- (-59.2, -20.25) -- (-54.4, -20.25) node [midway, above, sloped] (E4) {Precaution: Level 1} node [midway, below, sloped] (E5) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-48, -19.75) circle (0.4cm) node[draw=none] (N6) {C};
+\draw (-53.6, -20.25) -- (-53.2, -20.25) -- (-53.2, -19.75) -- (-48.4, -19.75) node [midway, above, sloped] (E6) {Accident: Yes} node [midway, below, sloped] (E7) {Pr.: $1.10 \times 10^{-4}$} ;
+
+
+    \draw[color=black] (-42, -9.75) circle (0.4cm) node[draw=none] (N8) {P2};
+\draw (-47.6, -19.75) -- (-47.2, -19.75) -- (-47.2, -9.75) -- (-42.4, -9.75) node [midway, above, sloped] (E8) {Plaintiff Signal: 0.25} node [midway, below, sloped] (E9) {Probability: 0.79} ;
+
+
+    \draw[color=black] (-36, -9.25) circle (0.4cm) node[draw=none] (N10) {D3};
+\draw (-41.6, -9.75) -- (-41.2, -9.75) -- (-41.2, -9.25) -- (-36.4, -9.25) node [midway, above, sloped] (E10) {P Files: Yes} node [midway, below, sloped] (E11) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -8.75) circle (0.4cm) node[draw=none] (N12) {P4};
+\draw (-35.6, -9.25) -- (-35.2, -9.25) -- (-35.2, -8.75) -- (-30.4, -8.75) node [midway, above, sloped] (E12) {D Answers: Yes} node [midway, below, sloped] (E13) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -4.25) circle (0.4cm) node[draw=none] (N14) {D5};
+\draw (-29.6, -8.75) -- (-29.200000000000003, -8.75) -- (-29.200000000000003, -4.25) -- (-24.4, -4.25) node [midway, above, sloped] (E14) {P Abandons: Yes} node [midway, below, sloped] (E15) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-18, -2.25) circle (0.4cm) node[draw=none] (N16) {P6};
+\draw (-23.6, -4.25) -- (-23.200000000000003, -4.25) -- (-23.200000000000003, -2.25) -- (-18.4, -2.25) node [midway, above, sloped] (E16) {D Defaults: Yes} node [midway, below, sloped] (E17) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -0.75) circle (0.4cm) node[draw=none] (N18) {D7};
+\draw (-17.6, -2.25) -- (-17.200000000000003, -2.25) -- (-17.200000000000003, -0.75) -- (-12.4, -0.75) node [midway, above, sloped] (E18) {P Offer: 0.25} node [midway, below, sloped] (E19) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -0.25) node[draw=none] (N20) {};
+\node[draw=none, right=-0.45cm of N20] {(9.05, 9.55)};
+\draw (-11.6, -0.75) -- (-11.2, -0.75) -- (-11.2, -0.25) -- (-0.4, -0.25) node [midway, above, sloped] (E20) {D Offer: 0.25} node [midway, below, sloped] (E21) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -1.25) node[draw=none] (N22) {};
+\node[draw=none, right=-0.45cm of N22] {(9.30, 9.30)};
+\draw (-11.6, -0.75) -- (-11.2, -0.75) -- (-11.2, -1.25) -- (-0.4, -1.25) node [midway, above, sloped] (E22) {D Offer: 0.75} node [midway, below, sloped] (E23) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -3.25) circle (0.4cm) node[draw=none] (N24) {D7};
+\draw (-17.6, -2.25) -- (-17.200000000000003, -2.25) -- (-17.200000000000003, -3.25) -- (-12.4, -3.25) node [midway, above, sloped] (E24) {P Offer: 0.75} node [midway, below, sloped] (E25) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -2.75) circle (0.4cm) node[draw=none] (N26) {C};
+\draw (-11.6, -3.25) -- (-11.2, -3.25) -- (-11.2, -2.75) -- (-6.4, -2.75) node [midway, above, sloped] (E26) {D Offer: 0.25} node [midway, below, sloped] (E27) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -2.25) node[draw=none] (N28) {};
+\node[draw=none, right=-0.45cm of N28] {(8.80, 9.80)};
+\draw (-5.6, -2.75) -- (-5.199999999999999, -2.75) -- (-5.199999999999999, -2.25) -- (-0.4, -2.25) node [midway, above, sloped] (E28) {Both Quit: P Abandons} node [midway, below, sloped] (E29) {Probability: 0.50} ;
+
+
+    \draw[color=black] (0, -3.25) node[draw=none] (N30) {};
+\node[draw=none, right=-0.45cm of N30] {(9.80, 8.80)};
+\draw (-5.6, -2.75) -- (-5.199999999999999, -2.75) -- (-5.199999999999999, -3.25) -- (-0.4, -3.25) node [midway, above, sloped] (E30) {Both Quit: D Defaults} node [midway, below, sloped] (E31) {Probability: 0.50} ;
+
+
+    \draw[color=black] (-6, -4.25) node[draw=none] (N32) {};
+\node[draw=none, right=-0.45cm of N32] {(9.55, 9.05)};
+\draw (-11.6, -3.25) -- (-11.2, -3.25) -- (-11.2, -4.25) -- (-6.4, -4.25) node [midway, above, sloped] (E32) {D Offer: 0.75} node [midway, below, sloped] (E33) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -6.75) circle (0.4cm) node[draw=none] (N34) {P6};
+\draw (-23.6, -4.25) -- (-23.200000000000003, -4.25) -- (-23.200000000000003, -6.75) -- (-18.4, -6.75) node [midway, above, sloped] (E34) {D Defaults: No} node [midway, below, sloped] (E35) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-6, -5.75) circle (0.4cm) node[draw=none] (N36) {D8};
+\draw (-17.6, -6.75) -- (-17.200000000000003, -6.75) -- (-17.200000000000003, -5.75) -- (-6.4, -5.75) node [midway, above, sloped] (E36) {P Offer: 0.25} node [midway, below, sloped] (E37) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -5.25) node[draw=none] (N38) {};
+\node[draw=none, right=-0.45cm of N38] {(9.05, 9.55)};
+\draw (-5.6, -5.75) -- (-5.199999999999999, -5.75) -- (-5.199999999999999, -5.25) -- (-0.4, -5.25) node [midway, above, sloped] (E38) {D Offer: 0.25} node [midway, below, sloped] (E39) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -6.25) node[draw=none] (N40) {};
+\node[draw=none, right=-0.45cm of N40] {(9.30, 9.30)};
+\draw (-5.6, -5.75) -- (-5.199999999999999, -5.75) -- (-5.199999999999999, -6.25) -- (-0.4, -6.25) node [midway, above, sloped] (E40) {D Offer: 0.75} node [midway, below, sloped] (E41) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -7.75) circle (0.4cm) node[draw=none] (N42) {D8};
+\draw (-17.6, -6.75) -- (-17.200000000000003, -6.75) -- (-17.200000000000003, -7.75) -- (-6.4, -7.75) node [midway, above, sloped] (E42) {P Offer: 0.75} node [midway, below, sloped] (E43) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -7.25) node[draw=none] (N44) {};
+\node[draw=none, right=-0.45cm of N44] {(8.80, 9.80)};
+\draw (-5.6, -7.75) -- (-5.199999999999999, -7.75) -- (-5.199999999999999, -7.25) -- (-0.4, -7.25) node [midway, above, sloped] (E44) {D Offer: 0.25} node [midway, below, sloped] (E45) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -8.25) node[draw=none] (N46) {};
+\node[draw=none, right=-0.45cm of N46] {(9.55, 9.05)};
+\draw (-5.6, -7.75) -- (-5.199999999999999, -7.75) -- (-5.199999999999999, -8.25) -- (-0.4, -8.25) node [midway, above, sloped] (E46) {D Offer: 0.75} node [midway, below, sloped] (E47) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -13.25) circle (0.4cm) node[draw=none] (N48) {D5};
+\draw (-29.6, -8.75) -- (-29.200000000000003, -8.75) -- (-29.200000000000003, -13.25) -- (-24.4, -13.25) node [midway, above, sloped] (E48) {P Abandons: No} node [midway, below, sloped] (E49) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -10.75) circle (0.4cm) node[draw=none] (N50) {P9};
+\draw (-23.6, -13.25) -- (-23.200000000000003, -13.25) -- (-23.200000000000003, -10.75) -- (-18.4, -10.75) node [midway, above, sloped] (E50) {D Defaults: Yes} node [midway, below, sloped] (E51) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -9.75) circle (0.4cm) node[draw=none] (N52) {D7};
+\draw (-17.6, -10.75) -- (-17.200000000000003, -10.75) -- (-17.200000000000003, -9.75) -- (-6.4, -9.75) node [midway, above, sloped] (E52) {P Offer: 0.25} node [midway, below, sloped] (E53) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -9.25) node[draw=none] (N54) {};
+\node[draw=none, right=-0.45cm of N54] {(9.05, 9.55)};
+\draw (-5.6, -9.75) -- (-5.199999999999999, -9.75) -- (-5.199999999999999, -9.25) -- (-0.4, -9.25) node [midway, above, sloped] (E54) {D Offer: 0.25} node [midway, below, sloped] (E55) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -10.25) node[draw=none] (N56) {};
+\node[draw=none, right=-0.45cm of N56] {(9.30, 9.30)};
+\draw (-5.6, -9.75) -- (-5.199999999999999, -9.75) -- (-5.199999999999999, -10.25) -- (-0.4, -10.25) node [midway, above, sloped] (E56) {D Offer: 0.75} node [midway, below, sloped] (E57) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -11.75) circle (0.4cm) node[draw=none] (N58) {D7};
+\draw (-17.6, -10.75) -- (-17.200000000000003, -10.75) -- (-17.200000000000003, -11.75) -- (-6.4, -11.75) node [midway, above, sloped] (E58) {P Offer: 0.75} node [midway, below, sloped] (E59) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -11.25) node[draw=none] (N60) {};
+\node[draw=none, right=-0.45cm of N60] {(9.80, 8.80)};
+\draw (-5.6, -11.75) -- (-5.199999999999999, -11.75) -- (-5.199999999999999, -11.25) -- (-0.4, -11.25) node [midway, above, sloped] (E60) {D Offer: 0.25} node [midway, below, sloped] (E61) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -12.25) node[draw=none] (N62) {};
+\node[draw=none, right=-0.45cm of N62] {(9.55, 9.05)};
+\draw (-5.6, -11.75) -- (-5.199999999999999, -11.75) -- (-5.199999999999999, -12.25) -- (-0.4, -12.25) node [midway, above, sloped] (E62) {D Offer: 0.75} node [midway, below, sloped] (E63) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -15.25) circle (0.4cm) node[draw=none] (N64) {P9};
+\draw (-23.6, -13.25) -- (-23.200000000000003, -13.25) -- (-23.200000000000003, -15.25) -- (-18.4, -15.25) node [midway, above, sloped] (E64) {D Defaults: No} node [midway, below, sloped] (E65) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-12, -13.75) circle (0.4cm) node[draw=none] (N66) {D8};
+\draw (-17.6, -15.25) -- (-17.200000000000003, -15.25) -- (-17.200000000000003, -13.75) -- (-12.4, -13.75) node [midway, above, sloped] (E66) {P Offer: 0.25} node [midway, below, sloped] (E67) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -13.25) node[draw=none] (N68) {};
+\node[draw=none, right=-0.45cm of N68] {(9.05, 9.55)};
+\draw (-11.6, -13.75) -- (-11.2, -13.75) -- (-11.2, -13.25) -- (-0.4, -13.25) node [midway, above, sloped] (E68) {D Offer: 0.25} node [midway, below, sloped] (E69) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -14.25) node[draw=none] (N70) {};
+\node[draw=none, right=-0.45cm of N70] {(9.30, 9.30)};
+\draw (-11.6, -13.75) -- (-11.2, -13.75) -- (-11.2, -14.25) -- (-0.4, -14.25) node [midway, above, sloped] (E70) {D Offer: 0.75} node [midway, below, sloped] (E71) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -16.25) circle (0.4cm) node[draw=none] (N72) {D8};
+\draw (-17.6, -15.25) -- (-17.200000000000003, -15.25) -- (-17.200000000000003, -16.25) -- (-12.4, -16.25) node [midway, above, sloped] (E72) {P Offer: 0.75} node [midway, below, sloped] (E73) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -15.75) circle (0.4cm) node[draw=none] (N74) {C};
+\draw (-11.6, -16.25) -- (-11.2, -16.25) -- (-11.2, -15.75) -- (-6.4, -15.75) node [midway, above, sloped] (E74) {D Offer: 0.25} node [midway, below, sloped] (E75) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -15.25) node[draw=none] (N76) {};
+\node[draw=none, right=-0.45cm of N76] {(8.70, 9.70)};
+\draw (-5.6, -15.75) -- (-5.199999999999999, -15.75) -- (-5.199999999999999, -15.25) -- (-0.4, -15.25) node [midway, above, sloped] (E76) {Court Decision: Not Liable} node [midway, below, sloped] (E77) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -16.25) node[draw=none] (N78) {};
+\node[draw=none, right=-0.45cm of N78] {(9.70, 8.70)};
+\draw (-5.6, -15.75) -- (-5.199999999999999, -15.75) -- (-5.199999999999999, -16.25) -- (-0.4, -16.25) node [midway, above, sloped] (E78) {Court Decision: Liable} node [midway, below, sloped] (E79) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -17.25) node[draw=none] (N80) {};
+\node[draw=none, right=-0.45cm of N80] {(9.55, 9.05)};
+\draw (-11.6, -16.25) -- (-11.2, -16.25) -- (-11.2, -17.25) -- (-6.4, -17.25) node [midway, above, sloped] (E80) {D Offer: 0.75} node [midway, below, sloped] (E81) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -18.25) node[draw=none] (N82) {};
+\node[draw=none, right=-0.45cm of N82] {(9.90, 9.00)};
+\draw (-35.6, -9.25) -- (-35.2, -9.25) -- (-35.2, -18.25) -- (-30.4, -18.25) node [midway, above, sloped] (E82) {D Answers: No} node [midway, below, sloped] (E83) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-36, -19.25) node[draw=none] (N84) {};
+\node[draw=none, right=-0.45cm of N84] {(9.00, 10.00)};
+\draw (-41.6, -9.75) -- (-41.2, -9.75) -- (-41.2, -19.25) -- (-36.4, -19.25) node [midway, above, sloped] (E84) {P Files: No} node [midway, below, sloped] (E85) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-42, -29.75) circle (0.4cm) node[draw=none] (N86) {P10};
+\draw (-47.6, -19.75) -- (-47.2, -19.75) -- (-47.2, -29.75) -- (-42.4, -29.75) node [midway, above, sloped] (E86) {Plaintiff Signal: 0.75} node [midway, below, sloped] (E87) {Probability: 0.21} ;
+
+
+    \draw[color=black] (-36, -29.25) circle (0.4cm) node[draw=none] (N88) {D3};
+\draw (-41.6, -29.75) -- (-41.2, -29.75) -- (-41.2, -29.25) -- (-36.4, -29.25) node [midway, above, sloped] (E88) {P Files: Yes} node [midway, below, sloped] (E89) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -28.75) circle (0.4cm) node[draw=none] (N90) {P11};
+\draw (-35.6, -29.25) -- (-35.2, -29.25) -- (-35.2, -28.75) -- (-30.4, -28.75) node [midway, above, sloped] (E90) {D Answers: Yes} node [midway, below, sloped] (E91) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -24.25) circle (0.4cm) node[draw=none] (N92) {D5};
+\draw (-29.6, -28.75) -- (-29.200000000000003, -28.75) -- (-29.200000000000003, -24.25) -- (-24.4, -24.25) node [midway, above, sloped] (E92) {P Abandons: Yes} node [midway, below, sloped] (E93) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-18, -22.25) circle (0.4cm) node[draw=none] (N94) {P12};
+\draw (-23.6, -24.25) -- (-23.200000000000003, -24.25) -- (-23.200000000000003, -22.25) -- (-18.4, -22.25) node [midway, above, sloped] (E94) {D Defaults: Yes} node [midway, below, sloped] (E95) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -20.75) circle (0.4cm) node[draw=none] (N96) {D7};
+\draw (-17.6, -22.25) -- (-17.200000000000003, -22.25) -- (-17.200000000000003, -20.75) -- (-12.4, -20.75) node [midway, above, sloped] (E96) {P Offer: 0.25} node [midway, below, sloped] (E97) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -20.25) node[draw=none] (N98) {};
+\node[draw=none, right=-0.45cm of N98] {(9.05, 9.55)};
+\draw (-11.6, -20.75) -- (-11.2, -20.75) -- (-11.2, -20.25) -- (-0.4, -20.25) node [midway, above, sloped] (E98) {D Offer: 0.25} node [midway, below, sloped] (E99) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -21.25) node[draw=none] (N100) {};
+\node[draw=none, right=-0.45cm of N100] {(9.30, 9.30)};
+\draw (-11.6, -20.75) -- (-11.2, -20.75) -- (-11.2, -21.25) -- (-0.4, -21.25) node [midway, above, sloped] (E100) {D Offer: 0.75} node [midway, below, sloped] (E101) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -23.25) circle (0.4cm) node[draw=none] (N102) {D7};
+\draw (-17.6, -22.25) -- (-17.200000000000003, -22.25) -- (-17.200000000000003, -23.25) -- (-12.4, -23.25) node [midway, above, sloped] (E102) {P Offer: 0.75} node [midway, below, sloped] (E103) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -22.75) circle (0.4cm) node[draw=none] (N104) {C};
+\draw (-11.6, -23.25) -- (-11.2, -23.25) -- (-11.2, -22.75) -- (-6.4, -22.75) node [midway, above, sloped] (E104) {D Offer: 0.25} node [midway, below, sloped] (E105) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -22.25) node[draw=none] (N106) {};
+\node[draw=none, right=-0.45cm of N106] {(8.80, 9.80)};
+\draw (-5.6, -22.75) -- (-5.199999999999999, -22.75) -- (-5.199999999999999, -22.25) -- (-0.4, -22.25) node [midway, above, sloped] (E106) {Both Quit: P Abandons} node [midway, below, sloped] (E107) {Probability: 0.50} ;
+
+
+    \draw[color=black] (0, -23.25) node[draw=none] (N108) {};
+\node[draw=none, right=-0.45cm of N108] {(9.80, 8.80)};
+\draw (-5.6, -22.75) -- (-5.199999999999999, -22.75) -- (-5.199999999999999, -23.25) -- (-0.4, -23.25) node [midway, above, sloped] (E108) {Both Quit: D Defaults} node [midway, below, sloped] (E109) {Probability: 0.50} ;
+
+
+    \draw[color=black] (-6, -24.25) node[draw=none] (N110) {};
+\node[draw=none, right=-0.45cm of N110] {(9.55, 9.05)};
+\draw (-11.6, -23.25) -- (-11.2, -23.25) -- (-11.2, -24.25) -- (-6.4, -24.25) node [midway, above, sloped] (E110) {D Offer: 0.75} node [midway, below, sloped] (E111) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -26.75) circle (0.4cm) node[draw=none] (N112) {P12};
+\draw (-23.6, -24.25) -- (-23.200000000000003, -24.25) -- (-23.200000000000003, -26.75) -- (-18.4, -26.75) node [midway, above, sloped] (E112) {D Defaults: No} node [midway, below, sloped] (E113) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-6, -25.75) circle (0.4cm) node[draw=none] (N114) {D8};
+\draw (-17.6, -26.75) -- (-17.200000000000003, -26.75) -- (-17.200000000000003, -25.75) -- (-6.4, -25.75) node [midway, above, sloped] (E114) {P Offer: 0.25} node [midway, below, sloped] (E115) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -25.25) node[draw=none] (N116) {};
+\node[draw=none, right=-0.45cm of N116] {(9.05, 9.55)};
+\draw (-5.6, -25.75) -- (-5.199999999999999, -25.75) -- (-5.199999999999999, -25.25) -- (-0.4, -25.25) node [midway, above, sloped] (E116) {D Offer: 0.25} node [midway, below, sloped] (E117) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -26.25) node[draw=none] (N118) {};
+\node[draw=none, right=-0.45cm of N118] {(9.30, 9.30)};
+\draw (-5.6, -25.75) -- (-5.199999999999999, -25.75) -- (-5.199999999999999, -26.25) -- (-0.4, -26.25) node [midway, above, sloped] (E118) {D Offer: 0.75} node [midway, below, sloped] (E119) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -27.75) circle (0.4cm) node[draw=none] (N120) {D8};
+\draw (-17.6, -26.75) -- (-17.200000000000003, -26.75) -- (-17.200000000000003, -27.75) -- (-6.4, -27.75) node [midway, above, sloped] (E120) {P Offer: 0.75} node [midway, below, sloped] (E121) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -27.25) node[draw=none] (N122) {};
+\node[draw=none, right=-0.45cm of N122] {(8.80, 9.80)};
+\draw (-5.6, -27.75) -- (-5.199999999999999, -27.75) -- (-5.199999999999999, -27.25) -- (-0.4, -27.25) node [midway, above, sloped] (E122) {D Offer: 0.25} node [midway, below, sloped] (E123) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -28.25) node[draw=none] (N124) {};
+\node[draw=none, right=-0.45cm of N124] {(9.55, 9.05)};
+\draw (-5.6, -27.75) -- (-5.199999999999999, -27.75) -- (-5.199999999999999, -28.25) -- (-0.4, -28.25) node [midway, above, sloped] (E124) {D Offer: 0.75} node [midway, below, sloped] (E125) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -33.25) circle (0.4cm) node[draw=none] (N126) {D5};
+\draw (-29.6, -28.75) -- (-29.200000000000003, -28.75) -- (-29.200000000000003, -33.25) -- (-24.4, -33.25) node [midway, above, sloped] (E126) {P Abandons: No} node [midway, below, sloped] (E127) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -30.75) circle (0.4cm) node[draw=none] (N128) {P13};
+\draw (-23.6, -33.25) -- (-23.200000000000003, -33.25) -- (-23.200000000000003, -30.75) -- (-18.4, -30.75) node [midway, above, sloped] (E128) {D Defaults: Yes} node [midway, below, sloped] (E129) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -29.75) circle (0.4cm) node[draw=none] (N130) {D7};
+\draw (-17.6, -30.75) -- (-17.200000000000003, -30.75) -- (-17.200000000000003, -29.75) -- (-6.4, -29.75) node [midway, above, sloped] (E130) {P Offer: 0.25} node [midway, below, sloped] (E131) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -29.25) node[draw=none] (N132) {};
+\node[draw=none, right=-0.45cm of N132] {(9.05, 9.55)};
+\draw (-5.6, -29.75) -- (-5.199999999999999, -29.75) -- (-5.199999999999999, -29.25) -- (-0.4, -29.25) node [midway, above, sloped] (E132) {D Offer: 0.25} node [midway, below, sloped] (E133) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -30.25) node[draw=none] (N134) {};
+\node[draw=none, right=-0.45cm of N134] {(9.30, 9.30)};
+\draw (-5.6, -29.75) -- (-5.199999999999999, -29.75) -- (-5.199999999999999, -30.25) -- (-0.4, -30.25) node [midway, above, sloped] (E134) {D Offer: 0.75} node [midway, below, sloped] (E135) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -31.75) circle (0.4cm) node[draw=none] (N136) {D7};
+\draw (-17.6, -30.75) -- (-17.200000000000003, -30.75) -- (-17.200000000000003, -31.75) -- (-6.4, -31.75) node [midway, above, sloped] (E136) {P Offer: 0.75} node [midway, below, sloped] (E137) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -31.25) node[draw=none] (N138) {};
+\node[draw=none, right=-0.45cm of N138] {(9.80, 8.80)};
+\draw (-5.6, -31.75) -- (-5.199999999999999, -31.75) -- (-5.199999999999999, -31.25) -- (-0.4, -31.25) node [midway, above, sloped] (E138) {D Offer: 0.25} node [midway, below, sloped] (E139) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -32.25) node[draw=none] (N140) {};
+\node[draw=none, right=-0.45cm of N140] {(9.55, 9.05)};
+\draw (-5.6, -31.75) -- (-5.199999999999999, -31.75) -- (-5.199999999999999, -32.25) -- (-0.4, -32.25) node [midway, above, sloped] (E140) {D Offer: 0.75} node [midway, below, sloped] (E141) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -35.25) circle (0.4cm) node[draw=none] (N142) {P13};
+\draw (-23.6, -33.25) -- (-23.200000000000003, -33.25) -- (-23.200000000000003, -35.25) -- (-18.4, -35.25) node [midway, above, sloped] (E142) {D Defaults: No} node [midway, below, sloped] (E143) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-12, -33.75) circle (0.4cm) node[draw=none] (N144) {D8};
+\draw (-17.6, -35.25) -- (-17.200000000000003, -35.25) -- (-17.200000000000003, -33.75) -- (-12.4, -33.75) node [midway, above, sloped] (E144) {P Offer: 0.25} node [midway, below, sloped] (E145) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -33.25) node[draw=none] (N146) {};
+\node[draw=none, right=-0.45cm of N146] {(9.05, 9.55)};
+\draw (-11.6, -33.75) -- (-11.2, -33.75) -- (-11.2, -33.25) -- (-0.4, -33.25) node [midway, above, sloped] (E146) {D Offer: 0.25} node [midway, below, sloped] (E147) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -34.25) node[draw=none] (N148) {};
+\node[draw=none, right=-0.45cm of N148] {(9.30, 9.30)};
+\draw (-11.6, -33.75) -- (-11.2, -33.75) -- (-11.2, -34.25) -- (-0.4, -34.25) node [midway, above, sloped] (E148) {D Offer: 0.75} node [midway, below, sloped] (E149) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -36.25) circle (0.4cm) node[draw=none] (N150) {D8};
+\draw (-17.6, -35.25) -- (-17.200000000000003, -35.25) -- (-17.200000000000003, -36.25) -- (-12.4, -36.25) node [midway, above, sloped] (E150) {P Offer: 0.75} node [midway, below, sloped] (E151) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -35.75) circle (0.4cm) node[draw=none] (N152) {C};
+\draw (-11.6, -36.25) -- (-11.2, -36.25) -- (-11.2, -35.75) -- (-6.4, -35.75) node [midway, above, sloped] (E152) {D Offer: 0.25} node [midway, below, sloped] (E153) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -35.25) node[draw=none] (N154) {};
+\node[draw=none, right=-0.45cm of N154] {(8.70, 9.70)};
+\draw (-5.6, -35.75) -- (-5.199999999999999, -35.75) -- (-5.199999999999999, -35.25) -- (-0.4, -35.25) node [midway, above, sloped] (E154) {Court Decision: Not Liable} node [midway, below, sloped] (E155) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -36.25) node[draw=none] (N156) {};
+\node[draw=none, right=-0.45cm of N156] {(9.70, 8.70)};
+\draw (-5.6, -35.75) -- (-5.199999999999999, -35.75) -- (-5.199999999999999, -36.25) -- (-0.4, -36.25) node [midway, above, sloped] (E156) {Court Decision: Liable} node [midway, below, sloped] (E157) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -37.25) node[draw=none] (N158) {};
+\node[draw=none, right=-0.45cm of N158] {(9.55, 9.05)};
+\draw (-11.6, -36.25) -- (-11.2, -36.25) -- (-11.2, -37.25) -- (-6.4, -37.25) node [midway, above, sloped] (E158) {D Offer: 0.75} node [midway, below, sloped] (E159) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -38.25) node[draw=none] (N160) {};
+\node[draw=none, right=-0.45cm of N160] {(9.90, 9.00)};
+\draw (-35.6, -29.25) -- (-35.2, -29.25) -- (-35.2, -38.25) -- (-30.4, -38.25) node [midway, above, sloped] (E160) {D Answers: No} node [midway, below, sloped] (E161) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-36, -39.25) node[draw=none] (N162) {};
+\node[draw=none, right=-0.45cm of N162] {(9.00, 10.00)};
+\draw (-41.6, -29.75) -- (-41.2, -29.75) -- (-41.2, -39.25) -- (-36.4, -39.25) node [midway, above, sloped] (E162) {P Files: No} node [midway, below, sloped] (E163) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-48, -40.25) node[draw=none] (N164) {};
+\node[draw=none, right=-0.45cm of N164] {(10.00, 10.00)};
+\draw (-53.6, -20.25) -- (-53.2, -20.25) -- (-53.2, -40.25) -- (-48.4, -40.25) node [midway, above, sloped] (E164) {Accident: No} node [midway, below, sloped] (E165) {Pr.: 1 -- $1.10 \times 10^{-4}$} ;
+
+
+    \draw[color=black] (-54, -61.25) circle (0.4cm) node[draw=none] (N166) {C};
+\draw (-59.6, -40.75) -- (-59.2, -40.75) -- (-59.2, -61.25) -- (-54.4, -61.25) node [midway, above, sloped] (E166) {Precaution: Level 2} node [midway, below, sloped] (E167) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-48, -60.75) circle (0.4cm) node[draw=none] (N168) {C};
+\draw (-53.6, -61.25) -- (-53.2, -61.25) -- (-53.2, -60.75) -- (-48.4, -60.75) node [midway, above, sloped] (E168) {Accident: Yes} node [midway, below, sloped] (E169) {Pr.: $7.98 \times 10^{-5}$} ;
+
+
+    \draw[color=black] (-42, -50.75) circle (0.4cm) node[draw=none] (N170) {P14};
+\draw (-47.6, -60.75) -- (-47.2, -60.75) -- (-47.2, -50.75) -- (-42.4, -50.75) node [midway, above, sloped] (E170) {Plaintiff Signal: 0.25} node [midway, below, sloped] (E171) {Probability: 0.80} ;
+
+
+    \draw[color=black] (-36, -50.25) circle (0.4cm) node[draw=none] (N172) {D15};
+\draw (-41.6, -50.75) -- (-41.2, -50.75) -- (-41.2, -50.25) -- (-36.4, -50.25) node [midway, above, sloped] (E172) {P Files: Yes} node [midway, below, sloped] (E173) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -49.75) circle (0.4cm) node[draw=none] (N174) {P16};
+\draw (-35.6, -50.25) -- (-35.2, -50.25) -- (-35.2, -49.75) -- (-30.4, -49.75) node [midway, above, sloped] (E174) {D Answers: Yes} node [midway, below, sloped] (E175) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -45.25) circle (0.4cm) node[draw=none] (N176) {D17};
+\draw (-29.6, -49.75) -- (-29.200000000000003, -49.75) -- (-29.200000000000003, -45.25) -- (-24.4, -45.25) node [midway, above, sloped] (E176) {P Abandons: Yes} node [midway, below, sloped] (E177) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-18, -43.25) circle (0.4cm) node[draw=none] (N178) {P18};
+\draw (-23.6, -45.25) -- (-23.200000000000003, -45.25) -- (-23.200000000000003, -43.25) -- (-18.4, -43.25) node [midway, above, sloped] (E178) {D Defaults: Yes} node [midway, below, sloped] (E179) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -41.75) circle (0.4cm) node[draw=none] (N180) {D19};
+\draw (-17.6, -43.25) -- (-17.200000000000003, -43.25) -- (-17.200000000000003, -41.75) -- (-12.4, -41.75) node [midway, above, sloped] (E180) {P Offer: 0.25} node [midway, below, sloped] (E181) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -41.25) node[draw=none] (N182) {};
+\node[draw=none, right=-0.45cm of N182] {(9.05, 9.55)};
+\draw (-11.6, -41.75) -- (-11.2, -41.75) -- (-11.2, -41.25) -- (-0.4, -41.25) node [midway, above, sloped] (E182) {D Offer: 0.25} node [midway, below, sloped] (E183) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -42.25) node[draw=none] (N184) {};
+\node[draw=none, right=-0.45cm of N184] {(9.30, 9.30)};
+\draw (-11.6, -41.75) -- (-11.2, -41.75) -- (-11.2, -42.25) -- (-0.4, -42.25) node [midway, above, sloped] (E184) {D Offer: 0.75} node [midway, below, sloped] (E185) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -44.25) circle (0.4cm) node[draw=none] (N186) {D19};
+\draw (-17.6, -43.25) -- (-17.200000000000003, -43.25) -- (-17.200000000000003, -44.25) -- (-12.4, -44.25) node [midway, above, sloped] (E186) {P Offer: 0.75} node [midway, below, sloped] (E187) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -43.75) circle (0.4cm) node[draw=none] (N188) {C};
+\draw (-11.6, -44.25) -- (-11.2, -44.25) -- (-11.2, -43.75) -- (-6.4, -43.75) node [midway, above, sloped] (E188) {D Offer: 0.25} node [midway, below, sloped] (E189) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -43.25) node[draw=none] (N190) {};
+\node[draw=none, right=-0.45cm of N190] {(8.80, 9.80)};
+\draw (-5.6, -43.75) -- (-5.199999999999999, -43.75) -- (-5.199999999999999, -43.25) -- (-0.4, -43.25) node [midway, above, sloped] (E190) {Both Quit: P Abandons} node [midway, below, sloped] (E191) {Probability: 0.50} ;
+
+
+    \draw[color=black] (0, -44.25) node[draw=none] (N192) {};
+\node[draw=none, right=-0.45cm of N192] {(9.80, 8.80)};
+\draw (-5.6, -43.75) -- (-5.199999999999999, -43.75) -- (-5.199999999999999, -44.25) -- (-0.4, -44.25) node [midway, above, sloped] (E192) {Both Quit: D Defaults} node [midway, below, sloped] (E193) {Probability: 0.50} ;
+
+
+    \draw[color=black] (-6, -45.25) node[draw=none] (N194) {};
+\node[draw=none, right=-0.45cm of N194] {(9.55, 9.05)};
+\draw (-11.6, -44.25) -- (-11.2, -44.25) -- (-11.2, -45.25) -- (-6.4, -45.25) node [midway, above, sloped] (E194) {D Offer: 0.75} node [midway, below, sloped] (E195) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -47.75) circle (0.4cm) node[draw=none] (N196) {P18};
+\draw (-23.6, -45.25) -- (-23.200000000000003, -45.25) -- (-23.200000000000003, -47.75) -- (-18.4, -47.75) node [midway, above, sloped] (E196) {D Defaults: No} node [midway, below, sloped] (E197) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-6, -46.75) circle (0.4cm) node[draw=none] (N198) {D20};
+\draw (-17.6, -47.75) -- (-17.200000000000003, -47.75) -- (-17.200000000000003, -46.75) -- (-6.4, -46.75) node [midway, above, sloped] (E198) {P Offer: 0.25} node [midway, below, sloped] (E199) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -46.25) node[draw=none] (N200) {};
+\node[draw=none, right=-0.45cm of N200] {(9.05, 9.55)};
+\draw (-5.6, -46.75) -- (-5.199999999999999, -46.75) -- (-5.199999999999999, -46.25) -- (-0.4, -46.25) node [midway, above, sloped] (E200) {D Offer: 0.25} node [midway, below, sloped] (E201) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -47.25) node[draw=none] (N202) {};
+\node[draw=none, right=-0.45cm of N202] {(9.30, 9.30)};
+\draw (-5.6, -46.75) -- (-5.199999999999999, -46.75) -- (-5.199999999999999, -47.25) -- (-0.4, -47.25) node [midway, above, sloped] (E202) {D Offer: 0.75} node [midway, below, sloped] (E203) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -48.75) circle (0.4cm) node[draw=none] (N204) {D20};
+\draw (-17.6, -47.75) -- (-17.200000000000003, -47.75) -- (-17.200000000000003, -48.75) -- (-6.4, -48.75) node [midway, above, sloped] (E204) {P Offer: 0.75} node [midway, below, sloped] (E205) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -48.25) node[draw=none] (N206) {};
+\node[draw=none, right=-0.45cm of N206] {(8.80, 9.80)};
+\draw (-5.6, -48.75) -- (-5.199999999999999, -48.75) -- (-5.199999999999999, -48.25) -- (-0.4, -48.25) node [midway, above, sloped] (E206) {D Offer: 0.25} node [midway, below, sloped] (E207) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -49.25) node[draw=none] (N208) {};
+\node[draw=none, right=-0.45cm of N208] {(9.55, 9.05)};
+\draw (-5.6, -48.75) -- (-5.199999999999999, -48.75) -- (-5.199999999999999, -49.25) -- (-0.4, -49.25) node [midway, above, sloped] (E208) {D Offer: 0.75} node [midway, below, sloped] (E209) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -54.25) circle (0.4cm) node[draw=none] (N210) {D17};
+\draw (-29.6, -49.75) -- (-29.200000000000003, -49.75) -- (-29.200000000000003, -54.25) -- (-24.4, -54.25) node [midway, above, sloped] (E210) {P Abandons: No} node [midway, below, sloped] (E211) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -51.75) circle (0.4cm) node[draw=none] (N212) {P21};
+\draw (-23.6, -54.25) -- (-23.200000000000003, -54.25) -- (-23.200000000000003, -51.75) -- (-18.4, -51.75) node [midway, above, sloped] (E212) {D Defaults: Yes} node [midway, below, sloped] (E213) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -50.75) circle (0.4cm) node[draw=none] (N214) {D19};
+\draw (-17.6, -51.75) -- (-17.200000000000003, -51.75) -- (-17.200000000000003, -50.75) -- (-6.4, -50.75) node [midway, above, sloped] (E214) {P Offer: 0.25} node [midway, below, sloped] (E215) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -50.25) node[draw=none] (N216) {};
+\node[draw=none, right=-0.45cm of N216] {(9.05, 9.55)};
+\draw (-5.6, -50.75) -- (-5.199999999999999, -50.75) -- (-5.199999999999999, -50.25) -- (-0.4, -50.25) node [midway, above, sloped] (E216) {D Offer: 0.25} node [midway, below, sloped] (E217) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -51.25) node[draw=none] (N218) {};
+\node[draw=none, right=-0.45cm of N218] {(9.30, 9.30)};
+\draw (-5.6, -50.75) -- (-5.199999999999999, -50.75) -- (-5.199999999999999, -51.25) -- (-0.4, -51.25) node [midway, above, sloped] (E218) {D Offer: 0.75} node [midway, below, sloped] (E219) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -52.75) circle (0.4cm) node[draw=none] (N220) {D19};
+\draw (-17.6, -51.75) -- (-17.200000000000003, -51.75) -- (-17.200000000000003, -52.75) -- (-6.4, -52.75) node [midway, above, sloped] (E220) {P Offer: 0.75} node [midway, below, sloped] (E221) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -52.25) node[draw=none] (N222) {};
+\node[draw=none, right=-0.45cm of N222] {(9.80, 8.80)};
+\draw (-5.6, -52.75) -- (-5.199999999999999, -52.75) -- (-5.199999999999999, -52.25) -- (-0.4, -52.25) node [midway, above, sloped] (E222) {D Offer: 0.25} node [midway, below, sloped] (E223) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -53.25) node[draw=none] (N224) {};
+\node[draw=none, right=-0.45cm of N224] {(9.55, 9.05)};
+\draw (-5.6, -52.75) -- (-5.199999999999999, -52.75) -- (-5.199999999999999, -53.25) -- (-0.4, -53.25) node [midway, above, sloped] (E224) {D Offer: 0.75} node [midway, below, sloped] (E225) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -56.25) circle (0.4cm) node[draw=none] (N226) {P21};
+\draw (-23.6, -54.25) -- (-23.200000000000003, -54.25) -- (-23.200000000000003, -56.25) -- (-18.4, -56.25) node [midway, above, sloped] (E226) {D Defaults: No} node [midway, below, sloped] (E227) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-12, -54.75) circle (0.4cm) node[draw=none] (N228) {D20};
+\draw (-17.6, -56.25) -- (-17.200000000000003, -56.25) -- (-17.200000000000003, -54.75) -- (-12.4, -54.75) node [midway, above, sloped] (E228) {P Offer: 0.25} node [midway, below, sloped] (E229) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -54.25) node[draw=none] (N230) {};
+\node[draw=none, right=-0.45cm of N230] {(9.05, 9.55)};
+\draw (-11.6, -54.75) -- (-11.2, -54.75) -- (-11.2, -54.25) -- (-0.4, -54.25) node [midway, above, sloped] (E230) {D Offer: 0.25} node [midway, below, sloped] (E231) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -55.25) node[draw=none] (N232) {};
+\node[draw=none, right=-0.45cm of N232] {(9.30, 9.30)};
+\draw (-11.6, -54.75) -- (-11.2, -54.75) -- (-11.2, -55.25) -- (-0.4, -55.25) node [midway, above, sloped] (E232) {D Offer: 0.75} node [midway, below, sloped] (E233) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -57.25) circle (0.4cm) node[draw=none] (N234) {D20};
+\draw (-17.6, -56.25) -- (-17.200000000000003, -56.25) -- (-17.200000000000003, -57.25) -- (-12.4, -57.25) node [midway, above, sloped] (E234) {P Offer: 0.75} node [midway, below, sloped] (E235) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -56.75) circle (0.4cm) node[draw=none] (N236) {C};
+\draw (-11.6, -57.25) -- (-11.2, -57.25) -- (-11.2, -56.75) -- (-6.4, -56.75) node [midway, above, sloped] (E236) {D Offer: 0.25} node [midway, below, sloped] (E237) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -56.25) node[draw=none] (N238) {};
+\node[draw=none, right=-0.45cm of N238] {(8.70, 9.70)};
+\draw (-5.6, -56.75) -- (-5.199999999999999, -56.75) -- (-5.199999999999999, -56.25) -- (-0.4, -56.25) node [midway, above, sloped] (E238) {Court Decision: Not Liable} node [midway, below, sloped] (E239) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -57.25) node[draw=none] (N240) {};
+\node[draw=none, right=-0.45cm of N240] {(9.70, 8.70)};
+\draw (-5.6, -56.75) -- (-5.199999999999999, -56.75) -- (-5.199999999999999, -57.25) -- (-0.4, -57.25) node [midway, above, sloped] (E240) {Court Decision: Liable} node [midway, below, sloped] (E241) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -58.25) node[draw=none] (N242) {};
+\node[draw=none, right=-0.45cm of N242] {(9.55, 9.05)};
+\draw (-11.6, -57.25) -- (-11.2, -57.25) -- (-11.2, -58.25) -- (-6.4, -58.25) node [midway, above, sloped] (E242) {D Offer: 0.75} node [midway, below, sloped] (E243) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -59.25) node[draw=none] (N244) {};
+\node[draw=none, right=-0.45cm of N244] {(9.90, 9.00)};
+\draw (-35.6, -50.25) -- (-35.2, -50.25) -- (-35.2, -59.25) -- (-30.4, -59.25) node [midway, above, sloped] (E244) {D Answers: No} node [midway, below, sloped] (E245) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-36, -60.25) node[draw=none] (N246) {};
+\node[draw=none, right=-0.45cm of N246] {(9.00, 10.00)};
+\draw (-41.6, -50.75) -- (-41.2, -50.75) -- (-41.2, -60.25) -- (-36.4, -60.25) node [midway, above, sloped] (E246) {P Files: No} node [midway, below, sloped] (E247) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-42, -70.75) circle (0.4cm) node[draw=none] (N248) {P22};
+\draw (-47.6, -60.75) -- (-47.2, -60.75) -- (-47.2, -70.75) -- (-42.4, -70.75) node [midway, above, sloped] (E248) {Plaintiff Signal: 0.75} node [midway, below, sloped] (E249) {Probability: 0.20} ;
+
+
+    \draw[color=black] (-36, -70.25) circle (0.4cm) node[draw=none] (N250) {D15};
+\draw (-41.6, -70.75) -- (-41.2, -70.75) -- (-41.2, -70.25) -- (-36.4, -70.25) node [midway, above, sloped] (E250) {P Files: Yes} node [midway, below, sloped] (E251) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -69.75) circle (0.4cm) node[draw=none] (N252) {P23};
+\draw (-35.6, -70.25) -- (-35.2, -70.25) -- (-35.2, -69.75) -- (-30.4, -69.75) node [midway, above, sloped] (E252) {D Answers: Yes} node [midway, below, sloped] (E253) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -65.25) circle (0.4cm) node[draw=none] (N254) {D17};
+\draw (-29.6, -69.75) -- (-29.200000000000003, -69.75) -- (-29.200000000000003, -65.25) -- (-24.4, -65.25) node [midway, above, sloped] (E254) {P Abandons: Yes} node [midway, below, sloped] (E255) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-18, -63.25) circle (0.4cm) node[draw=none] (N256) {P24};
+\draw (-23.6, -65.25) -- (-23.200000000000003, -65.25) -- (-23.200000000000003, -63.25) -- (-18.4, -63.25) node [midway, above, sloped] (E256) {D Defaults: Yes} node [midway, below, sloped] (E257) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -61.75) circle (0.4cm) node[draw=none] (N258) {D19};
+\draw (-17.6, -63.25) -- (-17.200000000000003, -63.25) -- (-17.200000000000003, -61.75) -- (-12.4, -61.75) node [midway, above, sloped] (E258) {P Offer: 0.25} node [midway, below, sloped] (E259) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -61.25) node[draw=none] (N260) {};
+\node[draw=none, right=-0.45cm of N260] {(9.05, 9.55)};
+\draw (-11.6, -61.75) -- (-11.2, -61.75) -- (-11.2, -61.25) -- (-0.4, -61.25) node [midway, above, sloped] (E260) {D Offer: 0.25} node [midway, below, sloped] (E261) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -62.25) node[draw=none] (N262) {};
+\node[draw=none, right=-0.45cm of N262] {(9.30, 9.30)};
+\draw (-11.6, -61.75) -- (-11.2, -61.75) -- (-11.2, -62.25) -- (-0.4, -62.25) node [midway, above, sloped] (E262) {D Offer: 0.75} node [midway, below, sloped] (E263) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -64.25) circle (0.4cm) node[draw=none] (N264) {D19};
+\draw (-17.6, -63.25) -- (-17.200000000000003, -63.25) -- (-17.200000000000003, -64.25) -- (-12.4, -64.25) node [midway, above, sloped] (E264) {P Offer: 0.75} node [midway, below, sloped] (E265) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -63.75) circle (0.4cm) node[draw=none] (N266) {C};
+\draw (-11.6, -64.25) -- (-11.2, -64.25) -- (-11.2, -63.75) -- (-6.4, -63.75) node [midway, above, sloped] (E266) {D Offer: 0.25} node [midway, below, sloped] (E267) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -63.25) node[draw=none] (N268) {};
+\node[draw=none, right=-0.45cm of N268] {(8.80, 9.80)};
+\draw (-5.6, -63.75) -- (-5.199999999999999, -63.75) -- (-5.199999999999999, -63.25) -- (-0.4, -63.25) node [midway, above, sloped] (E268) {Both Quit: P Abandons} node [midway, below, sloped] (E269) {Probability: 0.50} ;
+
+
+    \draw[color=black] (0, -64.25) node[draw=none] (N270) {};
+\node[draw=none, right=-0.45cm of N270] {(9.80, 8.80)};
+\draw (-5.6, -63.75) -- (-5.199999999999999, -63.75) -- (-5.199999999999999, -64.25) -- (-0.4, -64.25) node [midway, above, sloped] (E270) {Both Quit: D Defaults} node [midway, below, sloped] (E271) {Probability: 0.50} ;
+
+
+    \draw[color=black] (-6, -65.25) node[draw=none] (N272) {};
+\node[draw=none, right=-0.45cm of N272] {(9.55, 9.05)};
+\draw (-11.6, -64.25) -- (-11.2, -64.25) -- (-11.2, -65.25) -- (-6.4, -65.25) node [midway, above, sloped] (E272) {D Offer: 0.75} node [midway, below, sloped] (E273) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -67.75) circle (0.4cm) node[draw=none] (N274) {P24};
+\draw (-23.6, -65.25) -- (-23.200000000000003, -65.25) -- (-23.200000000000003, -67.75) -- (-18.4, -67.75) node [midway, above, sloped] (E274) {D Defaults: No} node [midway, below, sloped] (E275) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-6, -66.75) circle (0.4cm) node[draw=none] (N276) {D20};
+\draw (-17.6, -67.75) -- (-17.200000000000003, -67.75) -- (-17.200000000000003, -66.75) -- (-6.4, -66.75) node [midway, above, sloped] (E276) {P Offer: 0.25} node [midway, below, sloped] (E277) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -66.25) node[draw=none] (N278) {};
+\node[draw=none, right=-0.45cm of N278] {(9.05, 9.55)};
+\draw (-5.6, -66.75) -- (-5.199999999999999, -66.75) -- (-5.199999999999999, -66.25) -- (-0.4, -66.25) node [midway, above, sloped] (E278) {D Offer: 0.25} node [midway, below, sloped] (E279) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -67.25) node[draw=none] (N280) {};
+\node[draw=none, right=-0.45cm of N280] {(9.30, 9.30)};
+\draw (-5.6, -66.75) -- (-5.199999999999999, -66.75) -- (-5.199999999999999, -67.25) -- (-0.4, -67.25) node [midway, above, sloped] (E280) {D Offer: 0.75} node [midway, below, sloped] (E281) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -68.75) circle (0.4cm) node[draw=none] (N282) {D20};
+\draw (-17.6, -67.75) -- (-17.200000000000003, -67.75) -- (-17.200000000000003, -68.75) -- (-6.4, -68.75) node [midway, above, sloped] (E282) {P Offer: 0.75} node [midway, below, sloped] (E283) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -68.25) node[draw=none] (N284) {};
+\node[draw=none, right=-0.45cm of N284] {(8.80, 9.80)};
+\draw (-5.6, -68.75) -- (-5.199999999999999, -68.75) -- (-5.199999999999999, -68.25) -- (-0.4, -68.25) node [midway, above, sloped] (E284) {D Offer: 0.25} node [midway, below, sloped] (E285) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -69.25) node[draw=none] (N286) {};
+\node[draw=none, right=-0.45cm of N286] {(9.55, 9.05)};
+\draw (-5.6, -68.75) -- (-5.199999999999999, -68.75) -- (-5.199999999999999, -69.25) -- (-0.4, -69.25) node [midway, above, sloped] (E286) {D Offer: 0.75} node [midway, below, sloped] (E287) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -74.25) circle (0.4cm) node[draw=none] (N288) {D17};
+\draw (-29.6, -69.75) -- (-29.200000000000003, -69.75) -- (-29.200000000000003, -74.25) -- (-24.4, -74.25) node [midway, above, sloped] (E288) {P Abandons: No} node [midway, below, sloped] (E289) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -71.75) circle (0.4cm) node[draw=none] (N290) {P25};
+\draw (-23.6, -74.25) -- (-23.200000000000003, -74.25) -- (-23.200000000000003, -71.75) -- (-18.4, -71.75) node [midway, above, sloped] (E290) {D Defaults: Yes} node [midway, below, sloped] (E291) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -70.75) circle (0.4cm) node[draw=none] (N292) {D19};
+\draw (-17.6, -71.75) -- (-17.200000000000003, -71.75) -- (-17.200000000000003, -70.75) -- (-6.4, -70.75) node [midway, above, sloped] (E292) {P Offer: 0.25} node [midway, below, sloped] (E293) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -70.25) node[draw=none] (N294) {};
+\node[draw=none, right=-0.45cm of N294] {(9.05, 9.55)};
+\draw (-5.6, -70.75) -- (-5.199999999999999, -70.75) -- (-5.199999999999999, -70.25) -- (-0.4, -70.25) node [midway, above, sloped] (E294) {D Offer: 0.25} node [midway, below, sloped] (E295) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -71.25) node[draw=none] (N296) {};
+\node[draw=none, right=-0.45cm of N296] {(9.30, 9.30)};
+\draw (-5.6, -70.75) -- (-5.199999999999999, -70.75) -- (-5.199999999999999, -71.25) -- (-0.4, -71.25) node [midway, above, sloped] (E296) {D Offer: 0.75} node [midway, below, sloped] (E297) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -72.75) circle (0.4cm) node[draw=none] (N298) {D19};
+\draw (-17.6, -71.75) -- (-17.200000000000003, -71.75) -- (-17.200000000000003, -72.75) -- (-6.4, -72.75) node [midway, above, sloped] (E298) {P Offer: 0.75} node [midway, below, sloped] (E299) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -72.25) node[draw=none] (N300) {};
+\node[draw=none, right=-0.45cm of N300] {(9.80, 8.80)};
+\draw (-5.6, -72.75) -- (-5.199999999999999, -72.75) -- (-5.199999999999999, -72.25) -- (-0.4, -72.25) node [midway, above, sloped] (E300) {D Offer: 0.25} node [midway, below, sloped] (E301) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -73.25) node[draw=none] (N302) {};
+\node[draw=none, right=-0.45cm of N302] {(9.55, 9.05)};
+\draw (-5.6, -72.75) -- (-5.199999999999999, -72.75) -- (-5.199999999999999, -73.25) -- (-0.4, -73.25) node [midway, above, sloped] (E302) {D Offer: 0.75} node [midway, below, sloped] (E303) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -76.25) circle (0.4cm) node[draw=none] (N304) {P25};
+\draw (-23.6, -74.25) -- (-23.200000000000003, -74.25) -- (-23.200000000000003, -76.25) -- (-18.4, -76.25) node [midway, above, sloped] (E304) {D Defaults: No} node [midway, below, sloped] (E305) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-12, -74.75) circle (0.4cm) node[draw=none] (N306) {D20};
+\draw (-17.6, -76.25) -- (-17.200000000000003, -76.25) -- (-17.200000000000003, -74.75) -- (-12.4, -74.75) node [midway, above, sloped] (E306) {P Offer: 0.25} node [midway, below, sloped] (E307) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -74.25) node[draw=none] (N308) {};
+\node[draw=none, right=-0.45cm of N308] {(9.05, 9.55)};
+\draw (-11.6, -74.75) -- (-11.2, -74.75) -- (-11.2, -74.25) -- (-0.4, -74.25) node [midway, above, sloped] (E308) {D Offer: 0.25} node [midway, below, sloped] (E309) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -75.25) node[draw=none] (N310) {};
+\node[draw=none, right=-0.45cm of N310] {(9.30, 9.30)};
+\draw (-11.6, -74.75) -- (-11.2, -74.75) -- (-11.2, -75.25) -- (-0.4, -75.25) node [midway, above, sloped] (E310) {D Offer: 0.75} node [midway, below, sloped] (E311) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -77.25) circle (0.4cm) node[draw=none] (N312) {D20};
+\draw (-17.6, -76.25) -- (-17.200000000000003, -76.25) -- (-17.200000000000003, -77.25) -- (-12.4, -77.25) node [midway, above, sloped] (E312) {P Offer: 0.75} node [midway, below, sloped] (E313) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -76.75) circle (0.4cm) node[draw=none] (N314) {C};
+\draw (-11.6, -77.25) -- (-11.2, -77.25) -- (-11.2, -76.75) -- (-6.4, -76.75) node [midway, above, sloped] (E314) {D Offer: 0.25} node [midway, below, sloped] (E315) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -76.25) node[draw=none] (N316) {};
+\node[draw=none, right=-0.45cm of N316] {(8.70, 9.70)};
+\draw (-5.6, -76.75) -- (-5.199999999999999, -76.75) -- (-5.199999999999999, -76.25) -- (-0.4, -76.25) node [midway, above, sloped] (E316) {Court Decision: Not Liable} node [midway, below, sloped] (E317) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -77.25) node[draw=none] (N318) {};
+\node[draw=none, right=-0.45cm of N318] {(9.70, 8.70)};
+\draw (-5.6, -76.75) -- (-5.199999999999999, -76.75) -- (-5.199999999999999, -77.25) -- (-0.4, -77.25) node [midway, above, sloped] (E318) {Court Decision: Liable} node [midway, below, sloped] (E319) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -78.25) node[draw=none] (N320) {};
+\node[draw=none, right=-0.45cm of N320] {(9.55, 9.05)};
+\draw (-11.6, -77.25) -- (-11.2, -77.25) -- (-11.2, -78.25) -- (-6.4, -78.25) node [midway, above, sloped] (E320) {D Offer: 0.75} node [midway, below, sloped] (E321) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -79.25) node[draw=none] (N322) {};
+\node[draw=none, right=-0.45cm of N322] {(9.90, 9.00)};
+\draw (-35.6, -70.25) -- (-35.2, -70.25) -- (-35.2, -79.25) -- (-30.4, -79.25) node [midway, above, sloped] (E322) {D Answers: No} node [midway, below, sloped] (E323) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-36, -80.25) node[draw=none] (N324) {};
+\node[draw=none, right=-0.45cm of N324] {(9.00, 10.00)};
+\draw (-41.6, -70.75) -- (-41.2, -70.75) -- (-41.2, -80.25) -- (-36.4, -80.25) node [midway, above, sloped] (E324) {P Files: No} node [midway, below, sloped] (E325) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-48, -81.25) node[draw=none] (N326) {};
+\node[draw=none, right=-0.45cm of N326] {(10.00, 10.00)};
+\draw (-53.6, -61.25) -- (-53.2, -61.25) -- (-53.2, -81.25) -- (-48.4, -81.25) node [midway, above, sloped] (E326) {Accident: No} node [midway, below, sloped] (E327) {Pr.: 1 -- $7.98 \times 10^{-5}$} ;
+
+
+    \draw[color=black] (-60, -82.25) node[draw=none] (N328) {};
+\node[draw=none, right=-0.45cm of N328] {(10.00, 10.00)};
+\draw (-65.6, -41.25) -- (-65.19999999999999, -41.25) -- (-65.19999999999999, -82.25) -- (-60.4, -82.25) node [midway, above, sloped] (E328) {Engage in Activity: No} node [midway, below, sloped] (E329) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-66, -124.25) circle (0.4cm) node[draw=none] (N330) {D26};
+\draw (-71.6, -82.75) -- (-71.19999999999999, -82.75) -- (-71.19999999999999, -124.25) -- (-66.4, -124.25) node [midway, above, sloped] (E330) {Defendant Signal: 0.75} node [midway, below, sloped] (E331) {Probability: 0.50} ;
+
+
+    \draw[color=black] (-60, -123.75) circle (0.4cm) node[draw=none] (N332) {D27};
+\draw (-65.6, -124.25) -- (-65.19999999999999, -124.25) -- (-65.19999999999999, -123.75) -- (-60.4, -123.75) node [midway, above, sloped] (E332) {Engage in Activity: Yes} node [midway, below, sloped] (E333) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-54, -103.25) circle (0.4cm) node[draw=none] (N334) {C};
+\draw (-59.6, -123.75) -- (-59.2, -123.75) -- (-59.2, -103.25) -- (-54.4, -103.25) node [midway, above, sloped] (E334) {Precaution: Level 1} node [midway, below, sloped] (E335) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-48, -102.75) circle (0.4cm) node[draw=none] (N336) {C};
+\draw (-53.6, -103.25) -- (-53.2, -103.25) -- (-53.2, -102.75) -- (-48.4, -102.75) node [midway, above, sloped] (E336) {Accident: Yes} node [midway, below, sloped] (E337) {Pr.: $1.10 \times 10^{-4}$} ;
+
+
+    \draw[color=black] (-42, -92.75) circle (0.4cm) node[draw=none] (N338) {P2};
+\draw (-47.6, -102.75) -- (-47.2, -102.75) -- (-47.2, -92.75) -- (-42.4, -92.75) node [midway, above, sloped] (E338) {Plaintiff Signal: 0.25} node [midway, below, sloped] (E339) {Probability: 0.21} ;
+
+
+    \draw[color=black] (-36, -92.25) circle (0.4cm) node[draw=none] (N340) {D28};
+\draw (-41.6, -92.75) -- (-41.2, -92.75) -- (-41.2, -92.25) -- (-36.4, -92.25) node [midway, above, sloped] (E340) {P Files: Yes} node [midway, below, sloped] (E341) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -91.75) circle (0.4cm) node[draw=none] (N342) {P4};
+\draw (-35.6, -92.25) -- (-35.2, -92.25) -- (-35.2, -91.75) -- (-30.4, -91.75) node [midway, above, sloped] (E342) {D Answers: Yes} node [midway, below, sloped] (E343) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -87.25) circle (0.4cm) node[draw=none] (N344) {D29};
+\draw (-29.6, -91.75) -- (-29.200000000000003, -91.75) -- (-29.200000000000003, -87.25) -- (-24.4, -87.25) node [midway, above, sloped] (E344) {P Abandons: Yes} node [midway, below, sloped] (E345) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-18, -85.25) circle (0.4cm) node[draw=none] (N346) {P6};
+\draw (-23.6, -87.25) -- (-23.200000000000003, -87.25) -- (-23.200000000000003, -85.25) -- (-18.4, -85.25) node [midway, above, sloped] (E346) {D Defaults: Yes} node [midway, below, sloped] (E347) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -83.75) circle (0.4cm) node[draw=none] (N348) {D30};
+\draw (-17.6, -85.25) -- (-17.200000000000003, -85.25) -- (-17.200000000000003, -83.75) -- (-12.4, -83.75) node [midway, above, sloped] (E348) {P Offer: 0.25} node [midway, below, sloped] (E349) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -83.25) node[draw=none] (N350) {};
+\node[draw=none, right=-0.45cm of N350] {(9.05, 9.55)};
+\draw (-11.6, -83.75) -- (-11.2, -83.75) -- (-11.2, -83.25) -- (-0.4, -83.25) node [midway, above, sloped] (E350) {D Offer: 0.25} node [midway, below, sloped] (E351) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -84.25) node[draw=none] (N352) {};
+\node[draw=none, right=-0.45cm of N352] {(9.30, 9.30)};
+\draw (-11.6, -83.75) -- (-11.2, -83.75) -- (-11.2, -84.25) -- (-0.4, -84.25) node [midway, above, sloped] (E352) {D Offer: 0.75} node [midway, below, sloped] (E353) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -86.25) circle (0.4cm) node[draw=none] (N354) {D30};
+\draw (-17.6, -85.25) -- (-17.200000000000003, -85.25) -- (-17.200000000000003, -86.25) -- (-12.4, -86.25) node [midway, above, sloped] (E354) {P Offer: 0.75} node [midway, below, sloped] (E355) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -85.75) circle (0.4cm) node[draw=none] (N356) {C};
+\draw (-11.6, -86.25) -- (-11.2, -86.25) -- (-11.2, -85.75) -- (-6.4, -85.75) node [midway, above, sloped] (E356) {D Offer: 0.25} node [midway, below, sloped] (E357) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -85.25) node[draw=none] (N358) {};
+\node[draw=none, right=-0.45cm of N358] {(8.80, 9.80)};
+\draw (-5.6, -85.75) -- (-5.199999999999999, -85.75) -- (-5.199999999999999, -85.25) -- (-0.4, -85.25) node [midway, above, sloped] (E358) {Both Quit: P Abandons} node [midway, below, sloped] (E359) {Probability: 0.50} ;
+
+
+    \draw[color=black] (0, -86.25) node[draw=none] (N360) {};
+\node[draw=none, right=-0.45cm of N360] {(9.80, 8.80)};
+\draw (-5.6, -85.75) -- (-5.199999999999999, -85.75) -- (-5.199999999999999, -86.25) -- (-0.4, -86.25) node [midway, above, sloped] (E360) {Both Quit: D Defaults} node [midway, below, sloped] (E361) {Probability: 0.50} ;
+
+
+    \draw[color=black] (-6, -87.25) node[draw=none] (N362) {};
+\node[draw=none, right=-0.45cm of N362] {(9.55, 9.05)};
+\draw (-11.6, -86.25) -- (-11.2, -86.25) -- (-11.2, -87.25) -- (-6.4, -87.25) node [midway, above, sloped] (E362) {D Offer: 0.75} node [midway, below, sloped] (E363) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -89.75) circle (0.4cm) node[draw=none] (N364) {P6};
+\draw (-23.6, -87.25) -- (-23.200000000000003, -87.25) -- (-23.200000000000003, -89.75) -- (-18.4, -89.75) node [midway, above, sloped] (E364) {D Defaults: No} node [midway, below, sloped] (E365) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-6, -88.75) circle (0.4cm) node[draw=none] (N366) {D31};
+\draw (-17.6, -89.75) -- (-17.200000000000003, -89.75) -- (-17.200000000000003, -88.75) -- (-6.4, -88.75) node [midway, above, sloped] (E366) {P Offer: 0.25} node [midway, below, sloped] (E367) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -88.25) node[draw=none] (N368) {};
+\node[draw=none, right=-0.45cm of N368] {(9.05, 9.55)};
+\draw (-5.6, -88.75) -- (-5.199999999999999, -88.75) -- (-5.199999999999999, -88.25) -- (-0.4, -88.25) node [midway, above, sloped] (E368) {D Offer: 0.25} node [midway, below, sloped] (E369) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -89.25) node[draw=none] (N370) {};
+\node[draw=none, right=-0.45cm of N370] {(9.30, 9.30)};
+\draw (-5.6, -88.75) -- (-5.199999999999999, -88.75) -- (-5.199999999999999, -89.25) -- (-0.4, -89.25) node [midway, above, sloped] (E370) {D Offer: 0.75} node [midway, below, sloped] (E371) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -90.75) circle (0.4cm) node[draw=none] (N372) {D31};
+\draw (-17.6, -89.75) -- (-17.200000000000003, -89.75) -- (-17.200000000000003, -90.75) -- (-6.4, -90.75) node [midway, above, sloped] (E372) {P Offer: 0.75} node [midway, below, sloped] (E373) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -90.25) node[draw=none] (N374) {};
+\node[draw=none, right=-0.45cm of N374] {(8.80, 9.80)};
+\draw (-5.6, -90.75) -- (-5.199999999999999, -90.75) -- (-5.199999999999999, -90.25) -- (-0.4, -90.25) node [midway, above, sloped] (E374) {D Offer: 0.25} node [midway, below, sloped] (E375) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -91.25) node[draw=none] (N376) {};
+\node[draw=none, right=-0.45cm of N376] {(9.55, 9.05)};
+\draw (-5.6, -90.75) -- (-5.199999999999999, -90.75) -- (-5.199999999999999, -91.25) -- (-0.4, -91.25) node [midway, above, sloped] (E376) {D Offer: 0.75} node [midway, below, sloped] (E377) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -96.25) circle (0.4cm) node[draw=none] (N378) {D29};
+\draw (-29.6, -91.75) -- (-29.200000000000003, -91.75) -- (-29.200000000000003, -96.25) -- (-24.4, -96.25) node [midway, above, sloped] (E378) {P Abandons: No} node [midway, below, sloped] (E379) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -93.75) circle (0.4cm) node[draw=none] (N380) {P9};
+\draw (-23.6, -96.25) -- (-23.200000000000003, -96.25) -- (-23.200000000000003, -93.75) -- (-18.4, -93.75) node [midway, above, sloped] (E380) {D Defaults: Yes} node [midway, below, sloped] (E381) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -92.75) circle (0.4cm) node[draw=none] (N382) {D30};
+\draw (-17.6, -93.75) -- (-17.200000000000003, -93.75) -- (-17.200000000000003, -92.75) -- (-6.4, -92.75) node [midway, above, sloped] (E382) {P Offer: 0.25} node [midway, below, sloped] (E383) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -92.25) node[draw=none] (N384) {};
+\node[draw=none, right=-0.45cm of N384] {(9.05, 9.55)};
+\draw (-5.6, -92.75) -- (-5.199999999999999, -92.75) -- (-5.199999999999999, -92.25) -- (-0.4, -92.25) node [midway, above, sloped] (E384) {D Offer: 0.25} node [midway, below, sloped] (E385) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -93.25) node[draw=none] (N386) {};
+\node[draw=none, right=-0.45cm of N386] {(9.30, 9.30)};
+\draw (-5.6, -92.75) -- (-5.199999999999999, -92.75) -- (-5.199999999999999, -93.25) -- (-0.4, -93.25) node [midway, above, sloped] (E386) {D Offer: 0.75} node [midway, below, sloped] (E387) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -94.75) circle (0.4cm) node[draw=none] (N388) {D30};
+\draw (-17.6, -93.75) -- (-17.200000000000003, -93.75) -- (-17.200000000000003, -94.75) -- (-6.4, -94.75) node [midway, above, sloped] (E388) {P Offer: 0.75} node [midway, below, sloped] (E389) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -94.25) node[draw=none] (N390) {};
+\node[draw=none, right=-0.45cm of N390] {(9.80, 8.80)};
+\draw (-5.6, -94.75) -- (-5.199999999999999, -94.75) -- (-5.199999999999999, -94.25) -- (-0.4, -94.25) node [midway, above, sloped] (E390) {D Offer: 0.25} node [midway, below, sloped] (E391) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -95.25) node[draw=none] (N392) {};
+\node[draw=none, right=-0.45cm of N392] {(9.55, 9.05)};
+\draw (-5.6, -94.75) -- (-5.199999999999999, -94.75) -- (-5.199999999999999, -95.25) -- (-0.4, -95.25) node [midway, above, sloped] (E392) {D Offer: 0.75} node [midway, below, sloped] (E393) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -98.25) circle (0.4cm) node[draw=none] (N394) {P9};
+\draw (-23.6, -96.25) -- (-23.200000000000003, -96.25) -- (-23.200000000000003, -98.25) -- (-18.4, -98.25) node [midway, above, sloped] (E394) {D Defaults: No} node [midway, below, sloped] (E395) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-12, -96.75) circle (0.4cm) node[draw=none] (N396) {D31};
+\draw (-17.6, -98.25) -- (-17.200000000000003, -98.25) -- (-17.200000000000003, -96.75) -- (-12.4, -96.75) node [midway, above, sloped] (E396) {P Offer: 0.25} node [midway, below, sloped] (E397) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -96.25) node[draw=none] (N398) {};
+\node[draw=none, right=-0.45cm of N398] {(9.05, 9.55)};
+\draw (-11.6, -96.75) -- (-11.2, -96.75) -- (-11.2, -96.25) -- (-0.4, -96.25) node [midway, above, sloped] (E398) {D Offer: 0.25} node [midway, below, sloped] (E399) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -97.25) node[draw=none] (N400) {};
+\node[draw=none, right=-0.45cm of N400] {(9.30, 9.30)};
+\draw (-11.6, -96.75) -- (-11.2, -96.75) -- (-11.2, -97.25) -- (-0.4, -97.25) node [midway, above, sloped] (E400) {D Offer: 0.75} node [midway, below, sloped] (E401) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -99.25) circle (0.4cm) node[draw=none] (N402) {D31};
+\draw (-17.6, -98.25) -- (-17.200000000000003, -98.25) -- (-17.200000000000003, -99.25) -- (-12.4, -99.25) node [midway, above, sloped] (E402) {P Offer: 0.75} node [midway, below, sloped] (E403) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -98.75) circle (0.4cm) node[draw=none] (N404) {C};
+\draw (-11.6, -99.25) -- (-11.2, -99.25) -- (-11.2, -98.75) -- (-6.4, -98.75) node [midway, above, sloped] (E404) {D Offer: 0.25} node [midway, below, sloped] (E405) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -98.25) node[draw=none] (N406) {};
+\node[draw=none, right=-0.45cm of N406] {(8.70, 9.70)};
+\draw (-5.6, -98.75) -- (-5.199999999999999, -98.75) -- (-5.199999999999999, -98.25) -- (-0.4, -98.25) node [midway, above, sloped] (E406) {Court Decision: Not Liable} node [midway, below, sloped] (E407) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -99.25) node[draw=none] (N408) {};
+\node[draw=none, right=-0.45cm of N408] {(9.70, 8.70)};
+\draw (-5.6, -98.75) -- (-5.199999999999999, -98.75) -- (-5.199999999999999, -99.25) -- (-0.4, -99.25) node [midway, above, sloped] (E408) {Court Decision: Liable} node [midway, below, sloped] (E409) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -100.25) node[draw=none] (N410) {};
+\node[draw=none, right=-0.45cm of N410] {(9.55, 9.05)};
+\draw (-11.6, -99.25) -- (-11.2, -99.25) -- (-11.2, -100.25) -- (-6.4, -100.25) node [midway, above, sloped] (E410) {D Offer: 0.75} node [midway, below, sloped] (E411) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -101.25) node[draw=none] (N412) {};
+\node[draw=none, right=-0.45cm of N412] {(9.90, 9.00)};
+\draw (-35.6, -92.25) -- (-35.2, -92.25) -- (-35.2, -101.25) -- (-30.4, -101.25) node [midway, above, sloped] (E412) {D Answers: No} node [midway, below, sloped] (E413) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-36, -102.25) node[draw=none] (N414) {};
+\node[draw=none, right=-0.45cm of N414] {(9.00, 10.00)};
+\draw (-41.6, -92.75) -- (-41.2, -92.75) -- (-41.2, -102.25) -- (-36.4, -102.25) node [midway, above, sloped] (E414) {P Files: No} node [midway, below, sloped] (E415) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-42, -112.75) circle (0.4cm) node[draw=none] (N416) {P10};
+\draw (-47.6, -102.75) -- (-47.2, -102.75) -- (-47.2, -112.75) -- (-42.4, -112.75) node [midway, above, sloped] (E416) {Plaintiff Signal: 0.75} node [midway, below, sloped] (E417) {Probability: 0.79} ;
+
+
+    \draw[color=black] (-36, -112.25) circle (0.4cm) node[draw=none] (N418) {D28};
+\draw (-41.6, -112.75) -- (-41.2, -112.75) -- (-41.2, -112.25) -- (-36.4, -112.25) node [midway, above, sloped] (E418) {P Files: Yes} node [midway, below, sloped] (E419) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -111.75) circle (0.4cm) node[draw=none] (N420) {P11};
+\draw (-35.6, -112.25) -- (-35.2, -112.25) -- (-35.2, -111.75) -- (-30.4, -111.75) node [midway, above, sloped] (E420) {D Answers: Yes} node [midway, below, sloped] (E421) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -107.25) circle (0.4cm) node[draw=none] (N422) {D29};
+\draw (-29.6, -111.75) -- (-29.200000000000003, -111.75) -- (-29.200000000000003, -107.25) -- (-24.4, -107.25) node [midway, above, sloped] (E422) {P Abandons: Yes} node [midway, below, sloped] (E423) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-18, -105.25) circle (0.4cm) node[draw=none] (N424) {P12};
+\draw (-23.6, -107.25) -- (-23.200000000000003, -107.25) -- (-23.200000000000003, -105.25) -- (-18.4, -105.25) node [midway, above, sloped] (E424) {D Defaults: Yes} node [midway, below, sloped] (E425) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -103.75) circle (0.4cm) node[draw=none] (N426) {D30};
+\draw (-17.6, -105.25) -- (-17.200000000000003, -105.25) -- (-17.200000000000003, -103.75) -- (-12.4, -103.75) node [midway, above, sloped] (E426) {P Offer: 0.25} node [midway, below, sloped] (E427) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -103.25) node[draw=none] (N428) {};
+\node[draw=none, right=-0.45cm of N428] {(9.05, 9.55)};
+\draw (-11.6, -103.75) -- (-11.2, -103.75) -- (-11.2, -103.25) -- (-0.4, -103.25) node [midway, above, sloped] (E428) {D Offer: 0.25} node [midway, below, sloped] (E429) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -104.25) node[draw=none] (N430) {};
+\node[draw=none, right=-0.45cm of N430] {(9.30, 9.30)};
+\draw (-11.6, -103.75) -- (-11.2, -103.75) -- (-11.2, -104.25) -- (-0.4, -104.25) node [midway, above, sloped] (E430) {D Offer: 0.75} node [midway, below, sloped] (E431) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -106.25) circle (0.4cm) node[draw=none] (N432) {D30};
+\draw (-17.6, -105.25) -- (-17.200000000000003, -105.25) -- (-17.200000000000003, -106.25) -- (-12.4, -106.25) node [midway, above, sloped] (E432) {P Offer: 0.75} node [midway, below, sloped] (E433) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -105.75) circle (0.4cm) node[draw=none] (N434) {C};
+\draw (-11.6, -106.25) -- (-11.2, -106.25) -- (-11.2, -105.75) -- (-6.4, -105.75) node [midway, above, sloped] (E434) {D Offer: 0.25} node [midway, below, sloped] (E435) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -105.25) node[draw=none] (N436) {};
+\node[draw=none, right=-0.45cm of N436] {(8.80, 9.80)};
+\draw (-5.6, -105.75) -- (-5.199999999999999, -105.75) -- (-5.199999999999999, -105.25) -- (-0.4, -105.25) node [midway, above, sloped] (E436) {Both Quit: P Abandons} node [midway, below, sloped] (E437) {Probability: 0.50} ;
+
+
+    \draw[color=black] (0, -106.25) node[draw=none] (N438) {};
+\node[draw=none, right=-0.45cm of N438] {(9.80, 8.80)};
+\draw (-5.6, -105.75) -- (-5.199999999999999, -105.75) -- (-5.199999999999999, -106.25) -- (-0.4, -106.25) node [midway, above, sloped] (E438) {Both Quit: D Defaults} node [midway, below, sloped] (E439) {Probability: 0.50} ;
+
+
+    \draw[color=black] (-6, -107.25) node[draw=none] (N440) {};
+\node[draw=none, right=-0.45cm of N440] {(9.55, 9.05)};
+\draw (-11.6, -106.25) -- (-11.2, -106.25) -- (-11.2, -107.25) -- (-6.4, -107.25) node [midway, above, sloped] (E440) {D Offer: 0.75} node [midway, below, sloped] (E441) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -109.75) circle (0.4cm) node[draw=none] (N442) {P12};
+\draw (-23.6, -107.25) -- (-23.200000000000003, -107.25) -- (-23.200000000000003, -109.75) -- (-18.4, -109.75) node [midway, above, sloped] (E442) {D Defaults: No} node [midway, below, sloped] (E443) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-6, -108.75) circle (0.4cm) node[draw=none] (N444) {D31};
+\draw (-17.6, -109.75) -- (-17.200000000000003, -109.75) -- (-17.200000000000003, -108.75) -- (-6.4, -108.75) node [midway, above, sloped] (E444) {P Offer: 0.25} node [midway, below, sloped] (E445) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -108.25) node[draw=none] (N446) {};
+\node[draw=none, right=-0.45cm of N446] {(9.05, 9.55)};
+\draw (-5.6, -108.75) -- (-5.199999999999999, -108.75) -- (-5.199999999999999, -108.25) -- (-0.4, -108.25) node [midway, above, sloped] (E446) {D Offer: 0.25} node [midway, below, sloped] (E447) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -109.25) node[draw=none] (N448) {};
+\node[draw=none, right=-0.45cm of N448] {(9.30, 9.30)};
+\draw (-5.6, -108.75) -- (-5.199999999999999, -108.75) -- (-5.199999999999999, -109.25) -- (-0.4, -109.25) node [midway, above, sloped] (E448) {D Offer: 0.75} node [midway, below, sloped] (E449) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -110.75) circle (0.4cm) node[draw=none] (N450) {D31};
+\draw (-17.6, -109.75) -- (-17.200000000000003, -109.75) -- (-17.200000000000003, -110.75) -- (-6.4, -110.75) node [midway, above, sloped] (E450) {P Offer: 0.75} node [midway, below, sloped] (E451) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -110.25) node[draw=none] (N452) {};
+\node[draw=none, right=-0.45cm of N452] {(8.80, 9.80)};
+\draw (-5.6, -110.75) -- (-5.199999999999999, -110.75) -- (-5.199999999999999, -110.25) -- (-0.4, -110.25) node [midway, above, sloped] (E452) {D Offer: 0.25} node [midway, below, sloped] (E453) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -111.25) node[draw=none] (N454) {};
+\node[draw=none, right=-0.45cm of N454] {(9.55, 9.05)};
+\draw (-5.6, -110.75) -- (-5.199999999999999, -110.75) -- (-5.199999999999999, -111.25) -- (-0.4, -111.25) node [midway, above, sloped] (E454) {D Offer: 0.75} node [midway, below, sloped] (E455) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -116.25) circle (0.4cm) node[draw=none] (N456) {D29};
+\draw (-29.6, -111.75) -- (-29.200000000000003, -111.75) -- (-29.200000000000003, -116.25) -- (-24.4, -116.25) node [midway, above, sloped] (E456) {P Abandons: No} node [midway, below, sloped] (E457) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -113.75) circle (0.4cm) node[draw=none] (N458) {P13};
+\draw (-23.6, -116.25) -- (-23.200000000000003, -116.25) -- (-23.200000000000003, -113.75) -- (-18.4, -113.75) node [midway, above, sloped] (E458) {D Defaults: Yes} node [midway, below, sloped] (E459) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -112.75) circle (0.4cm) node[draw=none] (N460) {D30};
+\draw (-17.6, -113.75) -- (-17.200000000000003, -113.75) -- (-17.200000000000003, -112.75) -- (-6.4, -112.75) node [midway, above, sloped] (E460) {P Offer: 0.25} node [midway, below, sloped] (E461) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -112.25) node[draw=none] (N462) {};
+\node[draw=none, right=-0.45cm of N462] {(9.05, 9.55)};
+\draw (-5.6, -112.75) -- (-5.199999999999999, -112.75) -- (-5.199999999999999, -112.25) -- (-0.4, -112.25) node [midway, above, sloped] (E462) {D Offer: 0.25} node [midway, below, sloped] (E463) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -113.25) node[draw=none] (N464) {};
+\node[draw=none, right=-0.45cm of N464] {(9.30, 9.30)};
+\draw (-5.6, -112.75) -- (-5.199999999999999, -112.75) -- (-5.199999999999999, -113.25) -- (-0.4, -113.25) node [midway, above, sloped] (E464) {D Offer: 0.75} node [midway, below, sloped] (E465) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -114.75) circle (0.4cm) node[draw=none] (N466) {D30};
+\draw (-17.6, -113.75) -- (-17.200000000000003, -113.75) -- (-17.200000000000003, -114.75) -- (-6.4, -114.75) node [midway, above, sloped] (E466) {P Offer: 0.75} node [midway, below, sloped] (E467) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -114.25) node[draw=none] (N468) {};
+\node[draw=none, right=-0.45cm of N468] {(9.80, 8.80)};
+\draw (-5.6, -114.75) -- (-5.199999999999999, -114.75) -- (-5.199999999999999, -114.25) -- (-0.4, -114.25) node [midway, above, sloped] (E468) {D Offer: 0.25} node [midway, below, sloped] (E469) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -115.25) node[draw=none] (N470) {};
+\node[draw=none, right=-0.45cm of N470] {(9.55, 9.05)};
+\draw (-5.6, -114.75) -- (-5.199999999999999, -114.75) -- (-5.199999999999999, -115.25) -- (-0.4, -115.25) node [midway, above, sloped] (E470) {D Offer: 0.75} node [midway, below, sloped] (E471) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -118.25) circle (0.4cm) node[draw=none] (N472) {P13};
+\draw (-23.6, -116.25) -- (-23.200000000000003, -116.25) -- (-23.200000000000003, -118.25) -- (-18.4, -118.25) node [midway, above, sloped] (E472) {D Defaults: No} node [midway, below, sloped] (E473) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-12, -116.75) circle (0.4cm) node[draw=none] (N474) {D31};
+\draw (-17.6, -118.25) -- (-17.200000000000003, -118.25) -- (-17.200000000000003, -116.75) -- (-12.4, -116.75) node [midway, above, sloped] (E474) {P Offer: 0.25} node [midway, below, sloped] (E475) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -116.25) node[draw=none] (N476) {};
+\node[draw=none, right=-0.45cm of N476] {(9.05, 9.55)};
+\draw (-11.6, -116.75) -- (-11.2, -116.75) -- (-11.2, -116.25) -- (-0.4, -116.25) node [midway, above, sloped] (E476) {D Offer: 0.25} node [midway, below, sloped] (E477) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -117.25) node[draw=none] (N478) {};
+\node[draw=none, right=-0.45cm of N478] {(9.30, 9.30)};
+\draw (-11.6, -116.75) -- (-11.2, -116.75) -- (-11.2, -117.25) -- (-0.4, -117.25) node [midway, above, sloped] (E478) {D Offer: 0.75} node [midway, below, sloped] (E479) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -119.25) circle (0.4cm) node[draw=none] (N480) {D31};
+\draw (-17.6, -118.25) -- (-17.200000000000003, -118.25) -- (-17.200000000000003, -119.25) -- (-12.4, -119.25) node [midway, above, sloped] (E480) {P Offer: 0.75} node [midway, below, sloped] (E481) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -118.75) circle (0.4cm) node[draw=none] (N482) {C};
+\draw (-11.6, -119.25) -- (-11.2, -119.25) -- (-11.2, -118.75) -- (-6.4, -118.75) node [midway, above, sloped] (E482) {D Offer: 0.25} node [midway, below, sloped] (E483) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -118.25) node[draw=none] (N484) {};
+\node[draw=none, right=-0.45cm of N484] {(8.70, 9.70)};
+\draw (-5.6, -118.75) -- (-5.199999999999999, -118.75) -- (-5.199999999999999, -118.25) -- (-0.4, -118.25) node [midway, above, sloped] (E484) {Court Decision: Not Liable} node [midway, below, sloped] (E485) {Probability: -0.00} ;
+
+
+    \draw[color=black] (0, -119.25) node[draw=none] (N486) {};
+\node[draw=none, right=-0.45cm of N486] {(9.70, 8.70)};
+\draw (-5.6, -118.75) -- (-5.199999999999999, -118.75) -- (-5.199999999999999, -119.25) -- (-0.4, -119.25) node [midway, above, sloped] (E486) {Court Decision: Liable} node [midway, below, sloped] (E487) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -120.25) node[draw=none] (N488) {};
+\node[draw=none, right=-0.45cm of N488] {(9.55, 9.05)};
+\draw (-11.6, -119.25) -- (-11.2, -119.25) -- (-11.2, -120.25) -- (-6.4, -120.25) node [midway, above, sloped] (E488) {D Offer: 0.75} node [midway, below, sloped] (E489) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -121.25) node[draw=none] (N490) {};
+\node[draw=none, right=-0.45cm of N490] {(9.90, 9.00)};
+\draw (-35.6, -112.25) -- (-35.2, -112.25) -- (-35.2, -121.25) -- (-30.4, -121.25) node [midway, above, sloped] (E490) {D Answers: No} node [midway, below, sloped] (E491) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-36, -122.25) node[draw=none] (N492) {};
+\node[draw=none, right=-0.45cm of N492] {(9.00, 10.00)};
+\draw (-41.6, -112.75) -- (-41.2, -112.75) -- (-41.2, -122.25) -- (-36.4, -122.25) node [midway, above, sloped] (E492) {P Files: No} node [midway, below, sloped] (E493) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-48, -123.25) node[draw=none] (N494) {};
+\node[draw=none, right=-0.45cm of N494] {(10.00, 10.00)};
+\draw (-53.6, -103.25) -- (-53.2, -103.25) -- (-53.2, -123.25) -- (-48.4, -123.25) node [midway, above, sloped] (E494) {Accident: No} node [midway, below, sloped] (E495) {Pr.: 1 -- $1.10 \times 10^{-4}$} ;
+
+
+    \draw[color=black] (-54, -144.25) circle (0.4cm) node[draw=none] (N496) {C};
+\draw (-59.6, -123.75) -- (-59.2, -123.75) -- (-59.2, -144.25) -- (-54.4, -144.25) node [midway, above, sloped] (E496) {Precaution: Level 2} node [midway, below, sloped] (E497) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-48, -143.75) circle (0.4cm) node[draw=none] (N498) {C};
+\draw (-53.6, -144.25) -- (-53.2, -144.25) -- (-53.2, -143.75) -- (-48.4, -143.75) node [midway, above, sloped] (E498) {Accident: Yes} node [midway, below, sloped] (E499) {Pr.: $7.04 \times 10^{-5}$} ;
+
+
+    \draw[color=black] (-42, -133.75) circle (0.4cm) node[draw=none] (N500) {P14};
+\draw (-47.6, -143.75) -- (-47.2, -143.75) -- (-47.2, -133.75) -- (-42.4, -133.75) node [midway, above, sloped] (E500) {Plaintiff Signal: 0.25} node [midway, below, sloped] (E501) {Probability: 0.22} ;
+
+
+    \draw[color=black] (-36, -133.25) circle (0.4cm) node[draw=none] (N502) {D32};
+\draw (-41.6, -133.75) -- (-41.2, -133.75) -- (-41.2, -133.25) -- (-36.4, -133.25) node [midway, above, sloped] (E502) {P Files: Yes} node [midway, below, sloped] (E503) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -132.75) circle (0.4cm) node[draw=none] (N504) {P16};
+\draw (-35.6, -133.25) -- (-35.2, -133.25) -- (-35.2, -132.75) -- (-30.4, -132.75) node [midway, above, sloped] (E504) {D Answers: Yes} node [midway, below, sloped] (E505) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -128.25) circle (0.4cm) node[draw=none] (N506) {D33};
+\draw (-29.6, -132.75) -- (-29.200000000000003, -132.75) -- (-29.200000000000003, -128.25) -- (-24.4, -128.25) node [midway, above, sloped] (E506) {P Abandons: Yes} node [midway, below, sloped] (E507) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-18, -126.25) circle (0.4cm) node[draw=none] (N508) {P18};
+\draw (-23.6, -128.25) -- (-23.200000000000003, -128.25) -- (-23.200000000000003, -126.25) -- (-18.4, -126.25) node [midway, above, sloped] (E508) {D Defaults: Yes} node [midway, below, sloped] (E509) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -124.75) circle (0.4cm) node[draw=none] (N510) {D34};
+\draw (-17.6, -126.25) -- (-17.200000000000003, -126.25) -- (-17.200000000000003, -124.75) -- (-12.4, -124.75) node [midway, above, sloped] (E510) {P Offer: 0.25} node [midway, below, sloped] (E511) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -124.25) node[draw=none] (N512) {};
+\node[draw=none, right=-0.45cm of N512] {(9.05, 9.55)};
+\draw (-11.6, -124.75) -- (-11.2, -124.75) -- (-11.2, -124.25) -- (-0.4, -124.25) node [midway, above, sloped] (E512) {D Offer: 0.25} node [midway, below, sloped] (E513) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -125.25) node[draw=none] (N514) {};
+\node[draw=none, right=-0.45cm of N514] {(9.30, 9.30)};
+\draw (-11.6, -124.75) -- (-11.2, -124.75) -- (-11.2, -125.25) -- (-0.4, -125.25) node [midway, above, sloped] (E514) {D Offer: 0.75} node [midway, below, sloped] (E515) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -127.25) circle (0.4cm) node[draw=none] (N516) {D34};
+\draw (-17.6, -126.25) -- (-17.200000000000003, -126.25) -- (-17.200000000000003, -127.25) -- (-12.4, -127.25) node [midway, above, sloped] (E516) {P Offer: 0.75} node [midway, below, sloped] (E517) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -126.75) circle (0.4cm) node[draw=none] (N518) {C};
+\draw (-11.6, -127.25) -- (-11.2, -127.25) -- (-11.2, -126.75) -- (-6.4, -126.75) node [midway, above, sloped] (E518) {D Offer: 0.25} node [midway, below, sloped] (E519) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -126.25) node[draw=none] (N520) {};
+\node[draw=none, right=-0.45cm of N520] {(8.80, 9.80)};
+\draw (-5.6, -126.75) -- (-5.199999999999999, -126.75) -- (-5.199999999999999, -126.25) -- (-0.4, -126.25) node [midway, above, sloped] (E520) {Both Quit: P Abandons} node [midway, below, sloped] (E521) {Probability: 0.50} ;
+
+
+    \draw[color=black] (0, -127.25) node[draw=none] (N522) {};
+\node[draw=none, right=-0.45cm of N522] {(9.80, 8.80)};
+\draw (-5.6, -126.75) -- (-5.199999999999999, -126.75) -- (-5.199999999999999, -127.25) -- (-0.4, -127.25) node [midway, above, sloped] (E522) {Both Quit: D Defaults} node [midway, below, sloped] (E523) {Probability: 0.50} ;
+
+
+    \draw[color=black] (-6, -128.25) node[draw=none] (N524) {};
+\node[draw=none, right=-0.45cm of N524] {(9.55, 9.05)};
+\draw (-11.6, -127.25) -- (-11.2, -127.25) -- (-11.2, -128.25) -- (-6.4, -128.25) node [midway, above, sloped] (E524) {D Offer: 0.75} node [midway, below, sloped] (E525) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -130.75) circle (0.4cm) node[draw=none] (N526) {P18};
+\draw (-23.6, -128.25) -- (-23.200000000000003, -128.25) -- (-23.200000000000003, -130.75) -- (-18.4, -130.75) node [midway, above, sloped] (E526) {D Defaults: No} node [midway, below, sloped] (E527) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-6, -129.75) circle (0.4cm) node[draw=none] (N528) {D35};
+\draw (-17.6, -130.75) -- (-17.200000000000003, -130.75) -- (-17.200000000000003, -129.75) -- (-6.4, -129.75) node [midway, above, sloped] (E528) {P Offer: 0.25} node [midway, below, sloped] (E529) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -129.25) node[draw=none] (N530) {};
+\node[draw=none, right=-0.45cm of N530] {(9.05, 9.55)};
+\draw (-5.6, -129.75) -- (-5.199999999999999, -129.75) -- (-5.199999999999999, -129.25) -- (-0.4, -129.25) node [midway, above, sloped] (E530) {D Offer: 0.25} node [midway, below, sloped] (E531) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -130.25) node[draw=none] (N532) {};
+\node[draw=none, right=-0.45cm of N532] {(9.30, 9.30)};
+\draw (-5.6, -129.75) -- (-5.199999999999999, -129.75) -- (-5.199999999999999, -130.25) -- (-0.4, -130.25) node [midway, above, sloped] (E532) {D Offer: 0.75} node [midway, below, sloped] (E533) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -131.75) circle (0.4cm) node[draw=none] (N534) {D35};
+\draw (-17.6, -130.75) -- (-17.200000000000003, -130.75) -- (-17.200000000000003, -131.75) -- (-6.4, -131.75) node [midway, above, sloped] (E534) {P Offer: 0.75} node [midway, below, sloped] (E535) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -131.25) node[draw=none] (N536) {};
+\node[draw=none, right=-0.45cm of N536] {(8.80, 9.80)};
+\draw (-5.6, -131.75) -- (-5.199999999999999, -131.75) -- (-5.199999999999999, -131.25) -- (-0.4, -131.25) node [midway, above, sloped] (E536) {D Offer: 0.25} node [midway, below, sloped] (E537) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -132.25) node[draw=none] (N538) {};
+\node[draw=none, right=-0.45cm of N538] {(9.55, 9.05)};
+\draw (-5.6, -131.75) -- (-5.199999999999999, -131.75) -- (-5.199999999999999, -132.25) -- (-0.4, -132.25) node [midway, above, sloped] (E538) {D Offer: 0.75} node [midway, below, sloped] (E539) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -137.25) circle (0.4cm) node[draw=none] (N540) {D33};
+\draw (-29.6, -132.75) -- (-29.200000000000003, -132.75) -- (-29.200000000000003, -137.25) -- (-24.4, -137.25) node [midway, above, sloped] (E540) {P Abandons: No} node [midway, below, sloped] (E541) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -134.75) circle (0.4cm) node[draw=none] (N542) {P21};
+\draw (-23.6, -137.25) -- (-23.200000000000003, -137.25) -- (-23.200000000000003, -134.75) -- (-18.4, -134.75) node [midway, above, sloped] (E542) {D Defaults: Yes} node [midway, below, sloped] (E543) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -133.75) circle (0.4cm) node[draw=none] (N544) {D34};
+\draw (-17.6, -134.75) -- (-17.200000000000003, -134.75) -- (-17.200000000000003, -133.75) -- (-6.4, -133.75) node [midway, above, sloped] (E544) {P Offer: 0.25} node [midway, below, sloped] (E545) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -133.25) node[draw=none] (N546) {};
+\node[draw=none, right=-0.45cm of N546] {(9.05, 9.55)};
+\draw (-5.6, -133.75) -- (-5.199999999999999, -133.75) -- (-5.199999999999999, -133.25) -- (-0.4, -133.25) node [midway, above, sloped] (E546) {D Offer: 0.25} node [midway, below, sloped] (E547) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -134.25) node[draw=none] (N548) {};
+\node[draw=none, right=-0.45cm of N548] {(9.30, 9.30)};
+\draw (-5.6, -133.75) -- (-5.199999999999999, -133.75) -- (-5.199999999999999, -134.25) -- (-0.4, -134.25) node [midway, above, sloped] (E548) {D Offer: 0.75} node [midway, below, sloped] (E549) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -135.75) circle (0.4cm) node[draw=none] (N550) {D34};
+\draw (-17.6, -134.75) -- (-17.200000000000003, -134.75) -- (-17.200000000000003, -135.75) -- (-6.4, -135.75) node [midway, above, sloped] (E550) {P Offer: 0.75} node [midway, below, sloped] (E551) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -135.25) node[draw=none] (N552) {};
+\node[draw=none, right=-0.45cm of N552] {(9.80, 8.80)};
+\draw (-5.6, -135.75) -- (-5.199999999999999, -135.75) -- (-5.199999999999999, -135.25) -- (-0.4, -135.25) node [midway, above, sloped] (E552) {D Offer: 0.25} node [midway, below, sloped] (E553) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -136.25) node[draw=none] (N554) {};
+\node[draw=none, right=-0.45cm of N554] {(9.55, 9.05)};
+\draw (-5.6, -135.75) -- (-5.199999999999999, -135.75) -- (-5.199999999999999, -136.25) -- (-0.4, -136.25) node [midway, above, sloped] (E554) {D Offer: 0.75} node [midway, below, sloped] (E555) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -139.25) circle (0.4cm) node[draw=none] (N556) {P21};
+\draw (-23.6, -137.25) -- (-23.200000000000003, -137.25) -- (-23.200000000000003, -139.25) -- (-18.4, -139.25) node [midway, above, sloped] (E556) {D Defaults: No} node [midway, below, sloped] (E557) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-12, -137.75) circle (0.4cm) node[draw=none] (N558) {D35};
+\draw (-17.6, -139.25) -- (-17.200000000000003, -139.25) -- (-17.200000000000003, -137.75) -- (-12.4, -137.75) node [midway, above, sloped] (E558) {P Offer: 0.25} node [midway, below, sloped] (E559) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -137.25) node[draw=none] (N560) {};
+\node[draw=none, right=-0.45cm of N560] {(9.05, 9.55)};
+\draw (-11.6, -137.75) -- (-11.2, -137.75) -- (-11.2, -137.25) -- (-0.4, -137.25) node [midway, above, sloped] (E560) {D Offer: 0.25} node [midway, below, sloped] (E561) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -138.25) node[draw=none] (N562) {};
+\node[draw=none, right=-0.45cm of N562] {(9.30, 9.30)};
+\draw (-11.6, -137.75) -- (-11.2, -137.75) -- (-11.2, -138.25) -- (-0.4, -138.25) node [midway, above, sloped] (E562) {D Offer: 0.75} node [midway, below, sloped] (E563) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -140.25) circle (0.4cm) node[draw=none] (N564) {D35};
+\draw (-17.6, -139.25) -- (-17.200000000000003, -139.25) -- (-17.200000000000003, -140.25) -- (-12.4, -140.25) node [midway, above, sloped] (E564) {P Offer: 0.75} node [midway, below, sloped] (E565) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -139.75) circle (0.4cm) node[draw=none] (N566) {C};
+\draw (-11.6, -140.25) -- (-11.2, -140.25) -- (-11.2, -139.75) -- (-6.4, -139.75) node [midway, above, sloped] (E566) {D Offer: 0.25} node [midway, below, sloped] (E567) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -139.25) node[draw=none] (N568) {};
+\node[draw=none, right=-0.45cm of N568] {(8.70, 9.70)};
+\draw (-5.6, -139.75) -- (-5.199999999999999, -139.75) -- (-5.199999999999999, -139.25) -- (-0.4, -139.25) node [midway, above, sloped] (E568) {Court Decision: Not Liable} node [midway, below, sloped] (E569) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -140.25) node[draw=none] (N570) {};
+\node[draw=none, right=-0.45cm of N570] {(9.70, 8.70)};
+\draw (-5.6, -139.75) -- (-5.199999999999999, -139.75) -- (-5.199999999999999, -140.25) -- (-0.4, -140.25) node [midway, above, sloped] (E570) {Court Decision: Liable} node [midway, below, sloped] (E571) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -141.25) node[draw=none] (N572) {};
+\node[draw=none, right=-0.45cm of N572] {(9.55, 9.05)};
+\draw (-11.6, -140.25) -- (-11.2, -140.25) -- (-11.2, -141.25) -- (-6.4, -141.25) node [midway, above, sloped] (E572) {D Offer: 0.75} node [midway, below, sloped] (E573) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -142.25) node[draw=none] (N574) {};
+\node[draw=none, right=-0.45cm of N574] {(9.90, 9.00)};
+\draw (-35.6, -133.25) -- (-35.2, -133.25) -- (-35.2, -142.25) -- (-30.4, -142.25) node [midway, above, sloped] (E574) {D Answers: No} node [midway, below, sloped] (E575) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-36, -143.25) node[draw=none] (N576) {};
+\node[draw=none, right=-0.45cm of N576] {(9.00, 10.00)};
+\draw (-41.6, -133.75) -- (-41.2, -133.75) -- (-41.2, -143.25) -- (-36.4, -143.25) node [midway, above, sloped] (E576) {P Files: No} node [midway, below, sloped] (E577) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-42, -153.75) circle (0.4cm) node[draw=none] (N578) {P22};
+\draw (-47.6, -143.75) -- (-47.2, -143.75) -- (-47.2, -153.75) -- (-42.4, -153.75) node [midway, above, sloped] (E578) {Plaintiff Signal: 0.75} node [midway, below, sloped] (E579) {Probability: 0.78} ;
+
+
+    \draw[color=black] (-36, -153.25) circle (0.4cm) node[draw=none] (N580) {D32};
+\draw (-41.6, -153.75) -- (-41.2, -153.75) -- (-41.2, -153.25) -- (-36.4, -153.25) node [midway, above, sloped] (E580) {P Files: Yes} node [midway, below, sloped] (E581) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -152.75) circle (0.4cm) node[draw=none] (N582) {P23};
+\draw (-35.6, -153.25) -- (-35.2, -153.25) -- (-35.2, -152.75) -- (-30.4, -152.75) node [midway, above, sloped] (E582) {D Answers: Yes} node [midway, below, sloped] (E583) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -148.25) circle (0.4cm) node[draw=none] (N584) {D33};
+\draw (-29.6, -152.75) -- (-29.200000000000003, -152.75) -- (-29.200000000000003, -148.25) -- (-24.4, -148.25) node [midway, above, sloped] (E584) {P Abandons: Yes} node [midway, below, sloped] (E585) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-18, -146.25) circle (0.4cm) node[draw=none] (N586) {P24};
+\draw (-23.6, -148.25) -- (-23.200000000000003, -148.25) -- (-23.200000000000003, -146.25) -- (-18.4, -146.25) node [midway, above, sloped] (E586) {D Defaults: Yes} node [midway, below, sloped] (E587) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -144.75) circle (0.4cm) node[draw=none] (N588) {D34};
+\draw (-17.6, -146.25) -- (-17.200000000000003, -146.25) -- (-17.200000000000003, -144.75) -- (-12.4, -144.75) node [midway, above, sloped] (E588) {P Offer: 0.25} node [midway, below, sloped] (E589) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -144.25) node[draw=none] (N590) {};
+\node[draw=none, right=-0.45cm of N590] {(9.05, 9.55)};
+\draw (-11.6, -144.75) -- (-11.2, -144.75) -- (-11.2, -144.25) -- (-0.4, -144.25) node [midway, above, sloped] (E590) {D Offer: 0.25} node [midway, below, sloped] (E591) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -145.25) node[draw=none] (N592) {};
+\node[draw=none, right=-0.45cm of N592] {(9.30, 9.30)};
+\draw (-11.6, -144.75) -- (-11.2, -144.75) -- (-11.2, -145.25) -- (-0.4, -145.25) node [midway, above, sloped] (E592) {D Offer: 0.75} node [midway, below, sloped] (E593) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -147.25) circle (0.4cm) node[draw=none] (N594) {D34};
+\draw (-17.6, -146.25) -- (-17.200000000000003, -146.25) -- (-17.200000000000003, -147.25) -- (-12.4, -147.25) node [midway, above, sloped] (E594) {P Offer: 0.75} node [midway, below, sloped] (E595) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -146.75) circle (0.4cm) node[draw=none] (N596) {C};
+\draw (-11.6, -147.25) -- (-11.2, -147.25) -- (-11.2, -146.75) -- (-6.4, -146.75) node [midway, above, sloped] (E596) {D Offer: 0.25} node [midway, below, sloped] (E597) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -146.25) node[draw=none] (N598) {};
+\node[draw=none, right=-0.45cm of N598] {(8.80, 9.80)};
+\draw (-5.6, -146.75) -- (-5.199999999999999, -146.75) -- (-5.199999999999999, -146.25) -- (-0.4, -146.25) node [midway, above, sloped] (E598) {Both Quit: P Abandons} node [midway, below, sloped] (E599) {Probability: 0.50} ;
+
+
+    \draw[color=black] (0, -147.25) node[draw=none] (N600) {};
+\node[draw=none, right=-0.45cm of N600] {(9.80, 8.80)};
+\draw (-5.6, -146.75) -- (-5.199999999999999, -146.75) -- (-5.199999999999999, -147.25) -- (-0.4, -147.25) node [midway, above, sloped] (E600) {Both Quit: D Defaults} node [midway, below, sloped] (E601) {Probability: 0.50} ;
+
+
+    \draw[color=black] (-6, -148.25) node[draw=none] (N602) {};
+\node[draw=none, right=-0.45cm of N602] {(9.55, 9.05)};
+\draw (-11.6, -147.25) -- (-11.2, -147.25) -- (-11.2, -148.25) -- (-6.4, -148.25) node [midway, above, sloped] (E602) {D Offer: 0.75} node [midway, below, sloped] (E603) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -150.75) circle (0.4cm) node[draw=none] (N604) {P24};
+\draw (-23.6, -148.25) -- (-23.200000000000003, -148.25) -- (-23.200000000000003, -150.75) -- (-18.4, -150.75) node [midway, above, sloped] (E604) {D Defaults: No} node [midway, below, sloped] (E605) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-6, -149.75) circle (0.4cm) node[draw=none] (N606) {D35};
+\draw (-17.6, -150.75) -- (-17.200000000000003, -150.75) -- (-17.200000000000003, -149.75) -- (-6.4, -149.75) node [midway, above, sloped] (E606) {P Offer: 0.25} node [midway, below, sloped] (E607) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -149.25) node[draw=none] (N608) {};
+\node[draw=none, right=-0.45cm of N608] {(9.05, 9.55)};
+\draw (-5.6, -149.75) -- (-5.199999999999999, -149.75) -- (-5.199999999999999, -149.25) -- (-0.4, -149.25) node [midway, above, sloped] (E608) {D Offer: 0.25} node [midway, below, sloped] (E609) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -150.25) node[draw=none] (N610) {};
+\node[draw=none, right=-0.45cm of N610] {(9.30, 9.30)};
+\draw (-5.6, -149.75) -- (-5.199999999999999, -149.75) -- (-5.199999999999999, -150.25) -- (-0.4, -150.25) node [midway, above, sloped] (E610) {D Offer: 0.75} node [midway, below, sloped] (E611) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -151.75) circle (0.4cm) node[draw=none] (N612) {D35};
+\draw (-17.6, -150.75) -- (-17.200000000000003, -150.75) -- (-17.200000000000003, -151.75) -- (-6.4, -151.75) node [midway, above, sloped] (E612) {P Offer: 0.75} node [midway, below, sloped] (E613) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -151.25) node[draw=none] (N614) {};
+\node[draw=none, right=-0.45cm of N614] {(8.80, 9.80)};
+\draw (-5.6, -151.75) -- (-5.199999999999999, -151.75) -- (-5.199999999999999, -151.25) -- (-0.4, -151.25) node [midway, above, sloped] (E614) {D Offer: 0.25} node [midway, below, sloped] (E615) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -152.25) node[draw=none] (N616) {};
+\node[draw=none, right=-0.45cm of N616] {(9.55, 9.05)};
+\draw (-5.6, -151.75) -- (-5.199999999999999, -151.75) -- (-5.199999999999999, -152.25) -- (-0.4, -152.25) node [midway, above, sloped] (E616) {D Offer: 0.75} node [midway, below, sloped] (E617) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-24, -157.25) circle (0.4cm) node[draw=none] (N618) {D33};
+\draw (-29.6, -152.75) -- (-29.200000000000003, -152.75) -- (-29.200000000000003, -157.25) -- (-24.4, -157.25) node [midway, above, sloped] (E618) {P Abandons: No} node [midway, below, sloped] (E619) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -154.75) circle (0.4cm) node[draw=none] (N620) {P25};
+\draw (-23.6, -157.25) -- (-23.200000000000003, -157.25) -- (-23.200000000000003, -154.75) -- (-18.4, -154.75) node [midway, above, sloped] (E620) {D Defaults: Yes} node [midway, below, sloped] (E621) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -153.75) circle (0.4cm) node[draw=none] (N622) {D34};
+\draw (-17.6, -154.75) -- (-17.200000000000003, -154.75) -- (-17.200000000000003, -153.75) -- (-6.4, -153.75) node [midway, above, sloped] (E622) {P Offer: 0.25} node [midway, below, sloped] (E623) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -153.25) node[draw=none] (N624) {};
+\node[draw=none, right=-0.45cm of N624] {(9.05, 9.55)};
+\draw (-5.6, -153.75) -- (-5.199999999999999, -153.75) -- (-5.199999999999999, -153.25) -- (-0.4, -153.25) node [midway, above, sloped] (E624) {D Offer: 0.25} node [midway, below, sloped] (E625) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -154.25) node[draw=none] (N626) {};
+\node[draw=none, right=-0.45cm of N626] {(9.30, 9.30)};
+\draw (-5.6, -153.75) -- (-5.199999999999999, -153.75) -- (-5.199999999999999, -154.25) -- (-0.4, -154.25) node [midway, above, sloped] (E626) {D Offer: 0.75} node [midway, below, sloped] (E627) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -155.75) circle (0.4cm) node[draw=none] (N628) {D34};
+\draw (-17.6, -154.75) -- (-17.200000000000003, -154.75) -- (-17.200000000000003, -155.75) -- (-6.4, -155.75) node [midway, above, sloped] (E628) {P Offer: 0.75} node [midway, below, sloped] (E629) {Probability: 1.00} ;
+
+
+    \draw[color=black] (0, -155.25) node[draw=none] (N630) {};
+\node[draw=none, right=-0.45cm of N630] {(9.80, 8.80)};
+\draw (-5.6, -155.75) -- (-5.199999999999999, -155.75) -- (-5.199999999999999, -155.25) -- (-0.4, -155.25) node [midway, above, sloped] (E630) {D Offer: 0.25} node [midway, below, sloped] (E631) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -156.25) node[draw=none] (N632) {};
+\node[draw=none, right=-0.45cm of N632] {(9.55, 9.05)};
+\draw (-5.6, -155.75) -- (-5.199999999999999, -155.75) -- (-5.199999999999999, -156.25) -- (-0.4, -156.25) node [midway, above, sloped] (E632) {D Offer: 0.75} node [midway, below, sloped] (E633) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-18, -159.25) circle (0.4cm) node[draw=none] (N634) {P25};
+\draw (-23.6, -157.25) -- (-23.200000000000003, -157.25) -- (-23.200000000000003, -159.25) -- (-18.4, -159.25) node [midway, above, sloped] (E634) {D Defaults: No} node [midway, below, sloped] (E635) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-12, -157.75) circle (0.4cm) node[draw=none] (N636) {D35};
+\draw (-17.6, -159.25) -- (-17.200000000000003, -159.25) -- (-17.200000000000003, -157.75) -- (-12.4, -157.75) node [midway, above, sloped] (E636) {P Offer: 0.25} node [midway, below, sloped] (E637) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -157.25) node[draw=none] (N638) {};
+\node[draw=none, right=-0.45cm of N638] {(9.05, 9.55)};
+\draw (-11.6, -157.75) -- (-11.2, -157.75) -- (-11.2, -157.25) -- (-0.4, -157.25) node [midway, above, sloped] (E638) {D Offer: 0.25} node [midway, below, sloped] (E639) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -158.25) node[draw=none] (N640) {};
+\node[draw=none, right=-0.45cm of N640] {(9.30, 9.30)};
+\draw (-11.6, -157.75) -- (-11.2, -157.75) -- (-11.2, -158.25) -- (-0.4, -158.25) node [midway, above, sloped] (E640) {D Offer: 0.75} node [midway, below, sloped] (E641) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-12, -160.25) circle (0.4cm) node[draw=none] (N642) {D35};
+\draw (-17.6, -159.25) -- (-17.200000000000003, -159.25) -- (-17.200000000000003, -160.25) -- (-12.4, -160.25) node [midway, above, sloped] (E642) {P Offer: 0.75} node [midway, below, sloped] (E643) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -159.75) circle (0.4cm) node[draw=none] (N644) {C};
+\draw (-11.6, -160.25) -- (-11.2, -160.25) -- (-11.2, -159.75) -- (-6.4, -159.75) node [midway, above, sloped] (E644) {D Offer: 0.25} node [midway, below, sloped] (E645) {Probability: 0.00} ;
+
+
+    \draw[color=black] (0, -159.25) node[draw=none] (N646) {};
+\node[draw=none, right=-0.45cm of N646] {(8.70, 9.70)};
+\draw (-5.6, -159.75) -- (-5.199999999999999, -159.75) -- (-5.199999999999999, -159.25) -- (-0.4, -159.25) node [midway, above, sloped] (E646) {Court Decision: Not Liable} node [midway, below, sloped] (E647) {Probability: -0.00} ;
+
+
+    \draw[color=black] (0, -160.25) node[draw=none] (N648) {};
+\node[draw=none, right=-0.45cm of N648] {(9.70, 8.70)};
+\draw (-5.6, -159.75) -- (-5.199999999999999, -159.75) -- (-5.199999999999999, -160.25) -- (-0.4, -160.25) node [midway, above, sloped] (E648) {Court Decision: Liable} node [midway, below, sloped] (E649) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-6, -161.25) node[draw=none] (N650) {};
+\node[draw=none, right=-0.45cm of N650] {(9.55, 9.05)};
+\draw (-11.6, -160.25) -- (-11.2, -160.25) -- (-11.2, -161.25) -- (-6.4, -161.25) node [midway, above, sloped] (E650) {D Offer: 0.75} node [midway, below, sloped] (E651) {Probability: 1.00} ;
+
+
+    \draw[color=black] (-30, -162.25) node[draw=none] (N652) {};
+\node[draw=none, right=-0.45cm of N652] {(9.90, 9.00)};
+\draw (-35.6, -153.25) -- (-35.2, -153.25) -- (-35.2, -162.25) -- (-30.4, -162.25) node [midway, above, sloped] (E652) {D Answers: No} node [midway, below, sloped] (E653) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-36, -163.25) node[draw=none] (N654) {};
+\node[draw=none, right=-0.45cm of N654] {(9.00, 10.00)};
+\draw (-41.6, -153.75) -- (-41.2, -153.75) -- (-41.2, -163.25) -- (-36.4, -163.25) node [midway, above, sloped] (E654) {P Files: No} node [midway, below, sloped] (E655) {Probability: 0.00} ;
+
+
+    \draw[color=black] (-48, -164.25) node[draw=none] (N656) {};
+\node[draw=none, right=-0.45cm of N656] {(10.00, 10.00)};
+\draw (-53.6, -144.25) -- (-53.2, -144.25) -- (-53.2, -164.25) -- (-48.4, -164.25) node [midway, above, sloped] (E656) {Accident: No} node [midway, below, sloped] (E657) {Pr.: 1 -- $7.04 \times 10^{-5}$} ;
+
+
+    \draw[color=black] (-60, -165.25) node[draw=none] (N658) {};
+\node[draw=none, right=-0.45cm of N658] {(10.00, 10.00)};
+\draw (-65.6, -124.25) -- (-65.19999999999999, -124.25) -- (-65.19999999999999, -165.25) -- (-60.4, -165.25) node [midway, above, sloped] (E658) {Engage in Activity: No} node [midway, below, sloped] (E659) {Probability: 0.00} ;
+
+
+\end{tikzpicture}
+\end{document}
