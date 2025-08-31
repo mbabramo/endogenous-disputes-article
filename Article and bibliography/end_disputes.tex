@@ -162,9 +162,8 @@ If neither party precommitted to quit, the case proceeds to trial. At trial the 
 \section*{Appendix A: Formal Model}
 
 This appendix collects the mathematical details underlying the accident-probability and adjudication-resolution functions used in the model. The main text emphasizes intuition and strategic structure, while here we provide the explicit functional forms and parameterizations. 
-
 \paragraph{Hidden state and private signals.}
-Nature draws a hidden precaution–power state $\theta\in\Theta=\{1,\dots,n_H\}$ uniformly. Each precaution power level corresponds to a different liability strength level, with higher levels corresponding to higher liability strength for the plaintiff. We index $\theta$ onto $[0,1]$ by
+Nature draws a hidden precaution–power state $\theta\in\Theta=\{1,\dots,n_H\}$ uniformly. Each precaution–power level determines the \emph{center} of a liability–strength distribution for the plaintiff, not a deterministic level. We index $\theta$ onto $[0,1]$ by
 \[
 \varphi(\theta)\;=\;\frac{\theta}{\,n_H+1\,}.
 \]
@@ -213,7 +212,7 @@ For the defendant, define $SD_j=\dfrac{j-\tfrac12}{n_{S_D}}$ analogously and rep
 
 \paragraph{Accident probability.}
 
-The defendant then decides whether to engage in the activity, which yields a baseline benefit of $\epsilon = 1.0 \times 10^{-3}$ if undertaken, and, if the defendant engages, chooses a relative precaution level $k \in K = \{0,\dots,n_K-1\}$. Note that the lowest level here corresponds to no precaution undertaken at all. We index the relative precaution level $k$ on $[0,1)$ via $\tau(k) \;=\; \frac{k}{n_K + 1}$.
+The defendant then decides whether to engage in the activity, which yields a baseline benefit of $b_0 = 1.0 \times 10^{-3}$ if undertaken, and, if the defendant engages, chooses a relative precaution level $k \in K = \{0,\dots,n_K-1\}$. Note that the lowest level here corresponds to no precaution undertaken at all. We index the relative precaution level $k$ on $[0,1)$ via $\tau(k) \;=\; \frac{k}{n_K + 1}$.
 
 The probability that the defendant \emph{causes} an accident depends jointly on the hidden precaution–power $\varphi$ and the chosen precaution level $\tau$:
 \begin{equation}
@@ -241,7 +240,7 @@ The level of $\alpha(\varphi)$ is not fixed but follows a linear schedule in hid
 \alpha(\varphi) = \alpha^{\varphi=0} + 
 \bigl(\alpha^{\varphi=1}-\alpha^{\varphi=0}\bigr)\,\varphi(\theta).
 \]
-With the default calibration, $\alpha^{\varphi=0}=3.0$ and $\alpha^{\varphi=1}=1.5$. Each curve corresponds to a level of precaution power, with higher levels of precaution power below lower levels of precaution power, including at the endpoints. The variation in the $\alpha$ parameter, however, ensures that higher precaution-power levels make more of a difference for high relative precaution levels. Note that for $\tau(k) = \frac{1}{8}$, the highest precaution-power level is bunched with respect to accident probability with precaution-power levels just below it, whereas the accident probability levels are more evenly spread at $\tau(k) = \frac{7}{8}$. If $\alpha$ were constant, then there would be an equal degree of spreading at each relative precaution level.
+Each curve corresponds to a level of precaution power, with higher levels of precaution power below lower levels of precaution power, including at the endpoints. The variation in the $\alpha$ parameter, however, ensures that higher precaution-power levels make more of a difference for high relative precaution levels. Note that for $\tau(k) = \frac{1}{8}$, the highest precaution-power level is bunched with respect to accident probability with precaution-power levels just below it, whereas the accident probability levels are more evenly spread at $\tau(k) = \frac{7}{8}$. If $\alpha$ were constant, then there would be an equal degree of spreading at each relative precaution level.
 
   \begin{figure}[t]
     \centering
@@ -262,7 +261,60 @@ A settlement occurs if and only if the offers meet: $\mathcal{o}_D\ge \mathcal{o
 \[
 \sigma \;=\; \frac{\mathcal{o}_P+\mathcal{o}_D}{2}\in[0,1],
 \]
-and the case terminates without trial. If the offers do not meet, the game implements the previously recorded quit commitments (abandon or default); if neither party precommitted, the case proceeds to trial.
+and the case terminates without trial. No damages multiplier or fee–shifting applies to settlements (this model contains no Rule~68 or offer–of–judgment mechanism). If the offers do not meet, the game implements the previously recorded quit commitments (abandon or default); if neither party precommitted, the case proceeds to trial.
+
+\paragraph{Trial.}
+When bargaining fails, the court draws a discrete liability–strength signal
+\[
+s_C \in \mathcal{S}_C=\{1,\dots,n_{S_C}\},
+\]
+with distribution conditioned on the hidden precaution–power state $\theta$ by the same truncated–normal mechanism used for party signals. Let $SC_j=\dfrac{j-\tfrac12}{n_{S_C}}$ and let $\sigma_L^{C}>0$ denote the court’s noise parameter. Then
+\[
+\Pr(s_C=j\mid \theta)
+=
+\frac{
+\Phi\!\left(\dfrac{SC_j+\tfrac{1}{2n_{S_C}}-\varphi(\theta)}{\sigma_L^{C}}\right)
+-
+\Phi\!\left(\dfrac{SC_j-\tfrac{1}{2n_{S_C}}-\varphi(\theta)}{\sigma_L^{C}}\right)
+}{
+\Phi\!\left(\dfrac{1-\varphi(\theta)}{\sigma_L^{C}}\right)
+-
+\Phi\!\left(\dfrac{-\varphi(\theta)}{\sigma_L^{C}}\right)
+},
+\qquad j=1,\dots,n_{S_C}.
+\]
+Conditional on $\theta$, the court signal is independent of the parties’ signals; the correlation among all signals arises through the shared hidden state.
+
+Fix a precaution level $k\in K=\{0,\dots,n_K-1\}$. For each hidden state $\theta$, let $p_{\mathrm{acc}}(\theta,k)$ denote the accident probability defined above. The marginal reduction in accident risk from one more unit of precaution at level $k$ is approximated by a forward difference:
+\[
+\Delta(\theta,k)
+=
+\frac{p_{\mathrm{acc}}(\theta,k)\;-\;p_{\mathrm{acc}}(\theta,k+\varepsilon)}{\varepsilon},
+\qquad \varepsilon>0\ \text{small},
+\]
+with $\Delta(\theta,k)=0$ at the maximum level of precaution if $k+\varepsilon$ exceeds the grid. Given a realized court signal $s_C=c$, Bayes’ rule gives the posterior distribution $\Pr(\theta \mid s_C=c)$. The expected marginal reduction at $(c,k)$ is
+\[
+\bar{\Delta}(c,k)=\sum_{\theta\in\Theta}\Delta(\theta,k)\,\Pr(\theta\mid s_C=c).
+\]
+
+Because accident harm is normalized to one, the expected benefit of additional precaution equals $\bar{\Delta}(c,k)$. Let $c_{\mathrm{prec}}>0$ denote the unit cost of precaution. The court forms the ratio
+\[
+R(c,k)=\frac{\bar{\Delta}(c,k)}{c_{\mathrm{prec}}}.
+\]
+For a negligence threshold parameter $\lambda \ge 0$, the verdict is
+\[
+V=\mathbf{1}\!\left\{\,R(c,k)>\lambda\,\right\}.
+\]
+The baseline analysis sets $\lambda=1$, corresponding to the familiar benefit–cost test. We also examine alternative values $\lambda\in\{0,0.8,1.2,2\}$ to capture more lenient or stricter liability standards.
+
+Thus, the probability of liability at trial, conditional on the hidden state $\theta$ and the chosen precaution level $k$, is
+\[
+\Pr(V=1\mid \theta,k)\;=\;\sum_{c\in\mathcal{S}_C}\mathbf{1}\!\left\{R(c,k)>\lambda\right\}\,\Pr(s_C=c\mid \theta),
+\qquad
+\Pr(V=0\mid \theta,k)=1-\Pr(V=1\mid \theta,k).
+\]
+These probabilities appear explicitly in the game tree as branches following the court’s signal draw.
+
 
 \paragraph{Final wealth across all case outcomes.}
 Initial wealths are $W_P^{(0)}=W_D^{(0)}=10$. Let $C_P$ and $C_D$ denote the cumulative stage costs actually incurred along the realized path, where the baseline stage costs are
@@ -282,38 +334,69 @@ W_D^{\mathrm{final}} \;=\; W_D^{(0)} - C_D - T.
 \]
 No damages multiplier or fee–shifting applies to settlements.
 
-\emph{Trial.} If bargaining fails and no quit commitment takes effect, the case proceeds to trial. Let $V\in\{0,1\}$ denote the court’s verdict for the plaintiff. The judgment is
-\[
-J \;=\; \mu \cdot V,
-\]
-where $\mu\ge 0$ is the damages multiplier. Each side pays $c_{trial}$ in addition to earlier costs. Fee–shifting is represented by $\phi\in[0,1]$, the fraction of the prevailing party’s costs reimbursed by the loser. Under the American rule, $\phi=0$; under full loser–pays, $\phi=1$. Final wealths under trial are
+If a trial occurs, let $V\in\{0,1\}$ denote the court’s verdict for the plaintiff and $J \;=\; \mu \cdot V$ the judgment, where $\mu\ge 0$ is the damages multiplier. Each side pays $c_{trial}$ in addition to earlier costs. Fee–shifting is represented by $\phi\in[0,1]$, the fraction of the prevailing party’s \emph{total} costs reimbursed by the loser (American rule: $\phi=0$; full loser–pays: $\phi=1$). Final wealths under trial are
 \[
 W_P^{\mathrm{final}}
 \;=\;
-W_P^{(0)} - C_P + J + \phi C_P - \phi C_D,
+W_P^{(0)} - C_P + J + \phi\bigl(V\,C_P - (1-V)\,C_D\bigr),
 \]
 \[
 W_D^{\mathrm{final}}
 \;=\;
-W_D^{(0)} - C_D - J + \phi C_D - \phi C_P.
+W_D^{(0)} - C_D - J + \phi\bigl((1-V)\,C_D - V\,C_P\bigr).
 \]
 In the baseline with $\mu=1$ and $\phi=0$, these reduce to $W_P^{(0)}-C_P+V$ and $W_D^{(0)}-C_D-V$.
 
 \emph{Default.} If the defendant defaults at the answering stage, the plaintiff receives a judgment of $1$ without incurring $c_{bargain}$ or $c_{trial}$. Final wealths are
 \[
-W_P^{\mathrm{final}} \;=\; W_P^{(0)} - c_{file} + 1,
+W_P^{\mathrm{final}} \;=\; W_P^{(0)} - C_P + 1 \;+\; \phi\,C_P,
 \qquad
-W_D^{\mathrm{final}} \;=\; W_D^{(0)} - 1.
+W_D^{\mathrm{final}} \;=\; W_D^{(0)} - C_D - 1 \;-\; \phi\,C_P,
 \]
+where here $C_P=c_{file}$ and $C_D=0$ along this path. If default is implemented via a quit commitment \emph{after} bargaining fails, the same expressions apply with $C_P$ and $C_D$ including $c_{bargain}$ (and earlier costs) but not $c_{trial}$.
 
-\emph{Abandon.} If the plaintiff abandons through a quit commitment, no judgment is entered. Only the stage costs already incurred are deducted:
+\emph{Abandon.} If the plaintiff abandons through a quit commitment, no judgment is entered and no multipliers or fee-shifting apply. Final wealths are simply
 \[
 W_P^{\mathrm{final}} \;=\; W_P^{(0)} - C_P,
 \qquad
-W_D^{\mathrm{final}} \;=\; W_D^{(0)} - C_D.
+W_D^{\mathrm{final}} \;=\; W_D^{(0)} - C_D,
+\]
+where $C_P$ and $C_D$ include all stage costs already incurred along the realized path.
+
+\emph{Defendant quit.} If the defendant defaults through a quit commitment after bargaining fails, the plaintiff receives a judgment of $1$. No damages multiplier or fee-shifting applies in this branch. Final wealths are
+\[
+W_P^{\mathrm{final}} \;=\; W_P^{(0)} - C_P + 1,
+\qquad
+W_D^{\mathrm{final}} \;=\; W_D^{(0)} - C_D - 1,
+\]
+with $C_P$ and $C_D$ reflecting costs incurred through the bargaining stage (and earlier), but not $c_{trial}$ since no trial occurs.
+
+\paragraph{Final utilities.}
+Let $W_i^{\mathrm{final}}$ denote party $i$'s final wealth after the litigation path has concluded.
+
+\emph{Risk–neutral case.} With risk neutrality, utilities coincide with final wealth:
+\[
+U_i \;=\; W_i^{\mathrm{final}}.
 \]
 
+\emph{Risk–averse cases.} With risk aversion, we adopt a constant–absolute–risk–aversion specification,
+\[
+U_i \;=\; -\,\exp\!\bigl(-\alpha\,W_i^{\mathrm{final}}\bigr),
+\]
+where $\alpha\ge 0$ is the risk–aversion coefficient. The four calibrations used are:
+\[
+\alpha = 0 \quad\text{(none / risk neutral)},\qquad
+\alpha = 1 \quad\text{(mild)},\qquad
+\alpha = 2 \quad\text{(moderate)},\qquad
+\alpha = 4 \quad\text{(high)}.
+\]
+With baseline wealths of $10$ and stakes of size $1$, these values span from linear preferences to substantial curvature in the utility of wealth.
 
+\emph{Welfare reporting.} Aggregate social welfare is defined as the negative of the real resource costs:
+\[
+Welfare \;=\; -\bigl(\,k \cdot c_{\mathrm{prec}} \;+\; \mathbf{1}_{\{\text{accident caused}\}} \;+\; (C_P+C_D)\,\bigr).
+\]
+Here $k \cdot c_{\mathrm{prec}}$ is the total precaution expenditure chosen by the defendant (with $c_{\mathrm{prec}}$ the unit cost of precaution), $\mathbf{1}_{\{\text{accident caused}\}}$ is the injury loss (equal to $1$ if the defendant causes an accident, $0$ otherwise), and $C_P+C_D$ is the total litigation cost (the sum of stage costs incurred by both parties). Monetary transfers between plaintiff and defendant cancel in this welfare measure.
 
 
 \printbibliography
