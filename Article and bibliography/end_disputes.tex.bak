@@ -398,6 +398,39 @@ Welfare \;=\; -\bigl(\,k \cdot c_{\mathrm{prec}} \;+\; \mathbf{1}_{\{\text{accid
 \]
 Here $k \cdot c_{\mathrm{prec}}$ is the total precaution expenditure chosen by the defendant (with $c_{\mathrm{prec}}$ the unit cost of precaution), $\mathbf{1}_{\{\text{accident caused}\}}$ is the injury loss (equal to $1$ if the defendant causes an accident, $0$ otherwise), and $C_P+C_D$ is the total litigation cost (the sum of stage costs incurred by both parties). Monetary transfers between plaintiff and defendant cancel in this welfare measure.
 
+\section*{Appendix B: Bayesian Marginalization of Chance Nodes}
+
+\subsection*{B.1 Motivation and Overview}
+
+Explicitly modeling every chance node (random event) can cause an explosion in the size of the game tree. We thus use Bayesian marginalization of chance nodes to avoid explicitly branching on a random variable at the outset of the game. Instead, we integrate out uncertainties concerning the variable represented by the node on the fly, adjusting probabilities and outcomes accordingly. This approach keeps the tree smaller while still accounting for the uncertainty. For example, in our litigation game, the first chance event determines the precaution power state: the hidden state of which the defendant, plaintiff, and court may eventually receive signals. Instead of selecting such a state, we can convert the game into a mathematically equivalent game. For example, while previously in the game, the distribution of the defendant's private signal was calculated conditional on the actual hidden state, instead the distribution of the defendant's private signal may be calculated integrated over all such possible hidden states. Later distributions then require similar analysis. 
+
+This section outlines how those probability adjustments are computed using Bayes’ rule, and how we handle the missing (latent) variables by splitting game records with appropriate weights after the play-through. The goal is to produce the same expected outcomes as the full model, but with far fewer nodes in the game tree. The correctness of this model has been verified by a computational test. Specifically, two game trees are calculated, the original and the collapsed. The same information sets exist in both trees, and thus a random number generator produces random non-zero probabilities for each action at each information set wherever it appears. The players' utilities across the two games are then compared. This test confirms that the results are the same to a tolerance of $1.0 \times 10^{-12}$. Even such small rounding differences can become magnified over hundreds of iterations of counterfactual regret minimization, so different approximate equilibria may obtain depending on whether one is using the original or collapsed version, but both are approximate equilibria to the same game.
+
+\subsection*{B.2 Bayesian Updates for Chance Probabilities in the Simplified Tree}
+
+When chance nodes are marginalized, we must update the probabilities of subsequent events based on whatever partial information is revealed. We apply Bayes’ rule to revise distributions as new evidence (signals or outcomes) arrives. For each node that is eliminated from the tree, we provide the corresponding marginalization formula. The order of presentation below follows the order in which these chance nodes would be encountered in play, beginning with the elimination of the hidden liability-strength node at the defendant-signal stage, and continuing with the plaintiff’s signal, the accident outcome, and finally the court’s liability decision.
+
+
+\paragraph{Defendant’s liability signal and posterior over the hidden state.}
+Let $\Theta=\{1,\dots,n_H\}$ index the hidden precaution–power state and let $s_D\in\mathcal{S}_D=\{1,\dots,n_{S_D}\}$ denote the defendant’s liability signal, with prior $\Pr(\theta)=1/n_H$ and conditional likelihoods $\Pr(s_D=j\mid \theta)$ as in Appendix~A. In the collapsed-tree implementation, we do not draw $\theta$ explicitly before the defendant’s signal is realized. Instead, the chance node for $s_D$ uses the unconditional (marginal) distribution
+\[
+\Pr(s_D=j)
+\;=\;
+\sum_{\theta\in\Theta}\Pr(s_D=j\mid \theta)\Pr(\theta)
+\;=\;
+\frac{1}{n_H}\sum_{\theta=1}^{n_H}\Pr(s_D=j\mid \theta),
+\qquad j=1,\dots,n_{S_D}.
+\]
+Upon observing a particular realization $d\in\mathcal{S}_D$, beliefs over $\theta$ are updated by Bayes’ rule:
+\[
+\Pr(\theta\mid s_D=d)
+\;=\;
+\frac{\Pr(s_D=d\mid \theta)\Pr(\theta)}{\sum_{\theta'\in\Theta}\Pr(s_D=d\mid \theta')\Pr(\theta')}
+\;=\;
+\frac{\Pr(s_D=d\mid \theta)}{\sum_{\theta'=1}^{n_H}\Pr(s_D=d\mid \theta')},
+\qquad \theta=1,\dots,n_H,
+\]
+where the second equality uses the uniform prior $\Pr(\theta)=1/n_H$. The vector $\bigl(\Pr(\theta\mid s_D=d)\bigr)_{\theta\in\Theta}$ serves as the posterior over hidden states that conditions all downstream collapsed-node probabilities (e.g., accident occurrence and court outcomes), while the marginal $\bigl(\Pr(s_D=j)\bigr)_{j\in\mathcal{S}_D}$ determines the branching probabilities at the defendant-signal chance node.
 
 \printbibliography
 \end{document}
