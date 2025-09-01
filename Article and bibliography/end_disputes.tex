@@ -22,6 +22,7 @@ backend=bibtex]{biblatex}
 \usepackage{amssymb}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
+\usepackage{placeins}
 \newenvironment{nohyphen}
   {\tolerance=1% Also consider setting \pretolerance
    \emergencystretch=\maxdimen%
@@ -186,6 +187,143 @@ CFR’s strengths match the needs of this project. Each iteration is linear in t
 Its limitations deserve equal candor. CFR produces highly accurate \emph{approximations}, not certificates; closeness is demonstrated by diagnostics rather than guaranteed a priori. Results depend on discretization choices for signals, offers, and precaution levels; we therefore report robustness to grid refinements and use exact solvers for small-tree benchmarks. Multiple equilibria are a feature, not a bug, in many litigation games; CFR will converge to one, not enumerate all. Finally, full-tree passes are computationally heavy—tractable at our scales, but still the main cost driver. The total number of processor hours used to compute the data used in this paper was 640, and so using still larger trees or more exact algorithms would have been quite costly in a practical sense.
 
 In short, CFR lets us compute equilibrium behavior in a richly specified, cradle-to-grave litigation model. We use it to solve the full endogenous-disputes game; we use exact sequence-form solvers as spot checks on reduced versions of the same game; and we use exploitability and restart tests to verify that the solutions we report are both stable and economically meaningful. A more formal presentation—still without formulas in the main text—appears in the appendix, which spells out the learning loop, the diagnostics, and the precise stopping rules we employ.
+
+\section{Results}
+
+\subsection{Baseline}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Baseline (All Rows).pdf}
+  \caption{Baseline cost breakdown.}
+  \label{fig:baseline_costs}
+\end{figure}
+
+
+\subsection{Three Independent Interventions}
+
+\FloatBarrier
+\paragraph{Damages multiplier.}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Damages Multiplier (All Rows).pdf}
+  \caption{Cost breakdown under damages multiplier.}
+  \label{fig:damages_multiplier}
+\end{figure}
+
+\FloatBarrier
+\paragraph{Fee shifting.}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Fee Shifting Multiplier (All Rows).pdf}
+  \caption{Cost breakdown under fee shifting.}
+  \label{fig:fee_shifting}
+\end{figure}
+
+\FloatBarrier
+\paragraph{Liability threshold.}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Liability Threshold (All Rows).pdf}
+  \caption{Cost breakdown under liability threshold.}
+  \label{fig:liability_threshold}
+\end{figure}
+
+\subsection{Combining Interventions}
+
+\FloatBarrier
+\paragraph{Damages multiplier and fee shifting.}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Fee Shifting Multiplier and Damages Multiplier (All Rows).pdf}
+  \caption{Cost breakdown under damages multiplier and fee shifting.}
+  \label{fig:dm_fee}
+\end{figure}
+
+\FloatBarrier
+\paragraph{Damages multiplier and liability threshold.}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Damages Multiplier and Liability Threshold (All Rows).pdf}
+  \caption{Cost breakdown under damages multiplier and liability threshold.}
+  \label{fig:dm_liability}
+\end{figure}
+
+\FloatBarrier
+\paragraph{Fee shifting and liability threshold.}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Fee Shifting Multiplier and Liability Threshold (All Rows).pdf}
+  \caption{Cost breakdown under fee shifting and liability threshold.}
+  \label{fig:fee_liability}
+\end{figure}
+
+\section{Robustness Checks}
+
+\FloatBarrier
+\subsection{Imperfect Estimation}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Misestimation Level (All Rows).pdf}
+  \caption{Cost breakdown under imperfect estimation.}
+  \label{fig:imperfect_estimation}
+\end{figure}
+
+\FloatBarrier
+\subsection{Risk Aversion}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Damages Multiplier (Risk Averse) (All Rows).pdf}
+  \caption{Cost breakdown under risk aversion.}
+  \label{fig:risk_aversion}
+\end{figure}
+
+\FloatBarrier
+\subsection{Cost of Precaution}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Unit Precaution Cost (All Rows).pdf}
+  \caption{Cost breakdown under changes in cost of precaution.}
+  \label{fig:cost_precaution}
+\end{figure}
+
+\FloatBarrier
+\subsection{Information Asymmetry}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Information Asymmetry (All Rows).pdf}
+  \caption{Cost breakdown under information asymmetry.}
+  \label{fig:info_asymmetry}
+\end{figure}
+
+\FloatBarrier
+\subsection{Costs Asymmetry}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Relative Costs (All Rows).pdf}
+  \caption{Cost breakdown under costs asymmetry.}
+  \label{fig:costs_asymmetry}
+\end{figure}
+
+\FloatBarrier
+\subsection{Wrongful Attribution Probability}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Wrongful Attribution Probability (All Rows).pdf}
+  \caption{Cost breakdown under wrongful attribution probability.}
+  \label{fig:wrongful_attr}
+\end{figure}
+
+\FloatBarrier
+\subsection{Court Quality}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Court Quality (All Rows).pdf}
+  \caption{Cost breakdown under court quality.}
+  \label{fig:court_quality}
+\end{figure}
+
 
 \section*{Appendix A: Formal Model}
 
@@ -637,31 +775,31 @@ Given the same realization of $r$, we then compute players’ expected utilities
 
 \subsection{Counterfactual Regret Minimization}\label{app:CFR}
 
-Counterfactual Regret Minimization (CFR) is an iterative algorithm (developed by Zinkevich et al.\ 2008 \cite{zinkevichetal}) for computing approximate equilibria of extensive-form games by minimizing **regret** at each decision point. In essence, CFR treats each player’s decision **information set** as an independent sub-game for the purpose of learning, and repeatedly adjusts the players’ strategy probabilities in a way that guarantees no long-run regret for any single decision. We outline here the formalism and algorithmic steps of CFR. Note that because the formalism here is independent of the specific game detailed in Appendices A and B, some of the variable names (which will generally be the same as those in the algorithmic game theory literature) may be identical to other variable names in those appendices, but no overlap is intended.
+Counterfactual Regret Minimization (CFR) is an iterative algorithm (developed by Zinkevich et al.\ 2008 \cite{zinkevichetal}) for computing approximate equilibria of extensive-form games by minimizing regret at each decision point. In essence, CFR treats each player’s decision information set as an independent sub-game for the purpose of learning, and repeatedly adjusts the players’ strategy probabilities in a way that guarantees no long-run regret for any single decision. We outline here the formalism and algorithmic steps of CFR. Note that because the formalism here is independent of the specific game detailed in Appendices A and B, some of the variable names (which will generally be the same as those in the algorithmic game theory literature) may be identical to other variable names in those appendices, but no overlap is intended.
 
-**Game structure and notation.** Consider a finite extensive-form game with two players (the plaintiff $\Pi$ and defendant $\Delta$, in our litigation model) and Chance. Let $H$ denote the set of all possible histories (action sequences) starting from the game’s root, and let $Z \subseteq H$ be the set of terminal histories (complete plays of the game). An **information set** $I$ for a player $\phi \in \{\Pi,\Delta\}$ is a set of decision nodes (histories in $H$ with $\phi$ to move) that $\phi$ cannot distinguish given their observations; at any such $I$, the same actions are available. Denote by $A(I)$ the set of actions available at information set $I$. We assume **perfect recall**, so that no player forgets their own earlier actions or observations; in particular, a player will never encounter the same information set more than once along any history.
+Game structure and notation. Consider a finite extensive-form game with two players (the plaintiff $\Pi$ and defendant $\Delta$, in our litigation model) and Chance. Let $H$ denote the set of all possible histories (action sequences) starting from the game’s root, and let $Z \subseteq H$ be the set of terminal histories (complete plays of the game). An information set $I$ for a player $\phi \in \{\Pi,\Delta\}$ is a set of decision nodes (histories in $H$ with $\phi$ to move) that $\phi$ cannot distinguish given their observations; at any such $I$, the same actions are available. Denote by $A(I)$ the set of actions available at information set $I$. We assume perfect recall, so that no player forgets their own earlier actions or observations; in particular, a player will never encounter the same information set more than once along any history.
 
-For any information set $I$ belonging to player $\phi$, let $Z_I \subseteq Z$ be the set of terminal histories in which $I$ is reached.  For each terminal $z \in Z_I$, let $z_I$ denote the prefix of $z$ ending at $I$ (the history up to the decision at $I$). A **strategy profile** $\sigma$ specifies for each player $\phi$ and each $I$ of $\phi$ a mixed strategy $\sigma_\phi(I)$, which is a probability distribution over $A(I)$.  (Chance’s moves are also governed by fixed probabilities, which we treat as part of $\sigma$.) We write $\pi^\sigma(h)$ for the probability of a history $h \in H$ occurring when all players play according to $\sigma$.  For a prefix $z_I$ leading to information set $I$, define $\pi^\sigma(z_I)$ as the probability that the sequence of actions in $z_I$ is played under $\sigma$. We factor this into contributions from player $\phi$ and the other players (including chance): let $\pi^\sigma_{\phi}(z_I)$ be the product of the probabilities of all $\phi$’s own actions within $z_I$, and let $\pi^\sigma_{-\phi}(z_I) = \pi^\sigma(z_I) / \pi^\sigma_{\phi}(z_I)$ be the contribution of all other players and chance to the reach probability of $I$. Likewise, for any terminal $z \in Z_I$ that extends $z_I$, we denote by $\pi^\sigma(z_I, z)$ the conditional probability of reaching terminal $z$ from $I$ under strategy $\sigma$ (i.e., the product of probabilities of all actions taken *at and after* information set $I$ along the path $z_I \to z$, including $\phi$’s action at $I$ and onward). Finally, let $U_\phi(z)$ be the payoff (utility) received by player $\phi$ at terminal history $z$.
+For any information set $I$ belonging to player $\phi$, let $Z_I \subseteq Z$ be the set of terminal histories in which $I$ is reached.  For each terminal $z \in Z_I$, let $z_I$ denote the prefix of $z$ ending at $I$ (the history up to the decision at $I$). A strategy profile $\sigma$ specifies for each player $\phi$ and each $I$ of $\phi$ a mixed strategy $\sigma_\phi(I)$, which is a probability distribution over $A(I)$.  (Chance’s moves are also governed by fixed probabilities, which we treat as part of $\sigma$.) We write $\pi^\sigma(h)$ for the probability of a history $h \in H$ occurring when all players play according to $\sigma$.  For a prefix $z_I$ leading to information set $I$, define $\pi^\sigma(z_I)$ as the probability that the sequence of actions in $z_I$ is played under $\sigma$. We factor this into contributions from player $\phi$ and the other players (including chance): let $\pi^\sigma_{\phi}(z_I)$ be the product of the probabilities of all $\phi$’s own actions within $z_I$, and let $\pi^\sigma_{-\phi}(z_I) = \pi^\sigma(z_I) / \pi^\sigma_{\phi}(z_I)$ be the contribution of all other players and chance to the reach probability of $I$. Likewise, for any terminal $z \in Z_I$ that extends $z_I$, we denote by $\pi^\sigma(z_I, z)$ the conditional probability of reaching terminal $z$ from $I$ under strategy $\sigma$ (i.e., the product of probabilities of all actions taken *at and after* information set $I$ along the path $z_I \to z$, including $\phi$’s action at $I$ and onward). Finally, let $U_\phi(z)$ be the payoff (utility) received by player $\phi$ at terminal history $z$.
 
-Using this notation, we define the **counterfactual value** at information set $I$ for player $\phi$ given a profile $\sigma$ as the expected utility to $\phi$ starting from that decision point, weighting *only the probabilities of opponents’ and chance’s moves leading to $I$ (not $\phi$’s own probability of reaching $I$)*. Formally: 
+Using this notation, we define the counterfactual value at information set $I$ for player $\phi$ given a profile $\sigma$ as the expected utility to $\phi$ starting from that decision point, weighting *only the probabilities of opponents’ and chance’s moves leading to $I$ (not $\phi$’s own probability of reaching $I$)*. Formally: 
 
 \begin{equation}\label{eq:counterfactual-value}
 v_{\phi}(\sigma, I) \;=\; \sum_{z \in Z_I} \pi^\sigma_{-\phi}(z_I)\;\pi^\sigma(z_I, z)\;U_{\phi}(z)~,
 \end{equation}
 
-This $v_{\phi}(\sigma,I)$ is the expected payoff for player $\phi$ when information set $I$ is reached and all players subsequently play according to $\sigma$ (with $\phi$’s own prior reach probability factored out). Intuitively, $\pi^\sigma_{-\phi}(z_I)$ weights each possible path to $I$ by how likely the *other* players and chance make the moves leading to $I$, while $\pi^\sigma(z_I,z)$ is the probability of the continuation from $I$ to terminal $z$ under $\sigma$. Thus $v_{\phi}(\sigma,I)$ can be seen as the **counterfactual expected utility** for $\phi$ at $I$, conditioned on $I$ occurring but ignoring $\phi$’s contribution to reaching $I$.
+This $v_{\phi}(\sigma,I)$ is the expected payoff for player $\phi$ when information set $I$ is reached and all players subsequently play according to $\sigma$ (with $\phi$’s own prior reach probability factored out). Intuitively, $\pi^\sigma_{-\phi}(z_I)$ weights each possible path to $I$ by how likely the *other* players and chance make the moves leading to $I$, while $\pi^\sigma(z_I,z)$ is the probability of the continuation from $I$ to terminal $z$ under $\sigma$. Thus $v_{\phi}(\sigma,I)$ can be seen as the counterfactual expected utility for $\phi$ at $I$, conditioned on $I$ occurring but ignoring $\phi$’s contribution to reaching $I$.
 
-Now suppose the game is played repeatedly and let $\sigma^t$ denote the strategy profile used in iteration $t$. We define the **instantaneous regret** for player $\phi$ at information set $I$ for not having played a particular action $a \in A(I)$ (with probability 1) in iteration $t$ as the difference in $\phi$’s counterfactual value between that unilateral action choice and the actual strategy played: 
+Now suppose the game is played repeatedly and let $\sigma^t$ denote the strategy profile used in iteration $t$. We define the instantaneous regret for player $\phi$ at information set $I$ for not having played a particular action $a \in A(I)$ (with probability 1) in iteration $t$ as the difference in $\phi$’s counterfactual value between that unilateral action choice and the actual strategy played: 
 \[
 r^t(I,a) \;=\; v_{\phi}(\sigma^t_{I \to a},\, I)\;-\;v_{\phi}(\sigma^t,\, I)~,
 \] 
-where $\sigma^t_{I \to a}$ denotes the same profile as $\sigma^t$ except that at information set $I$, player $\phi$ plays action $a$ with certainty (probability $1$) instead of the mixed strategy $\sigma^t_\phi(I)$. In other words, $r^t(I,a)$ measures how much $\phi$ *regrets* not having played action $a$ at $I$, given the opponent’s strategy in iteration $t$. A positive regret value means action $a$ would have yielded a higher payoff to $\phi$ than the action actually used (in expectation), while a negative or zero value means $a$ would have been no better than the current choice. We then accumulate these regrets over $T$ iterations: the **cumulative regret** up to iteration $T$ for not playing $a$ at $I$ is 
+where $\sigma^t_{I \to a}$ denotes the same profile as $\sigma^t$ except that at information set $I$, player $\phi$ plays action $a$ with certainty (probability $1$) instead of the mixed strategy $\sigma^t_\phi(I)$. In other words, $r^t(I,a)$ measures how much $\phi$ *regrets* not having played action $a$ at $I$, given the opponent’s strategy in iteration $t$. A positive regret value means action $a$ would have yielded a higher payoff to $\phi$ than the action actually used (in expectation), while a negative or zero value means $a$ would have been no better than the current choice. We then accumulate these regrets over $T$ iterations: the cumulative regret up to iteration $T$ for not playing $a$ at $I$ is 
 \[ 
 R^T(I,a) \;=\; \sum_{t=1}^{T} r^t(I,a)~. 
 \] 
-Player $\phi$’s overall goal is to minimize these regrets over time. In particular, if for every information set $I$ the average regret $\frac{1}{T}R^T(I,a)$ tends to $0$ as $T\to\infty$ for all actions $a$, then $\phi$ is said to have **no regret** (meaning they cannot improve their long-run average payoff by unilaterally deviating to any single fixed action at any $I$).
+Player $\phi$’s overall goal is to minimize these regrets over time. In particular, if for every information set $I$ the average regret $\frac{1}{T}R^T(I,a)$ tends to $0$ as $T\to\infty$ for all actions $a$, then $\phi$ is said to have no regret (meaning they cannot improve their long-run average payoff by unilaterally deviating to any single fixed action at any $I$).
 
-CFR updates the strategy profile $\sigma$ iteratively in such a way that each player’s cumulative regrets are driven toward zero. A simple but powerful update rule is **regret matching** (Hart and Mas-Colell 2000 \cite{hartmascolell}): in each iteration, at every information set $I$, player $\phi$ chooses actions in proportion to their positive cumulative regret so far. Formally, let $R^{t,+}(I,a) \equiv \max\{\,R^t(I,a),\,0\,\}$ denote the positive part of the cumulative regret for action $a$ (clamped at zero if regret is negative). The regret-matching strategy for the next iteration $t\!+\!1$ is then defined by: 
+CFR updates the strategy profile $\sigma$ iteratively in such a way that each player’s cumulative regrets are driven toward zero. A simple but powerful update rule is regret matching (Hart and Mas-Colell 2000 \cite{hartmascolell}): in each iteration, at every information set $I$, player $\phi$ chooses actions in proportion to their positive cumulative regret so far. Formally, let $R^{t,+}(I,a) \equiv \max\{\,R^t(I,a),\,0\,\}$ denote the positive part of the cumulative regret for action $a$ (clamped at zero if regret is negative). The regret-matching strategy for the next iteration $t\!+\!1$ is then defined by: 
 
 \begin{equation}\label{eq:regret-matching}
 \sigma_{\phi}^{\,t+1}(I,a) \;=\; 
@@ -673,9 +811,9 @@ CFR updates the strategy profile $\sigma$ iteratively in such a way that each pl
 
 Thus, $\sigma_{\phi}^{\,t+1}(I,a)$ is set to the fraction of total positive regret attributable to action $a$, and if all cumulative regrets are non-positive we default to an equal probability for each action at $I$. By construction, this update rule guarantees that actions with higher regret (those that would have provided higher payoffs in hindsight) get higher probability in the future, while actions that have never shown positive regret may be dropped to zero probability. Hart and Mas-Colell show that regret matching causes $R^T(I,a)/T \to 0$ as $T\to\infty$ for each $a$, ensuring no-regret learning at each information set.
 
-**CFR algorithm.** The overall CFR algorithm alternates between **strategy simulation** (to gather payoff statistics and compute regrets) and **strategy update** (applying the regret-matching rule). Pseudocode for one player’s regret minimization is given below; in practice the procedure is run for both players simultaneously (either by alternating updates or in parallel each iteration):
+CFR algorithm. The overall CFR algorithm alternates between strategy simulation (to gather payoff statistics and compute regrets) and strategy update (applying the regret-matching rule). Pseudocode for one player’s regret minimization is given below; in practice the procedure is run for both players simultaneously (either by alternating updates or in parallel each iteration):
 
-\begin{algorithm}[h]
+\begin{algorithm}[ht]
 \caption{Counterfactual Regret Minimization (for one player $\phi$)}\label{alg:CFR}
 \begin{algorithmic}[1]
 \State \textbf{Initialize:} For every information set $I$ of player $\phi$, set an initial strategy $\sigma_{\phi}^1(I)$ (e.g. uniform random over $A(I)$), and initialize $R^0(I,a)=0$ for all $a\in A(I)$.
@@ -688,23 +826,57 @@ Thus, $\sigma_{\phi}^{\,t+1}(I,a)$ is set to the fraction of total positive regr
 \end{algorithmic}
 \end{algorithm}
 
-In words, at each iteration $t$ the algorithm **walks the game tree** under the current strategy profile to compute the payoff outcomes at all terminal nodes, then **backs up** those results to determine every information set’s counterfactual values $v_\phi(\sigma^t,I)$ and regrets $r^t(I,a)$. The regrets are accumulated, and then the strategy at each decision point is adjusted for the next iteration by regret matching. Because each information set $I$ is updated independently based on its own regret values, CFR effectively decomposes the global game into many local learning problems—yet it can be shown (for zero-sum games) that this process drives the overall strategy profile toward a Nash equilibrium for two-player zero-sum games, CFR converges provably to an $\epsilon$-Nash equilibrium as $T \to \infty$ \cite{zinkevichetal}.
+In words, at each iteration $t$ the algorithm walks the game tree under the current strategy profile to compute the payoff outcomes at all terminal nodes, then backs up those results to determine every information set’s counterfactual values $v_\phi(\sigma^t,I)$ and regrets $r^t(I,a)$. The regrets are accumulated, and then the strategy at each decision point is adjusted for the next iteration by regret matching. Because each information set $I$ is updated independently based on its own regret values, CFR effectively decomposes the global game into many local learning problems—yet it can be shown (for zero-sum games) that this process drives the overall strategy profile toward a Nash equilibrium for two-player zero-sum games, CFR converges provably to an $\epsilon$-Nash equilibrium as $T \to \infty$ \cite{zinkevichetal}.
 
-**Practical modifications.** We note that many variations of the basic CFR algorithm exist to improve performance in large games. For example, one can avoid full traversals by sampling terminal paths (the Monte Carlo CFR approach, cf. Lanctot 2013 \cite{lanctot}) or use function approximation to generalize regret updates (e.g. Steinberger 2019 \cite{steinberger}). In our implementation, the game trees are of manageable size, so we employ the simplest “full-width” CFR (no sampling). However, we found it beneficial to incorporate two small enhancements to the vanilla algorithm in order to obtain better convergence in our **general-sum** litigation game (where theoretical convergence to Nash equilibrium is not guaranteed):
+Practical modifications. We note that many variations of the basic CFR algorithm exist to improve performance in large games. For example, one can avoid full traversals by sampling terminal paths (the Monte Carlo CFR approach, cf. Lanctot 2013 \cite{lanctot}) or use function approximation to generalize regret updates (e.g. Steinberger 2019 \cite{steinberger}). In our implementation, the game trees are of manageable size, so we employ the simplest “full-width” CFR (no sampling). However, we found it beneficial to incorporate two small enhancements to the vanilla algorithm in order to obtain better convergence in our general-sum litigation game (where theoretical convergence to Nash equilibrium is not guaranteed):
 
-1. **Outcome Perturbation (Exploration)** – We require that each action has at least a small minimum probability of being played at each iteration.  Specifically, following the suggestion of Farina et al.\ (2017), we introduce a *trembling-hand* perturbation $\mathcal{P}_t>0$ such that in iteration $t$ we set 
+1. Outcome Perturbation (Exploration) – We require that each action has at least a small minimum probability of being played at each iteration.  Specifically, following the suggestion of Farina et al.\ (2017), we introduce a *trembling-hand* perturbation $\mathcal{P}_t>0$ such that in iteration $t$ we set 
    \[
    \sigma_{\phi}^{\,t+1}(I,a) \;\ge\; \mathcal{P}_t \qquad \text{for all $a \in A(I)$,}
    \] 
    with the probabilities renormalized if necessary.  This ensures that no action is ever completely excluded from the strategy, which is useful because an equilibrium strategy might assign zero probability to some actions that nonetheless need to be evaluated in response to an opponent’s occasional deviations. We let $\mathcal{P}_t$ decay gradually over time (starting at $\mathcal{P}_1 = 10^{-3}$ in the first iteration and reducing to $0$ by the final iteration $T$) so that the perturbation vanishes as the algorithm nears convergence.
 
-2. **Regret Discounting (Recency Weighting)** – We apply a geometric discount factor to past regrets so that more recent iterations have greater influence on the strategy. In particular, after each iteration we scale down all accumulated regret values by a factor $0<\delta<1$. In our experiments we set $\delta=0.99$, meaning we multiply every $R^t(I,a)$ by $0.99$ at the end of each iteration $t$. This heuristic (inspired by Brown and Sandholm 2018 \cite{brownsandholm}) helps the algorithm respond more quickly to changing strategic dynamics and “forget” outdated early-iteration regrets. For example, if initially a defendant erroneously plays an action that yields very poor payoff, the undiscounted regrets for alternative actions might take a long time to outweigh that early mistake; discounting accelerates this re-adjustment. We found that regret discounting significantly improved stability and convergence speed in our simulations.
+2. Regret Discounting (Recency Weighting) – We apply a geometric discount factor to past regrets so that more recent iterations have greater influence on the strategy. In particular, after each iteration we scale down all accumulated regret values by a factor $0<\delta<1$. In our experiments we set $\delta=0.99$, meaning we multiply every $R^t(I,a)$ by $0.99$ at the end of each iteration $t$. This heuristic (inspired by Brown and Sandholm 2018 \cite{brownsandholm}) helps the algorithm respond more quickly to changing strategic dynamics and “forget” outdated early-iteration regrets. For example, if initially a defendant erroneously plays an action that yields very poor payoff, the undiscounted regrets for alternative actions might take a long time to outweigh that early mistake; discounting accelerates this re-adjustment. We found that regret discounting significantly improved stability and convergence speed in our simulations.
 
-These modifications do not fundamentally change the CFR update rule, but they can improve the quality of the approximate equilibrium reached, especially in non-zero-sum settings. **Recall that in a general-sum game, CFR (and no-regret learning in general) does not offer a theoretical guarantee of converging to a Nash equilibrium.** The standard guarantee we do have is that as $T\to\infty$, each player’s average strategy will satisfy the no-regret condition, which implies the joint strategy sequence comes arbitrarily close to a **coarse correlated equilibrium** of the game. In particular, after $T$ iterations the players’ strategy profile $\{\sigma^t\}_{t=1}^T$ ensures that no single player could have gained more than a small amount $\epsilon$ (vanishing as $T$ grows) by unilaterally deviating to any fixed alternative strategy, on average. Formally, one can show that for any $\epsilon>0$ there exists $T_0$ such that for all $T>T_0$: 
+These modifications do not fundamentally change the CFR update rule, but they can improve the quality of the approximate equilibrium reached, especially in non-zero-sum settings. Recall that in a general-sum game, CFR (and no-regret learning in general) does not offer a theoretical guarantee of converging to a Nash equilibrium. The standard guarantee we do have is that as $T\to\infty$, each player’s average strategy will satisfy the no-regret condition, which implies the joint strategy sequence comes arbitrarily close to a coarse correlated equilibrium of the game. In particular, after $T$ iterations the players’ strategy profile $\{\sigma^t\}_{t=1}^T$ ensures that no single player could have gained more than a small amount $\epsilon$ (vanishing as $T$ grows) by unilaterally deviating to any fixed alternative strategy, on average. Formally, one can show that for any $\epsilon>0$ there exists $T_0$ such that for all $T>T_0$: 
 \begin{equation}\label{eq:CCE}
 \frac{1}{T}\sum_{t=1}^T U_\phi\!\big(\sigma^t_{\phi},\,\sigma^t_{-\phi}\big)\;\ge\;\frac{1}{T}\sum_{t=1}^T U_\phi\!\big(\sigma'_{\phi},\,\sigma^t_{-\phi}\big)\;-\;\epsilon~,\qquad \forall\, \sigma'_{\phi}\in\Sigma_\phi~,
 \end{equation}
-where $U_\phi(\sigma_\phi,\sigma_{-\phi})$ is $\phi$’s expected utility given the strategy profile $(\sigma_\phi,\sigma_{-\phi})$, and $\Sigma_\phi$ is the set of all strategies for player $\phi$. Inequality \eqref{eq:CCE} is precisely the condition that the time-averaged strategy lies in an $\epsilon$-**coarse correlated equilibrium** (a very weak equilibrium notion). In practice, however, we observe much stronger behavior: the strategies produced by the CFR algorithm in our setting appear to *converge to a Nash equilibrium*. Empirically, after a sufficient number of iterations, the players’ strategies stabilize and no player can gain a noticeable advantage by deviating. We verify this by computing best responses ex post (following the procedure of Johanson et al.\ 2011 \cite{johanson}) to measure any incentive to deviate; in all the cases we tested, the **exploitability** of the learned profiles was on the order of numerical rounding error (e.g. $\sim10^{-15}$ or smaller in payoff units). In other words, although we lack a theoretical guarantee, the CFR algorithm (augmented with the above perturbation and discounting) reliably finds an equilibrium strategy profile for the models we analyze. Ultimately, the justification for using CFR in our general-sum setting is **empirical**: it successfully finds strategy profiles that are essentially equilibrium solutions, even in complex litigation games where analytical solutions are intractable.
+where $U_\phi(\sigma_\phi,\sigma_{-\phi})$ is $\phi$’s expected utility given the strategy profile $(\sigma_\phi,\sigma_{-\phi})$, and $\Sigma_\phi$ is the set of all strategies for player $\phi$. Inequality \eqref{eq:CCE} is precisely the condition that the time-averaged strategy lies in an $\epsilon$-coarse correlated equilibrium (a very weak equilibrium notion). 
+\paragraph{Exploitability as a diagnostic.} 
+We assess approximate equilibria by their \emph{exploitability} 
+\cite{lanctot2013,johanson2011}. For each player $\phi$, let 
+$U_\phi(\sigma_\phi,\sigma_{-\phi})$ be the expected payoff under profile 
+$(\sigma_\phi,\sigma_{-\phi})$, and let $\sigma'_\phi$ be a best response to 
+$\sigma_{-\phi}$. Exploitability for $\phi$ is
+\[
+E_\phi \;=\; U_\phi(\sigma'_\phi,\sigma_{-\phi}) \;-\; 
+             U_\phi(\sigma_\phi,\sigma_{-\phi})~,
+\]
+and overall exploitability is 
+\[
+E \;=\; \tfrac{1}{2}\big(E_{\Pi}+E_{\Delta}\big).
+\]
+By definition, $E=0$ at a Nash equilibrium. 
+
+To compute best responses, we use the forward–backward dynamic programming 
+method of Johanson et al.\ (2011). This procedure calculates, in a forward pass, 
+the probabilities of reaching each information set under $\sigma_{-\phi}$, then 
+selects in a backward pass the action maximizing expected utility at each 
+information set. 
+
+Because the scale of payoffs varies, we normalize each player’s performance to 
+the unit interval, with $0$ corresponding to the lowest attainable payoff in the 
+game tree and $1$ to the highest. Exploitability values are thus reported on this 
+$[0,1]$ scale. 
+
+In our simulations, we checkpoint every 100 iterations of CFR and compute 
+exploitability at each checkpoint. We then select the iteration with the lowest 
+observed exploitability as the equilibrium candidate. Over the full set of 
+simulations, the \emph{worst} exploitability value ever observed was only 
+$4.52 \times 10^{-6}$ in normalized units, far below any economically meaningful 
+threshold. This confirms that the strategy profiles identified are, for all 
+practical purposes, equilibrium solutions.
 
 
 \printbibliography

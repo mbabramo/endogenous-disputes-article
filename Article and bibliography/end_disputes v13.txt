@@ -22,7 +22,6 @@ backend=bibtex]{biblatex}
 \usepackage{amssymb}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
-\usepackage{placeins}
 \newenvironment{nohyphen}
   {\tolerance=1% Also consider setting \pretolerance
    \emergencystretch=\maxdimen%
@@ -192,138 +191,33 @@ In short, CFR lets us compute equilibrium behavior in a richly specified, cradle
 
 \subsection{Baseline}
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Baseline (All Rows).pdf}
-  \caption{Baseline cost breakdown .}
-  \label{fig:baseline_costs}
-\end{figure}
-
-
 \subsection{Three Independent Interventions}
 
-\FloatBarrier
 \paragraph{Damages multiplier.}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Damages Multiplier (All Rows).pdf}
-  \caption{Cost breakdown under damages multiplier .}
-  \label{fig:damages_multiplier}
-\end{figure}
-
-\FloatBarrier
 \paragraph{Fee shifting.}
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Fee Shifting Multiplier (All Rows).pdf}
-  \caption{Cost breakdown under fee shifting .}
-  \label{fig:fee_shifting}
-\end{figure}
-
-\FloatBarrier
 \paragraph{Liability threshold.}
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Liability Threshold (All Rows).pdf}
-  \caption{Cost breakdown under liability threshold .}
-  \label{fig:liability_threshold}
-\end{figure}
 
 \subsection{Combining Interventions}
 
-\FloatBarrier
 \paragraph{Damages multiplier and fee shifting.}
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Fee Shifting Multiplier and Damages Multiplier (All Rows).pdf}
-  \caption{Cost breakdown under damages multiplier and fee shifting .}
-  \label{fig:dm_fee}
-\end{figure}
-
-\FloatBarrier
 \paragraph{Damages multiplier and liability threshold.}
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Damages Multiplier and Liability Threshold (All Rows).pdf}
-  \caption{Cost breakdown under damages multiplier and liability threshold .}
-  \label{fig:dm_liability}
-\end{figure}
-
-\FloatBarrier
 \paragraph{Fee shifting and liability threshold.}
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Fee Shifting Multiplier and Liability Threshold (All Rows).pdf}
-  \caption{Cost breakdown under fee shifting and liability threshold .}
-  \label{fig:fee_liability}
-\end{figure}
 
 \section{Robustness Checks}
 
-\FloatBarrier
 \subsection{Imperfect Estimation}
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Misestimation Level (All Rows).pdf}
-  \caption{Cost breakdown under imperfect estimation .}
-  \label{fig:imperfect_estimation}
-\end{figure}
 
-\FloatBarrier
 \subsection{Risk Aversion}
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Damages Multiplier (Risk Averse) (All Rows).pdf}
-  \caption{Cost breakdown under risk aversion .}
-  \label{fig:risk_aversion}
-\end{figure}
 
-\FloatBarrier
 \subsection{Cost of Precaution}
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Unit Precaution Cost (All Rows).pdf}
-  \caption{Cost breakdown under changes in cost of precaution .}
-  \label{fig:cost_precaution}
-\end{figure}
 
-\FloatBarrier
 \subsection{Information Asymmetry}
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Information Asymmetry (All Rows).pdf}
-  \caption{Cost breakdown under information asymmetry .}
-  \label{fig:info_asymmetry}
-\end{figure}
 
-\FloatBarrier
 \subsection{Costs Asymmetry}
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Relative Costs (All Rows).pdf}
-  \caption{Cost breakdown under costs asymmetry .}
-  \label{fig:costs_asymmetry}
-\end{figure}
 
-\FloatBarrier
 \subsection{Wrongful Attribution Probability}
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Wrongful Attribution Probability (All Rows).pdf}
-  \caption{Cost breakdown under wrongful attribution probability .}
-  \label{fig:wrongful_attr}
-\end{figure}
 
-\FloatBarrier
 \subsection{Court Quality}
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Court Quality (All Rows).pdf}
-  \caption{Cost breakdown under court quality .}
-  \label{fig:court_quality}
-\end{figure}
-
 
 \section*{Appendix A: Formal Model}
 
@@ -813,7 +707,7 @@ Thus, $\sigma_{\phi}^{\,t+1}(I,a)$ is set to the fraction of total positive regr
 
 CFR algorithm. The overall CFR algorithm alternates between strategy simulation (to gather payoff statistics and compute regrets) and strategy update (applying the regret-matching rule). Pseudocode for one player’s regret minimization is given below; in practice the procedure is run for both players simultaneously (either by alternating updates or in parallel each iteration):
 
-\begin{algorithm}[ht]
+\begin{algorithm}[h]
 \caption{Counterfactual Regret Minimization (for one player $\phi$)}\label{alg:CFR}
 \begin{algorithmic}[1]
 \State \textbf{Initialize:} For every information set $I$ of player $\phi$, set an initial strategy $\sigma_{\phi}^1(I)$ (e.g. uniform random over $A(I)$), and initialize $R^0(I,a)=0$ for all $a\in A(I)$.
