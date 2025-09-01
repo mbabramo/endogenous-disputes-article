@@ -162,11 +162,11 @@ If neither party precommitted to quit, the case proceeds to trial. At trial the 
 
 This appendix collects the mathematical details underlying the accident-probability and adjudication-resolution functions used in the model. The main text emphasizes intuition and strategic structure, while here we provide the explicit functional forms and parameterizations. 
 \paragraph{Hidden state and private signals.}
-Nature draws a hidden precaution–power state $\theta\in\Theta=\{1,\dots,n_H\}$ uniformly. Each precaution–power level determines the \emph{center} of a liability–strength distribution for the plaintiff, not a deterministic level. We index $\theta$ onto $(0,1)$ by
+Nature draws a hidden precaution–power state $\theta\in\Theta=\{1,\dots,n_H\}$ uniformly. Each precaution–power level determines the \emph{center} of a precaution-power distribution for the case, not a deterministic level. We index $\theta$ onto $(0,1)$ by
 \[
 \varphi(\theta)\;=\;\frac{\theta}{\,n_H+1\,}.
 \]
-Conditional on $\theta$, the defendant and plaintiff privately observe liability–strength signals
+Conditional on $\theta$, the defendant and plaintiff privately observe precaution–power signals
 \[
 s_D\in\mathcal{S}_D=\{1,\dots,n_{S_D}\},\qquad
 s_P\in\mathcal{S}_P=\{1,\dots,n_{S_P}\}.
@@ -187,23 +187,6 @@ These are calculated as follows. Let $\Phi$ denote the standard normal cdf. Each
 }.
 \]
 For the defendant, define $SD_j=\dfrac{j-\tfrac12}{n_{S_D}}$ analogously and replace $\sigma_L^{P}$ by $\sigma_L^{D}$. Signals are conditionally independent given $\theta$ (and therefore positively correlated unconditionally through the common hidden state). The unconditional distributions over $s_P$ and $s_D$ follow by averaging the above conditional probabilities over the uniform prior on $\theta\in\Theta$.
-
-
-Each party’s signal is constructed by the same truncated–normal binning, using party–specific noise and grid. For the plaintiff, define $SP_j=\dfrac{j-\tfrac12}{n_{S_P}}$ for $j=1,\dots,n_{S_P}$ and
-\[
-\Pr(s_P=j\mid \theta)
-=
-\frac{
-\Phi\!\left(\dfrac{SP_j+\tfrac{1}{2n_{S_P}}-\varphi(\theta)}{\sigma_L^{P}}\right)
--
-\Phi\!\left(\dfrac{SP_j-\tfrac{1}{2n_{S_P}}-\varphi(\theta)}{\sigma_L^{P}}\right)
-}{
-\Phi\!\left(\dfrac{1-\varphi(\theta)}{\sigma_L^{P}}\right)
--
-\Phi\!\left(\dfrac{-\varphi(\theta)}{\sigma_L^{P}}\right)
-}.
-\]
-For the defendant, define $SD_j=\dfrac{j-\tfrac12}{n_{S_D}}$ analogously and replace $\sigma_L^{P}$ by $\sigma_L^{D}$. Signals are conditionally independent given $\theta$ (and therefore positively correlated unconditionally through the common hidden state). The unconditional distributions over $LS_i$, $s_P$, and $s_D$ follow by averaging the above conditional probabilities over the uniform prior on $\theta\in\Theta$.
 
 \paragraph{Accident probability.}
 
@@ -269,7 +252,7 @@ Although defendants choose from a discrete grid $k \in K$ with relative levels $
 \paragraph{Filing, answering, and quitting.}
 Following an accident realization, the plaintiff, who has observed $s_P$, chooses whether to \emph{file}, incurring $c_{file}=0.10$ if she does so. If the plaintiff files, the defendant observes $s_D$ and chooses whether to \emph{answer} or \emph{default}. Answering imposes $c_{answer}=0.10$ and moves the case into bargaining. Default ends the case immediately with a plaintiff judgment for normalized damages $\mu$, without any bargaining or trial costs.
 
-If the defendant answers, each party makes a one–time \emph{quit commitment} that is implemented if bargaining fails: the plaintiff may precommit to \emph{abandon} (ending the case with no judgment), and the defendant may precommit to \emph{default} (ending the case with a judgment of $1$ for the plaintiff). If both precommit to quit and no settlement occurs, a symmetric chance node resolves which commitment is implemented; if neither precommits, the case proceeds to trial if bargaining fails. These commitments are made once, at the entry to bargaining, and cannot be revised thereafter.
+If the defendant answers, each party makes a one–time \emph{quit commitment} that is implemented if bargaining fails: the plaintiff may precommit to \emph{abandon} (ending the case with no judgment), and the defendant may precommit to \emph{default} (ending the case with a judgment of $\mu$ for the plaintiff). If both precommit to quit and no settlement occurs, a symmetric chance node resolves which commitment is implemented; if neither precommits, the case proceeds to trial if bargaining fails. These commitments are made once, at the entry to bargaining, and cannot be revised thereafter.
 
 \paragraph{Bargaining (simultaneous offers).}
 Bargaining consists of a single round of \emph{simultaneous} monetary offers on finite grids $\mathcal{O}_P\subset[0,1]$ and $\mathcal{O}_D\subset[0,1]$. The plaintiff demands $\mathcal{o}_P\in\mathcal{O}_P$ and the defendant offers $\mathcal{o}_D\in\mathcal{O}_D$ simultaneously. The per–party bargaining stage cost $c_{bargain}=0.10$ is incurred by any party that participates in this round.
@@ -281,7 +264,7 @@ T \;=\; \frac{\mathcal{o}_P+\mathcal{o}_D}{2}\in[0,1],
 and the case terminates without trial. No damages multiplier or fee–shifting applies to settlements (this model contains no Rule 68 or offer–of–judgment mechanism). If the offers do not meet, the game implements the previously recorded quit commitments (abandon or default); if neither party precommitted, the case proceeds to trial.
 
 \paragraph{Trial.}
-When bargaining fails, the court draws a discrete liability–strength signal
+When bargaining fails, the court draws a discrete precaution–power signal
 \[
 s_C \in \mathcal{S}_C=\{1,\dots,n_{S_C}\},
 \]
@@ -304,7 +287,7 @@ Conditional on $\theta$, the court signal is independent of the parties’ signa
 \[
 \Pr(V=1 \mid \theta,k,s_C) \quad \text{rather than} \quad \Pr(V=1 \mid \theta,k,s_C,\text{accident}),
 \]
-so that the court’s liability probability is unaffected by the event that a case is filed. This independence from case selection applies only to the court’s negligence test itself. In Appendix B, ex-ante probabilities are updated conditional on whether an accident was realized, but this conditioning affects only Bayesian accounting of states and signals. It does not alter the court’s liability rule $\ell(c,k)$, which is applied solely to cost and risk information as if ex ante.
+so that the court’s liability probability is unaffected by the event that a case is filed. This independence from case selection applies only to the court’s negligence test itself. In Appendix B, ex-ante probabilities are updated conditional on whether an accident was realized, but this conditioning affects only Bayesian accounting of states and signals. It does not alter the court’s liability rule $\ell(c,k)$, which is applied solely to cost and risk information as if ex ante. Put differently, the court applies $\ell(c,k)$ as though ex ante; only our Bayesian updating of $\theta$ reflects case selection.
 
 Fix a precaution level $k\in K=\{0,\dots,n_K-1\}$ and let $\tau_k=\tau(k)$. For each hidden state $\theta$, recall that the accident probability is
 \[
@@ -319,7 +302,7 @@ The marginal reduction in accident risk at $\tau_k$ is defined by the continuous
 \]
 so $\Delta(\theta,\tau_k)\ge 0$ for $\tau_k\in[0,1)$ and $\Delta(\theta,1)=0$ (since $\eta(\varphi)>1$). This sign convention interprets $\Delta$ as the benefit of an infinitesimal increase in precaution. We evaluate this marginal benefit with respect to the legally attributed accident probability rather than the physical probability of causation. The court is modeled as aware that some attributions are wrongful in expectation, but unable to distinguish them case by case. Liability therefore attaches to all attributed accidents, and the marginal-benefit measure is discounted by $(1-\rho)$. This approach plausibly reflects the institutional perspective of a court that applies the Hand formula to the risk of being held liable, not to the risk of true causation.
 
-Given a realized court signal $s_C=c$, Bayes’ rule gives the posterior distribution $\Pr(\theta \mid s_C=c)$. The expected marginal reduction at $(c,k)$ is
+Given a realized court signal $s_C=c$, Bayes’ rule with the uniform prior $\Pr(\theta)=1/n_H$ gives the posterior distribution $\Pr(\theta \mid s_C=c)$. The expected marginal reduction at $(c,k)$ is
 \[
 \bar{\Delta}(c,k)=\sum_{\theta\in\Theta}\Delta(\theta,\tau_k)\,\Pr(\theta\mid s_C=c).
 \]
@@ -328,7 +311,7 @@ Because accident harm is normalized to $1$, the expected benefit of additional p
 \[
 R(c,k)=\frac{\bar{\Delta}(c,k)}{\,n_K\,c_{\mathrm{prec}}\,}.
 \]
-Here $\bar{\Delta}(c,k)$ is measured in accident probability points per unit of the continuous precaution index $\tau$, so dividing by $n_K\,c_{\mathrm{prec}}$ (the cost per unit $\tau$) yields a dimensionless ratio.
+Here $\bar{\Delta}(c,k)$ is measured in accident probability points per unit of the continuous precaution index $\tau$, so dividing by $n_K\,c_{\mathrm{prec}}$ (the cost per unit $\tau$) yields a dimensionless ratio, representing expected accidents avoided per unit expenditure.
 
 For a negligence threshold parameter $\lambda \ge 0$, the verdict is
 \[
@@ -352,7 +335,7 @@ Initial wealths are $W_P^{(0)}=W_D^{(0)}=10$. We also introduce a binary cause f
 \[
 c_{file}=c_{answer}=c_{bargain}=c_{trial}=0.10.
 \]
-The defendant’s decision to engage in the activity yields a baseline benefit $b_0>0$. If the defendant chooses not to engage, social welfare is assigned a negative baseline of $-b_0$. This convention ensures that both the cost of precaution and the opportunity cost of forgoing the activity enter social welfare with the same sign, so that precaution expenditures and non-engagement are treated consistently as resource costs offsetting the benefits of accident reduction.
+The defendant’s decision to engage in the activity yields a baseline benefit $0$. If the defendant chooses not to engage, social welfare is assigned a baseline of $b_0 < 0$. This convention ensures that both the cost of precaution and the opportunity cost of forgoing the activity enter social welfare with the same sign, so that precaution expenditures and non-engagement are treated consistently as resource costs offsetting the benefits of accident reduction.
 
 \emph{Settlement.} If the parties reach settlement, with offers $\mathcal{o}_P$ and $\mathcal{o}_D$ meeting, the transfer is
 \[
@@ -360,9 +343,9 @@ T \;=\; \frac{\mathcal{o}_P+\mathcal{o}_D}{2}.
 \]
 Final wealths are
 \[
-W_P^{\mathrm{final}} \;=\; W_P^{(0)} - C_P + T,
+W_P^{\mathrm{final}} \;=\; W_P^{(0)} - Z - C_P + T,
 \qquad
-W_D^{\mathrm{final}} \;=\; W_D^{(0)} - C_D - T + b_0.
+W_D^{\mathrm{final}} \;=\; W_D^{(0)} + b_0 - k\,c_{\mathrm{prec}} - C_D - T.
 \]
 No damages multiplier or fee–shifting applies to settlements.
 
@@ -370,24 +353,22 @@ No damages multiplier or fee–shifting applies to settlements.
 \[
 W_P^{\mathrm{final}}
 \;=\;
-W_P^{(0)} - C_P + J + \phi\bigl(V\,C_P - (1-V)\,C_D\bigr),
+W_P^{(0)} - Z - C_P + J + \phi\bigl(V\,C_P - (1-V)\,C_D\bigr),
 \]
 \[
 W_D^{\mathrm{final}}
 \;=\;
-W_D^{(0)} - C_D - J + \phi\bigl((1-V)\,C_D - V\,C_P\bigr) + b_0.
+W_D^{(0)} + b_0 - k\,c_{\mathrm{prec}} - C_D - J + \phi\bigl((1-V)\,C_D - V\,C_P\bigr).
 \]
-In the baseline with $\mu=1$ and $\phi=0$, these reduce to $W_P^{(0)}-C_P+V$ and $W_D^{(0)}-C_D-V+b_0$.
+In the baseline with $\mu=1$ and $\phi=0$, these reduce to $W_P^{(0)}-Z-C_P+V$ and $W_D^{(0)}+b_0-k\,c_{\mathrm{prec}}-C_D-V$.
 
-\emph{Default.} If the defendant defaults at the answering stage, the plaintiff receives a judgment of $\mu$, reflecting the damages multiplier, without incurring $c_{bargain}$ or $c_{trial}$. Fee–shifting does not apply.
-Final wealths are
+\emph{Default and Defendant quit.} If the defendant defaults—either immediately at the answering stage or later through a quit commitment after bargaining fails—the plaintiff receives a judgment of $\mu$, reflecting the damages multiplier, and fee–shifting does not apply. Final wealths are
 \[
 W_P^{\mathrm{final}} \;=\; W_P^{(0)} - C_P + \mu,
 \qquad
 W_D^{\mathrm{final}} \;=\; W_D^{(0)} - C_D - \mu + b_0,
 \]
-
-where here $C_P=c_{file}$ and $C_D=0$ along this path. If default is implemented via a quit commitment \emph{after} bargaining fails, the same expressions apply with $C_P$ and $C_D$ including $c_{bargain}$ (and earlier costs) but not $c_{trial}$.
+with $C_P$ and $C_D$ including only filing costs if default occurs at answering, or also bargaining costs (but not trial costs) if default occurs after bargaining fails.
 
 \emph{Abandon.} If the plaintiff abandons through a quit commitment, no judgment is entered. Neither damages multipliers nor fee–shifting apply. Final wealths are
 \[
@@ -396,14 +377,6 @@ W_P^{\mathrm{final}} \;=\; W_P^{(0)} - C_P,
 W_D^{\mathrm{final}} \;=\; W_D^{(0)} - C_D + b_0,
 \]
 where $C_P$ and $C_D$ include all stage costs already incurred along the realized path.
-
-\emph{Defendant quit.} If the defendant defaults through a quit commitment after bargaining fails, the plaintiff receives a judgment of $\mu$, reflecting the damages multiplier, but fee–shifting does not apply. Final wealths are
-\[
-W_P^{\mathrm{final}} \;=\; W_P^{(0)} - C_P + \mu,
-\qquad
-W_D^{\mathrm{final}} \;=\; W_D^{(0)} - C_D - \mu + b_0,
-\]
-with $C_P$ and $C_D$ reflecting costs incurred through the bargaining stage (and earlier), but not $c_{trial}$ since no trial occurs.
 
 \paragraph{Final utilities.}
 Let $W_i^{\mathrm{final}}$ denote party $i$'s final wealth after the litigation path has concluded.
@@ -429,9 +402,9 @@ With baseline wealths of $10$ and stakes of size $1$, these values span from lin
 \emph{Welfare reporting.} Aggregate social welfare is defined as the negative of the real resource costs:
 \[
 Welfare \;=\; -\bigl(\,k \cdot c_{\mathrm{prec}} \;+\; \mathbf{1}_{\{Z=1\}} \;+\; (C_P+C_D)\,\bigr)
-\;-\;\mathbf{1}_{\{\neg \text{engage}\}}\,b_0.
+\;+\;\mathbf{1}_{\{\neg \text{engage}\}}\,b_0.
 \]
-Here $c_{\mathrm{prec}}$ denotes the cost of taking one discrete step in the precaution index $k$, so that $k \cdot c_{\mathrm{prec}}$ is the total precaution expenditure chosen by the defendant. The indicator $\mathbf{1}_{\{Z=1\}}$ represents the injury loss (equal to $1$ if the accident is physically caused by the defendant, $0$ otherwise). Accidents that occur in wrongful attribution cases ($Z=0$) are not counted, since welfare includes only consequences of the defendant’s own activity. The quantity $C_P+C_D$ is the total litigation cost (the sum of stage costs incurred by both parties). The additional term $\mathbf{1}_{\{\neg \text{engage}\}}\,b_0$ reflects the opportunity cost of forgoing the activity: when the defendant does not engage, welfare is reduced by $b_0$. Monetary transfers between plaintiff and defendant cancel in this welfare measure. This welfare measure is consistent with the earlier sign convention: both precaution expenditures and the opportunity cost of non-engagement are treated as negative contributions to welfare, so that the court’s marginal-benefit test and the welfare accounting operate on the same footing in terms of opportunity costs.
+Here $c_{\mathrm{prec}}$ denotes the cost of taking one discrete step in the precaution index $k$, so that $k \cdot c_{\mathrm{prec}}$ is the total precaution expenditure chosen by the defendant. The indicator $\mathbf{1}_{\{Z=1\}}$ represents the injury loss (equal to $1$ if the accident is physically caused by the defendant, $0$ otherwise). Accidents that occur in wrongful attribution cases ($Z=0$) are not counted, since welfare includes only consequences of the defendant’s own activity. The quantity $C_P+C_D$ is the total litigation cost (the sum of stage costs incurred by both parties). The additional term $\mathbf{1}_{\{\neg \text{engage}\}}\,b_0$ reflects the opportunity cost of forgoing the activity: when the defendant does not engage, welfare is reduced by $|b_0|$. Monetary transfers between plaintiff and defendant cancel in this welfare measure. This welfare measure is consistent with the earlier sign convention: both precaution expenditures and the opportunity cost of non-engagement are treated as negative contributions to welfare, so that the court’s marginal-benefit test and the welfare accounting operate on the same footing in terms of opportunity costs.
 
 
 
@@ -442,7 +415,7 @@ Here $c_{\mathrm{prec}}$ denotes the cost of taking one discrete step in the pre
 
 Explicitly modeling every chance node (random event) can cause an explosion in the size of the game tree. We thus use Bayesian marginalization of chance nodes to avoid explicitly branching on a random variable at the outset of the game. Instead, we integrate out uncertainties concerning the variable represented by the node on the fly, adjusting probabilities and outcomes accordingly. This approach keeps the tree smaller while still accounting for the uncertainty. In our litigation game, the first chance event determines the precaution power state: the hidden state of which the defendant, plaintiff, and court may eventually receive signals. Instead of selecting such a state, we can convert the game into a mathematically equivalent game. The strategic players' information sets in this game are exactly the same as those in the original game, because the hidden state never becomes part of the plaintiff's or defendant's information set. While in the full game the distribution of the defendant's private signal is calculated conditional on the actual hidden state, in the collapsed tree the distribution of the defendant's private signal is calculated by integrating over all such possible hidden states. Later distributions then require similar treatment. With this approach, any equilibrium of the original extensive form game tree is equivalently an equilibrium of the collapsed game, and vice versa.
 
-Figure \ref{fig:smalltree_collapsed_beginning.pdf} illustrates the beginning of the extensive form game in which the node selecting precaution power is omitted. The first node now represents the defendant's signal. Because this is not conditioned on the hidden state, the defendant is equally likely to receive a low and a high signal. Instead of immediately calculating the plaintiff's signal, the defendant makes its decisions on whether to engage in the activity and if so, what relative level of precaution to take. The next node then represents the accident, and the accident probabilities are calculated by integrating over both possible hidden states in this miniaturized game. Finally, the plaintiff's signal node now follows the accident node. The probability that the plaintiff will receive each of the two possible signals takes into account the defendant's signal, the defendant's precaution level, and the occurrence of the accident, integrating again over both possible hidden states. Note that in this case, the plaintiff is much more likely to receive the low signal, because that is the signal that the defendant received. It would equivalently be possible to position the plaintiff's signal node immediately after the defendant signal and then condition the accident probability on the parties' joint signals, but this approach produces a smaller game tree.
+Figure \ref{fig:smalltree_collapsed_beginning.pdf} illustrates the beginning of the extensive form game in which the node selecting precaution power is omitted. The first node now represents the defendant's signal. Because this is not conditioned on the hidden state, the defendant is equally likely to receive a low and a high signal in this miniaturized game. Instead of immediately calculating the plaintiff's signal, the defendant makes its decisions on whether to engage in the activity and if so, what relative level of precaution to take. The next node then represents the accident, and the accident probabilities are calculated by integrating over both possible hidden states in this miniaturized game. Finally, the plaintiff's signal node now follows the accident node. The probability that the plaintiff will receive each of the two possible signals takes into account the defendant's signal, the defendant's precaution level, and the occurrence of the accident, integrating again over both possible hidden states. Note that in this case, the plaintiff is much more likely to receive the low signal, because that is the signal that the defendant received. It would equivalently be possible to position the plaintiff's signal node immediately after the defendant signal and then condition the accident probability on the parties' joint signals, but this approach produces a smaller game tree.
 
   \begin{figure}[t]
     \centering
@@ -549,7 +522,7 @@ and for a no-liability verdict,
 \]
 These posteriors provide the probability weights over hidden states that are used to assign concrete values when outcomes are tabulated.
 
-\subsection*{B.3 Ex Post Splitting of Game Records (Matches Implementation)}
+\subsection*{B.3 Ex Post Attribution and State Reconstruction for Reporting}
 
 We record realized play and then, when needed for reporting, clone records to fill in the hidden state $\theta$ and whether a legally attributed accident is truly caused by the defendant. The cloning weights are chosen to reproduce the expectations of the explicit tree.
 
