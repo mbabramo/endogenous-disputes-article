@@ -1,0 +1,126 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usetikzlibrary{patterns, positioning}
+\usetikzlibrary{shapes.misc}
+\usepackage[outline]{contour}
+\contourlength{1.5pt} 
+
+
+\begin{document}
+\begin{tikzpicture}
+\draw[fill=blue!11.11111111111111!orange] (3.9,0) rectangle (4.9,1.8);
+\draw[draw=black, fill=white, text=black, minimum width=3.9cm, minimum height=1cm, anchor=west] (0, 0.9) node {Hidden State 1/9};
+\draw[draw=black, dotted, left color=blue!11.11111111111111!orange, right color=blue!6.25!orange, opacity=0.2, text=black] (4.9, 0) -- (4.9, 0.709223133835425) -- (11.9, 0.709223133835425) -- (11.9, 0) -- cycle ;
+\draw[draw=black, dotted, left color=blue!11.11111111111111!orange, right color=blue!18.75!orange, opacity=0.2, text=black] (4.9, 0.709223133835425) -- (4.9, 1.2962827231536318) -- (11.9, 2.2963989334722865) -- (11.9, 1.7093393441540798) -- cycle ;
+\draw[draw=black, dotted, left color=blue!11.11111111111111!orange, right color=blue!31.25!orange, opacity=0.2, text=black] (4.9, 1.2962827231536318) -- (4.9, 1.6292015905045407) -- (11.9, 4.102320409806618) -- (11.9, 3.769401542455709) -- cycle ;
+\draw[draw=black, dotted, left color=blue!11.11111111111111!orange, right color=blue!43.75!orange, opacity=0.2, text=black] (4.9, 1.6292015905045407) -- (4.9, 1.7585126494079608) -- (11.9, 6.072808557093722) -- (11.9, 5.943497498190301) -- cycle ;
+\draw[draw=black, dotted, left color=blue!11.11111111111111!orange, right color=blue!56.25!orange, opacity=0.2, text=black] (4.9, 1.7585126494079608) -- (4.9, 1.7928985607461416) -- (11.9, 8.148671625623894) -- (11.9, 8.114285714285714) -- cycle ;
+\draw[draw=black, dotted, left color=blue!11.11111111111111!orange, right color=blue!68.75!orange, opacity=0.2, text=black] (4.9, 1.7928985607461416) -- (4.9, 1.7991552553352297) -- (11.9, 10.291330624970216) -- (11.9, 10.285073930381127) -- cycle ;
+\draw[draw=black, dotted, left color=blue!11.11111111111111!orange, right color=blue!81.25!orange, opacity=0.2, text=black] (4.9, 1.7991552553352297) -- (4.9, 1.7999337922283434) -- (11.9, 12.459948423008832) -- (11.9, 12.459169886115719) -- cycle ;
+\draw[draw=black, dotted, left color=blue!11.11111111111111!orange, right color=blue!93.75!orange, opacity=0.2, text=black] (4.9, 1.7999337922283434) -- (4.9, 1.7999999999999998) -- (11.9, 14.519298292189003) -- (11.9, 14.519232084417347) -- cycle ;
+
+\draw[fill=blue!22.22222222222222!orange] (3.9,2.0286) rectangle (4.9,3.8286);
+\draw[draw=black, fill=white, text=black, minimum width=3.9cm, minimum height=1cm, anchor=west] (0, 2.9285714285714284) node {Hidden State 2/9};
+\draw[draw=black, dotted, left color=blue!22.22222222222222!orange, right color=blue!6.25!orange, opacity=0.2, text=black] (4.9, 2.0285714285714285) -- (4.9, 2.471265266326489) -- (11.9, 1.1519169715904858) -- (11.9, 0.709223133835425) -- cycle ;
+\draw[draw=black, dotted, left color=blue!22.22222222222222!orange, right color=blue!18.75!orange, opacity=0.2, text=black] (4.9, 2.471265266326489) -- (4.9, 3.0060810101710094) -- (11.9, 2.8312146773168068) -- (11.9, 2.2963989334722865) -- cycle ;
+\draw[draw=black, dotted, left color=blue!22.22222222222222!orange, right color=blue!31.25!orange, opacity=0.2, text=black] (4.9, 3.0060810101710094) -- (4.9, 3.44877484792607) -- (11.9, 4.545014247561678) -- (11.9, 4.102320409806618) -- cycle ;
+\draw[draw=black, dotted, left color=blue!22.22222222222222!orange, right color=blue!43.75!orange, opacity=0.2, text=black] (4.9, 3.44877484792607) -- (4.9, 3.69982454327268) -- (11.9, 6.323858252440331) -- (11.9, 6.072808557093722) -- cycle ;
+\draw[draw=black, dotted, left color=blue!22.22222222222222!orange, right color=blue!56.25!orange, opacity=0.2, text=black] (4.9, 3.69982454327268) -- (4.9, 3.797336295012582) -- (11.9, 8.246183377363796) -- (11.9, 8.148671625623894) -- cycle ;
+\draw[draw=black, dotted, left color=blue!22.22222222222222!orange, right color=blue!68.75!orange, opacity=0.2, text=black] (4.9, 3.797336295012582) -- (4.9, 3.823266253967317) -- (11.9, 10.31726058392495) -- (11.9, 10.291330624970216) -- cycle ;
+\draw[draw=black, dotted, left color=blue!22.22222222222222!orange, right color=blue!81.25!orange, opacity=0.2, text=black] (4.9, 3.823266253967317) -- (4.9, 3.827984344242482) -- (11.9, 12.464666513283998) -- (11.9, 12.459948423008832) -- cycle ;
+\draw[draw=black, dotted, left color=blue!22.22222222222222!orange, right color=blue!93.75!orange, opacity=0.2, text=black] (4.9, 3.8279843442424824) -- (4.9, 3.8285714285714287) -- (11.9, 14.51988537651795) -- (11.9, 14.519298292189003) -- cycle ;
+
+\draw[fill=blue!33.33333333333333!orange] (3.9,4.0571) rectangle (4.9,5.8571);
+\draw[draw=black, fill=white, text=black, minimum width=3.9cm, minimum height=1cm, anchor=west] (0, 4.957142857142857) node {Hidden State 1/3};
+\draw[draw=black, dotted, left color=blue!33.33333333333333!orange, right color=blue!6.25!orange, opacity=0.2, text=black] (4.9, 4.057142857142857) -- (4.9, 4.277527003235441) -- (11.9, 1.3723011176830697) -- (11.9, 1.1519169715904858) -- cycle ;
+\draw[draw=black, dotted, left color=blue!33.33333333333333!orange, right color=blue!18.75!orange, opacity=0.2, text=black] (4.9, 4.277527003235441) -- (4.9, 4.66614609030264) -- (11.9, 3.2198337643840054) -- (11.9, 2.8312146773168068) -- cycle ;
+\draw[draw=black, dotted, left color=blue!33.33333333333333!orange, right color=blue!31.25!orange, opacity=0.2, text=black] (4.9, 4.6661460903026395) -- (4.9, 5.135634455390338) -- (11.9, 5.014502612649378) -- (11.9, 4.545014247561679) -- cycle ;
+\draw[draw=black, dotted, left color=blue!33.33333333333333!orange, right color=blue!43.75!orange, opacity=0.2, text=black] (4.9, 5.135634455390338) -- (4.9, 5.524253542457537) -- (11.9, 6.71247733950753) -- (11.9, 6.323858252440331) -- cycle ;
+\draw[draw=black, dotted, left color=blue!33.33333333333333!orange, right color=blue!56.25!orange, opacity=0.2, text=black] (4.9, 5.5242535424575365) -- (4.9, 5.744637688550121) -- (11.9, 8.466567523456382) -- (11.9, 8.246183377363797) -- cycle ;
+\draw[draw=black, dotted, left color=blue!33.33333333333333!orange, right color=blue!68.75!orange, opacity=0.2, text=black] (4.9, 5.744637688550121) -- (4.9, 5.8302384462468) -- (11.9, 10.40286134162163) -- (11.9, 10.31726058392495) -- cycle ;
+\draw[draw=black, dotted, left color=blue!33.33333333333333!orange, right color=blue!81.25!orange, opacity=0.2, text=black] (4.9, 5.8302384462468) -- (4.9, 5.853001078380511) -- (11.9, 12.487429145417709) -- (11.9, 12.464666513283998) -- cycle ;
+\draw[draw=black, dotted, left color=blue!33.33333333333333!orange, right color=blue!93.75!orange, opacity=0.2, text=black] (4.9, 5.853001078380511) -- (4.9, 5.857142857142857) -- (11.9, 14.524027155280296) -- (11.9, 14.51988537651795) -- cycle ;
+
+\draw[fill=blue!44.44444444444444!orange] (3.9,6.0857) rectangle (4.9,7.8857);
+\draw[draw=black, fill=white, text=black, minimum width=3.9cm, minimum height=1cm, anchor=west] (0, 6.985714285714286) node {Hidden State 4/9};
+\draw[draw=black, dotted, left color=blue!44.44444444444444!orange, right color=blue!6.25!orange, opacity=0.2, text=black] (4.9, 6.085714285714285) -- (4.9, 6.16760890344403) -- (11.9, 1.4541957354128145) -- (11.9, 1.3723011176830697) -- cycle ;
+\draw[draw=black, dotted, left color=blue!44.44444444444444!orange, right color=blue!18.75!orange, opacity=0.2, text=black] (4.9, 6.16760890344403) -- (4.9, 6.378451375912571) -- (11.9, 3.430676236852546) -- (11.9, 3.2198337643840054) -- cycle ;
+\draw[draw=black, dotted, left color=blue!44.44444444444444!orange, right color=blue!31.25!orange, opacity=0.2, text=black] (4.9, 6.378451375912571) -- (4.9, 6.750244949173023) -- (11.9, 5.3862961859098295) -- (11.9, 5.014502612649377) -- cycle ;
+\draw[draw=black, dotted, left color=blue!44.44444444444444!orange, right color=blue!43.75!orange, opacity=0.2, text=black] (4.9, 6.750244949173023) -- (4.9, 7.199406512948659) -- (11.9, 7.161638903283166) -- (11.9, 6.71247733950753) -- cycle ;
+\draw[draw=black, dotted, left color=blue!44.44444444444444!orange, right color=blue!56.25!orange, opacity=0.2, text=black] (4.9, 7.199406512948659) -- (4.9, 7.571200086209111) -- (11.9, 8.838361096716833) -- (11.9, 8.46656752345638) -- cycle ;
+\draw[draw=black, dotted, left color=blue!44.44444444444444!orange, right color=blue!68.75!orange, opacity=0.2, text=black] (4.9, 7.571200086209112) -- (4.9, 7.782042558677653) -- (11.9, 10.61370381409017) -- (11.9, 10.40286134162163) -- cycle ;
+\draw[draw=black, dotted, left color=blue!44.44444444444444!orange, right color=blue!81.25!orange, opacity=0.2, text=black] (4.9, 7.782042558677653) -- (4.9, 7.863937176407398) -- (11.9, 12.569323763147453) -- (11.9, 12.487429145417709) -- cycle ;
+\draw[draw=black, dotted, left color=blue!44.44444444444444!orange, right color=blue!93.75!orange, opacity=0.2, text=black] (4.9, 7.863937176407397) -- (4.9, 7.885714285714285) -- (11.9, 14.545804264587183) -- (11.9, 14.524027155280296) -- cycle ;
+
+\draw[fill=blue!55.55555555555556!orange] (3.9,8.1143) rectangle (4.9,9.9143);
+\draw[draw=black, fill=white, text=black, minimum width=3.9cm, minimum height=1cm, anchor=west] (0, 9.014285714285714) node {Hidden State 5/9};
+\draw[draw=black, dotted, left color=blue!55.55555555555556!orange, right color=blue!6.25!orange, opacity=0.2, text=black] (4.9, 8.114285714285714) -- (4.9, 8.136062823592601) -- (11.9, 1.4759728447197025) -- (11.9, 1.4541957354128145) -- cycle ;
+\draw[draw=black, dotted, left color=blue!55.55555555555556!orange, right color=blue!18.75!orange, opacity=0.2, text=black] (4.9, 8.136062823592601) -- (4.9, 8.217957441322346) -- (11.9, 3.5125708545822913) -- (11.9, 3.4306762368525465) -- cycle ;
+\draw[draw=black, dotted, left color=blue!55.55555555555556!orange, right color=blue!31.25!orange, opacity=0.2, text=black] (4.9, 8.217957441322346) -- (4.9, 8.428799913790886) -- (11.9, 5.597138658378371) -- (11.9, 5.3862961859098295) -- cycle ;
+\draw[draw=black, dotted, left color=blue!55.55555555555556!orange, right color=blue!43.75!orange, opacity=0.2, text=black] (4.9, 8.428799913790888) -- (4.9, 8.80059348705134) -- (11.9, 7.533432476543619) -- (11.9, 7.161638903283166) -- cycle ;
+\draw[draw=black, dotted, left color=blue!55.55555555555556!orange, right color=blue!56.25!orange, opacity=0.2, text=black] (4.9, 8.80059348705134) -- (4.9, 9.249755050826977) -- (11.9, 9.287522660492469) -- (11.9, 8.838361096716833) -- cycle ;
+\draw[draw=black, dotted, left color=blue!55.55555555555556!orange, right color=blue!68.75!orange, opacity=0.2, text=black] (4.9, 9.249755050826977) -- (4.9, 9.62154862408743) -- (11.9, 10.985497387350623) -- (11.9, 10.61370381409017) -- cycle ;
+\draw[draw=black, dotted, left color=blue!55.55555555555556!orange, right color=blue!81.25!orange, opacity=0.2, text=black] (4.9, 9.621548624087428) -- (4.9, 9.832391096555968) -- (11.9, 12.780166235615994) -- (11.9, 12.569323763147453) -- cycle ;
+\draw[draw=black, dotted, left color=blue!55.55555555555556!orange, right color=blue!93.75!orange, opacity=0.2, text=black] (4.9, 9.83239109655597) -- (4.9, 9.914285714285715) -- (11.9, 14.627698882316928) -- (11.9, 14.545804264587183) -- cycle ;
+
+\draw[fill=blue!66.66666666666666!orange] (3.9,10.143) rectangle (4.9,11.943);
+\draw[draw=black, fill=white, text=black, minimum width=3.9cm, minimum height=1cm, anchor=west] (0, 11.042857142857143) node {Hidden State 2/3};
+\draw[draw=black, dotted, left color=blue!66.66666666666666!orange, right color=blue!6.25!orange, opacity=0.2, text=black] (4.9, 10.142857142857142) -- (4.9, 10.146998921619488) -- (11.9, 1.4801146234820484) -- (11.9, 1.4759728447197025) -- cycle ;
+\draw[draw=black, dotted, left color=blue!66.66666666666666!orange, right color=blue!18.75!orange, opacity=0.2, text=black] (4.9, 10.146998921619488) -- (4.9, 10.1697615537532) -- (11.9, 3.535333486716002) -- (11.9, 3.5125708545822913) -- cycle ;
+\draw[draw=black, dotted, left color=blue!66.66666666666666!orange, right color=blue!31.25!orange, opacity=0.2, text=black] (4.9, 10.1697615537532) -- (4.9, 10.255362311449879) -- (11.9, 5.68273941607505) -- (11.9, 5.59713865837837) -- cycle ;
+\draw[draw=black, dotted, left color=blue!66.66666666666666!orange, right color=blue!43.75!orange, opacity=0.2, text=black] (4.9, 10.255362311449879) -- (4.9, 10.475746457542463) -- (11.9, 7.7538166226362035) -- (11.9, 7.533432476543619) -- cycle ;
+\draw[draw=black, dotted, left color=blue!66.66666666666666!orange, right color=blue!56.25!orange, opacity=0.2, text=black] (4.9, 10.475746457542462) -- (4.9, 10.86436554460966) -- (11.9, 9.676141747559667) -- (11.9, 9.287522660492469) -- cycle ;
+\draw[draw=black, dotted, left color=blue!66.66666666666666!orange, right color=blue!68.75!orange, opacity=0.2, text=black] (4.9, 10.864365544609662) -- (4.9, 11.33385390969736) -- (11.9, 11.454985752438322) -- (11.9, 10.985497387350623) -- cycle ;
+\draw[draw=black, dotted, left color=blue!66.66666666666666!orange, right color=blue!81.25!orange, opacity=0.2, text=black] (4.9, 11.33385390969736) -- (4.9, 11.722472996764559) -- (11.9, 13.168785322683192) -- (11.9, 12.780166235615994) -- cycle ;
+\draw[draw=black, dotted, left color=blue!66.66666666666666!orange, right color=blue!93.75!orange, opacity=0.2, text=black] (4.9, 11.722472996764559) -- (4.9, 11.942857142857143) -- (11.9, 14.848083028409512) -- (11.9, 14.627698882316928) -- cycle ;
+
+\draw[fill=blue!77.77777777777779!orange] (3.9,12.171) rectangle (4.9,13.971);
+\draw[draw=black, fill=white, text=black, minimum width=3.9cm, minimum height=1cm, anchor=west] (0, 13.071428571428571) node {Hidden State 7/9};
+\draw[draw=black, dotted, left color=blue!77.77777777777779!orange, right color=blue!6.25!orange, opacity=0.2, text=black] (4.9, 12.17142857142857) -- (4.9, 12.172015655757518) -- (11.9, 1.4807017078109947) -- (11.9, 1.4801146234820484) -- cycle ;
+\draw[draw=black, dotted, left color=blue!77.77777777777779!orange, right color=blue!18.75!orange, opacity=0.2, text=black] (4.9, 12.172015655757518) -- (4.9, 12.176733746032683) -- (11.9, 3.5400515769911665) -- (11.9, 3.5353334867160013) -- cycle ;
+\draw[draw=black, dotted, left color=blue!77.77777777777779!orange, right color=blue!31.25!orange, opacity=0.2, text=black] (4.9, 12.176733746032683) -- (4.9, 12.202663704987417) -- (11.9, 5.7086693750297846) -- (11.9, 5.68273941607505) -- cycle ;
+\draw[draw=black, dotted, left color=blue!77.77777777777779!orange, right color=blue!43.75!orange, opacity=0.2, text=black] (4.9, 12.202663704987417) -- (4.9, 12.30017545672732) -- (11.9, 7.851328374376105) -- (11.9, 7.753816622636203) -- cycle ;
+\draw[draw=black, dotted, left color=blue!77.77777777777779!orange, right color=blue!56.25!orange, opacity=0.2, text=black] (4.9, 12.300175456727318) -- (4.9, 12.551225152073929) -- (11.9, 9.92719144290628) -- (11.9, 9.676141747559669) -- cycle ;
+\draw[draw=black, dotted, left color=blue!77.77777777777779!orange, right color=blue!68.75!orange, opacity=0.2, text=black] (4.9, 12.551225152073929) -- (4.9, 12.99391898982899) -- (11.9, 11.897679590193382) -- (11.9, 11.454985752438322) -- cycle ;
+\draw[draw=black, dotted, left color=blue!77.77777777777779!orange, right color=blue!81.25!orange, opacity=0.2, text=black] (4.9, 12.993918989828991) -- (4.9, 13.528734733673511) -- (11.9, 13.703601066527712) -- (11.9, 13.168785322683192) -- cycle ;
+\draw[draw=black, dotted, left color=blue!77.77777777777779!orange, right color=blue!93.75!orange, opacity=0.2, text=black] (4.9, 13.528734733673511) -- (4.9, 13.971428571428572) -- (11.9, 15.290776866164572) -- (11.9, 14.848083028409512) -- cycle ;
+
+\draw[fill=blue!88.88888888888889!orange] (3.9,14.2) rectangle (4.9,16);
+\draw[draw=black, fill=white, text=black, minimum width=3.9cm, minimum height=1cm, anchor=west] (0, 15.1) node {Hidden State 8/9};
+\draw[draw=black, dotted, left color=blue!88.88888888888889!orange, right color=blue!6.25!orange, opacity=0.2, text=black] (4.9, 14.2) -- (4.9, 14.200066207771656) -- (11.9, 1.4807679155826514) -- (11.9, 1.4807017078109947) -- cycle ;
+\draw[draw=black, dotted, left color=blue!88.88888888888889!orange, right color=blue!18.75!orange, opacity=0.2, text=black] (4.9, 14.200066207771656) -- (4.9, 14.200844744664769) -- (11.9, 3.540830113884281) -- (11.9, 3.540051576991167) -- cycle ;
+\draw[draw=black, dotted, left color=blue!88.88888888888889!orange, right color=blue!31.25!orange, opacity=0.2, text=black] (4.9, 14.200844744664769) -- (4.9, 14.207101439253858) -- (11.9, 5.714926069618873) -- (11.9, 5.7086693750297846) -- cycle ;
+\draw[draw=black, dotted, left color=blue!88.88888888888889!orange, right color=blue!43.75!orange, opacity=0.2, text=black] (4.9, 14.207101439253858) -- (4.9, 14.241487350592038) -- (11.9, 7.885714285714286) -- (11.9, 7.851328374376106) -- cycle ;
+\draw[draw=black, dotted, left color=blue!88.88888888888889!orange, right color=blue!56.25!orange, opacity=0.2, text=black] (4.9, 14.241487350592038) -- (4.9, 14.370798409495459) -- (11.9, 10.056502501809698) -- (11.9, 9.927191442906278) -- cycle ;
+\draw[draw=black, dotted, left color=blue!88.88888888888889!orange, right color=blue!68.75!orange, opacity=0.2, text=black] (4.9, 14.370798409495459) -- (4.9, 14.703717276846367) -- (11.9, 12.230598457544291) -- (11.9, 11.897679590193382) -- cycle ;
+\draw[draw=black, dotted, left color=blue!88.88888888888889!orange, right color=blue!81.25!orange, opacity=0.2, text=black] (4.9, 14.703717276846367) -- (4.9, 15.290776866164574) -- (11.9, 14.29066065584592) -- (11.9, 13.703601066527714) -- cycle ;
+\draw[draw=black, dotted, left color=blue!88.88888888888889!orange, right color=blue!93.75!orange, opacity=0.2, text=black] (4.9, 15.290776866164574) -- (4.9, 16) -- (11.9, 15.999999999999998) -- (11.9, 15.290776866164572) -- cycle ;
+
+\draw[fill=blue!6.25!orange] (11.9,0) rectangle (12.9,1.4808);
+\draw[draw=black, fill=white, text=black, minimum width=2.200000000000001cm, minimum height=1cm, anchor=west] (12.9, 0.7403839577913256) node {Signal 1/16};
+
+\draw[fill=blue!18.75!orange] (11.9,1.7093) rectangle (12.9,3.5408);
+\draw[draw=black, fill=white, text=black, minimum width=2.200000000000001cm, minimum height=1cm, anchor=west] (12.9, 2.6250847290191803) node {Signal 3/16};
+
+\draw[fill=blue!31.25!orange] (11.9,3.7694) rectangle (12.9,5.7149);
+\draw[draw=black, fill=white, text=black, minimum width=2.200000000000001cm, minimum height=1cm, anchor=west] (12.9, 4.742163806037291) node {Signal 5/16};
+
+\draw[fill=blue!43.75!orange] (11.9,5.9435) rectangle (12.9,7.8857);
+\draw[draw=black, fill=white, text=black, minimum width=2.200000000000001cm, minimum height=1cm, anchor=west] (12.9, 6.914605891952293) node {Signal 7/16};
+
+\draw[fill=blue!56.25!orange] (11.9,8.1143) rectangle (12.9,10.057);
+\draw[draw=black, fill=white, text=black, minimum width=2.200000000000001cm, minimum height=1cm, anchor=west] (12.9, 9.085394108047707) node {Signal 9/16};
+
+\draw[fill=blue!68.75!orange] (11.9,10.285) rectangle (12.9,12.231);
+\draw[draw=black, fill=white, text=black, minimum width=2.200000000000001cm, minimum height=1cm, anchor=west] (12.9, 11.25783619396271) node {Signal 11/16};
+
+\draw[fill=blue!81.25!orange] (11.9,12.459) rectangle (12.9,14.291);
+\draw[draw=black, fill=white, text=black, minimum width=2.200000000000001cm, minimum height=1cm, anchor=west] (12.9, 13.374915270980818) node {Signal 13/16};
+
+\draw[fill=blue!93.75!orange] (11.9,14.519) rectangle (12.9,16);
+\draw[draw=black, fill=white, text=black, minimum width=2.200000000000001cm, minimum height=1cm, anchor=west] (12.9, 15.259616042208673) node {Signal 15/16};
+
+
+\end{tikzpicture}
+\end{document}
