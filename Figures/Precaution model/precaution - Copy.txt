@@ -1,0 +1,57 @@
+\documentclass[tikz,border=3mm]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+% ---------------- Parameters ----------------
+\def\pMax{0.0001}
+\def\pMinLow{0.0001}
+\def\pMinHigh{0.0000}
+\def\alphaLow{3.0}
+\def\alphaHigh{1.5}
+\def\powerLevels{8}
+\def\K{8}
+
+% ---------------- Model functions ----------------
+\pgfmathdeclarefunction{pmin}{1}{\pgfmathparse{\pMinLow + (\pMinHigh - \pMinLow) * (#1)}}
+\pgfmathdeclarefunction{alphaf}{1}{\pgfmathparse{\alphaLow + (\alphaHigh - \alphaLow) * (#1)}}
+\pgfmathdeclarefunction{accprob}{2}{\pgfmathparse{ pmin(#2) + (\pMax - pmin(#2)) * pow(1 - #1, alphaf(#2)) }}
+
+\begin{document}
+\begin{tikzpicture}
+  \pgfmathtruncatemacro{\denom}{\powerLevels + 1}
+
+  \begin{axis}[
+    width=15cm, height=9cm,
+    xmin=0, xmax=0.875,                % stop at 7/8
+    ymin=0, ymax=\pMax,
+    xlabel={Relative precaution level $\tau(k)$},
+    ylabel={Accident probability $p_{\mathrm{caused}}(\theta,k)$},
+    xmajorgrids, ymajorgrids,
+    major grid style={gray!55, dotted, line width=0.25pt},
+    domain=0:0.875, samples=201,
+    xtick={0,0.125,0.25,0.375,0.5,0.625,0.75,0.875},
+    xticklabels={$0$,$\frac{1}{8}$,$\frac{1}{4}$,$\frac{3}{8}$,$\frac{1}{2}$,$\frac{5}{8}$,$\frac{3}{4}$,$\frac{7}{8}$},
+  ]
+
+    % --- Dark blue solid curves (varying hidden precaution–power φ = θ/(n_H+1)) ---
+    \foreach \pidx in {1,...,\powerLevels} {
+      \pgfmathsetmacro{\power}{\pidx/(\powerLevels+1)}
+      \addplot[blue!60!black, thick] ({x},{accprob(x,\power)});
+    }
+
+    % --- Uniform black markers at τ(k) ∈ {0, 1/8, ..., 7/8} ---
+    \foreach \pidx in {1,...,\powerLevels} {
+      \pgfmathsetmacro{\power}{\pidx/(\powerLevels+1)}
+      \addplot[
+        only marks,
+        mark=*,
+        mark size=1.6pt,
+        draw=black, fill=black
+      ] plot[
+        samples at={0,0.125,0.25,0.375,0.5,0.625,0.75,0.875}
+      ] ({x},{accprob(x,\power)});
+    }
+
+  \end{axis}
+\end{tikzpicture}
+\end{document}
