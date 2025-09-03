@@ -1,36 +1,51 @@
 \documentclass{article}
 
-% these lines make double-spaced with wide margins for submission purposes
-% comment them out to make it look like a more conventionally formatted article
+% double-spaced with wide margins for submission purposes
+% comment these out to get a more conventional article layout
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
-\AtBeginDocument{\doublespacing} % activates double spacing for the entire document, footnotes included
+\AtBeginDocument{\doublespacing}
 
-\usepackage[
-backend=bibtex]{biblatex}
-\usepackage{graphicx}
-\usepackage [english]{babel}
-\usepackage [autostyle, english = american]{csquotes}
+% language, encoding, and typography
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% bibliography
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{end_disputes.bib}
+
+% quoting and punctuation
+\usepackage[autostyle, english=american]{csquotes}
 \MakeOuterQuote{"}
+
+% math & algorithms
 \usepackage{amsmath}
+\usepackage{amssymb}
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
-\usepackage{BOONDOX-cal} % a calligraphic font that includes lowercase letters, will be used with mathcal command
-\usepackage{babel, blindtext}
-\usepackage{caption}
-\usepackage{hyperref}
-\usepackage{amssymb}
+\usepackage{BOONDOX-cal}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
+
+% figures, captions, floats, hyperlinks
+\usepackage{graphicx}
+\usepackage{caption}
 \usepackage{placeins}
+\usepackage{hyperref}
+
+% drafting aids (optional)
+\usepackage{blindtext}
+
+% gentle line-breaking help (keeps hyphenation enabled)
+\tolerance=2000
+\emergencystretch=2em
+
+% environment: disable hyphenation locally
 \newenvironment{nohyphen}
-  {\tolerance=1% Also consider setting \pretolerance
-   \emergencystretch=\maxdimen%
-   \hyphenpenalty=10000%
-   \hbadness=10000}% \begin{nohyphen}
-  {\par}% \end{nohyphen}
- 
-\addbibresource{end_disputes.bib}
+  {\hyphenpenalty=10000 \exhyphenpenalty=10000 \sloppy}
+  {\par}
 
 \begin{document}
 
@@ -42,7 +57,7 @@ backend=bibtex]{biblatex}
 
 \begin{abstract}
 \begin{nohyphen}
-[WRITE ABSTRACT]
+ABSTRACT FORTHCOMING
 \end{nohyphen}
 \end{abstract}
 
@@ -52,7 +67,7 @@ In a world of costly litigation, how can procedural mechanisms best advance the 
 
 Part of the challenge for the theoretical literature is that any mathematical model can incorporate only so many features of the litigation process before the analysis becomes intractable. Even the sign of predicted effects may change depending on which features are included, and even a single model may produce different recommendations, depending on the value of a particular parameter. Models designed to address one procedural choice, such as burdens of proof, may not be well suited to addressing others. The theoretical literature on procedural devices is thus highly fractured. It offers nuanced insights into how particular assumptions may affect the case for different interventions into the civil litigation process, but researchers have not converted on generally agreed upon conclusions about optimal system design. And such convergence seems impossible unless any given theoretical excursion can improve the realism of modeling of settlement bargaining, consider multiple procedural devices in tandem, and more explicitly consider the implications of trade-offs for social welfare.
 
-An understandable reaction may be a flight from theory. But Greiner and Matthews (2016), in their comprehensive review of randomized controlled trials in law, find no tests of devices like fee shifting, damages multipliers, or changing burdens of proof in civil trials. Even if a legislature were to approve randomizing litigants into these regimes, such experiments would not be able to measure effects on primary behavior, unless litigants were randomized before cases even accrued. Natural experiments in theory could reveal effects on primary behavior variables such as accident rates. But natural experiments with strong identifications are few and far between; Helmers et al. (2021) reports a valuable experiment on fee-shifting but compares only two venues. Experimental evidence leaves questions about external validity. And so we can hve little confidence that we have arrived at the optimal approaches to these most foundational aspects of our litigation system. It should not be surprising that procedural design choices vary across countries (the American vs. the British rules are so named for a reason) and legal contexts (with antitrust and the False Claims Act in the United States being exceptional in imposing fixed treble damages and with heightened burdens of proof applying in many contexts).
+An understandable reaction may be a flight from theory. But Greiner and Matthews (2016), in their comprehensive review of randomized controlled trials in law, find no tests of devices like fee shifting, damages multipliers, or changing burdens of proof in civil trials. Even if a legislature were to approve randomizing litigants into these regimes, such experiments would not be able to measure effects on primary behavior, unless litigants were randomized before cases even accrued. Natural experiments in theory could reveal effects on primary behavior variables such as accident rates. But natural experiments with strong identifications are few and far between; Helmers et al. (2021) reports a valuable experiment on fee-shifting but compares only two venues. Experimental evidence leaves questions about external validity. And so we can have little confidence that we have arrived at the optimal approaches to these most foundational aspects of our litigation system. It should not be surprising that procedural design choices vary across countries (the American vs. the British rules are so named for a reason) and legal contexts (with antitrust and the False Claims Act in the United States being exceptional in imposing fixed treble damages and with heightened burdens of proof applying in many contexts).
 
 The prospect that any paper with any methodology will get us to the correct answer thus seems small. But we may be able to make some progress by using new tools, particularly taking advantage of the increasing power of computation. This paper seeks to use algorithmic game theory to develop a single theoretical model that can be applied to questions of fee shifting, damages multipliers, and burdens of proof, while offering more realism than one-sided information models. The expectation is not that we will produce definitive answers about optimal design. But by varying procedural rules and other assumptions with an approach that allows more knobs and variations than most models, perhaps we might at least be able to develop a sense of the answer to the following important meta-question: How much does the choice of procedural mechanism really matter? 
 
@@ -74,7 +89,7 @@ The results strongly suggest that generalizations based on simpler models may no
 
 A significant limitation of these computational analyses is that they feature disputes that are exogenously generated, with a $\frac{1}{2}$ chance of a case being one in which the defendant is truly liable and an equal chance of being one in which the defendant is not truly liable. Truly liable cases are assumed tend to have stronger evidence for the plaintiff than not truly liable cases, but the distribution of litigation strength given true liability is also set based on an arbitrary parameter. In essence, in these models, as in many litigation models, cases in effect fall from the sky. This leaves unresolved questions of whether the conclusions would be different if there were a different distribution of truly liable vs. not truly liable cases. More critically, it elides the interaction effects between the litigation process and the generation of disputes. The computational approach to date has modeled how fee-shifting affects cost and accuracy in various environments, but it has not previously combined these considerations, as Hylton does, in an effort to identify global optimality.
 
-This article applies algorithmic game theory, albeit with a different algorithm that makes it feasible to feature much larger game trees, each containing over 225,000 nodes. The greater size of these game trees makes it feasible to integrate potential tortfeasors' decisions about whether to take care, while still maintaining the richness of the bargaining framework of the earlier papers. It thus continues Hylton's project of modeling litigation cradle to grave, while allowing for two-sided asymmetric information. Each party's signals span multiple levels of litigation quality, and settlements can occur at each of multiple payment levels. Instead of one party being limited to accepting or rejecting the other party's settlement offer, the parties follow the Chaterjee and Samuelson (1983) bargaining protocol, in which each party submits an offer and cases settle at the midpoint if the defendant's offer equals or exceeds the plaintiff's. Although the algorithm uses floating point numbers and finds approximate equilibria, unlike the exact algorithm operating on rational numbers of the von Stengel et al. algorithm, these equilibria are measurably quite close to perfect Bayesian Nash equilibria. 
+This article applies algorithmic game theory, albeit with a different algorithm that makes it feasible to feature much larger game trees, each containing over 225,000 nodes. The greater size of these game trees makes it feasible to integrate potential tortfeasors' decisions about whether to take care, while still maintaining the richness of the bargaining framework of the earlier papers. It thus continues Hylton's project of modeling litigation cradle to grave, while allowing for two-sided asymmetric information. Each party's signals span multiple levels of litigation quality, and settlements can occur at each of multiple payment levels. Instead of one party being limited to accepting or rejecting the other party's settlement offer, the parties follow the Chatterjee and Samuelson (1983) bargaining protocol, in which each party submits an offer and cases settle at the midpoint if the defendant's offer equals or exceeds the plaintiff's. Although the algorithm uses floating point numbers and finds approximate equilibria, unlike the exact algorithm operating on rational numbers of the von Stengel et al. algorithm, these equilibria are measurably quite close to perfect Bayesian Nash equilibria. 
 
 This article's analysis is not limited to fee shifting. Recognizing Craswell (1999)'s point that a variety of different types of procedural mechanisms might help achieve optimality, this article also considers two other procedural variations: damages multiples and alterations in the liability threshold. Some simulations intersect multiple such variations, to enable consideration of, for example, a regime in which it is difficult to establish liability but liability once established is heavy. With each simulation, it is possible to observe the sum of precaution, injury, and litigation costs, and differences across simulations can thus be at least tentatively attributed to differences in parameters and, in particular, differences in the procedural mechanisms used. Though it is difficult to encapsulate all of the article's findings in a single conclusion, a central point emerges: When lawsuits are generated endogenously based on the potential defendant's level of care, the adjustments in that level to the legal environment will generally prevent extreme variation in total costs. If liability levels are high, for example, precaution will be relatively high, but injury and litigation will be relatively low. That does not mean that the procedural mechanisms are entirely irrelevant, and certainly at extremes of the cost continuum (very low or very high litigation costs), some clear conclusions emerge. But the effects of even aggressive procedural mechanisms such as damages multiples are much more muted than one might think. 
 
@@ -90,43 +105,43 @@ This section thus presents a single extensive-form model in which precaution and
 
 Assuming an accident occurs, the plaintiff decides whether to file suit, the defendant decides whether to answer or default, the parties engage in a one-shot simultaneous-offers bargaining stage (with acceptance if the defendant’s offer weakly exceeds the plaintiff’s demand). If there is no settlement the case proceeds to trial unless one party decides to quit upon settlement failure. At trial, a court renders a binary liability verdict based on the liability threshold and on its own noisy signal of precaution power, again assuming knowledge of the precaution level. Payoffs incorporate damages (with an optional multiplier), litigation costs, and fee rules. Social welfare accounts for precaution costs, defendant-caused accident losses, and litigation costs. 
 
-In this section, we will introduce the game by zooming into portions of a miniature version of the extension form game tree and then discussing the algorithm used to find perfect Bayesian Nash equilibria in these trees. More detail about the construction of the game trees is available in the appendices. Appendix A elaborates the formulas that are used for critical calculations, such as the probability of an accident and the probability that the court rules for the plaintiff in a case that goes to trial. Appendix B, meanwhile, describes a simplification that makes calculation much more feasible. The simplification is that the node in which the precaution power level is chosen can be eliminated from the game tree, so long as Bayesian probability is applied both to calculations (such as accident and trial probabilities) and to back out signal values after games are complete. This simplification was tested in relatively small trees by comparing its results to the same simulations run without simplification, and they produced identical results. The details underlying this algorithmic shortcut may be of interest primarily to readers interested in implementing similar simulations.
+In this section, we will introduce the game by zooming into portions of a miniature version of the extensive-form game tree and then discussing the algorithm used to find perfect Bayesian Nash equilibria in these trees. More detail about the construction of the game trees is available in the appendices. Appendix A elaborates the formulas that are used for critical calculations, such as the probability of an accident and the probability that the court rules for the plaintiff in a case that goes to trial. Appendix B, meanwhile, describes a simplification that makes calculation much more feasible. The simplification is that the node in which the precaution power level is chosen can be eliminated from the game tree, so long as Bayesian probability is applied both to calculations (such as accident and trial probabilities) and to back out signal values after games are complete. This simplification was tested in relatively small trees by comparing its results to the same simulations run without simplification, and they produced identical results. The details underlying this algorithmic shortcut may be of interest primarily to readers interested in implementing similar simulations.
 
 \subsection{Extensive-form game tree}
 
 An extensive-form game tree can fully capture the formal game summarized above for any particular set of parameter values. The game features two strategic players and Chance. The \emph{defendant} (potential injurer) chooses whether to engage in the underlying activity, and, if so, a discrete precaution level. (The choice whether to engage in the activity and thus receive the fruits of that activity has little role in the analysis in this paper, but is included both for analytic completeness and as a source for analysis in future work.) The \emph{plaintiff} (victim) decides whether to file, whether to quit before trial if settlement fails, and which demand to submit in simultaneous offers. The defendant similarly decides whether to answer, whether to quit before trial if settlement fails, and what demand to submit. The \emph{court} is modeled as a chance node that observes a noisy liability signal at trial and returns a binary liability verdict.
 
-In the baseline calibration used for analysis, the number of hidden precaution-power states is $n_H=8$, the number of discrete precaution levels is $n_K=8$, and each party’s liability signal has $n_{S_P}=n_{S_D}=8$ levels. In addition, the number of possible settlement offers that the plaintiff and defendant, respectively, may make, is defined as $n_{\mathcal{o}_P} = n_{\mathcal{o}_D} = 8$. In the miniaturized version of the game tree explored here, $n_H = n_K = n_{S_P} = n_{S_D} = n_{\mathcal{o}_P} = n_{\mathcal{o}_D} = 2$ (for the hidden state, precaution levels, and the plaintiff/defendant signals and offers). Otherwise, parameters are set to the baseline values that we use in the simulation with the larger tree. Figure \ref{fig:smalltree.pdf} provides a zoomed-out view of the miniaturized version of the game. This is designed solely to provide context and a sense of the game complexity even in this miniature game. We must now zoom into particular portions of the game tree to allow for clearer explication of the game.
+In the baseline calibration used for analysis, the number of hidden precaution-power states is $n_H=8$, the number of discrete precaution levels is $n_K=8$, and each party’s liability signal has $n_{S_P}=n_{S_D}=8$ levels. In addition, the number of possible settlement offers that the plaintiff and defendant, respectively, may make, is defined as $n_{\mathcal{o}_P} = n_{\mathcal{o}_D} = 8$. In the miniaturized version of the game tree explored here, $n_H = n_K = n_{S_P} = n_{S_D} = n_{\mathcal{o}_P} = n_{\mathcal{o}_D} = 2$ (for the hidden state, precaution levels, and the plaintiff/defendant signals and offers). Otherwise, parameters are set to the baseline values that we use in the simulation with the larger tree. Figure \ref{fig:smalltree} provides a zoomed-out view of the miniaturized version of the game. This is designed solely to provide context and a sense of the game complexity even in this miniature game. We must now zoom into particular portions of the game tree to allow for clearer explication of the game.
 
  \begin{figure}[t]
   \centering
   \includegraphics[width=0.8\textwidth,height=0.3\textheight]{../Figures/smalltree.pdf}
   \caption{Zoomed out version of the miniaturized version of the game tree.}
-  \label{fig:smalltree.pdf}
+  \label{fig:smalltree}
 \end{figure}
 
-The game proceeds in three loosely stages. For each stage, we first present the technical structure of the game, and then discuss how the corresponding figure illustrates that structure. 
+The game proceeds in three broad stages. For each stage, we first present the technical structure of the game, and then discuss how the corresponding figure illustrates that structure. 
 
-Figure \ref{fig:smalltree_beginning.pdf} provides the first stage in the miniature version of the game. The diagram shows the split of hidden states representing precaution power at the left, the branching for defendant and plaintiff signals just to the right, the defendant’s decision to engage in the activity and select a precaution level, and the accident node at the far right. Ellipses are used to indicate the vast portions of the miniaturized game tree that are omitted. 
+Figure \ref{fig:smalltree_beginning} provides the first stage in the miniature version of the game. The diagram shows the split of hidden states representing precaution power at the left, the branching for defendant and plaintiff signals just to the right, the defendant’s decision to engage in the activity and select a precaution level, and the accident node at the far right. Ellipses are used to indicate the vast portions of the miniaturized game tree that are omitted. 
 
-The numbers attached to these nodes, along with the probability estimates from the calculated Nash equilibrium in the miniaturized game, provide some intuition. In the portion of the tree fully presented in Figure \ref{fig:smalltree_beginning.pdf}, the precaution power is set randomly to a low value (0.25), with the very bottom of the diagram representing the contingency in which the precaution power is set randomly to a high value (0.75). With the low precaution power, each party is likely to receive a low signal of precaution power rather than a high signal. Indeed, with the default parameter values, there is for each party approximately an 88\% chance of receiving the signal corresponding to the correct precaution power level. Because the parties' signals are of the true value of precaution power, they will be correlated with one another. The chance probabilities are calculated based on the assumption that a draw from a random distribution is added to the true value and thus becomes noise that obfuscates it. The degree of noise determines the quality of the party's information, and here we assume that each party has equally good information about precaution power.
+The numbers attached to these nodes, along with the probability estimates from the calculated Nash equilibrium in the miniaturized game, provide some intuition. In the portion of the tree fully presented in Figure \ref{fig:smalltree_beginning}, the precaution power is set randomly to a low value (0.25), with the very bottom of the diagram representing the contingency in which the precaution power is set randomly to a high value (0.75). With the low precaution power, each party is likely to receive a low signal of precaution power rather than a high signal. Indeed, with the default parameter values, there is for each party approximately an 88\% chance of receiving the signal corresponding to the correct precaution power level. Because the parties' signals are of the true value of precaution power, they will be correlated with one another. The chance probabilities are calculated based on the assumption that a draw from a random distribution is added to the true value and thus becomes noise that obfuscates it. The degree of noise determines the quality of the party's information, and here we assume that each party has equally good information about precaution power.
 
   \begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{../Figures/smalltree_beginning.pdf}
     \caption{Stage I: hidden state, private signals, activity/precaution choice, and accident realization (illustrative tree with two levels for readability).}
-    \label{fig:smalltree_beginning.pdf}
+    \label{fig:smalltree_beginning}
   \end{figure}
 
 The plaintiff’s and defendant’s liability signals are private; each party knows the model primitives and distributions but not the other’s realized signal or the hidden state. Actions in the litigation block to be discussed below are observed as they occur (filing, answering, offers, and quits). A party's information set consists of any signal that the party receives, the party's own decisions earlier in the game, and public decisions of the opponent. The court’s internal signal is not observed by the parties; they observe only the binary verdict. Each party has perfect recall, meaning that its own decisions and the signals available to it remain part of its information set throughout the game. The extensive form game diagrams denote information sets by placing a number next to a letter; for example, "D26" refers to a particular information set faced by the defendant at the time the defendant must determine whether to engage in the activity. The algorithm for finding a Nash equilibrium must assign a single mixed strategy (i.e., probability of choosing each action) for each information set, even though an information set may recur many times in the game tree.
 
-Before turning to the strategic choices of the parties, it is helpful to visualize the space of possible signals in the baseline (non-miniaturized) game. Figure \ref{fig:signals_levels.pdf} depicts the full set of signal levels that plaintiffs, defendants, and courts may receive. Each signal corresponds to a midpoint bin in the unit interval, constructed by adding noise to the hidden precaution-power state. The height of each signal target represents the probability that such a signal will be received; this reflects that middling assessments will be more common than extreme ones. As explained more formally in Appendix~A, this discretization ensures that the full range of possible noisy observations is covered. The figure thus provides intuition about the informativeness of the signals used in the simulations: While the signals are imperfect, they are reasonably strong indicators of the underlying hidden state. 
+Before turning to the strategic choices of the parties, it is helpful to visualize the space of possible signals in the baseline (non-miniaturized) game. Figure \ref{fig:signals_levels} depicts the full set of signal levels that plaintiffs, defendants, and courts may receive. Each signal corresponds to a midpoint bin in the unit interval, constructed by adding noise to the hidden precaution-power state. The height of each signal target represents the probability that such a signal will be received; this reflects that middling assessments will be more common than extreme ones. As explained more formally in Appendix~A, this discretization ensures that the full range of possible noisy observations is covered. The figure thus provides intuition about the informativeness of the signals used in the simulations: While the signals are imperfect, they are reasonably strong indicators of the underlying hidden state. 
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.75\textwidth,height=0.5\textheight]{../Figures/signals_levels.pdf}
   \caption{Signal levels in the baseline game.}
-  \label{fig:signals_levels.pdf}
+  \label{fig:signals_levels}
 \end{figure}
 
 Following receipt of signals, the defendant must choose whether to engage in the underlying activity. By engaging in the activity, the defendant receives some benefit. This might be seen as the benefit of driving instead of staying home or pursuing a business activity instead of investing in diversified mutual funds. The value of the benefit parameter is assumed to be $1.0 \times 10^{-3}$ if undertaken. This is a relatively high value relative to some of the other parameters in this simulation, and thus unless otherwise noted, the defendant always chooses to engage in the activity. This approach, however, opens up the possibility of considering not only the possibility that there might be negative consequences from underdeterrence, but also that overdeterrence of activities that have the potential to lead to tort liability could produce costs (or alternatively benefits, if the relevant activities have negative externalities apart from the torts that may be committed, though such externalities are beyond this article's scope). If the defendant decides not to engage in the underlying activity, then the defendant cannot cause injury to the plaintiff or be thought to have been responsible for any injury to the plaintiff, and so the game ends. The modeling cost of including this branch in the model is very low because it does not exponentially increase the size of the tree.
@@ -145,29 +160,29 @@ If an accident occurs, the plaintiff decides whether to file suit after observin
     \centering
     \includegraphics[width=\textwidth]{../Figures/smalltree_mid.pdf}
     \caption{Stage II: filing, answer/default, and entry into bargaining (illustrative tree with two levels for readability).}
-    \label{fig:smalltree_mid.pdf}
+    \label{fig:smalltree_mid}
   \end{figure}
 
 After the plaintiff files and the defendant answers, we insert—before any settlement proposals—the parties’ contingent exit choices: the plaintiff may elect to abandon if bargaining later fails, and the defendant may elect to default if bargaining later fails. This placement is deliberate. Modeling these “quit if no settlement” decisions \emph{after} every possible offer profile would require intersecting abandon/default with the settlement subgame, exponentially multiplying information sets without changing what the parties can do or the distribution of outcomes. By recording the quit choices immediately after the file/answer node (and keeping them unobserved until they matter), we preserve most of the strategic richness while dramatically simplifying the tree.
 
 Bargaining then proceeds exactly as in the models of Abramowicz (2025a) and Abramowicz (2025b). The plaintiff states a minimum monetary demand $\mathcal{o}_P$ (labeled “P Offer” in the tree diagram) and the defendant announces the most it is willing to pay $\mathcal{o}_D$ (“D Offer”). Although the diagram prints P Offer before D Offer, this ordering is irrelevant. Because the defendant does not receive information about the plaintiff offer before announcing its own amount, the decisions are effectively simultaneous. If the offers meet or cross (the defendant's offer is at least as great as the plaintiff's), the case settles at the midpoint of the two numbers and litigation ends. The defendant then pays to the plaintiff the amount of the settlement. In addition, each party pays a cost for filing or answering, as well as a cost of bargaining, but then saves the cost of trial. In the baseline condition, the stakes are normalized to $1$ and $c_{file} = c_{answer} = c_{bargain} = c_{trial} = 0.10$.
 
-If the offers do not meet, we implement the contingent choices recorded earlier: if the plaintiff chose to abandon, the case terminates without judgment; if the defendant chose to default, judgment is entered against the defendant with the applicable damages multiplier but without fee-shifting; if both parties would quit, Chance determines which party quits first, thus saving the other the trouble. This scenario, along with successful settlements, is illustrated in Figure \ref{fig:smalltree_end.pdf}
+If the offers do not meet, we implement the contingent choices recorded earlier: if the plaintiff chose to abandon, the case terminates without judgment; if the defendant chose to default, judgment is entered against the defendant with the applicable damages multiplier but without fee-shifting; if both parties would quit, Chance determines which party quits first, thus saving the other the trouble. This scenario, along with successful settlements, is illustrated in Figure \ref{fig:smalltree_end}
 
   \begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{../Figures/smalltree_end.pdf}
-    \caption{Stage III: simultaneous offers and resolution of case in which settlement fails and both parties precommitted to quit).}
-    \label{fig:smalltree_end.pdf}
+    \caption{Stage III: simultaneous offers and resolution of case in which settlement fails and both parties precommitted to quit.}
+    \label{fig:smalltree_end}
   \end{figure}
 
-If neither party precommitted to quit, the case proceeds to trial. At trial the court observes an imperfect signal of case quality and returns a binary liability verdict; damages and any fee shifting are applied, and remaining stage costs are assessed. Figure \ref{fig:smalltree_end.pdf} depicts this end phase; we keep notation light here to emphasize the structure of the tree. In this case in the miniaturized version of the game, the court always finds liability. In the non-miniaturized version to be reported later, court decisions are heterogeneous at the baseline parameter values, resulting in a probability of liability between $0$ and $1$ even for a particular pair of precaution power and relative precaution levels. 
+If neither party precommitted to quit, the case proceeds to trial. At trial the court observes an imperfect signal of case quality and returns a binary liability verdict; damages and any fee shifting are applied, and remaining stage costs are assessed. Figure \ref{fig:smalltree_end_adjudication} depicts this end phase. In this case in the miniaturized version of the game, the court always finds liability. In the non-miniaturized version to be reported later, court decisions are heterogeneous at the baseline parameter values, resulting in a probability of liability between $0$ and $1$ even for a particular pair of precaution power and relative precaution levels. 
 
   \begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{../Figures/smalltree_end_adjudication.pdf}
-    \caption{Stage III: resolution by trial of case in which settlement fails and neither party precommitted to quit).}
-    \label{fig:smalltree_end_adjudication.pdf}
+    \caption{Stage III: resolution by trial of case in which settlement fails and neither party precommitted to quit.}
+    \label{fig:smalltree_end_adjudication}
   \end{figure}
 
 \subsection{Algorithm}
@@ -190,22 +205,34 @@ In short, CFR lets us compute equilibrium behavior in a richly specified, cradle
 
 \section{Results}
 
-This section reports primary results. The goal is less to 
+This section reports the primary results. The goal is less to catalog every specification than to highlight the main comparative-statics patterns and welfare implications under the baseline and the three interventions.
 
 \subsection{Baseline}
 
+The results of any given simulation can be summarized easily in a diagram that illustrates social welfare losses disaggregated among precaution costs, injury costs, and litigation costs. Figure \ref{fig:baseline_costs} provides this illustration at the baseline parameter values of the simulation (which are described above and also documented in Appendix A). The diagram is divided into two parts, for the cases in which no accident occurs (and thus no potential dispute arises) and those in which there is an actual or wrongly attributed accident (and thus a potential dispute). The left side of the diagram represents the vast majority of cases, in this case approximately 99.993\%. But for the vertical axis, representing costs, the values on the left side are several orders of magnitude lower than the values on the right side. The axis scales have been carefully selected to equalize a square unit of cost on both sides of the diagram. A horizontal unit on the left side represents a far higher proportion of cases than a horizontal unit on the right side, but a vertical unit on the left side represents a much lower level of costs than a vertical unit on the right side. The exact values are chosen to ensure that the product of a horizontal and a vertical unit are the same on both the right and left sides. 
+
+The result is that the contributions to social welfare losses of very common but low precaution costs can be directly compared to the contributions to social welfare losses of injury costs and litigation costs, which may be accrued either in cases in which the defendant has not caused any injury the plaintiff may have suffered or those in which the defendant genuinely caused an injury to the plaintiff. That these costs are the exclusive components of social welfare is a standard assumption since at least Calabresi (1970) [ADD CITE]. One can, of course, argue for a more sophisticated social welfare function. For example, it might take into account distributional consequences. In general, distributional consequences might mean that a unit of precaution is in a sense less costly than a unit of injury, since injuries are generally concentrated rather than diffuse. Determining how to weigh distributional consequences will be context-sensitive, however, and is beyond this article's scope. Another challenge to this simplistic social welfare accounting might arise from the study of procedural justice, as in Tyler (2003) [ADD CITE]. Perhaps litigation costs, particularly trial costs, promote feelings of procedural justice and increase legal compliance. Again, however, this is context-sensitive and beyond the scope here.
+
+In Figure \ref{fig:baseline_costs}, different levels of precaution cost are visible on the left side of the diagram. This reflects that precaution power may vary and different defendants will have received different signals of precaution power and will have made different decisions based on those signals. Those precaution costs are still in principle illustrated on the right side of the diagram; that is, cases in which an injury occurred are not solely cases in which the potential defendant chose not to exercise precaution (though some might be). The precaution costs are just so much smaller than the injury costs in a case in which injury occurs that they are negligible and are not even visible on this automatically constructed diagram. Indeed, even when measured as total contributions to social welfare loss, precaution costs are, in both this diagram and those associated with the vast majority of other simulations, generally much lower than the total costs of injury. 
+
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Baseline (All Rows).pdf}
-  \caption{Baseline cost breakdown.}
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Baseline (Single Row).pdf}
+  \caption{Social costs with baseline parameter values.}
   \label{fig:baseline_costs}
 \end{figure}
 
+Defendants face two channels of incentive to raise precaution. First, more care lowers accident risk. In our calibration the marginal reduction in risk is front‑loaded—early units of care do most of the work—and a positive residual risk remains even at high care because accidents cannot be eliminated and a small wrongful‑attribution hazard persists. Second, more care lowers the chance of an adverse verdict and, through that, improves the defendant’s bargaining position. That leverage is weak, however, because both parties and the court observe noisy signals, so the mapping from care to liability is shallow and uncertain. Taken together, diminishing returns in accident prevention and noisy adjudication mean the marginal private benefit of very high care is often below its marginal cost, so equilibrium care typically stops short of the maximum.
+
+Figure \ref{fig:baseline_costs},  the injuries are mostly injuries for which the defendant is truly not liable (designated as "TNL Harm" in the legend). That is, the defendant did cause such injuries, but if the court knew the precaution power and applied the Hand formula, it would find the defendant not truly liable. There are a few cases in which the defendant is truly liable. In the vast majority of cases in which harm occurs, whether the defendant is truly liable or not, no litigation occurs as a result. But there are some cases in which the plaintiff does file a claim, and in this simulation, the defendant generally answers and bargaining results. In a relatively small number of cases, a trial occurs. There is also a small sliver of cases in which causation is wrongfully attributed to the defendant and a lawsuit results (in some cases resulting in a trial), at the very left of the right side of the diagram. This sliver is much lower than the proportion of cases in which wrongful attribution occurs, because this diagram illustrates only harms attributable to the defendant's conduct, not harms that could have occurred even if the defendant had not engaged in the underlying activity. Thus, wrongfully attributable cases are included only when they lead to litigation, because the litigation costs (along with the much lower precaution costs) are the only social cost attributable to this wrongful attribution.
+
+The story in Figure \ref{fig:baseline_costs} is straightforward, but the baseline should be read with caution. The model is richer than standard one‑shot filing/settlement/trial frameworks—endogenous disputes, two‑sided private information, and noisy adjudication—but it is not calibrated to data, and several simplifying choices matter. Bargaining is a single simultaneous‑offer round with midpoint settlement; stage costs and damages are normalized; care, signals, and offers live on discrete grids. As in Bayesian extensive‑form models generally, the Harsanyi transformation assumes common knowledge of the game form and of the signal/state distributions [CITE]. These features make equilibrium computation feasible at scale, but they limit external validity. Accordingly, absolute levels in Figure \ref{fig:baseline_costs} should be taken as illustrative. Our focus is comparative statics—how fee shifting, damages multipliers, or liability thresholds move total costs holding the environment fixed—where we can hope that many misspecifications cancel and the sign and relative magnitude of changes are more informative than the baseline levels.
 
 \subsection{Three Independent Interventions}
 
 \FloatBarrier
-\paragraph{Damages multiplier.}
+\paragraph{Damages multiplier.}  
+Figure \ref{fig:damages_multiplier} demonstrates that social welfare is less sensitive to increases in the damages multiplier than one might anticipate. This is because transfers of money between plaintiff and defendant do not themselves enter the social cost accounting; what matters are changes in real expenditures on precaution, injury, and litigation. The first mechanism shaping the diagram is precaution. Higher multipliers give defendants a stronger incentive to take care, and this reduces the incidence of accidents and the costs of harm. But the precaution technology features diminishing returns: once a reasonably high level of care has been taken, further increments produce only small additional reductions in risk. The savings from fewer injuries are therefore offset by the higher precaution costs themselves, leaving total costs relatively flat through much of the multiplier range. The second mechanism is bargaining and exit. Higher potential awards do not simply push more cases into trial; rather, they encourage weak plaintiffs to refrain from filing and weak defendants to concede quickly, while cases that do enter litigation often resolve through settlement. These channels vent much of the additional pressure from increased stakes, preventing procedural expenditures from rising proportionately.  
 
 \begin{figure}[ht]
   \centering
@@ -214,8 +241,13 @@ This section reports primary results. The goal is less to
   \label{fig:damages_multiplier}
 \end{figure}
 
+Taken together, these forces mean that increasing damages does not markedly change aggregate social costs until one moves to extreme settings—very high multipliers, or very high costs of litigation more generally—where the balance among precaution, injury, and litigation costs no longer offsets so neatly. At that point, the diagrams do show visible shifts, but the main lesson from the central range is that the damages multiplier has surprisingly muted welfare consequences in equilibrium.
+
+
 \FloatBarrier
 \paragraph{Fee shifting.}
+Figure \ref{fig:fee_shifting} shows that fee shifting is even less potent than damages multiples at moving aggregate social costs. The core reason is prosaic: the dollars at issue are litigation expenses that are small relative to the unitized harm and to precaution outlays. With stakes normalized to one and per‑stage costs for filing, answering, bargaining, and trial set at modest levels, shifting those costs from loser to winner changes who writes the check more than how many real resources the system burns. In equilibrium, the channels through which fee shifting could matter—filing and answering margins, simultaneous‑offers bargaining, and quit/default choices—adjust, but mostly in ways that reallocate transfers without producing large movements in precaution, injury incidence, or procedural consumption. Across the policy range from American (no shifting) through English (full shifting) and even to multiples above one, the total bar in the diagram stays nearly flat in the baseline cost environment; visible movement appears mainly when overall costs are scaled up so far that small changes in the fraction of cases that resist settlement translate into disproportionately large resource outlays.
+
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Fee Shifting Multiplier (All Rows).pdf}
@@ -223,8 +255,12 @@ This section reports primary results. The goal is less to
   \label{fig:fee_shifting}
 \end{figure}
 
+This pattern aligns with and helps reconcile several strands of the literature. Rowe’s early skepticism about general predictions for American versus English rules foreshadows the modest welfare stakes of fee allocation when the fee wedge is small relative to primary behavior costs (Rowe 1984). The sensitivity of theoretical results to settlement structure in Polinsky and Rubinfeld (1998) also resonates here: because our bargaining protocol already resolves many disputes short of trial, fee shifting has limited room to amplify or dampen procedural spending except in corner regimes. Two‑sided information models that study fee shifting’s selection effects—such as Friedman and Wittman (2007), Klerman, Lee, and Liu (2018), and Dari‑Mattiacci and Saraceno (2020)—show channels that our diagrams likewise contain: weak cases exit, strong cases obtain leverage, and some parties bluff. But with the baseline magnitudes used here, those channels mostly reshuffle payoffs rather than expand real inputs. Endogenous‑disputes perspectives in Hylton’s cradle‑to‑grave framework (1990, 1993, 2002) further suggest why: precaution and case selection co‑move to absorb policy changes, leaving total social costs comparatively insensitive unless costs or risk attitudes are extreme.
+
 \FloatBarrier
 \paragraph{Liability threshold.}
+Figure \ref{fig:liability_threshold} shows somewhat larger movements than the other interventions, though most of the welfare action still occurs in corner regimes. In our baseline calibration, the defendant-favorable, higher threshold appears to minimize the sum of precaution, injury, and litigation costs. That pattern should be read with caution: our “continuous” convention for the negligence test, described in Appendix A, is more plaintiff-friendly than the discrete alternative, and so the relative efficiency of the higher liability threshold may partly reflect discreteness of action choices rather than a robust advantage of a stricter standard.
+
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Liability Threshold (All Rows).pdf}
@@ -232,9 +268,12 @@ This section reports primary results. The goal is less to
   \label{fig:liability_threshold}
 \end{figure}
 
+The diagrams make clear why strict liability can perform relatively poorly once litigation costs are included, however and the reason turns on who pays costs first. In the negligence panels, the vast majority of injury is “truly not liable” harm for which plaintiffs rationally do not file; fault must be shown, so many potential disputes are screened out at the filing stage. Under strict liability, by contrast, all such harms become compensable regardless of the defendant’s care. Given our move order, plaintiffs bear the filing cost up front while defendants frequently default rather than answer, so \emph{plaintiff} litigation outlays dominate in the strict-liability rows even though defendants’ own outlays remain small. From the defendant’s perspective, litigation costs are largely external and liability is essentially inevitable, so cutting precaution can be privately sensible even when it increases harm at the margin. This asymmetric cost bearing aligns with well-known comparative statics: negligence regimes tend to generate fewer suits because fault must be established, whereas strict liability invites filing after any harmful outcome (e.g., Shavell 2003). At the same time, uncertainty about the negligence boundary gives precaution a second private payoff—reducing the probability of being held liable at all—so care is often higher under negligence than under strict liability (Calfee and Craswell 1984). Put together, the diagrams’ pattern follows: at very low costs, strict liability can be slightly more efficient because the filing burden is cheap and broader compensation modestly improves incentives; as costs rise, the plaintiff-first filing asymmetry under strict liability swamps those gains, while negligence’s screening conserves resources even if it tolerates somewhat more injury.
+
+At the other extreme, when the liability threshold is set very high, the diagrams show precaution levels falling again. With a stringent negligence standard, the chance of being held liable is so low that the private return to additional care shrinks, and defendants rationally scale back. Litigation expenditures remain small because few plaintiffs file under that standard, but the reduction in care raises realized harm; the total social loss moves, but only modestly, reflecting the same plaintiff-first asymmetry working in the opposite direction—fewer filings and lower procedural costs, purchased by tolerating more injury.
+
 \subsection{Combining Interventions}
 
-\FloatBarrier
 \paragraph{Damages multiplier and fee shifting.}
 \begin{figure}[ht]
   \centering
@@ -243,7 +282,8 @@ This section reports primary results. The goal is less to
   \label{fig:dm_fee}
 \end{figure}
 
-\FloatBarrier
+Figure \ref{fig:dm_fee} shows that these two levers mostly operate on different, weakly connected margins, so their joint effect is close to additive and small. The damages multiplier works, if at all, by altering precaution incentives and case selection; fee shifting reassigns relatively modest stage costs and nudges bargaining posture. Because transfers do not impact welfare and the per-stage costs are small relative to normalized harm, increasing the fee-shifting multiple barely changes real resource use, and the slope with respect to the damages multiplier looks nearly the same whether the multiple is zero, one, or even above one. Only in high-cost environments do we start to see an interaction: stronger fee shifting can accelerate exits (defaults or early settlements) in the few cases that would otherwise press on, blunting the modest procedural uptick that very large damages could induce. For most policy-relevant settings, however, the grids are flat in both directions.
+
 \paragraph{Damages multiplier and liability threshold.}
 \begin{figure}[ht]
   \centering
@@ -252,7 +292,6 @@ This section reports primary results. The goal is less to
   \label{fig:dm_liability}
 \end{figure}
 
-\FloatBarrier
 \paragraph{Fee shifting and liability threshold.}
 \begin{figure}[ht]
   \centering
@@ -260,6 +299,8 @@ This section reports primary results. The goal is less to
   \caption{Cost breakdown under fee shifting and liability threshold.}
   \label{fig:fee_liability}
 \end{figure}
+
+
 
 \section{Robustness Checks}
 
@@ -329,7 +370,8 @@ This section reports primary results. The goal is less to
 
 \section*{Appendix A: Formal Model}
 
-This appendix collects the mathematical details underlying the accident-probability and adjudication-resolution functions used in the model. The main text emphasizes intuition and strategic structure, while here we provide the explicit functional forms and parameterizations. 
+This appendix collects the mathematical details underlying the accident-probability and adjudication-resolution functions used in the model. The main text emphasizes intuition and strategic structure, while here we provide the explicit functional forms and parameterizations.
+
 \paragraph{Hidden state and private signals.}
 Nature draws a hidden precaution–power state $\theta\in\Theta=\{1,\dots,n_H\}$ uniformly. Each precaution–power level determines the \emph{center} of a precaution-power distribution for the case, not a deterministic level. We index $\theta$ onto $(0,1)$ by
 \[
@@ -378,7 +420,7 @@ p_{\min}\!\bigl(\varphi(\theta)\bigr)
 
 The function has three key ingredients. First, $p_{\max}$ is the accident probability at zero precaution. Second, $p_{\min}(\varphi)$ sets a floor that declines with $\varphi$: when precaution power is weak, accidents remain more likely even at maximum care; when precaution power is strong, precaution can reduce risk further. Third, the  $\eta(\varphi)$ curvature parameters determine how fast each probability curve bends downward as precaution increases.
 
-This function is illustrated in Figure \ref{fig:precaution.pdf}, given that $n_K = 8$ and given baseline parameter values as follows:
+This function is illustrated in Figure \ref{fig:precaution}, given that $n_K = 8$ and given baseline parameter values as follows. These accident-probability curves provide the common basis for both conventions of the marginal-benefit test (continuous derivative and discrete next-step), which are introduced in the following subsections.
 
 \[
 p_{\max}=10^{-4}, \qquad 
@@ -389,8 +431,8 @@ p_{\min}^{\varphi=1}=2\times 10^{-5}.
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.8\textwidth]{../Figures/precaution.pdf}
-  \caption{Accident probability as a function of precaution level $\tau$, for different hidden precaution–power states $\varphi(\theta)$. Higher precaution power yields lower $p_{\min}$ and faster decline of risk with $\tau$.}
-  \label{fig:precaution.pdf}
+\caption{Accident probability as a function of precaution level $\tau$, for different hidden precaution–power states $\varphi(\theta)$. Higher precaution power yields lower $p_{\min}$ and faster decline of risk with $\tau$. The marginal-benefit tests introduced below (continuous derivative or discrete next-step) are applied to these same accident-probability curves.}
+  \label{fig:precaution}
 \end{figure}
 
 We interpolate linearly in hidden precaution power:
@@ -429,7 +471,7 @@ p_{\mathrm{acc}}(\theta,k)
 so that $p_{\mathrm{acc}}(\theta,k)$ is the total probability that an accident is (legally) attributed to the defendant at $(\theta,k)$, combining true causation and wrongful attribution.
 Let $A\in\{0,1\}$ denote the legally attributed-accident indicator, with $\Pr(A=1\mid \theta,k)=p_{\mathrm{acc}}(\theta,k)$.
 
-Although defendants choose from a discrete grid $k \in K$ with relative levels $\tau(k)=k/(n_K)$, we define $p_{\mathrm{acc}}(\theta,\tau)$ as a smooth function of continuous $\tau\in[0,1]$. The grid values $\tau_k$ are simply the points at which the defendant can act. This continuous extension allows us to compute derivatives of accident probability with respect to precaution, which will be used in the court’s liability test.
+Although defendants choose from the discrete grid $k\in\{0,\dots,n_K-1\}$ with $\tau_k=k/n_K$, the court may apply either the continuous or the discrete marginal test, depending on the convention selected. Under the \emph{continuous} convention, there is no discrete safe harbor at the top step: the court evaluates the benefit of further precaution via $\Delta(\theta,\tau_{n_K-1})>0$ whenever $\tau_{n_K-1}<1$. This reflects the modeling philosophy that real-world care is refinable even when our action set is discretized for computation. Under the \emph{discrete} convention, by contrast, the incremental benefit at $k=n_K-1$ is defined to be $0$, so the top step always provides a safe harbor. In both cases, increasing $n_K$ makes the discrete grid approximate the continuous ideal more closely, so that results under the two conventions converge as the action space becomes finer.
 
 \paragraph{Filing, answering, and quitting.}
 Following an accident realization, the plaintiff, who has observed $s_P$, chooses whether to \emph{file}, incurring $c_{file}=0.10$ if she does so. If the plaintiff files, the defendant observes $s_D$ and chooses whether to \emph{answer} or \emph{default}. Answering imposes $c_{answer}=0.10$ and moves the case into bargaining. Default ends the case immediately with a plaintiff judgment for normalized damages $\mu$, without any bargaining or trial costs.
@@ -465,7 +507,7 @@ with distribution conditioned on the hidden precaution–power state $\theta$ by
 },
 \qquad j=1,\dots,n_{S_C}.
 \]
-Unless noted otherwise, the court's signal is equal in strength to the parties: $\sigma_C = \sigma_P = \sigma_CD= 0.2$ (on the $[0,1]$ latent scale). Conditional on $\theta$, the court signal is independent of the parties’ signals; the correlation among all signals arises through the shared hidden state. In the baseline model, the court does not condition its liability determination on whether an accident has occurred. This reflects the idea that the Hand-formula style negligence test is applied ex ante, using only cost and risk information rather than case-selection data. As a result, the court’s decision depends solely on its noisy observation of $\theta$, not on the fact that the dispute reached litigation. Formally, we model
+Unless noted otherwise, the court's signal is equal in strength to the parties: $\sigma_C = \sigma_P = \sigma_D= 0.2$ (on the $[0,1]$ latent scale). Conditional on $\theta$, the court signal is independent of the parties’ signals; the correlation among all signals arises through the shared hidden state. In the baseline model, the court does not condition its liability determination on whether an accident has occurred. This reflects the idea that the Hand-formula style negligence test is applied ex ante, using only cost and risk information rather than case-selection data. As a result, the court’s decision depends solely on its noisy observation of $\theta$, not on the fact that the dispute reached litigation. Formally, we model
 \[
 \Pr(V=1 \mid \theta,k,s_C) \quad \text{rather than} \quad \Pr(V=1 \mid \theta,k,s_C,\text{accident}),
 \]
@@ -518,23 +560,28 @@ At the top level \(k=n_K-1\) the incremental benefit is defined as \(0\) because
 \noindent\textbf{Posterior expectation of marginal benefit.}
 Having specified the marginal-benefit convention—whether continuous or discrete—we can now turn to how the court evaluates the expected benefit of an additional precaution, conditional on its signal. Given a realized court signal $s_C=c$, Bayes’ rule with the uniform prior $\Pr(\theta)=1/n_H$ gives the posterior distribution $\Pr(\theta \mid s_C=c)$. The expected marginal reduction at $(c,k)$ is
 \[
-\bar{\Delta}(c,k)\;=\;\sum_{\theta\in\Theta}\Delta(\theta,\tau_k)\,\Pr(\theta\mid s_C=c).
+\bar{\Delta}(c,k)\;=\;\sum_{\theta\in\Theta}\Delta^{*}(\theta,\tau_k)\,\Pr(\theta\mid s_C=c),
 \]
-Here the posterior $\Pr(\theta\mid s_C=c)$ is formed from the ex ante prior (i.e., it does not condition on $A$); in particular, we ignore case-selection effects when computing $\bar{\Delta}$.
+where $\Delta^{*}$ denotes either the continuous derivative $\Delta$ or the discrete difference $\Delta^{\mathrm{disc}}$, depending on the convention in use. The posterior $\Pr(\theta\mid s_C=c)$ is formed from the ex ante prior (i.e., it does not condition on $A$); in particular, we ignore case-selection effects when computing $\bar{\Delta}$.
 
-Because accident harm is normalized to $1$, the expected benefit of additional precaution equals $\bar{\Delta}(c,k)$. Let $c_{\mathrm{prec}}>0$ denote the cost of one discrete step in $k$; because $\tau(k)=k/n_K$, the cost per unit of the continuous precaution index $\tau$ is $n_K\,c_{\mathrm{prec}}$. The court forms the ratio
+Because accident harm is normalized to $1$, the expected benefit of additional precaution equals $\bar{\Delta}(c,k)$. Let $c_{\mathrm{prec}}>0$ denote the cost of one discrete step in $k$. Under the continuous convention (derivative per unit $\tau$), the court compares
 \[
-R(c,k)=\frac{\bar{\Delta}(c,k)}{\,n_K\,c_{\mathrm{prec}}\,}.
+R_{\mathrm{cont}}(c,k)=\frac{\bar{\Delta}(c,k)}{\,n_K\,c_{\mathrm{prec}}\,},
 \]
-Here $\bar{\Delta}(c,k)$ is measured in accident probability points per unit of the continuous precaution index $\tau$, so dividing by $n_K\,c_{\mathrm{prec}}$ (the cost per unit $\tau$) yields a dimensionless ratio, representing expected accidents avoided per unit expenditure.
+where $n_K c_{\mathrm{prec}}$ is the cost per unit $\tau$. Under the discrete convention (benefit of the next step), the court compares
+\[
+R_{\mathrm{disc}}(c,k)=\frac{\bar{\Delta}(c,k)}{\,c_{\mathrm{prec}}\,}.
+\]
+For brevity, let $R_\star(c,k)$ denote the applicable ratio given the chosen convention.
+
 
 For a negligence threshold parameter $\lambda \ge 0$, the verdict is
 \[
-V=\mathbf{1}\!\left\{\,R(c,k)>\lambda\,\right\}.
+V=\mathbf{1}\!\left\{\,R_\star(c,k)>\lambda\,\right\}.
 \]
 The baseline analysis sets $\lambda=1$, corresponding to the familiar benefit–cost test. We also examine alternative values $\lambda\in\{0,0.8,1.2,2\}$ to capture more lenient or stricter liability standards. 
 
-Although defendants choose from the discrete grid $k\in\{0,\dots,n_K-1\}$ with $\tau_k=k/n_K$, the court applies a continuous marginal test. This means there is no discrete safe harbor at the top step $k=n_K-1$: the court evaluates the benefit of further precaution via $\Delta(\theta,\tau_{n_K-1})>0$ whenever $\tau_{n_K-1}<1$. This reflects the modeling philosophy that real-world care is refinable even when our action set is discretized for computation. As $n_K$ increases, the discrete grid approximates the continuous ideal more closely and the probability mass on “negligent at the top step” correspondingly shrinks. Parameterizations that imply frequent liability at high $k$ are therefore interpretable as environments with unusually high residual returns to care (large $\eta(\varphi)$ or wide $p_{\max}-p_{\min}(\varphi)$) or relatively low marginal cost (small $c_{\mathrm{prec}}$), not as artifacts of the liability test.
+At the top step $k=n_K-1$, the treatment depends on which marginal-benefit convention is applied. Under the \emph{continuous} convention, there is no discrete safe harbor: the court evaluates the benefit of further precaution via $\Delta(\theta,\tau_{n_K-1})>0$ whenever $\tau_{n_K-1}<1$, reflecting the modeling philosophy that real-world care is refinable even when our action set is discretized for computation. Under the \emph{discrete} convention, by contrast, the incremental benefit at $k=n_K-1$ is defined as $0$, so the top step always provides a safe harbor. As $n_K$ increases, the discrete grid approximates the continuous ideal more closely, so results under the two conventions converge. Parameterizations that imply frequent liability at high $k$ are therefore interpretable as environments with unusually high residual returns to care (large $\eta(\varphi)$ or wide $p_{\max}-p_{\min}(\varphi)$) or relatively low marginal cost (small $c_{\mathrm{prec}}$), not as artifacts of the liability test.
 
 
 The probability of liability at trial, conditional on the hidden state $\theta$ and the chosen precaution level $k$, is
@@ -629,24 +676,24 @@ Here $c_{\mathrm{prec}}$ denotes the cost of taking one discrete step in the pre
 
 Explicitly modeling every chance node (random event) can cause an explosion in the size of the game tree. We thus use Bayesian marginalization of chance nodes to avoid explicitly branching on a random variable at the outset of the game. Instead, we integrate out uncertainties concerning the variable represented by the node on the fly, adjusting probabilities and outcomes accordingly. This approach keeps the tree smaller while still accounting for the uncertainty. In our litigation game, the first chance event determines the precaution power state: the hidden state of which the defendant, plaintiff, and court may eventually receive signals. Instead of selecting such a state, we can convert the game into a mathematically equivalent game. The strategic players' information sets in this game are exactly the same as those in the original game, because the hidden state never becomes part of the plaintiff's or defendant's information set. 
 
-While in the full game the distribution of the defendant's private signal is calculated conditional on the actual hidden state, in the collapsed tree the distribution of the defendant's private signal is calculated by integrating over all such possible hidden states. Later distributions then require similar treatment. Figure~\ref{fig:signals_graph.pdf} summarizes the dependence structure among the hidden state, signals, precaution choice, and accident realization. Solid arrows indicate explicit dependencies present in both the full and collapsed trees, dotted arrows show dependencies present only in the full tree and eliminated by marginalization, and dashed arrows indicate conditional structure that arises only in the collapsed implementation.
+While in the full game the distribution of the defendant's private signal is calculated conditional on the actual hidden state, in the collapsed tree the distribution of the defendant's private signal is calculated by integrating over all such possible hidden states. Later distributions then require similar treatment. Figure~\ref{fig:signals_graph} summarizes the dependence structure among the hidden state, signals, precaution choice, and accident realization. Solid arrows indicate explicit dependencies present in both the full and collapsed trees, dotted arrows show dependencies present only in the full tree and eliminated by marginalization, and dashed arrows indicate conditional structure that arises only in the collapsed implementation.
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.9\textwidth]{../Figures/signals_graph.pdf}
   \caption{Conditional–independence structure for signals and accident attribution.}
-  \label{fig:signals_graph.pdf}
+  \label{fig:signals_graph}
 \end{figure}
 
 With this approach, any equilibrium of the original extensive form game tree is equivalently an equilibrium of the collapsed game, and vice versa, because certain conditions hold. In particular, the equivalence requires that the eliminated chance variable never enters any player’s information set, that players have perfect recall, that no strategic decision is made in between the eliminated chance node and the downstream chance events whose distributions depend on it, and that the collapsed tree preserves the same information sets and feasible actions. Under these conditions, the collapsed and full trees induce the same distribution over terminal histories and therefore share the same equilibria.
 
-Figure \ref{fig:smalltree_collapsed_beginning.pdf} illustrates the beginning of the extensive form game in which the node selecting precaution power is omitted. The first node now represents the defendant's signal. Because this is not conditioned on the hidden state, in this particular miniaturized calibration the defendant has equal probability of receiving a low or a high signal. In the general model, the distribution across signals depends on the noise parameters chosen. Instead of immediately calculating the plaintiff's signal, the defendant makes its decisions on whether to engage in the activity and if so, what relative level of precaution to take. The next node then represents the accident, and the accident probabilities are calculated by integrating over both possible hidden states in this miniaturized game. Finally, the plaintiff's signal node now follows the accident node. The probability that the plaintiff will receive each of the two possible signals takes into account the defendant's signal, the defendant's precaution level, and the occurrence of the accident, integrating again over both possible hidden states. Note that in this case, the plaintiff is much more likely to receive the low signal, because that is the signal that the defendant received. It would equivalently be possible to position the plaintiff's signal node immediately after the defendant signal and then condition the accident probability on the parties' joint signals, but this approach produces a smaller game tree.
+Figure \ref{fig:smalltree_collapsed_beginning} illustrates the beginning of the extensive form game in which the node selecting precaution power is omitted. The first node now represents the defendant's signal. Because this is not conditioned on the hidden state, in this particular miniaturized calibration the defendant has equal probability of receiving a low or a high signal. In the general model, the distribution across signals depends on the noise parameters chosen. Instead of immediately calculating the plaintiff's signal, the defendant makes its decisions on whether to engage in the activity and if so, what relative level of precaution to take. The next node then represents the accident, and the accident probabilities are calculated by integrating over both possible hidden states in this miniaturized game. Finally, the plaintiff's signal node now follows the accident node. The probability that the plaintiff will receive each of the two possible signals takes into account the defendant's signal, the defendant's precaution level, and the occurrence of the accident, integrating again over both possible hidden states. Note that in this case, the plaintiff is much more likely to receive the low signal, because that is the signal that the defendant received. It would equivalently be possible to position the plaintiff's signal node immediately after the defendant signal and then condition the accident probability on the parties' joint signals, but this approach produces a smaller game tree.
 
   \begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{../Figures/smalltree_collapsed_beginning.pdf}
     \caption{Beginning of the collapsed game.}
-    \label{fig:smalltree_collapsed_beginning.pdf}
+    \label{fig:smalltree_collapsed_beginning}
   \end{figure}
 
 This section explains more formally how those probability adjustments are computed using Bayes’ rule, and how we handle missing (latent) variables by splitting game records with appropriate weights after the play-through. The goal is to produce the same expected outcomes as the full model, but with far fewer nodes in the game tree.
@@ -665,9 +712,12 @@ p_{\mathrm{acc}}(\theta,k) \;=\; \Pr(A=1 \mid \theta,k),
 \]
 which aggregates both true causation and wrongful attribution. In the collapsed tree, the hidden state $\theta\in\Theta=\{1,\dots,n_H\}$ is not drawn before the accident node. Instead, after observing the defendant’s signal $s_D=d$, we branch at the accident node using the mixture of state–contingent accident probabilities,
 \[
-\Pr(A=1 \mid s_D=d,\,k) \;=\; \sum_{\theta\in\Theta} p_{\mathrm{acc}}(\theta,k)\,\Pr(\theta \mid s_D=d),
-\qquad
-\Pr(A=0 \mid s_D=d,\,k) \;=\; 1-\Pr(A=1 \mid s_D=d,\,k).
+\begin{aligned}
+\Pr(A=1 \mid s_D=d,\,k) 
+   &= \sum_{\theta\in\Theta} p_{\mathrm{acc}}(\theta,k)\,\Pr(\theta \mid s_D=d), \\
+\Pr(A=0 \mid s_D=d,\,k) 
+   &= 1-\Pr(A=1 \mid s_D=d,\,k).
+\end{aligned}
 \]
 If no informative signal has been observed, the uniform prior $\Pr(\theta)=1/n_H$ is used in place of $\Pr(\theta \mid s_D=d)$.
 
