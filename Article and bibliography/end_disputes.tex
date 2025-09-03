@@ -57,7 +57,7 @@
 
 \begin{abstract}
 \begin{nohyphen}
-ABSTRACT FORTHCOMING
+This article develops a computational game theory model of the tort system in which disputes arise endogenously from defendants’ care choices and are resolved through litigation under two-sided asymmetric information. The framework allows variation of key procedural mechanisms—damages multipliers, fee shifting, and liability thresholds—within a single extensive-form game tree that incorporates filing, answering, bargaining, settlement, quitting, and trial. A central finding is that the litigation system often re-equilibrates to absorb these interventions. Damages multipliers, conventionally thought to powerfully reshape deterrence, prove surprisingly muted: transfers are not welfare-relevant, and precaution and settlement adjust in ways that offset much of the apparent leverage until multipliers reach extremes. Fee shifting is still less consequential, since the amounts at stake are small relative to primary accident costs and precaution expenditures. Liability thresholds matter somewhat more, with higher thresholds tending to minimize total social costs under our continuous convention, though the apparent optimality partly reflects modeling assumptions. The broader strict-liability versus negligence debate resurfaces here: strict liability reduces harm when litigation is cheap but performs poorly when litigation is costly, highlighting how procedural and substantive design interact. Overall, the model suggests that canonical interventions in civil procedure often move welfare less than expected, except in environments with very high or very low litigation costs. The results imply both caution and humility: procedural design choices do affect incentives, but the system’s endogenous equilibria dampen their aggregate welfare consequences. \emph{[NOTE: This is preliminary and very much subject to change. I am reviewing key aspects of the model and am likely to make significant changes, and also I continue to examine the code for the possibility of errors. The figures and explanations are highly likely to change, and some key conclusions may as well.]} 
 \end{nohyphen}
 \end{abstract}
 
@@ -285,7 +285,7 @@ At the other extreme, when the liability threshold is set very high, the diagram
 Figure \ref{fig:dm_fee} shows that these two levers mostly operate on different, weakly connected margins, so their joint effect is close to additive and small. The damages multiplier works, if at all, by altering precaution incentives and case selection; fee shifting reassigns relatively modest stage costs and nudges bargaining posture. Because transfers do not impact welfare and the per-stage costs are small relative to normalized harm, increasing the fee-shifting multiple barely changes real resource use, and the slope with respect to the damages multiplier looks nearly the same whether the multiple is zero, one, or even above one. Only in high-cost environments do we start to see an interaction: stronger fee shifting can accelerate exits (defaults or early settlements) in the few cases that would otherwise press on, blunting the modest procedural uptick that very large damages could induce. For most policy-relevant settings, however, the grids are flat in both directions.
 
 \paragraph{Damages multiplier and liability threshold.}
-Figure \ref{fig:dm_liability} shows that the liability threshold drives larger differences in overall social costs than the damages multiplier, and the two levers interact mostly by dampening one another rather than compounding. Within any fixed liability threshold, moving from a low to a high damages multiplier mainly shifts composition: higher precaution, fewer realized harms, modestly different bargaining and exit patterns. The total bar, however, remains nearly constant. By contrast, tightening the liability threshold from plaintiff-friendly to defendant-friendly screens out many potential claims, cutting filing and procedural expenditures regardless of the damages setting. Once that screen is in place, raising damages does little, because liability attaches so rarely. The one quadrant where some joint movement appears is when both the threshold is lenient and damages are high: here greater stakes induce quicker concessions and more precaution, tilting the mix away from injury toward care, but even then the total height remains close to neighboring panels:contentReference[oaicite:0]{index=0}.
+Figure \ref{fig:dm_liability} shows that the liability threshold drives larger differences in overall social costs than the damages multiplier, and the two levers interact mostly by dampening one another rather than compounding. Within any fixed liability threshold, moving from a low to a high damages multiplier mainly shifts composition: higher precaution, fewer realized harms, modestly different bargaining and exit patterns. The total bar, however, remains nearly constant. By contrast, tightening the liability threshold from plaintiff-friendly to defendant-friendly screens out many potential claims, cutting filing and procedural expenditures regardless of the damages setting. Once that screen is in place, raising damages does little, because liability attaches so rarely. The one quadrant where some joint movement appears is when both the threshold is lenient and damages are high: here greater stakes induce quicker concessions and more precaution, tilting the mix away from injury toward care, but even then the total height remains close to neighboring panels.
 
 \begin{figure}[ht]
   \centering
@@ -295,25 +295,45 @@ Figure \ref{fig:dm_liability} shows that the liability threshold drives larger d
 \end{figure}
 
 \paragraph{Fee shifting and liability threshold.}
-Figure \ref{fig:fee_liability} tells a similar story: the liability threshold dominates, while fee shifting modestly reallocates costs without changing totals much. Under a plaintiff-friendly standard, stronger fee shifting increases the incentive to exit early—especially defaults—because a trial loss would carry not only one’s own costs but also the opponent’s. Default does not trigger reimbursement, so some litigation mass shifts from bargaining and trial into earlier resolution. Under a defendant-friendly standard, fee shifting scarcely matters, since few plaintiffs file and there are few losers to pay. Across all four panels, then, adjusting the liability threshold screens disputes and moves the overall bar, whereas fee shifting primarily tweaks the path to resolution and redistributes expenses between parties:contentReference[oaicite:1]{index=1}.
+Figure \ref{fig:fee_liability} tells a similar story: the liability threshold dominates, while fee shifting modestly reallocates costs without changing totals much. Under a plaintiff-friendly standard, stronger fee shifting increases the incentive to exit early—especially defaults—because a trial loss would carry not only one’s own costs but also the opponent’s. Default does not trigger reimbursement, so some litigation mass shifts from bargaining and trial into earlier resolution. Under a defendant-friendly standard, fee shifting scarcely matters, since few plaintiffs file and there are few losers to pay. Across all four panels, then, adjusting the liability threshold screens disputes and moves the overall bar, whereas fee shifting primarily tweaks the path to resolution and redistributes expenses between parties.
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Fee Shifting Multiplier and Liability Threshold (All Rows).pdf}
   \caption{Cost breakdown under fee shifting and liability threshold.}
   \label{fig:fee_liability}
-\end{figure}
+\end{figure} 
 
 \section{Robustness Checks}
 
 \FloatBarrier
 \subsection{Imperfect Estimation}
+
+A central worry about the baseline model is that the clean, strong equilibrium patterns may be partly an artifact of assuming complete information at the care stage. Real defendants rarely have a crisp, shared view of the tradeoff the negligence test asks them to make. They misread internal budgets, discount or overstate hassle costs, and—perhaps most likely—misjudge the other side of the ledger: what the magnitude of injury might be. Because the court’s rule and the defendant’s decision both hinge on a comparison of “expected harm avoided” to “cost of precaution,” any broad uncertainty about the magnitude of injury can be represented, without loss of generality, as uncertainty about the effective price of care.
+
+We therefore introduce a coarse misestimation device that is intentionally not a small Gaussian wobble but a substantial, case‑specific shift in the defendant’s private optimization. At the moment the defendant chooses precaution, a chance draw sets the perceived step cost to one of three levels—much lower than true, accurate, or much higher—each equally likely. In the running example, a misestimation level of five means the defendant feels the step as one‑fifth, exactly, or five times the true cost. Nothing else in the world moves: the technology stays fixed, the court continues to apply the negligence threshold using the true cost, and welfare accounting uses the true cost. Only the defendant’s private calculus is distorted, and the draw is not observed by the plaintiff or the court. The advantage of focusing the misestimation on care rather than injury is that this approach does not distort the litigation process. The point is to stress‑test conclusions that rely on precise private optimization: if those conclusions are fragile to coarse miscalibration, then the baseline results should be read more cautiously.
+
+Figure \ref{fig:imperfect_estimation} shows what happens as the misestimation level rises. Two patterns are immediate. First, the precaution bar becomes visibly more heterogeneous. Some defendants, feeling care is cheap, climb to higher levels; others, feeling it is dear, scale back. The averages move only a little, but the spread grows. Second, the system gets a bit busier procedurally. With more mass near the noisy negligence boundary, plaintiffs file slightly more often, defendants answer more often, bargaining runs more frequently, and trials tick up modestly. These are composition effects rather than explosions in inputs: Greater care by some defendants partly offsets lower care by others, so the total bar remains fairly flat through the middle of the range. What changes is the mix—more dispersion in primary behavior and a thicker layer of litigation activity.
+
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Misestimation Level (All Rows).pdf}
-  \caption{Cost breakdown under imperfect estimation.}
+  \caption{Social costs under imperfect estimation of precaution cost. Coarse miscalibration disperses care choices and modestly increases procedural expenditures through selection and bargaining effects.}
   \label{fig:imperfect_estimation}
 \end{figure}
+
+[Discuss effects of misestimation on interventions]
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Misestimation Level (All Rows).pdf}
+  \caption{Social costs under imperfect estimation of precaution cost. Misestimation disperses care choices and modestly increases procedural expenditures through selection and bargaining effects.}
+  \label{fig:imperfect_estimation}
+\end{figure}
+
+\paragraph{A preview: damages in the presence of misestimation.}
+When we vary damages against this backdrop, the qualitative picture remains familiar. Higher damages amplify incentives for those who already perceive care as cheap and soften under‑investment among those who perceive it as expensive, which narrows the dispersion in care somewhat. At the same time, larger stakes make early exits slightly more attractive for weak positions, shifting some mass from bargaining and trial into earlier resolution. In our runs, these countervailing channels mostly reshuffle composition—more care, fewer realized harms, slightly different procedural mix—while total resource use stays comparatively flat outside of extreme settings. We return to these interactions in the combined‑intervention results.
+
 
 \FloatBarrier
 \subsection{Risk Aversion}
