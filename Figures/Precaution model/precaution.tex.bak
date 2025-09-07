@@ -22,15 +22,15 @@
 
   \begin{axis}[
     width=15cm, height=9cm,
-    xmin=0, xmax=0.875,                % stop at 7/8
+    xmin=0, xmax=1,
     ymin=0, ymax=\pMax,
-    xlabel={Relative precaution level $\tau(k)$},
-    ylabel={Accident probability $p_{\mathrm{caused}}(\theta,k)$},
+    xlabel={Relative Precaution Level},
+    ylabel={Accident Probability},
     xmajorgrids, ymajorgrids,
     major grid style={gray!55, dotted, line width=0.25pt},
-    domain=0:0.875, samples=201,
-    xtick={0,0.125,0.25,0.375,0.5,0.625,0.75,0.875},
-    xticklabels={$0$,$\frac{1}{8}$,$\frac{1}{4}$,$\frac{3}{8}$,$\frac{1}{2}$,$\frac{5}{8}$,$\frac{3}{4}$,$\frac{7}{8}$},
+    domain=0:1, samples=201,
+    xtick={0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1},
+    xticklabels={$0$,$\frac{1}{8}$,$\frac{1}{4}$,$\frac{3}{8}$,$\frac{1}{2}$,$\frac{5}{8}$,$\frac{3}{4}$,$\frac{7}{8}$,$1$},
   ]
 
     % --- Dark blue solid curves (varying hidden precaution–power φ = θ/(n_H+1)) ---
@@ -39,7 +39,7 @@
       \addplot[blue!60!black, thick] ({x},{accprob(x,\power)});
     }
 
-    % --- Uniform black markers at τ(k) ∈ {0, 1/8, ..., 7/8} ---
+    % --- Uniform black markers at τ(k) ∈ {0, 1/8, ..., 7/8} (no dot at 1) ---
     \foreach \pidx in {1,...,\powerLevels} {
       \pgfmathsetmacro{\power}{\pidx/(\powerLevels+1)}
       \addplot[

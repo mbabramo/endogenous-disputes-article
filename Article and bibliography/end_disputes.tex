@@ -101,15 +101,36 @@ The approach that would be most consistent with Hylton's and indeed the broader 
 
 A modeling approach addressing this concern emerges from the recognition that in many real settings, both parties can observe what level of precaution the injurer actually took (for example, whether a machine guard was installed or which safety protocol was followed), and may even have strong information about the cost of such precautions. Meanwhile, the parties also may know what precautions the injurer forewent and how much such additional precaution might have cost. Nonetheless, there might still be uncertainty concerning how \emph{effective} the marginal precaution not taken would have been at reducing risk and whether such a risk reduction would have been cost-justified. Effectiveness depends on technological fit, local conditions, and other hidden factors that are not fully verifiable or knowable ex ante or perhaps even after an accident occurs. Such questions can be particularly challenging because they are counter-factual. Disputes in tort cases will thus often concern whether the defendant should have taken a more cautious path than the defendant actually took. To be sure, there may sometimes be debates as well as to what the defendant actually did and as to what a hypothetical precaution would have cost, but even with computation, analytic tractability makes desirable focus on a single source of uncertainty. For the purpose of the model in this article, the fount of uncertainty will thus concern the level of \emph{precaution power}, that is the extent to which expenditures on precaution would have reduced the probability of an accident. Each party knows the \emph{precaution level} but receives only a signal of precaution power. 
 
-This section thus presents a single extensive-form model in which precaution and litigation are determined jointly in equilibrium under a negligence rule with imperfect adjudication and two-sided private information. Chance determines an underlying state that governs how effective precaution is at reducing accident risk. The defendant chooses a discrete precaution level before any accident occurs. The precaution level and chance then jointly determine whether the defendant causes an accident. If the defendant does not cause an accident, there is nonetheless some chance, unrelated to the level of precaution, that an accident is wrongly attributed to the defendant. 
+This section thus presents a single extensive-form model in which precaution and litigation are determined jointly in equilibrium under a negligence rule with imperfect adjudication and two-sided private information. Chance determines an underlying state that governs how effective precaution is at reducing accident risk. The defendant chooses a discrete precaution level before any accident occurs. The precaution level and chance then jointly determine whether the defendant causes an accident.
 
-Assuming an accident occurs, the plaintiff decides whether to file suit, the defendant decides whether to answer or default, the parties engage in a one-shot simultaneous-offers bargaining stage (with acceptance if the defendant’s offer weakly exceeds the plaintiff’s demand). If there is no settlement the case proceeds to trial unless one party decides to quit upon settlement failure. At trial, a court renders a binary liability verdict based on the liability threshold and on its own noisy signal of precaution power, again assuming knowledge of the precaution level. Payoffs incorporate damages (with an optional multiplier), litigation costs, and fee rules. Social welfare accounts for precaution costs, defendant-caused accident losses, and litigation costs. 
+Figure \ref{fig:precaution} illustrates, using the baseline calibration that will be our focus, the interaction between precaution power levels and the defendant's relative precaution level in our model. The vertical axis represents accident probability, with a maximum accident probability of $1.0 \times 10^{-4}$. The horizontal axis specifies the relative precaution level chosen. The curve is defined continuously, but for computational tractability, the defendant is required to choose a discrete point. The eight discrete points permitted are marked on each precaution power curve. Different conventions may be used to measure the marginal benefit of reducing an accident at each of these points; the marginal benefit may be defined as the instantaneous reduction in slope or the difference from the next discrete level, and with the former, either assuming that the top level represents a safe harbor or not. These different conventions are explored further in Appendix A. In our baseline, the marginal benefit of precaution is measured next to the next discrete level chosen but in the case of the highest permissible level, relative to the hypothetical next discrete level visible at the far right of the graph. This provides a compromise between the discrete and continuous approaches that avoids the cliff of a safe harbor at the maximum precaution level.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{../Figures/precaution.pdf}
+\caption{Accident probability as a function of precaution level, for different hidden precaution–power states. Successively lower curves reflect successively stronger precaution powers.}
+  \label{fig:precaution}
+\end{figure}
+
+Together, the precaution power fixed by chance and the relative precaution level chosen by the defendant determine whether the defendant causes an accident that injures the plaintiff. If the defendant does not cause an accident, there is nonetheless some chance, unrelated to the level of precaution, that an accident is wrongly attributed to the defendant. Assuming the defendant does injury the plaintiff or such an injury is wrongly attributed to the defendant, the plaintiff decides whether to file suit, the defendant decides whether to answer or default, the parties engage in a one-shot simultaneous-offers bargaining stage (with acceptance if the defendant’s offer weakly exceeds the plaintiff’s demand). If there is no settlement the case proceeds to trial unless one party decides to quit upon settlement failure. 
+
+At trial, the court applies a probabilistic liability test using its noisy signal of precaution power, together with the observed relative precaution level. In the baseline specification reported here, the court is modeled as if there is an official liability threshold of $1.0$, but individual judges differ slightly in the exact threshold they apply. Some judges effectively require a somewhat higher benefit–cost ratio than $1.0$, others somewhat lower. As a result, for any given case, the chance of a liability verdict is the fraction of judges whose personal thresholds would be exceeded by the court’s estimate of the benefit of further precaution. This produces a smooth rise in the probability of liability as the expected benefit crosses the doctrinal threshold, as shown in Figure \ref{fig:probit}. The higher signals indicate greater precaution power, and so, controlling for relative precaution level, a higher signal implies a greater benefit that would have accrued from more precaution and thus a higher probability of liability. If instead all judges applied exactly the same cutoff of $1.0$ without variation, any point on Figure \ref{fig:probit} with a probability of liability greater than $0.5$ would result in liability with a probability of $1$, and any other point would result in liability with a probability of $0$. The distributed-threshold rule provides a more realistic interpretation that avoids such cliff effects while preserving the idea of a common doctrinal benchmark at $1.0$.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{../Figures/probit.pdf}
+\caption{Probability of liability curves for possible court signals as a function of defendant's relative precautio level. Successively higher curves reflect successively stronger signals of precaution power. In-between points (not used in simulation) are cubic interpolations.}
+  \label{fig:probit}
+\end{figure}
+
+Given a finding of liability, the defendant is responsible for damages, which may be scaled by a multiplier to represent punitive or enhanced awards. Both parties also bear litigation costs, and fee-shifting rules determine whether those costs are shared or shifted. From the broader perspective of social welfare, we add up not only these litigation expenditures but also the underlying precaution costs borne by defendants and the accident losses that remain after precaution is chosen. In this way, welfare reflects the full set of resources used or wasted in the process—what defendants spend to prevent accidents, what is lost when accidents nevertheless occur, and what both sides spend to fight over liability in court.
 
 In this section, we will introduce the game by zooming into portions of a miniature version of the extensive-form game tree and then discussing the algorithm used to find perfect Bayesian Nash equilibria in these trees. More detail about the construction of the game trees is available in the appendices. Appendix A elaborates the formulas that are used for critical calculations, such as the probability of an accident and the probability that the court rules for the plaintiff in a case that goes to trial. Appendix B, meanwhile, describes a simplification that makes calculation much more feasible. The simplification is that the node in which the precaution power level is chosen can be eliminated from the game tree, so long as Bayesian probability is applied both to calculations (such as accident and trial probabilities) and to back out signal values after games are complete. This simplification was tested in relatively small trees by comparing its results to the same simulations run without simplification, and they produced identical results. The details underlying this algorithmic shortcut may be of interest primarily to readers interested in implementing similar simulations.
 
 \subsection{Extensive-form game tree}
 
-An extensive-form game tree can fully capture the formal game summarized above for any particular set of parameter values. The game features two strategic players and Chance. The \emph{defendant} (potential injurer) chooses whether to engage in the underlying activity, and, if so, a discrete precaution level. (The choice whether to engage in the activity and thus receive the fruits of that activity has little role in the analysis in this paper, but is included both for analytic completeness and as a source for analysis in future work.) The \emph{plaintiff} (victim) decides whether to file, whether to quit before trial if settlement fails, and which demand to submit in simultaneous offers. The defendant similarly decides whether to answer, whether to quit before trial if settlement fails, and what demand to submit. The \emph{court} is modeled as a chance node that observes a noisy liability signal at trial and returns a binary liability verdict.
+An extensive-form game tree can fully capture the formal game summarized above for any particular set of parameter values. The game features two strategic players and Chance. The \emph{defendant} (potential injurer) chooses whether to engage in the underlying activity, and, if so, a discrete precaution level. (The choice whether to engage in the activity and thus receive the fruits of that activity has little role in the analysis in this paper, but is included both for analytic completeness and as a source for analysis in future work.) The \emph{plaintiff} (victim) decides whether to file, whether to quit before trial if settlement fails, and which demand to submit in simultaneous offers. The defendant similarly decides whether to answer, whether to quit before trial if settlement fails, and what demand to submit. The \emph{court} is modeled as a chance node that observes a noisy liability signal at trial and applies (under our baseline settings) a probabilistic liability test. Near the level where marginal benefit equals cost, the probability of liability is close to even; further from that level, the probability approaches either $0$ or $1$. 
+
 
 In the baseline calibration used for analysis, the number of hidden precaution-power states is $n_H=8$, the number of discrete precaution levels is $n_K=8$, and each party’s liability signal has $n_{S_P}=n_{S_D}=8$ levels. In addition, the number of possible settlement offers that the plaintiff and defendant, respectively, may make, is defined as $n_{\mathcal{o}_P} = n_{\mathcal{o}_D} = 8$. In the miniaturized version of the game tree explored here, $n_H = n_K = n_{S_P} = n_{S_D} = n_{\mathcal{o}_P} = n_{\mathcal{o}_D} = 2$ (for the hidden state, precaution levels, and the plaintiff/defendant signals and offers). Otherwise, parameters are set to the baseline values that we use in the simulation with the larger tree. Figure \ref{fig:smalltree} provides a zoomed-out view of the miniaturized version of the game. This is designed solely to provide context and a sense of the game complexity even in this miniature game. We must now zoom into particular portions of the game tree to allow for clearer explication of the game.
 
@@ -176,7 +197,7 @@ If the offers do not meet, we implement the contingent choices recorded earlier:
     \label{fig:smalltree_end}
   \end{figure}
 
-If neither party precommitted to quit, the case proceeds to trial. At trial the court observes an imperfect signal of case quality and returns a binary liability verdict; damages and any fee shifting are applied, and remaining stage costs are assessed. Figure \ref{fig:smalltree_end_adjudication} depicts this end phase. In this case in the miniaturized version of the game, the court always finds liability. In the non-miniaturized version to be reported later, court decisions are heterogeneous at the baseline parameter values, resulting in a probability of liability between $0$ and $1$ even for a particular pair of precaution power and relative precaution levels. 
+If neither party precommitted to quit, the case proceeds to trial. At trial the court observes an imperfect signal of case quality and estimates from that signal the benefit-cost ratio of the first foregone precaution. Judges may have individual liability thresholds that are distributed around the official liability threshold (at which liability attaches when the estimated benefits are greater than the costs). The likelihood of a liability verdict rises smoothly with stronger apparent case quality. The court renders a verdict accordingly; damages and any fee shifting are applied, and remaining stage costs are assessed. Figure \ref{fig:smalltree_end_adjudication} depicts this end phase. In this case in the miniaturized version of the game, the court always finds liability. In the non-miniaturized version to be reported later, court decisions are heterogeneous at the baseline parameter values, resulting in a probability of liability between $0$ and $1$ even for a particular pair of precaution power and relative precaution levels. 
 
   \begin{figure}[t]
     \centering
@@ -259,7 +280,7 @@ This pattern aligns with and helps reconcile several strands of the literature. 
 
 \FloatBarrier
 \paragraph{Liability threshold.}
-Figure \ref{fig:liability_threshold} shows somewhat larger movements than the other interventions, though most of the welfare action still occurs in corner regimes. In our baseline calibration, the defendant-favorable, higher threshold appears to minimize the sum of precaution, injury, and litigation costs. That pattern should be read with caution: our “continuous” convention for the negligence test, described in Appendix A, is more plaintiff-friendly than the discrete alternative, and so the relative efficiency of the higher liability threshold may partly reflect discreteness of action choices rather than a robust advantage of a stricter standard.
+Figure \ref{fig:liability_threshold} shows somewhat larger movements than the other interventions, though most of the welfare action still occurs in corner regimes. In our baseline calibration, the defendant-favorable, higher threshold appears to minimize the sum of precaution, injury, and litigation costs. 
 
 \begin{figure}[ht]
   \centering
@@ -451,13 +472,6 @@ p_{\min}^{\varphi=0}=8\times 10^{-5}, \qquad
 p_{\min}^{\varphi=1}=2\times 10^{-5}.
 \]
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.8\textwidth]{../Figures/precaution.pdf}
-\caption{Accident probability as a function of precaution level $\tau$, for different hidden precaution–power states $\varphi(\theta)$. Higher precaution power yields lower $p_{\min}$ and faster decline of risk with $\tau$. The marginal-benefit tests introduced below (continuous derivative or discrete next-step) are applied to these same accident-probability curves.}
-  \label{fig:precaution}
-\end{figure}
-
 We interpolate linearly in hidden precaution power:
 \[
 p_{\min}(\varphi(\theta)) = p_{\min}^{\varphi=0} +
@@ -494,7 +508,8 @@ p_{\mathrm{acc}}(\theta,k)
 so that $p_{\mathrm{acc}}(\theta,k)$ is the total probability that an accident is (legally) attributed to the defendant at $(\theta,k)$, combining true causation and wrongful attribution.
 Let $A\in\{0,1\}$ denote the legally attributed-accident indicator, with $\Pr(A=1\mid \theta,k)=p_{\mathrm{acc}}(\theta,k)$.
 
-Although defendants choose from the discrete grid $k\in\{0,\dots,n_K-1\}$ with $\tau_k=k/n_K$, the court may apply either the continuous or the discrete marginal test, depending on the convention selected. Under the \emph{continuous} convention, there is no discrete safe harbor at the top step: the court evaluates the benefit of further precaution via $\Delta(\theta,\tau_{n_K-1})>0$ whenever $\tau_{n_K-1}<1$. This reflects the modeling philosophy that real-world care is refinable even when our action set is discretized for computation. Under the \emph{discrete} convention, by contrast, the incremental benefit at $k=n_K-1$ is defined to be $0$, so the top step always provides a safe harbor. In both cases, increasing $n_K$ makes the discrete grid approximate the continuous ideal more closely, so that results under the two conventions converge as the action space becomes finer.
+Although defendants choose from the discrete grid $k\in\{0,\dots,n_K-1\}$ with $\tau_k=k/n_K$, the court may apply the continuous marginal test or one of two discrete “next‑step” variants: a safe‑harbor option (defining the top increment as $0$) or a phantom‑level option (evaluating the next‑step difference even at the top by positing $k+1$). As $n_K$ increases, the discrete grid approximates the continuous ideal, and results under all three conventions converge as the action space becomes finer.
+
 
 \paragraph{Filing, answering, and quitting.}
 Following an accident realization, the plaintiff, who has observed $s_P$, chooses whether to \emph{file}, incurring $c_{file}=0.10$ if she does so. If the plaintiff files, the defendant observes $s_D$ and chooses whether to \emph{answer} or \emph{default}. Answering imposes $c_{answer}=0.10$ and moves the case into bargaining. Default ends the case immediately with a plaintiff judgment for normalized damages $\mu$, without any bargaining or trial costs.
@@ -534,7 +549,7 @@ Unless noted otherwise, the court's signal is equal in strength to the parties: 
 \[
 \Pr(V=1 \mid \theta,k,s_C) \quad \text{rather than} \quad \Pr(V=1 \mid \theta,k,s_C,\text{accident}),
 \]
-so that the court’s liability probability is unaffected by the event that a case is filed. This independence from case selection applies only to the court’s negligence test itself. In Appendix B, ex-ante probabilities are updated conditional on whether an accident was realized, but this conditioning affects only Bayesian accounting of states and signals. It does not alter the court’s liability rule $\ell(c,k)$, which is applied solely to cost and risk information as if ex ante. Put differently, the court applies $\ell(c,k)$ as though ex ante; only our Bayesian updating of $\theta$ reflects case selection.
+so that the court’s liability probability is unaffected by the event that a case is filed. This independence from case selection applies only to the court’s negligence test itself. In Appendix B, ex-ante probabilities are updated conditional on whether an accident was realized, but this conditioning affects only Bayesian accounting of states and signals.
 
 Fix a precaution level $k\in K=\{0,\dots,n_K-1\}$ and let $\tau_k=\tau(k)$. For each hidden state $\theta$, recall that the accident probability is
 \[
@@ -542,11 +557,14 @@ p_{\mathrm{acc}}(\theta,\tau)
 =\rho+(1-\rho)\Bigl[p_{\min}\!\bigl(\varphi(\theta)\bigr)
 +\bigl(p_{\max}-p_{\min}\!\bigl(\varphi(\theta)\bigr)\bigr)\,(1-\tau)^{\eta(\varphi(\theta))}\Bigr].
 \]
-\paragraph{Discrete vs. continuous marginal benefit.}
-The code supports \emph{two} conventions for evaluating the marginal reduction in accident risk at a precaution level \(\tau_k\): a continuous derivative and a discrete “next-step” difference. Each has advantages and drawbacks, both as a model of real precaution decisions and as a computational device. From the behavioral perspective, some contexts plausibly involve continuous precaution choices (e.g., investment in maintenance effort or the level of monitoring intensity), while in many legal–institutional settings defendants face only finitely many meaningful care levels (e.g., whether to install a guardrail or not). From the modeling perspective, the continuous approach is analytically smooth and aligns with solvers that assume fine granularity, whereas the discrete approach aligns exactly with a finite action space and permits cleaner welfare comparisons when care levels are indivisible. [SPECIFY WHICH WE ARE CHOOSING -- OTHER CAN BE A ROBUSTNESS CHECK.]
+
+The court's task is to compare the marginal cost of precaution with the marginal benefit.
+
+\paragraph{Alternative conventions for marginal benefit calculation.}
+The code supports three conventions for evaluating the marginal reduction in accident risk at a precaution level \(\tau_k\). Each has advantages and drawbacks, both as a model of real precaution decisions and as a computational device. From the behavioral perspective, some contexts plausibly involve continuous precaution choices (e.g., investment in maintenance effort or the level of monitoring intensity), while in many legal–institutional settings defendants face only finitely many meaningful care levels (e.g., whether to install a guardrail or not). From the modeling perspective, the continuous approach is analytically smooth and aligns with solvers that assume fine granularity, whereas the discrete approaches align exactly with a finite action space and permit cleaner welfare comparisons when care levels are indivisible.
 
 \medskip
-\noindent\textbf{Continuous-derivative convention.}
+\noindent\emph{Continuous-derivative convention.}
 With sign chosen so that benefits are nonnegative, the marginal benefit at \(\tau_k\) is
 \[
 \Delta(\theta,\tau_k)
@@ -555,63 +573,66 @@ With sign chosen so that benefits are nonnegative, the marginal benefit at \(\ta
 \]
 so \(\Delta(\theta,\tau_k)\ge 0\) for \(\tau_k\in[0,1)\) and \(\Delta(\theta,1)=0\) (since \(\eta(\varphi)>1\)). Let \(\bar{\Delta}(c,k)\) denote the posterior expectation of \(\Delta(\theta,\tau_k)\) given the court’s signal \(s_C=c\). The court compares the expected marginal benefit to the \emph{per-unit-\(\tau\)} cost,
 \[
-R_{\mathrm{cont}}(c,k)\;=\;\frac{\bar{\Delta}(c,k)}{\,n_K\,c_{\mathrm{prec}}\,},
-\qquad
-V=\mathbf{1}\!\{R_{\mathrm{cont}}(c,k)>\lambda\},
+R_{\mathrm{cont}}(c,k)\;=\;\frac{\bar{\Delta}(c,k)}{\,n_K\,c_{\mathrm{prec}}\,}.
 \]
-where \(n_K c_{\mathrm{prec}}\) rescales the discrete unit cost \(c_{\mathrm{prec}}\) to the cost of a unit change in \(\tau\).
 
 \medskip
-\noindent\textbf{Discrete “next-step” convention.}
-Alternatively, we define marginal benefit as the risk reduction from taking the next available step of care:
+\noindent\emph{Discrete “next-step” conventions.}
+When precaution is represented by a finite grid of levels, one can define the marginal benefit of the next step in more than one way:
 \[
 \Delta^{\mathrm{disc}}(\theta,\tau_k)\;=\;
 \begin{cases}
 p_{\mathrm{acc}}(\theta,\tau_k)\;-\;p_{\mathrm{acc}}\!\bigl(\theta,\tau_{k+1}\bigr), & k<n_K-1,\\[4pt]
-0, & k=n_K-1,
+\ast & k=n_K-1.
 \end{cases}
 \]
-which is nonnegative because accident risk is decreasing in precaution. Since \(p_{\mathrm{acc}}=\rho+(1-\rho)\,p_{\mathrm{caused}}\), the wrongful-attribution term \(\rho\) cancels in the difference and the discount by \((1-\rho)\) is implicit, just as in the continuous case. With \(\bar{\Delta}^{\mathrm{disc}}(c,k)\) the posterior expectation of \(\Delta^{\mathrm{disc}}(\theta,\tau_k)\) given \(s_C=c\), the court compares the \emph{discrete} expected benefit of the next step to the \emph{cost of one step}:
+At interior levels, this expression is nonnegative because accident risk decreases with precaution, and the wrongful-attribution term cancels just as in the continuous case. At the top level, however, two interpretations are possible. Under the \emph{safe-harbor convention}, the final increment is defined as \(0\), so the highest level of precaution automatically satisfies the negligence test. This corresponds to a legal regime in which the most precautionary observable act provides full insulation from liability. Under the \emph{phantom-level convention}, by contrast, the formula applies even at the top step by positing a hypothetical further increment \(k+1\). This reflects the idea that courts may consider broader hypothetical options even when the defendant has reached the top of a discretized scale, and that a categorical safe harbor may be unrealistic in litigation, particularly given the safe-harbor treatment discussed elsewhere in the model. In our baseline simulations we use the phantom-level convention; robustness checks examine the safe-harbor alternative. This represents a compromise, recognizing the limited menu of the defendant's choices but also preserving our ability to model the judiciary as containing a distribution of individual liability thresholds around the official threshold.
+
+With \(\bar{\Delta}^{\mathrm{disc}}(c,k)\) denoting the posterior expectation under whichever discrete convention is chosen, the court compares the expected discrete benefit of the next step to the \emph{cost of one step}:
 \[
-R_{\mathrm{disc}}(c,k)\;=\;\frac{\bar{\Delta}^{\mathrm{disc}}(c,k)}{\,c_{\mathrm{prec}}\,},
-\qquad
-V=\mathbf{1}\!\{R_{\mathrm{disc}}(c,k)>\lambda\}.
+R_{\mathrm{disc}}(c,k)\;=\;\frac{\bar{\Delta}^{\mathrm{disc}}(c,k)}{\,c_{\mathrm{prec}}\,}.
 \]
-At the top level \(k=n_K-1\) the incremental benefit is defined as \(0\) because no further step is available (a “safe harbor” boundary condition).
 
 \medskip
 \noindent\textbf{Posterior expectation of marginal benefit.}
-Having specified the marginal-benefit convention—whether continuous or discrete—we can now turn to how the court evaluates the expected benefit of an additional precaution, conditional on its signal. Given a realized court signal $s_C=c$, Bayes’ rule with the uniform prior $\Pr(\theta)=1/n_H$ gives the posterior distribution $\Pr(\theta \mid s_C=c)$. The expected marginal reduction at $(c,k)$ is
+Having specified the marginal-benefit convention—continuous derivative, discrete safe harbor, or discrete phantom—we now turn to how the court evaluates the expected benefit of an additional precaution, conditional on its signal. Given a realized court signal $s_C=c$, Bayes’ rule with the uniform prior $\Pr(\theta)=1/n_H$ gives the posterior distribution $\Pr(\theta \mid s_C=c)$. The expected marginal reduction at $(c,k)$ is
 \[
 \bar{\Delta}(c,k)\;=\;\sum_{\theta\in\Theta}\Delta^{*}(\theta,\tau_k)\,\Pr(\theta\mid s_C=c),
 \]
-where $\Delta^{*}$ denotes either the continuous derivative $\Delta$ or the discrete difference $\Delta^{\mathrm{disc}}$, depending on the convention in use. The posterior $\Pr(\theta\mid s_C=c)$ is formed from the ex ante prior (i.e., it does not condition on $A$); in particular, we ignore case-selection effects when computing $\bar{\Delta}$.
+where $\Delta^{*}$ denotes the convention in use (continuous derivative, discrete safe-harbor difference, or discrete phantom difference). The posterior $\Pr(\theta\mid s_C=c)$ is formed from the ex ante prior (i.e., it does not condition on $A$); in particular, we ignore case-selection effects when computing $\bar{\Delta}$.
 
 Because accident harm is normalized to $1$, the expected benefit of additional precaution equals $\bar{\Delta}(c,k)$. Let $c_{\mathrm{prec}}>0$ denote the cost of one discrete step in $k$. Under the continuous convention (derivative per unit $\tau$), the court compares
 \[
 R_{\mathrm{cont}}(c,k)=\frac{\bar{\Delta}(c,k)}{\,n_K\,c_{\mathrm{prec}}\,},
 \]
-where $n_K c_{\mathrm{prec}}$ is the cost per unit $\tau$. Under the discrete convention (benefit of the next step), the court compares
+where $n_K c_{\mathrm{prec}}$ is the cost per unit $\tau$. Under either discrete convention (benefit of the next step, defined with or without a phantom level), the court compares
 \[
 R_{\mathrm{disc}}(c,k)=\frac{\bar{\Delta}(c,k)}{\,c_{\mathrm{prec}}\,}.
 \]
 For brevity, let $R_\star(c,k)$ denote the applicable ratio given the chosen convention.
 
-
-For a negligence threshold parameter $\lambda \ge 0$, the verdict is
+\medskip
+\noindent\textbf{Liability rule (deterministic vs.\ distributed thresholds).}
+Given $R_\star(c,k)$, the court applies one of two liability rules. In the \emph{deterministic threshold} rule, all judges are assumed to apply the same official liability threshold $\lambda$, so the verdict is
 \[
-V=\mathbf{1}\!\left\{\,R_\star(c,k)>\lambda\,\right\}.
+V=\mathbf{1}\!\{R_\star(c,k)>\lambda\}.
 \]
-The baseline analysis sets $\lambda=1$, corresponding to the familiar benefit–cost test. We also examine alternative values $\lambda\in\{0,0.8,1.2,2\}$ to capture more lenient or stricter liability standards. 
-
-At the top step $k=n_K-1$, the treatment depends on which marginal-benefit convention is applied. Under the \emph{continuous} convention, there is no discrete safe harbor: the court evaluates the benefit of further precaution via $\Delta(\theta,\tau_{n_K-1})>0$ whenever $\tau_{n_K-1}<1$, reflecting the modeling philosophy that real-world care is refinable even when our action set is discretized for computation. Under the \emph{discrete} convention, by contrast, the incremental benefit at $k=n_K-1$ is defined as $0$, so the top step always provides a safe harbor. As $n_K$ increases, the discrete grid approximates the continuous ideal more closely, so results under the two conventions converge. Parameterizations that imply frequent liability at high $k$ are therefore interpretable as environments with unusually high residual returns to care (large $\eta(\varphi)$ or wide $p_{\max}-p_{\min}(\varphi)$) or relatively low marginal cost (small $c_{\mathrm{prec}}$), not as artifacts of the liability test.
-
-
-The probability of liability at trial, conditional on the hidden state $\theta$ and the chosen precaution level $k$, is
+In the \emph{distributed-threshold} rule, we model each judge as having a personal cutoff $\lambda_j$ equal to the official threshold $\lambda$ plus a random deviation. Specifically, we assume
 \[
-\Pr(V=1\mid \theta,k)\;=\;\sum_{c\in\mathcal{S}_C}\mathbf{1}\!\left\{R(c,k)>\lambda\right\}\,\Pr(s_C=c\mid \theta),
+\lambda_j = \lambda + sZ, \quad Z\sim N(0,1),
+\]
+so that judges differ in how much higher or lower a benefit–cost ratio they require relative to the doctrinal benchmark. For a given $(c,k)$, the probability of liability is then the fraction of judges whose cutoff lies below $R_\star(c,k)$:
+\[
+w(c,k)=\Pr(\lambda_j \leq R_\star(c,k))=\Phi\!\Bigl(\tfrac{R_\star(c,k)-\lambda}{s}\Bigr).
+\]
+The verdict is then drawn $V\sim \mathrm{Bernoulli}(w(c,k))$. Unless otherwise noted, we set $\lambda=1$ and use the distributed-threshold rule with $s=0.25$. Alternative $\lambda$ values, and in robustness checks the deterministic rule, are also examined.
+
+\noindent\textbf{Probability of liability at trial.}
+Conditional on hidden state $\theta$ and chosen precaution level $k$, the probability that the court returns a liability verdict integrates over the court’s noisy signal:
+\[
+\Pr(V=1 \mid \theta,k)\;=\;\sum_{c\in\mathcal{S}_C} w(c,k)\,\Pr(s_C=c\mid \theta),
 \qquad
-\Pr(V=0\mid \theta,k)=1-\Pr(V=1\mid \theta,k).
+\Pr(V=0 \mid \theta,k)\;=\;\sum_{c\in\mathcal{S}_C} \bigl(1-w(c,k)\bigr)\,\Pr(s_C=c\mid \theta).
 \]
 These probabilities appear explicitly in the game tree as branches following the court’s signal draw.
 
@@ -793,31 +814,33 @@ For each hidden state $\theta$, Appendix~A defined the conditional law $\Pr(s_C=
 = \sum_{\theta\in\Theta} \Pr(s_C=c\mid \theta)\,\Pr(\theta \mid s_D, A, k, s_P).
 \]
 
-For each $(c,k)$ pair, the liability rule determines whether the court would declare the defendant liable. Let $\ell(c,k)\in\{0,1\}$ be the indicator that the benefit–cost ratio of additional precaution exceeds the negligence threshold $\lambda$ given court signal $c$ at precaution level $k$ (as specified in Appendix~A). The probability of a liability verdict in the collapsed tree is then
-\[
-\Pr(V=1 \mid s_D, A, k, s_P)
-= \sum_{c\in\mathcal{S}_C} \ell(c,k)\,
-   \Pr(s_C=c \mid s_D, A, k, s_P),
-\qquad
-\Pr(V=0 \mid \cdot)=1-\Pr(V=1 \mid \cdot).
-\]
+For each $(c,k)$ pair, let $w(c,k)\in[0,1]$ denote the court’s decision weight (Appendix~A). Under the deterministic threshold, $w(c,k)=\mathbf{1}\{R_\star(c,k)>\lambda\}$; under the probit rule, $w(c,k)=\Phi\!\bigl((R_\star(c,k)-\lambda)/s\bigr)$. The probability of a liability verdict in the collapsed tree is
+\begin{align*}
+\Pr(V=1 \mid \theta,k)
+  &= \sum_{c\in\mathcal{S}_C} 
+     w(c,k)\,\Pr(s_C=c\mid \theta), \\[6pt]
+\Pr(V=0 \mid \theta,k)
+  &= \sum_{c\in\mathcal{S}_C} 
+     \bigl(1-w(c,k)\bigr)\,\Pr(s_C=c\mid \theta).
+\end{align*}
 
 If the game reaches trial and a verdict $V$ is realized, beliefs over the hidden state are updated by Bayes’ rule. For a liability verdict,
 \[
 \Pr(\theta \mid s_D, A, k, s_P, V=1)
-= \frac{\Bigl(\sum_{c:\,\ell(c,k)=1}\Pr(s_C=c\mid \theta)\Bigr)\,
+= \frac{\Bigl(\sum_{c} w(c,k)\,\Pr(s_C=c\mid \theta)\Bigr)\,
        \Pr(\theta \mid s_D, A, k, s_P)}
-       {\sum_{\theta'\in\Theta}\Bigl(\sum_{c:\,\ell(c,k)=1}\Pr(s_C=c\mid \theta')\Bigr)\,
+       {\sum_{\theta'\in\Theta}\Bigl(\sum_{c} w(c,k)\,\Pr(s_C=c\mid \theta')\Bigr)\,
         \Pr(\theta' \mid s_D, A, k, s_P)},
 \]
-and for a no-liability verdict,
+and for a no‑liability verdict,
 \[
 \Pr(\theta \mid s_D, A, k, s_P, V=0)
-= \frac{\Bigl(\sum_{c:\,\ell(c,k)=0}\Pr(s_C=c\mid \theta)\Bigr)\,
+= \frac{\Bigl(\sum_{c} \bigl(1-w(c,k)\bigr)\,\Pr(s_C=c\mid \theta)\Bigr)\,
        \Pr(\theta \mid s_D, A, k, s_P)}
-       {\sum_{\theta'\in\Theta}\Bigl(\sum_{c:\,\ell(c,k)=0}\Pr(s_C=c\mid \theta')\Bigr)\,
+       {\sum_{\theta'\in\Theta}\Bigl(\sum_{c} \bigl(1-w(c,k)\bigr)\,\Pr(s_C=c\mid \theta')\Bigr)\,
         \Pr(\theta' \mid s_D, A, k, s_P)}.
 \]
+
 These posteriors provide the probability weights over hidden states that are used to assign concrete values when outcomes are tabulated.
 
 \subsection*{B.3 Ex Post Attribution and State Reconstruction for Reporting}
