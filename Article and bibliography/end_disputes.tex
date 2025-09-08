@@ -156,7 +156,7 @@ The numbers attached to these nodes, along with the probability estimates from t
 
 The plaintiff’s and defendant’s liability signals are private; each party knows the model primitives and distributions but not the other’s realized signal or the hidden state. Actions in the litigation block to be discussed below are observed as they occur (filing, answering, offers, and quits). A party's information set consists of any signal that the party receives, the party's own decisions earlier in the game, and public decisions of the opponent. The court’s internal signal is not observed by the parties; they observe only the binary verdict. Each party has perfect recall, meaning that its own decisions and the signals available to it remain part of its information set throughout the game. The extensive form game diagrams denote information sets by placing a number next to a letter; for example, "D26" refers to a particular information set faced by the defendant at the time the defendant must determine whether to engage in the activity. The algorithm for finding a Nash equilibrium must assign a single mixed strategy (i.e., probability of choosing each action) for each information set, even though an information set may recur many times in the game tree.
 
-Before turning to the strategic choices of the parties, it is helpful to visualize the space of possible signals in the baseline (non-miniaturized) game. Figure \ref{fig:signals_levels} depicts the full set of signal levels that plaintiffs, defendants, and courts may receive. Each signal corresponds to a midpoint bin in the unit interval, constructed by adding noise to the hidden precaution-power state. The height of each signal target represents the probability that such a signal will be received; this reflects that middling assessments will be more common than extreme ones. As explained more formally in Appendix~A, this discretization ensures that the full range of possible noisy observations is covered. The figure thus provides intuition about the informativeness of the signals used in the simulations: While the signals are imperfect, they are reasonably strong indicators of the underlying hidden state. 
+Before turning to the strategic choices of the parties, it is helpful to visualize the space of possible signals in the baseline (non-miniaturized) game. Figure \ref{fig:signals_levels} depicts the full set of signal levels that plaintiffs, defendants, and courts may receive. Each signal is associated with a midpoint of bin in the unit interval, constructed by adding noise to the hidden precaution-power state. The height of each signal target represents the probability that such a signal will be received; this reflects that middling assessments will be more common than extreme ones. As explained more formally in Appendix~A, this discretization ensures that the full range of possible noisy observations is covered. The figure thus provides intuition about the informativeness of the signals used in the simulations: While the signals are imperfect, they are reasonably strong indicators of the underlying hidden state. 
 
 \begin{figure}[t]
   \centering
@@ -234,7 +234,7 @@ The results of any given simulation can be summarized easily in a diagram that i
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.75\textwidth, clip, trim=0 0 0 4.1cm]{../Figures/PREC008 Risk Neutral CM 1 FSM 1 DM 1 LT 1 UPC 1E-05 -costbreakdownlight.pdf}
+  \includegraphics[width=0.75\textwidth, clip, trim=0 0 0 4.7cm]{../Figures/PREC008 Risk Neutral CM 1 FSM 0 DM 1 LT 1 UPC 1E-05 -costbreakdownlight.pdf}
   \caption{Social costs with baseline parameter values.}
   \label{fig:baseline_costs}
 \end{figure}
@@ -347,13 +347,6 @@ Figure \ref{fig:imperfect_estimation} shows what happens as the misestimation le
 \end{figure}
 
 [Discuss effects of misestimation on interventions]
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Misestimation Level (All Rows).pdf}
-  \caption{Social costs under imperfect estimation of precaution cost. Misestimation disperses care choices and modestly increases procedural expenditures through selection and bargaining effects.}
-  \label{fig:imperfect_estimation}
-\end{figure}
 
 \paragraph{A preview: damages in the presence of misestimation.}
 When we vary damages against this backdrop, the qualitative picture remains familiar. Higher damages amplify incentives for those who already perceive care as cheap and soften under‑investment among those who perceive it as expensive, which narrows the dispersion in care somewhat. At the same time, larger stakes make early exits slightly more attractive for weak positions, shifting some mass from bargaining and trial into earlier resolution. In our runs, these countervailing channels mostly reshuffle composition—more care, fewer realized harms, slightly different procedural mix—while total resource use stays comparatively flat outside of extreme settings. We return to these interactions in the combined‑intervention results.
