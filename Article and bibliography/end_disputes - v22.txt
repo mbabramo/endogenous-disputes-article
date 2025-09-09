@@ -414,10 +414,6 @@ Two implications follow. First, asymmetry mainly reshuffles where resources are 
 \FloatBarrier
 \subsection{Cost of Precaution}
 
-Figure \ref{fig:cost_precaution} shows how social welfare loss responds when the unit cost of precaution varies. Normal unit cost remains $1.0 \times 10^{-5}$. The other three levels tested ("Very Low", "Low" and "High") are $1.0 \times 10^{-6}$, $0.8 \times 10^{-6}$, and $1.2 \times 10^{-5}$. Cheaper precaution is, of course, a boon, as the cost of precaution is itself a component of the welfare analysis, and potential defendants will take more care will relatively low precaution costs. Yet at the baseline and inexpensive cost levels, the core pattern that we have observed of damages multipliers having relatively minimal consequence for social welfare remains intact. Damages multipliers increase relative precaution costs even at high levels of precaution costs, and this increased expenditure reduces injury and has modest effects on litigation. Overall, social costs rise slightly with high damages multipliers and fall slightly with reduced damages, as in our baseline simulations. 
-
-Once again, very expensive litigation produces a different patern. Here, at very low unit precaution cost, low damages multipliers are preferable, as precaution levels are essentially maxed out and result in more litigation but no decrease in harm. At other levels of precaution cost, low damages multipliers produce greater social cost, as the defendant engages in too little precaution. There is virtually no difference, however, in total social welfare between damages multipliers of $1$ and $2$. 
-
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.85\textwidth]{../Figures/Social Welfare Loss Varying Unit Precaution Cost.pdf}
@@ -427,23 +423,15 @@ Once again, very expensive litigation produces a different patern. Here, at very
 
 \FloatBarrier
 \subsection{Information Asymmetry}
-
-We vary which party’s private signal about liability is more informative while holding the court’s signal fixed and all other primitives at their baseline.
-
-\begin{center}
+\begin{figure}[ht]
+  \centering
   \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Information Asymmetry (All Rows).pdf}
-  \captionof{figure}{Cost breakdown under information asymmetry.}
+  \caption{Cost breakdown under information asymmetry.}
   \label{fig:info_asymmetry}
-\end{center}
-
-In Figure \ref{fig:info_asymmetry}, the party with the better information has half the noise multiplier that it would ordinarily have, while its opponent has twice the noise multiplier. The figure shows that total social cost is quite stable across regimes; the main effects are again compositional. When defendants are better informed, procedural activity expands (more answering and bargaining) and precaution softens. When plaintiffs are better informed, filing is more selective, settlements arrive earlier, and precaution rises slightly. The cost environment moderates these patterns: with cheap procedure, defendant‑side informational advantages tilt behavior toward additional procedural consumption; with expensive procedure, the same advantages curb contests and modestly reduce procedural outlays. In all cases, the swings in totals are small relative to the baseline. Though not shown here, changing the damages multiplier also has muted effects on total social welfare loss at baseline and low levels of costs. 
-
+\end{figure}
 
 \FloatBarrier
 \subsection{Costs Asymmetry}
-
-Creating asymmetry in litigation costs also has little implication for the optimal damages multiplier, though there are slightly more pronounced effects on social welfare of the asymmetry, without changing from the baseline damages multiplier. In Figure \ref{fig:costs_asymmetry}, in the "P Lower Costs" column, the plaintiff's litigation costs are halved relative to the normal level for that row; in the "P Higher Costs" column, they are doubled. When the plaintiff enjoys a litigation cost advantage, the defendant at any given level of overall costs will engage in a greater degree of precaution. Litigation will also be more common, except at the highest levels of overall costs, where the defendant would recognize in any settlement negotiations that the plaintiff would not have a credible threat to take a case to trial. As we have seen with earlier changes to the model, the plaintiff-friendly change here tends to increase total social costs but only slightly. The regime with the lowest total social cost, at all three levels of overall litigation costs, is the regime in which the plaintiff bears relatively higher costs. 
-
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Relative Costs (All Rows).pdf}
@@ -453,9 +441,6 @@ Creating asymmetry in litigation costs also has little implication for the optim
 
 \FloatBarrier
 \subsection{Wrongful Attribution Probability}
-
-A change in the wrongful attribution probability can have a significant effect on welfare, though the effect is more substantial when litigation costs are relatively low. In Figure \ref{fig:wrongful_attr} disaggregates social costs, varying the probability that a defendant who has not caused an injury to the plaintiff will wrongfully be thought to have done so. Recall that in such cases, the causation issue is assumed to be settled, and the issue remains whether the defendant exercised sufficient care. We can see that with high wrongful attribution probability (10 times the usual level), litigation becomes considerably more common. But that effect is relatively insubstantial at the baseline level of costs, since plaintiffs still will not sue when the plaintiff's signal indicates that the defendant has likely exercised due care. With very low litigation costs, however, it is worth it for the plaintiff to file and to extract a nuisance settlement in some cases, with other cases going to trial. This considerably increases litigation costs. 
-
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Wrongful Attribution Probability (All Rows).pdf}
@@ -463,20 +448,8 @@ A change in the wrongful attribution probability can have a significant effect o
   \label{fig:wrongful_attr}
 \end{figure}
 
-The unsurprising implication is that in this condition, dividing damages in half will improve social welfare, as indicated in Figure \ref{fig:wrongful_attr_damages_mult}. But such a low damages multiplier is especially problematic in a high litigation cost environment, leading to the undesirable combination of suboptimal precaution and litigation in the form of plaintiffs' filing to claim their damages.
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Social Welfare Loss Varying Wrongful Attribution Probability.pdf}
-  \caption{Social welfare loss under changes in the probability of wrongful attribution of liability.}
-  \label{fig:wrongful_attr_damages_mult}
-\end{figure}
-
 \FloatBarrier
 \subsection{Court Quality}
-
-Finally, let us consider court quality. Recall that courts may be considered imperfect in two ways. First, a court, like the parties, receives only a signal of the precaution power. Second, each individual judge may have an idiosyncratic threshold at which to apply liability. In Figure \ref{fig:court_quality}, with "Low Noise," the noise signal is halved and with "High Noise," it is doubled. "Low Indet" refers to a state in which there is less indeterminacy (the variable is set to $0.1$ instead of $0.25$), and "High Indet" refers to a state in which there is high indeterminacy ($0.5$). Once again, social welfare within each row is relatively consistent, though there are significant changes in composition. At baseline costs, with higher indeterminacy, the defendant's relative precaution level becomes homogeneous. As the legal standard becomes fuzzier, there is less reason to tailor to the defendant's signal of precaution power, but the defendant becomes somewhat more cautious (causing greater social loss) overall. Interestingly, high court noise also leads to more homogeneous action by the defendant, but at a lower total level with baseline and high costs.
-
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Court Quality (All Rows).pdf}
@@ -484,18 +457,7 @@ Finally, let us consider court quality. Recall that courts may be considered imp
   \label{fig:court_quality}
 \end{figure}
 
-An interesting aspect of Figure \ref{fig:court_quality} is that the social welfare under a perfect system of adjudication is lower than in some other systems. This highlights that the complex interactions in the endogenous model can lead to counterintuitive results. But this is in part because the "perfect" adjudication in that figure means only that the courts are perfect, not that the litigants are. Figure \ref{fig:perfect} compares the baseline to a regime in which the parties are fully informed and litigation is costless. Litigation occurs in every case resulting in injury in this regime, but bears no costs. Meanwhile, the the defendant's choice of relative precaution level increases gradually based on the defendant's signals, and the social welfare loss is considerably lower than at baseline, $9.91 \times 10^{-5}$ versus $1.06 \times 10^-4$. This provides a target for maximal efficiency that can be used to assess procedural mechanisms. At the same time, it reflects that in an equilibrating legal system, the difference between baseline and perfect may not be all that great. That helps explain why it is hard for procedural interventions to make things much better, though possible for a litigation system with very high costs and mediocre results to make things considerably worse.
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.85\textwidth]{../Figures/Cost Breakdown Court Quality (All Rows).pdf}
-  \caption{Cost breakdown with no noise for parties or court and no indeterminacy.}
-  \label{fig:perfect}
-\end{figure}
-
 \section{Conclusion}
-
-[ADD CONCLUSION]
 
 \section*{Appendix A: Formal Model}
 
