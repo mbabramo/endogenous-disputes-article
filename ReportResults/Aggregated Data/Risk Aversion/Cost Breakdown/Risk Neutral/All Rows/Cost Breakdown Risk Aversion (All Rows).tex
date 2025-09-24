@@ -1,0 +1,672 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{patterns, positioning}
+\usetikzlibrary{shapes.misc}
+\usepackage[outline]{contour}
+\contourlength{1.5pt} 
+\usetikzlibrary{calc}
+        \usepackage{relsize}
+        \tikzset{fontscale/.style = {font=\relsize{#1}}}
+
+\begin{document}
+\begin{tikzpicture}
+\clip(-0.5,-1.1) rectangle +(20.91,11);
+\draw[black] (1,1) -- (1,9.5);
+\node[rotate=90, fontscale=2, anchor=center] at (0.1, 5.25) {Costs Multiplier};
+\draw[black] (0.95,2.4167) -- (1.05,2.4167);
+\node[fontscale=2, anchor=east] at (0.95, 2.4167) {$\frac{1}{4}$};
+\draw[black] (0.95,5.25) -- (1.05,5.25);
+\node[fontscale=2, anchor=east] at (0.95, 5.25) {1};
+\draw[black] (0.95,8.0833) -- (1.05,8.0833);
+\node[fontscale=2, anchor=east] at (0.95, 8.0833) {4};
+
+\draw[black] (1,1) -- (20.41,1);
+\node[fontscale=2, anchor=center] at (10.705, 0.1) {Risk Aversion};
+\draw[black] (3.4263,0.95) -- (3.4263,1.05);
+\node[fontscale=2, anchor=north] at (3.4263, 0.95) {Risk Neutral};
+\draw[black] (8.2788,0.95) -- (8.2788,1.05);
+\node[fontscale=2, anchor=north] at (8.2788, 0.95) {Mildly Averse};
+\draw[black] (13.131,0.95) -- (13.131,1.05);
+\node[fontscale=2, anchor=north] at (13.131, 0.95) {Moderately Averse};
+\draw[black] (17.984,0.95) -- (17.984,1.05);
+\node[fontscale=2, anchor=north] at (17.984, 0.95) {Highly Averse};
+
+
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (1.2381,1.54) rectangle (1.8045,1.6788);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (1.8045,1.54) rectangle (2.0279,1.8175);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (2.0279,1.54) rectangle (2.6114,1.9563);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (2.6114,1.54) rectangle (3.4013,2.095);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (3.4013,1.54) rectangle (3.4291,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (3.4013,1.54) rectangle (3.4291,1.5688);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (3.4013,1.5688) rectangle (3.4291,1.5977);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (3.4013,1.5977) rectangle (3.4291,1.6553);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (3.4291,1.54) rectangle (3.4418,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (3.4291,1.54) rectangle (3.4418,1.5689);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (3.4291,1.5689) rectangle (3.4418,1.5977);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (3.4291,1.5977) rectangle (3.4418,1.6554);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (3.4418,1.54) rectangle (3.4495,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (3.4418,1.54) rectangle (3.4495,1.5689);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (3.4418,1.5689) rectangle (3.4495,1.5977);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (3.4418,1.5977) rectangle (3.4495,1.6554);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (3.4495,1.54) rectangle (3.4897,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (3.4495,1.54) rectangle (3.4897,1.5688);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (3.4495,1.5688) rectangle (3.4897,1.5977);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (3.4495,1.5977) rectangle (3.4897,1.6553);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (3.4495,1.6553) rectangle (3.4897,1.713);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (3.4897,1.54) rectangle (3.5166,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (3.4897,1.54) rectangle (3.5166,1.5689);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (3.4897,1.5689) rectangle (3.5166,1.5977);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (3.4897,1.5977) rectangle (3.5166,1.6553);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (3.4897,1.6553) rectangle (3.5166,1.713);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (3.5166,1.54) rectangle (3.5741,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (3.5166,1.54) rectangle (3.5741,1.5689);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (3.5166,1.5689) rectangle (3.5741,1.5977);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (3.5166,1.5977) rectangle (3.5741,1.6554);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (3.5166,1.6554) rectangle (3.5741,1.713);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (3.5741,1.54) rectangle (3.662,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (3.5741,1.54) rectangle (3.662,1.5689);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (3.5741,1.5689) rectangle (3.662,1.5977);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (3.5741,1.5977) rectangle (3.662,1.6554);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (3.5741,1.6554) rectangle (3.662,1.713);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (3.662,1.54) rectangle (3.9199,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (3.662,1.54) rectangle (3.9199,2.6932);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (3.662,2.6932) rectangle (3.9199,2.7221);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (3.662,2.7221) rectangle (3.9199,2.7509);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (3.662,2.7509) rectangle (3.9199,2.8086);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (3.9199,1.54) rectangle (4.019,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (3.9199,1.54) rectangle (4.019,2.6933);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (3.9199,2.6933) rectangle (4.019,2.7221);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (3.9199,2.7221) rectangle (4.019,2.7509);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (3.9199,2.7509) rectangle (4.019,2.8086);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (4.019,1.54) rectangle (4.0695,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (4.019,1.54) rectangle (4.0695,2.6933);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (4.019,2.6933) rectangle (4.0695,2.7221);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (4.019,2.7221) rectangle (4.0695,2.7509);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (4.019,2.7509) rectangle (4.0695,2.8086);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (4.0695,1.54) rectangle (4.4333,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (4.0695,1.54) rectangle (4.4333,2.6932);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (4.0695,2.6932) rectangle (4.4333,2.7221);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (4.0695,2.7221) rectangle (4.4333,2.7509);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (4.0695,2.7509) rectangle (4.4333,2.8086);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (4.0695,2.8086) rectangle (4.4333,2.8662);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (4.4333,1.54) rectangle (4.4408,1.54);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (4.4333,1.54) rectangle (4.4408,2.6932);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (4.4333,2.6932) rectangle (4.4408,2.7221);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (4.4333,2.7221) rectangle (4.4408,2.7509);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (4.4333,2.7509) rectangle (4.4408,2.8086);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (4.4333,2.8086) rectangle (4.4408,2.8662);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (4.4408,1.54) rectangle (4.663,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (4.4408,1.54) rectangle (4.663,2.6932);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (4.4408,2.6932) rectangle (4.663,2.7221);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (4.4408,2.7221) rectangle (4.663,2.7509);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (4.4408,2.7509) rectangle (4.663,2.8086);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (4.4408,2.8086) rectangle (4.663,2.8662);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (4.663,1.54) rectangle (4.6658,1.54);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (4.663,1.54) rectangle (4.6658,2.6932);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (4.663,2.6932) rectangle (4.6658,2.7221);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (4.663,2.7221) rectangle (4.6658,2.7509);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (4.663,2.7509) rectangle (4.6658,2.8086);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (4.663,2.8086) rectangle (4.6658,2.8662);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (4.6658,1.54) rectangle (5.0545,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (4.6658,1.54) rectangle (5.0545,2.6933);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (4.6658,2.6933) rectangle (5.0545,2.7221);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (4.6658,2.7221) rectangle (5.0545,2.7509);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (4.6658,2.7509) rectangle (5.0545,2.8086);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (4.6658,2.8086) rectangle (5.0545,2.8662);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (5.0545,1.54) rectangle (5.0737,1.54);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (5.0545,1.54) rectangle (5.0737,2.6933);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (5.0545,2.6933) rectangle (5.0737,2.7221);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (5.0545,2.7221) rectangle (5.0737,2.7509);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (5.0545,2.7509) rectangle (5.0737,2.8086);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (5.0545,2.8086) rectangle (5.0737,2.8662);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (5.0737,1.54) rectangle (5.5644,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (5.0737,1.54) rectangle (5.5644,2.6933);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (5.0737,2.6933) rectangle (5.5644,2.7221);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (5.0737,2.7221) rectangle (5.5644,2.7509);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (5.0737,2.7509) rectangle (5.5644,2.8086);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (5.0737,2.8086) rectangle (5.5644,2.8663);
+\node[font=\small,text=black,anchor=north] at (3.4013, 3.5333) {$1.12\times 10^{-4}$};
+\draw[black,very thin] (1.2381,1.54) -- (1.2381,3.5333);
+\draw[black,very thin] (1.1881,1.54) -- (1.2881,1.54);
+\node[font=\small,text=black, anchor=west] at (1.1881, 1.54) {};
+\draw[black,very thin] (1.1881,2.9275) -- (1.2881,2.9275);
+\node[font=\small,text=black, anchor=west] at (1.1881, 2.9275) {$\frac{1}{10^{4}}$};
+
+\draw[black,dotted,very thin] (3.4013,1.5998) -- (3.4013,3.4735);
+\draw[black,very thin] (5.5644,1.54) -- (5.5644,3.5333);
+\draw[black,very thin] (5.5144,1.54) -- (5.6144,1.54);
+\node[font=\small,text=black, anchor=east] at (5.5144, 1.54) {\contour{white}{}};
+\draw[black,very thin] (5.5144,2.6932) -- (5.6144,2.6932);
+\node[font=\small,text=black, anchor=east] at (5.5144, 2.6932) {\contour{white}{}};
+
+\draw[black,very thin] (1.2381,1.54) -- (5.5644,1.54);
+\draw[black,very thin] (1.2381,1.49) -- (1.2381,1.59);
+\node[font=\small,text=black, anchor=north] at (1.2381, 1.49) {};
+\draw[black,very thin] (5.5644,1.49) -- (5.5644,1.59);
+\node[font=\small,text=black, anchor=north] at (5.5644, 1.49) {};
+
+\node[font=\small,text=black,anchor=south] at (2.3197, 0.94) {99.992\%};
+\node[font=\small,text=black,anchor=south] at (4.4828, 0.94) {0.008\%};
+
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (6.0906,1.54) rectangle (6.8804,1.6788);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (6.8804,1.54) rectangle (7.4644,1.9563);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (7.4644,1.54) rectangle (8.0313,2.095);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.0313,1.54) rectangle (8.2538,2.2338);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.2538,1.54) rectangle (8.332,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (8.2538,1.54) rectangle (8.332,1.5689);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (8.2538,1.5689) rectangle (8.332,1.5978);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (8.2538,1.5978) rectangle (8.332,1.6556);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.332,1.54) rectangle (8.3931,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (8.332,1.54) rectangle (8.3931,1.5689);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (8.332,1.5689) rectangle (8.3931,1.5978);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (8.332,1.5978) rectangle (8.3931,1.6556);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.3931,1.54) rectangle (8.4469,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (8.3931,1.54) rectangle (8.4469,1.5689);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (8.3931,1.5689) rectangle (8.4469,1.5979);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (8.3931,1.5979) rectangle (8.4469,1.6557);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.4469,1.54) rectangle (8.4738,1.5401);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (8.4469,1.5401) rectangle (8.4738,1.569);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (8.4469,1.569) rectangle (8.4738,1.5979);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (8.4469,1.5979) rectangle (8.4738,1.6557);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.4738,1.54) rectangle (8.4903,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (8.4738,1.54) rectangle (8.4903,1.5689);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (8.4738,1.5689) rectangle (8.4903,1.5978);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (8.4738,1.5978) rectangle (8.4903,1.6556);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (8.4738,1.6556) rectangle (8.4903,1.7134);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.4903,1.54) rectangle (8.4994,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (8.4903,1.54) rectangle (8.4994,1.5689);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (8.4903,1.5689) rectangle (8.4994,1.5978);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (8.4903,1.5978) rectangle (8.4994,1.6556);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (8.4903,1.6556) rectangle (8.4994,1.7134);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.4994,1.54) rectangle (8.5139,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (8.4994,1.54) rectangle (8.5139,1.5689);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (8.4994,1.5689) rectangle (8.5139,1.5979);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (8.4994,1.5979) rectangle (8.5139,1.6557);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (8.4994,1.6557) rectangle (8.5139,1.7135);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.5139,1.54) rectangle (9.2362,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (8.5139,1.54) rectangle (9.2362,2.6961);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (8.5139,2.6961) rectangle (9.2362,2.725);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (8.5139,2.725) rectangle (9.2362,2.7539);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (8.5139,2.7539) rectangle (9.2362,2.8117);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (9.2362,1.54) rectangle (9.2381,1.54);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (9.2362,1.54) rectangle (9.2381,2.6961);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (9.2362,2.6961) rectangle (9.2381,2.725);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (9.2362,2.725) rectangle (9.2381,2.7539);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (9.2362,2.7539) rectangle (9.2381,2.8117);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (9.2381,1.54) rectangle (9.6302,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (9.2381,1.54) rectangle (9.6302,2.6961);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (9.2381,2.6961) rectangle (9.6302,2.725);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (9.2381,2.725) rectangle (9.6302,2.7539);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (9.2381,2.7539) rectangle (9.6302,2.8117);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (9.6302,1.54) rectangle (9.6639,1.54);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (9.6302,1.54) rectangle (9.6639,2.6961);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (9.6302,2.6961) rectangle (9.6639,2.725);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (9.6302,2.725) rectangle (9.6639,2.7539);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (9.6302,2.7539) rectangle (9.6639,2.8117);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (9.6639,1.54) rectangle (9.9957,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (9.6639,1.54) rectangle (9.9957,2.6961);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (9.6639,2.6961) rectangle (9.9957,2.725);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (9.6639,2.725) rectangle (9.9957,2.7539);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (9.6639,2.7539) rectangle (9.9957,2.8118);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (9.9957,1.54) rectangle (10.119,1.5401);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (9.9957,1.5401) rectangle (10.119,2.6962);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (9.9957,2.6962) rectangle (10.119,2.7251);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (9.9957,2.7251) rectangle (10.119,2.754);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (9.9957,2.754) rectangle (10.119,2.8118);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (10.119,1.54) rectangle (10.25,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (10.119,1.54) rectangle (10.25,2.6961);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (10.119,2.6961) rectangle (10.25,2.725);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (10.119,2.725) rectangle (10.25,2.7539);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (10.119,2.7539) rectangle (10.25,2.8117);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (10.119,2.8117) rectangle (10.25,2.8695);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (10.25,1.54) rectangle (10.268,1.54);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (10.25,1.54) rectangle (10.268,2.6961);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (10.25,2.6961) rectangle (10.268,2.725);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (10.25,2.725) rectangle (10.268,2.7539);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (10.25,2.7539) rectangle (10.268,2.8117);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (10.25,2.8117) rectangle (10.268,2.8695);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (10.268,1.54) rectangle (10.304,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (10.268,1.54) rectangle (10.304,2.6961);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (10.268,2.6961) rectangle (10.304,2.725);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (10.268,2.725) rectangle (10.304,2.7539);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (10.268,2.7539) rectangle (10.304,2.8117);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (10.268,2.8117) rectangle (10.304,2.8695);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (10.304,1.54) rectangle (10.327,1.54);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (10.304,1.54) rectangle (10.327,2.6961);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (10.304,2.6961) rectangle (10.327,2.725);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (10.304,2.725) rectangle (10.327,2.7539);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (10.304,2.7539) rectangle (10.327,2.8117);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (10.304,2.8117) rectangle (10.327,2.8695);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (10.327,1.54) rectangle (10.417,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (10.327,1.54) rectangle (10.417,2.6961);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (10.327,2.6961) rectangle (10.417,2.725);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (10.327,2.725) rectangle (10.417,2.7539);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (10.327,2.7539) rectangle (10.417,2.8118);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (10.327,2.8118) rectangle (10.417,2.8696);
+\node[font=\small,text=black,anchor=north] at (8.2538, 3.5333) {$1.10\times 10^{-4}$};
+\draw[black,very thin] (6.0906,1.54) -- (6.0906,3.5333);
+\draw[black,very thin] (6.0406,1.54) -- (6.1406,1.54);
+\node[font=\small,text=black, anchor=west] at (6.0406, 1.54) {};
+\draw[black,very thin] (6.0406,2.9275) -- (6.1406,2.9275);
+\node[font=\small,text=black, anchor=west] at (6.0406, 2.9275) {$\frac{1}{10^{4}}$};
+
+\draw[black,dotted,very thin] (8.2538,1.5998) -- (8.2538,3.4735);
+\draw[black,very thin] (10.417,1.54) -- (10.417,3.5333);
+\draw[black,very thin] (10.367,1.54) -- (10.467,1.54);
+\node[font=\small,text=black, anchor=east] at (10.367, 1.54) {\contour{white}{}};
+\draw[black,very thin] (10.367,2.6961) -- (10.467,2.6961);
+\node[font=\small,text=black, anchor=east] at (10.367, 2.6961) {\contour{white}{}};
+
+\draw[black,very thin] (6.0906,1.54) -- (10.417,1.54);
+\draw[black,very thin] (6.0906,1.49) -- (6.0906,1.59);
+\node[font=\small,text=black, anchor=north] at (6.0906, 1.49) {};
+\draw[black,very thin] (10.417,1.49) -- (10.417,1.59);
+\node[font=\small,text=black, anchor=north] at (10.417, 1.49) {};
+
+\node[font=\small,text=black,anchor=south] at (7.1722, 0.94) {99.992\%};
+\node[font=\small,text=black,anchor=south] at (9.3353, 0.94) {0.008\%};
+
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (10.943,1.54) rectangle (11.937,1.8175);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (11.937,1.54) rectangle (13.106,1.9563);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (13.106,1.54) rectangle (13.222,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (13.106,1.54) rectangle (13.222,1.5697);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (13.106,1.5697) rectangle (13.222,1.5995);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (13.106,1.5995) rectangle (13.222,1.6589);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (13.222,1.54) rectangle (13.353,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (13.222,1.54) rectangle (13.353,1.5697);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (13.222,1.5697) rectangle (13.353,1.5995);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (13.222,1.5995) rectangle (13.353,1.6589);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (13.353,1.54) rectangle (13.359,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (13.353,1.54) rectangle (13.359,1.5697);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (13.353,1.5697) rectangle (13.359,1.5995);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (13.353,1.5995) rectangle (13.359,1.6589);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (13.353,1.6589) rectangle (13.359,1.7183);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (13.359,1.54) rectangle (14.276,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (13.359,1.54) rectangle (14.276,2.7286);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (13.359,2.7286) rectangle (14.276,2.7583);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (13.359,2.7583) rectangle (14.276,2.788);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (13.359,2.788) rectangle (14.276,2.8474);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (14.276,1.54) rectangle (14.321,1.54);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (14.276,1.54) rectangle (14.321,2.7286);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (14.276,2.7286) rectangle (14.321,2.7583);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (14.276,2.7583) rectangle (14.321,2.788);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (14.276,2.788) rectangle (14.321,2.8474);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (14.321,1.54) rectangle (15.022,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (14.321,1.54) rectangle (15.022,2.7286);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (14.321,2.7286) rectangle (15.022,2.7583);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (14.321,2.7583) rectangle (15.022,2.788);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (14.321,2.788) rectangle (15.022,2.8475);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (15.022,1.54) rectangle (15.225,1.54);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (15.022,1.54) rectangle (15.225,2.7286);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (15.022,2.7286) rectangle (15.225,2.7583);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (15.022,2.7583) rectangle (15.225,2.788);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (15.022,2.788) rectangle (15.225,2.8475);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (15.225,1.54) rectangle (15.269,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (15.225,1.54) rectangle (15.269,2.7286);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (15.225,2.7286) rectangle (15.269,2.7583);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (15.225,2.7583) rectangle (15.269,2.788);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (15.225,2.788) rectangle (15.269,2.8475);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (15.225,2.8475) rectangle (15.269,2.9069);
+\node[font=\small,text=black,anchor=north] at (13.106, 3.5333) {$1.10\times 10^{-4}$};
+\draw[black,very thin] (10.943,1.54) -- (10.943,3.5333);
+\draw[black,very thin] (10.893,1.54) -- (10.993,1.54);
+\node[font=\small,text=black, anchor=west] at (10.893, 1.54) {};
+\draw[black,very thin] (10.893,2.9275) -- (10.993,2.9275);
+\node[font=\small,text=black, anchor=west] at (10.893, 2.9275) {$\frac{1}{10^{4}}$};
+
+\draw[black,dotted,very thin] (13.106,1.5998) -- (13.106,3.4735);
+\draw[black,very thin] (15.269,1.54) -- (15.269,3.5333);
+\draw[black,very thin] (15.219,1.54) -- (15.319,1.54);
+\node[font=\small,text=black, anchor=east] at (15.219, 1.54) {\contour{white}{}};
+\draw[black,very thin] (15.219,2.7286) -- (15.319,2.7286);
+\node[font=\small,text=black, anchor=east] at (15.219, 2.7286) {\contour{white}{}};
+
+\draw[black,very thin] (10.943,1.54) -- (15.269,1.54);
+\draw[black,very thin] (10.943,1.49) -- (10.943,1.59);
+\node[font=\small,text=black, anchor=north] at (10.943, 1.49) {};
+\draw[black,very thin] (15.269,1.49) -- (15.269,1.59);
+\node[font=\small,text=black, anchor=north] at (15.269, 1.49) {};
+
+\node[font=\small,text=black,anchor=south] at (12.025, 0.94) {99.991\%};
+\node[font=\small,text=black,anchor=south] at (14.188, 0.94) {0.009\%};
+
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (15.796,1.54) rectangle (17.847,1.9563);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (17.847,1.54) rectangle (17.959,2.095);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (17.959,1.54) rectangle (18.209,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (17.959,1.54) rectangle (18.209,1.5685);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (17.959,1.5685) rectangle (18.209,1.5969);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (17.959,1.5969) rectangle (18.209,1.6537);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (18.209,1.54) rectangle (18.223,1.54);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (18.209,1.54) rectangle (18.223,1.5685);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (18.209,1.5685) rectangle (18.223,1.5969);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (18.209,1.5969) rectangle (18.223,1.6537);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (18.223,1.54) rectangle (19.868,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (18.223,1.54) rectangle (19.868,2.6767);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (18.223,2.6767) rectangle (19.868,2.7051);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (18.223,2.7051) rectangle (19.868,2.7335);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (18.223,2.7335) rectangle (19.868,2.7903);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (19.868,1.54) rectangle (20.047,1.54);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (19.868,1.54) rectangle (20.047,2.6767);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (19.868,2.6767) rectangle (20.047,2.7051);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (19.868,2.7051) rectangle (20.047,2.7335);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (19.868,2.7335) rectangle (20.047,2.7903);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (20.047,1.54) rectangle (20.122,1.54);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (20.047,1.54) rectangle (20.122,2.6767);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (20.047,2.6767) rectangle (20.122,2.7051);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (20.047,2.7051) rectangle (20.122,2.7335);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (20.047,2.7335) rectangle (20.122,2.7904);
+\node[font=\small,text=black,anchor=north] at (17.959, 3.5333) {$1.11\times 10^{-4}$};
+\draw[black,very thin] (15.796,1.54) -- (15.796,3.5333);
+\draw[black,very thin] (15.746,1.54) -- (15.846,1.54);
+\node[font=\small,text=black, anchor=west] at (15.746, 1.54) {};
+\draw[black,very thin] (15.746,2.9275) -- (15.846,2.9275);
+\node[font=\small,text=black, anchor=west] at (15.746, 2.9275) {$\frac{1}{10^{4}}$};
+
+\draw[black,dotted,very thin] (17.959,1.5998) -- (17.959,3.4735);
+\draw[black,very thin] (20.122,1.54) -- (20.122,3.5333);
+\draw[black,very thin] (20.072,1.54) -- (20.172,1.54);
+\node[font=\small,text=black, anchor=east] at (20.072, 1.54) {\contour{white}{}};
+\draw[black,very thin] (20.072,2.6766) -- (20.172,2.6766);
+\node[font=\small,text=black, anchor=east] at (20.072, 2.6766) {\contour{white}{}};
+
+\draw[black,very thin] (15.796,1.54) -- (20.122,1.54);
+\draw[black,very thin] (15.796,1.49) -- (15.796,1.59);
+\node[font=\small,text=black, anchor=north] at (15.796, 1.49) {};
+\draw[black,very thin] (20.122,1.49) -- (20.122,1.59);
+\node[font=\small,text=black, anchor=north] at (20.122, 1.49) {};
+
+\node[font=\small,text=black,anchor=south] at (16.877, 0.94) {99.992\%};
+\node[font=\small,text=black,anchor=south] at (19.04, 0.94) {0.008\%};
+
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (1.2381,4.3733) rectangle (2.3197,4.6508);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (2.3197,4.3733) rectangle (3.4013,4.9284);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (3.4013,4.3733) rectangle (3.4157,4.3734);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (3.4013,4.3734) rectangle (3.4157,4.473);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (3.4013,4.473) rectangle (3.4157,4.5727);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (3.4013,4.5727) rectangle (3.4157,4.772);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (3.4013,4.772) rectangle (3.4157,4.9713);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (3.4157,4.3733) rectangle (4.5625,4.3734);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (3.4157,4.3734) rectangle (4.5625,5.37);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (4.5625,4.3733) rectangle (4.5682,4.3734);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (4.5625,4.3734) rectangle (4.5682,5.37);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (4.5682,4.3733) rectangle (5.4501,4.3734);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (4.5682,4.3734) rectangle (5.4501,5.37);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (5.4501,4.3733) rectangle (5.5451,4.3734);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (5.4501,4.3734) rectangle (5.5451,5.37);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (5.4501,5.37) rectangle (5.5451,5.4697);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (5.4501,5.4697) rectangle (5.5451,5.5693);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (5.4501,5.5693) rectangle (5.5451,5.7687);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (5.4501,5.7687) rectangle (5.5451,5.968);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (5.5451,4.3733) rectangle (5.5644,4.3734);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (5.5451,4.3734) rectangle (5.5644,5.37);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (5.5451,5.37) rectangle (5.5644,5.4697);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (5.5451,5.4697) rectangle (5.5644,5.5693);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (5.5451,5.5693) rectangle (5.5644,5.7687);
+\draw[pattern=grid,            pattern color=red!70!black,draw=black,very thin] (5.5451,5.7687) rectangle (5.5644,5.968);
+\node[font=\small,text=black,anchor=north] at (3.4013, 6.3667) {$1.04\times 10^{-4}$};
+\draw[black,very thin] (1.2381,4.3733) -- (1.2381,6.3667);
+\draw[black,very thin] (1.1881,4.3733) -- (1.2881,4.3733);
+\node[font=\small,text=black, anchor=west] at (1.1881, 4.3733) {};
+\draw[black,very thin] (1.1881,5.7609) -- (1.2881,5.7609);
+\node[font=\small,text=black, anchor=west] at (1.1881, 5.7609) {$\frac{1}{10^{4}}$};
+
+\draw[black,dotted,very thin] (3.4013,4.4331) -- (3.4013,6.3069);
+\draw[black,very thin] (5.5644,4.3733) -- (5.5644,6.3667);
+\draw[black,very thin] (5.5144,6.3666) -- (5.6144,6.3666);
+\node[font=\small,text=black, anchor=east] at (5.5144, 6.3666) {\contour{white}{2}};
+
+\draw[black,very thin] (1.2381,4.3733) -- (5.5644,4.3733);
+\draw[black,very thin] (1.2381,4.3233) -- (1.2381,4.4233);
+\node[font=\small,text=black, anchor=north] at (1.2381, 4.3233) {};
+\draw[black,very thin] (5.5644,4.3233) -- (5.5644,4.4233);
+\node[font=\small,text=black, anchor=north] at (5.5644, 4.3233) {};
+
+\node[font=\small,text=black,anchor=south] at (2.3197, 3.7733) {99.993\%};
+\node[font=\small,text=black,anchor=south] at (4.4828, 3.7733) {0.007\%};
+
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (6.0906,4.3733) rectangle (6.5882,4.6508);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (6.5882,4.3733) rectangle (8.2538,4.7896);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.2538,4.3733) rectangle (8.255,4.3734);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (8.2538,4.3734) rectangle (8.255,4.4757);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (8.2538,4.4757) rectangle (8.255,4.578);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (8.2538,4.578) rectangle (8.255,4.7827);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.255,4.3733) rectangle (8.8245,4.3734);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (8.255,4.3734) rectangle (8.8245,5.3968);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.8245,4.3733) rectangle (10.159,4.3734);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (8.8245,4.3734) rectangle (10.159,5.3968);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (10.159,4.3733) rectangle (10.407,4.3734);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (10.159,4.3734) rectangle (10.407,5.3968);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (10.407,4.3733) rectangle (10.416,4.3734);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (10.407,4.3734) rectangle (10.416,5.3968);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (10.407,5.3968) rectangle (10.416,5.4992);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (10.407,5.4992) rectangle (10.416,5.6015);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (10.407,5.6015) rectangle (10.416,5.8062);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (10.416,4.3733) rectangle (10.417,4.3734);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (10.416,4.3734) rectangle (10.417,5.3968);
+\draw[pattern=north east lines, pattern color=blue!30,draw=black,very thin] (10.416,5.3968) rectangle (10.417,5.4992);
+\draw[pattern=dots,  pattern color=blue!60,draw=black,very thin] (10.416,5.4992) rectangle (10.417,5.6015);
+\draw[pattern=crosshatch,      pattern color=blue!90,draw=black,very thin] (10.416,5.6015) rectangle (10.417,5.8062);
+\node[font=\small,text=black,anchor=north] at (8.2538, 6.3667) {$1.02\times 10^{-4}$};
+\draw[black,very thin] (6.0906,4.3733) -- (6.0906,6.3667);
+\draw[black,very thin] (6.0406,4.3733) -- (6.1406,4.3733);
+\node[font=\small,text=black, anchor=west] at (6.0406, 4.3733) {};
+\draw[black,very thin] (6.0406,5.7609) -- (6.1406,5.7609);
+\node[font=\small,text=black, anchor=west] at (6.0406, 5.7609) {$\frac{1}{10^{4}}$};
+
+\draw[black,dotted,very thin] (8.2538,4.4331) -- (8.2538,6.3069);
+\draw[black,very thin] (10.417,4.3733) -- (10.417,6.3667);
+\draw[black,very thin] (10.367,4.3733) -- (10.467,4.3733);
+\node[font=\small,text=black, anchor=east] at (10.367, 4.3733) {\contour{white}{}};
+\draw[black,very thin] (10.367,5.3968) -- (10.467,5.3968);
+\node[font=\small,text=black, anchor=east] at (10.367, 5.3968) {\contour{white}{}};
+
+\draw[black,very thin] (6.0906,4.3733) -- (10.417,4.3733);
+\draw[black,very thin] (6.0906,4.3233) -- (6.0906,4.4233);
+\node[font=\small,text=black, anchor=north] at (6.0906, 4.3233) {};
+\draw[black,very thin] (10.417,4.3233) -- (10.417,4.4233);
+\node[font=\small,text=black, anchor=north] at (10.417, 4.3233) {};
+
+\node[font=\small,text=black,anchor=south] at (7.1722, 3.7733) {99.993\%};
+\node[font=\small,text=black,anchor=south] at (9.3353, 3.7733) {0.007\%};
+
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (10.943,4.3733) rectangle (11.441,4.6508);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (11.441,4.3733) rectangle (13.106,4.7896);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (13.106,4.3733) rectangle (13.685,4.3734);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (13.106,4.3734) rectangle (13.685,5.3964);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (13.685,4.3733) rectangle (13.686,4.3734);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (13.685,4.3734) rectangle (13.686,5.3964);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (13.686,4.3733) rectangle (15.021,4.3734);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (13.686,4.3734) rectangle (15.021,5.3964);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (15.021,4.3733) rectangle (15.269,4.3734);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (15.021,4.3734) rectangle (15.269,5.3964);
+\node[font=\small,text=black,anchor=north] at (13.106, 6.3667) {$1.01\times 10^{-4}$};
+\draw[black,very thin] (10.943,4.3733) -- (10.943,6.3667);
+\draw[black,very thin] (10.893,4.3733) -- (10.993,4.3733);
+\node[font=\small,text=black, anchor=west] at (10.893, 4.3733) {};
+\draw[black,very thin] (10.893,5.7609) -- (10.993,5.7609);
+\node[font=\small,text=black, anchor=west] at (10.893, 5.7609) {$\frac{1}{10^{4}}$};
+
+\draw[black,dotted,very thin] (13.106,4.4331) -- (13.106,6.3069);
+\draw[black,very thin] (15.269,4.3733) -- (15.269,6.3667);
+\draw[black,very thin] (15.219,4.3733) -- (15.319,4.3733);
+\node[font=\small,text=black, anchor=east] at (15.219, 4.3733) {\contour{white}{}};
+\draw[black,very thin] (15.219,5.3963) -- (15.319,5.3963);
+\node[font=\small,text=black, anchor=east] at (15.219, 5.3963) {\contour{white}{}};
+
+\draw[black,very thin] (10.943,4.3733) -- (15.269,4.3733);
+\draw[black,very thin] (10.943,4.3233) -- (10.943,4.4233);
+\node[font=\small,text=black, anchor=north] at (10.943, 4.3233) {};
+\draw[black,very thin] (15.269,4.3233) -- (15.269,4.4233);
+\node[font=\small,text=black, anchor=north] at (15.269, 4.3233) {};
+
+\node[font=\small,text=black,anchor=south] at (12.025, 3.7733) {99.993\%};
+\node[font=\small,text=black,anchor=south] at (14.188, 3.7733) {0.007\%};
+
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (15.796,4.3733) rectangle (17.959,4.6508);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (17.959,4.3733) rectangle (19.595,4.3734);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (17.959,4.3734) rectangle (19.595,5.4915);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (19.595,4.3733) rectangle (20.122,4.3734);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (19.595,4.3734) rectangle (20.122,5.4915);
+\node[font=\small,text=black,anchor=north] at (17.959, 6.3667) {$1.01\times 10^{-4}$};
+\draw[black,very thin] (15.796,4.3733) -- (15.796,6.3667);
+\draw[black,very thin] (15.746,4.3733) -- (15.846,4.3733);
+\node[font=\small,text=black, anchor=west] at (15.746, 4.3733) {};
+\draw[black,very thin] (15.746,5.7609) -- (15.846,5.7609);
+\node[font=\small,text=black, anchor=west] at (15.746, 5.7609) {$\frac{1}{10^{4}}$};
+
+\draw[black,dotted,very thin] (17.959,4.4331) -- (17.959,6.3069);
+\draw[black,very thin] (20.122,4.3733) -- (20.122,6.3667);
+\draw[black,very thin] (20.072,4.3733) -- (20.172,4.3733);
+\node[font=\small,text=black, anchor=east] at (20.072, 4.3733) {\contour{white}{}};
+\draw[black,very thin] (20.072,5.4915) -- (20.172,5.4915);
+\node[font=\small,text=black, anchor=east] at (20.072, 5.4915) {\contour{white}{}};
+
+\draw[black,very thin] (15.796,4.3733) -- (20.122,4.3733);
+\draw[black,very thin] (15.796,4.3233) -- (15.796,4.4233);
+\node[font=\small,text=black, anchor=north] at (15.796, 4.3233) {};
+\draw[black,very thin] (20.122,4.3233) -- (20.122,4.4233);
+\node[font=\small,text=black, anchor=north] at (20.122, 4.3233) {};
+
+\node[font=\small,text=black,anchor=south] at (16.877, 3.7733) {99.992\%};
+\node[font=\small,text=black,anchor=south] at (19.04, 3.7733) {0.008\%};
+
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (1.2381,7.2067) rectangle (3.4013,7.4842);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (3.4013,7.2067) rectangle (5.0379,7.2067);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (3.4013,7.2067) rectangle (5.0379,8.3249);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (5.0379,7.2067) rectangle (5.5644,7.2067);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (5.0379,7.2067) rectangle (5.5644,8.3249);
+\node[font=\small,text=black,anchor=north] at (3.4013, 9.2) {$1.01\times 10^{-4}$};
+\draw[black,very thin] (1.2381,7.2067) -- (1.2381,9.2);
+\draw[black,very thin] (1.1881,7.2067) -- (1.2881,7.2067);
+\node[font=\small,text=black, anchor=west] at (1.1881, 7.2067) {};
+\draw[black,very thin] (1.1881,8.5942) -- (1.2881,8.5942);
+\node[font=\small,text=black, anchor=west] at (1.1881, 8.5942) {$\frac{1}{10^{4}}$};
+
+\draw[black,dotted,very thin] (3.4013,7.2665) -- (3.4013,9.1402);
+\draw[black,very thin] (5.5644,7.2067) -- (5.5644,9.2);
+\draw[black,very thin] (5.5144,7.2067) -- (5.6144,7.2067);
+\node[font=\small,text=black, anchor=east] at (5.5144, 7.2067) {\contour{white}{}};
+\draw[black,very thin] (5.5144,8.3249) -- (5.6144,8.3249);
+\node[font=\small,text=black, anchor=east] at (5.5144, 8.3249) {\contour{white}{}};
+
+\draw[black,very thin] (1.2381,7.2067) -- (5.5644,7.2067);
+\draw[black,very thin] (1.2381,7.1567) -- (1.2381,7.2567);
+\node[font=\small,text=black, anchor=north] at (1.2381, 7.1567) {};
+\draw[black,very thin] (5.5644,7.1567) -- (5.5644,7.2567);
+\node[font=\small,text=black, anchor=north] at (5.5644, 7.1567) {};
+
+\node[font=\small,text=black,anchor=south] at (2.3197, 6.6067) {99.992\%};
+\node[font=\small,text=black,anchor=south] at (4.4828, 6.6067) {0.008\%};
+
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (6.0906,7.2067) rectangle (6.313,7.3454);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (6.313,7.2067) rectangle (8.2538,7.4842);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.2538,7.2067) rectangle (8.5075,7.2067);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (8.2538,7.2067) rectangle (8.5075,8.3339);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.5075,7.2067) rectangle (8.508,7.2067);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (8.5075,7.2067) rectangle (8.508,8.3339);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.508,7.2067) rectangle (9.8947,7.2067);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (8.508,7.2067) rectangle (9.8947,8.3339);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (9.8947,7.2067) rectangle (10.417,7.2067);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (9.8947,7.2067) rectangle (10.417,8.3339);
+\node[font=\small,text=black,anchor=north] at (8.2538, 9.2) {$1.00\times 10^{-4}$};
+\draw[black,very thin] (6.0906,7.2067) -- (6.0906,9.2);
+\draw[black,very thin] (6.0406,7.2067) -- (6.1406,7.2067);
+\node[font=\small,text=black, anchor=west] at (6.0406, 7.2067) {};
+\draw[black,very thin] (6.0406,8.5942) -- (6.1406,8.5942);
+\node[font=\small,text=black, anchor=west] at (6.0406, 8.5942) {$\frac{1}{10^{4}}$};
+
+\draw[black,dotted,very thin] (8.2538,7.2665) -- (8.2538,9.1402);
+\draw[black,very thin] (10.417,7.2067) -- (10.417,9.2);
+\draw[black,very thin] (10.367,7.2067) -- (10.467,7.2067);
+\node[font=\small,text=black, anchor=east] at (10.367, 7.2067) {\contour{white}{}};
+\draw[black,very thin] (10.367,8.3339) -- (10.467,8.3339);
+\node[font=\small,text=black, anchor=east] at (10.367, 8.3339) {\contour{white}{}};
+
+\draw[black,very thin] (6.0906,7.2067) -- (10.417,7.2067);
+\draw[black,very thin] (6.0906,7.1567) -- (6.0906,7.2567);
+\node[font=\small,text=black, anchor=north] at (6.0906, 7.1567) {};
+\draw[black,very thin] (10.417,7.1567) -- (10.417,7.2567);
+\node[font=\small,text=black, anchor=north] at (10.417, 7.1567) {};
+
+\node[font=\small,text=black,anchor=south] at (7.1722, 6.6067) {99.992\%};
+\node[font=\small,text=black,anchor=south] at (9.3353, 6.6067) {0.008\%};
+
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (10.943,7.2067) rectangle (13.106,7.3454);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (13.106,7.2067) rectangle (14.465,7.2067);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (13.106,7.2067) rectangle (14.465,8.4527);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (14.465,7.2067) rectangle (15.269,7.2067);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (14.465,7.2067) rectangle (15.269,8.4527);
+\node[font=\small,text=black,anchor=north] at (13.106, 9.2) {$9.98\times 10^{-5}$};
+\draw[black,very thin] (10.943,7.2067) -- (10.943,9.2);
+\draw[black,very thin] (10.893,7.2067) -- (10.993,7.2067);
+\node[font=\small,text=black, anchor=west] at (10.893, 7.2067) {};
+\draw[black,very thin] (10.893,8.5942) -- (10.993,8.5942);
+\node[font=\small,text=black, anchor=west] at (10.893, 8.5942) {$\frac{1}{10^{4}}$};
+
+\draw[black,dotted,very thin] (13.106,7.2665) -- (13.106,9.1402);
+\draw[black,very thin] (15.269,7.2067) -- (15.269,9.2);
+\draw[black,very thin] (15.219,7.2067) -- (15.319,7.2067);
+\node[font=\small,text=black, anchor=east] at (15.219, 7.2067) {\contour{white}{}};
+\draw[black,very thin] (15.219,8.4527) -- (15.319,8.4527);
+\node[font=\small,text=black, anchor=east] at (15.219, 8.4527) {\contour{white}{1}};
+
+\draw[black,very thin] (10.943,7.2067) -- (15.269,7.2067);
+\draw[black,very thin] (10.943,7.1567) -- (10.943,7.2567);
+\node[font=\small,text=black, anchor=north] at (10.943, 7.1567) {};
+\draw[black,very thin] (15.269,7.1567) -- (15.269,7.2567);
+\node[font=\small,text=black, anchor=north] at (15.269, 7.1567) {};
+
+\node[font=\small,text=black,anchor=south] at (12.025, 6.6067) {99.991\%};
+\node[font=\small,text=black,anchor=south] at (14.188, 6.6067) {0.009\%};
+
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (15.796,7.2067) rectangle (17.959,7.3454);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (17.959,7.2067) rectangle (19.318,7.2067);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (17.959,7.2067) rectangle (19.318,8.4527);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (19.318,7.2067) rectangle (20.122,7.2067);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (19.318,7.2067) rectangle (20.122,8.4527);
+\node[font=\small,text=black,anchor=north] at (17.959, 9.2) {$9.98\times 10^{-5}$};
+\draw[black,very thin] (15.796,7.2067) -- (15.796,9.2);
+\draw[black,very thin] (15.746,7.2067) -- (15.846,7.2067);
+\node[font=\small,text=black, anchor=west] at (15.746, 7.2067) {};
+\draw[black,very thin] (15.746,8.5942) -- (15.846,8.5942);
+\node[font=\small,text=black, anchor=west] at (15.746, 8.5942) {$\frac{1}{10^{4}}$};
+
+\draw[black,dotted,very thin] (17.959,7.2665) -- (17.959,9.1402);
+\draw[black,very thin] (20.122,7.2067) -- (20.122,9.2);
+\draw[black,very thin] (20.072,7.2067) -- (20.172,7.2067);
+\node[font=\small,text=black, anchor=east] at (20.072, 7.2067) {\contour{white}{}};
+\draw[black,very thin] (20.072,8.4527) -- (20.172,8.4527);
+\node[font=\small,text=black, anchor=east] at (20.072, 8.4527) {\contour{white}{1}};
+
+\draw[black,very thin] (15.796,7.2067) -- (20.122,7.2067);
+\draw[black,very thin] (15.796,7.1567) -- (15.796,7.2567);
+\node[font=\small,text=black, anchor=north] at (15.796, 7.1567) {};
+\draw[black,very thin] (20.122,7.1567) -- (20.122,7.2567);
+\node[font=\small,text=black, anchor=north] at (20.122, 7.1567) {};
+
+\node[font=\small,text=black,anchor=south] at (16.877, 6.6067) {99.991\%};
+\node[font=\small,text=black,anchor=south] at (19.04, 6.6067) {0.009\%};
+
+\coordinate (LegendAnchor) at (10.205000000000002,0);
+\begin{scope}[align=center]
+\matrix[scale=0.6,draw=black,below=0.2cm of LegendAnchor,nodes={draw},column sep=0.12cm]{
+\node[rectangle,draw,minimum width=0.55cm,minimum height=0.55cm,pattern=crosshatch, pattern color=green]{}; &
+        \node[draw=none,font=\small]{Precaution}; &
+\node[rectangle,draw,minimum width=0.55cm,minimum height=0.55cm,pattern=vertical lines, pattern color=orange]{}; &
+        \node[draw=none,font=\small]{TL Harm}; &
+\node[rectangle,draw,minimum width=0.55cm,minimum height=0.55cm,pattern=crosshatch dots, pattern color=yellow]{}; &
+        \node[draw=none,font=\small]{TNL Harm}; &
+\node[rectangle,draw,minimum width=0.55cm,minimum height=0.55cm,pattern=north east lines, pattern color=blue!30]{}; &
+        \node[draw=none,font=\small]{File}; &
+\node[rectangle,draw,minimum width=0.55cm,minimum height=0.55cm,pattern=dots, pattern color=blue!60]{}; &
+        \node[draw=none,font=\small]{Answer}; &
+\node[rectangle,draw,minimum width=0.55cm,minimum height=0.55cm,pattern=crosshatch, pattern color=blue!90]{}; &
+        \node[draw=none,font=\small]{Bargaining}; &
+\node[rectangle,draw,minimum width=0.55cm,minimum height=0.55cm,pattern=grid, pattern color=red!70!black]{}; &
+        \node[draw=none,font=\small]{Trial}; \\
+};\end{scope}
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,70 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{patterns, positioning}
+\usetikzlibrary{shapes.misc}
+\usepackage[outline]{contour}
+\contourlength{1.5pt} 
+\usetikzlibrary{calc}
+        \usepackage{relsize}
+        \tikzset{fontscale/.style = {font=\relsize{#1}}}
+
+\begin{document}
+\begin{tikzpicture}
+\clip(-0.5,-1.1) rectangle +(13.25,6.2);
+\draw[black] (1,1) -- (1,4.7);
+\node[rotate=90, fontscale=2, anchor=center] at (0.1, 2.85) {Costs Multiplier};
+\draw[black] (0.95,2.85) -- (1.05,2.85);
+\node[fontscale=2, anchor=east] at (0.95, 2.85) {1};
+
+\draw[black] (1,1) -- (12.75,1);
+\node[fontscale=2, anchor=center] at (6.875, 0.1) {Baseline};
+\draw[black] (6.875,0.95) -- (6.875,1.05);
+\node[fontscale=2, anchor=north] at (6.875, 0.95) {Baseline Values};
+
+
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (1.978,1.592) rectangle (3.0986,2.2014);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (3.0986,1.592) rectangle (6.85,2.506);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (6.85,1.592) rectangle (8.154,1.592);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (6.85,1.592) rectangle (8.154,3.8384);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.154,1.592) rectangle (8.1555,1.592);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (8.154,1.592) rectangle (8.1555,3.8384);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (8.1555,1.592) rectangle (11.162,1.5921);
+\draw[pattern=crosshatch dots, pattern color=yellow,draw=black,very thin] (8.1555,1.5921) rectangle (11.162,3.8384);
+\draw[pattern=crosshatch, pattern color=green,draw=black,very thin] (11.162,1.592) rectangle (11.722,1.5921);
+\draw[pattern=vertical lines, pattern color=orange,draw=black,very thin] (11.162,1.5921) rectangle (11.722,3.8384);
+\node[font=\small,text=black,anchor=north] at (6.85, 4.4) {Total: $1.01\times 10^{-4}$};
+\draw[black,very thin] (1.978,1.592) -- (1.978,4.4);
+\draw[black,very thin] (1.928,4.3341) -- (2.028,4.3341);
+\node[font=\small,text=black, anchor=west] at (1.928, 4.3341) {$\frac{9}{10^{5}}$};
+
+\draw[black,dotted,very thin] (6.85,1.6762) -- (6.85,4.3158);
+\draw[black,very thin] (11.722,1.592) -- (11.722,4.4);
+\draw[black,very thin] (11.672,1.592) -- (11.772,1.592);
+\node[font=\small,text=black, anchor=east] at (11.672, 1.592) {\contour{white}{}};
+\draw[black,very thin] (11.672,3.8383) -- (11.772,3.8383);
+\node[font=\small,text=black, anchor=east] at (11.672, 3.8383) {\contour{white}{1}};
+
+\draw[black,very thin] (1.978,1.592) -- (11.722,1.592);
+\draw[black,very thin] (1.978,1.542) -- (1.978,1.642);
+\node[font=\small,text=black, anchor=north] at (1.978, 1.542) {};
+\draw[black,very thin] (11.722,1.542) -- (11.722,1.642);
+\node[font=\small,text=black, anchor=north] at (11.722, 1.542) {};
+
+\node[font=\small,text=black,anchor=south] at (4.414, 0.992) {No\ Dispute\ (99.993\%)};
+\node[font=\small,text=black,anchor=south] at (9.286, 0.992) {Dispute\ (0.007\%)};
+
+\coordinate (LegendAnchor) at (6.375,0);
+\begin{scope}[align=center]
+\matrix[scale=0.6,draw=black,below=0.2cm of LegendAnchor,nodes={draw},column sep=0.12cm]{
+\node[rectangle,draw,minimum width=0.55cm,minimum height=0.55cm,pattern=crosshatch, pattern color=green]{}; &
+        \node[draw=none,font=\small]{Precaution}; &
+\node[rectangle,draw,minimum width=0.55cm,minimum height=0.55cm,pattern=vertical lines, pattern color=orange]{}; &
+        \node[draw=none,font=\small]{TL Harm}; &
+\node[rectangle,draw,minimum width=0.55cm,minimum height=0.55cm,pattern=crosshatch dots, pattern color=yellow]{}; &
+        \node[draw=none,font=\small]{TNL Harm}; \\
+};\end{scope}
+
+\end{tikzpicture}
+\end{document}

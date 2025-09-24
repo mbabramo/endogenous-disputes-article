@@ -1,0 +1,161 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usetikzlibrary{patterns, positioning}
+\usetikzlibrary{shapes.misc}
+\usepackage[outline]{contour}
+\contourlength{1.5pt} 
+
+
+\begin{document}
+\begin{tikzpicture}
+\newcommand{\DFractionOffset}{0.4}
+\newcommand{\AxisLabelYAdjust}{-0.235}
+\pagecolor{black}
+\draw[fill=black, draw=none] (-2,-2) rectangle (14,10);
+\draw[draw=white] (0.6,2) rectangle (10.15,7.5);
+\draw[fill=blue!93!orange!7!white!68!white, draw=white] (0.6,2) rectangle (1.6766,3.4294);
+\draw (1.1383107068621092, 2.7146852201810967) node[font=\scriptsize, text=black, align=center] {D: $\frac{1}{16}$\\ 7\%};
+\draw[fill=blue!93!orange!7!white!68!white, draw=white] (0.6,3.5094) rectangle (1.6766,4.9311);
+\draw (1.1383107068621092, 4.220253041181377) node[font=\scriptsize, text=black, align=center] {D: $\frac{3}{16}$\\ 7.3\%};
+\draw[fill=blue!92!orange!8!white!68!white, draw=white] (0.6,5.0111) rectangle (1.6766,6.0669);
+\draw (1.1383107068621092, 5.53901818813253) node[font=\scriptsize, text=black, align=center] {D: $\frac{5}{16}$\\ 7.9\%};
+\draw[fill=blue!91!orange!9!white!68!white, draw=white] (0.6,6.1469) rectangle (1.6766,6.7523);
+\draw (1.1383107068621092, 6.44960668053835) node[font=\scriptsize, text=black, align=center] {8.6\%};
+\draw[fill=blue!90!orange!10!white!68!white, draw=white] (0.6,6.8323) rectangle (1.6766,7.1106);
+\draw[fill=blue!89!orange!11!white!67!white, draw=white] (0.6,7.1906) rectangle (1.6766,7.2965);
+\draw[fill=blue!88!orange!12!white!67!white, draw=white] (0.6,7.3765) rectangle (1.6766,7.4106);
+\draw[fill=blue!87!orange!13!white!67!white, draw=white] (0.6,7.4906) rectangle (1.6766,7.5);
+\draw (1.1383107068621092, 1.6) node[anchor=north, font=\scriptsize, text=white] {7.7\%};
+\draw (1.1383107068621092, {1.6 + \DFractionOffset}) node[anchor=north, font=\scriptsize, text=white] {P: $\frac{1}{16}$};
+\draw[fill=blue!93!orange!7!white!68!white, draw=white] (1.7766,2) rectangle (3.0729,3.1809);
+\draw (2.4247485358928227, 2.590433114513915) node[font=\scriptsize, text=black, align=center] {D: $\frac{1}{16}$\\ 7.3\%};
+\draw[fill=blue!92!orange!8!white!68!white, draw=white] (1.7766,3.2609) rectangle (3.0729,4.5408);
+\draw (2.4247485358928227, 3.9008170208086486) node[font=\scriptsize, text=black, align=center] {D: $\frac{3}{16}$\\ 7.9\%};
+\draw[fill=blue!91!orange!9!white!68!white, draw=white] (1.7766,4.6208) rectangle (3.0729,5.6921);
+\draw (2.4247485358928227, 5.156454898038655) node[font=\scriptsize, text=black, align=center] {D: $\frac{5}{16}$\\ 8.6\%};
+\draw[fill=blue!90!orange!10!white!68!white, draw=white] (1.7766,5.7721) rectangle (3.0729,6.4911);
+\draw (2.4247485358928227, 6.131608015473868) node[font=\scriptsize, text=black, align=center] {9.5\%};
+\draw[fill=blue!89!orange!11!white!67!white, draw=white] (1.7766,6.5711) rectangle (3.0729,6.9707);
+\draw[fill=blue!88!orange!12!white!67!white, draw=white] (1.7766,7.0507) rectangle (3.0729,7.2386);
+\draw[fill=blue!87!orange!13!white!67!white, draw=white] (1.7766,7.3186) rectangle (3.0729,7.3941);
+\draw[fill=blue!87!orange!13!white!67!white, draw=white] (1.7766,7.4741) rectangle (3.0729,7.5);
+\draw (2.4247485358928227, 1.6) node[anchor=north, font=\scriptsize, text=white] {8.6\%};
+\draw (2.4247485358928227, {1.6 + \DFractionOffset}) node[anchor=north, font=\scriptsize, text=white] {P: $\frac{3}{16}$};
+\draw[fill=blue!92!orange!8!white!68!white, draw=white] (3.1729,2) rectangle (4.4908,2.8625);
+\draw (3.8318288877036393, 2.431236715696442) node[font=\scriptsize, text=black, align=center] {D: $\frac{1}{16}$\\ 7.9\%};
+\draw[fill=blue!91!orange!9!white!68!white, draw=white] (3.1729,2.9425) rectangle (4.4908,3.9962);
+\draw (3.8318288877036393, 3.469359579691424) node[font=\scriptsize, text=black, align=center] {D: $\frac{3}{16}$\\ 8.6\%};
+\draw[fill=blue!90!orange!10!white!68!white, draw=white] (3.1729,4.0762) rectangle (4.4908,5.1084);
+\draw (3.8318288877036393, 4.592332103776776) node[font=\scriptsize, text=black, align=center] {D: $\frac{5}{16}$\\ 9.5\%};
+\draw[fill=blue!89!orange!11!white!67!white, draw=white] (3.1729,5.1884) rectangle (4.4908,6.0259);
+\draw (3.8318288877036393, 5.607182052150591) node[font=\scriptsize, text=black, align=center] {D: $\frac{7}{16}$\\ 10.5\%};
+\draw[fill=blue!88!orange!12!white!67!white, draw=white] (3.1729,6.1059) rectangle (4.4908,6.6809);
+\draw (3.8318288877036393, 6.39343183875742) node[font=\scriptsize, text=black, align=center] {11.5\%};
+\draw[fill=blue!87!orange!13!white!67!white, draw=white] (3.1729,6.7609) rectangle (4.4908,7.098);
+\draw[fill=blue!87!orange!13!white!67!white, draw=white] (3.1729,7.178) rectangle (4.4908,7.3472);
+\draw[fill=blue!86!orange!14!white!66!white, draw=white] (3.1729,7.4272) rectangle (4.4908,7.5);
+\draw (3.8318288877036393, 1.6) node[anchor=north, font=\scriptsize, text=white] {9.9\%};
+\draw (3.8318288877036393, {1.6 + \DFractionOffset}) node[anchor=north, font=\scriptsize, text=white] {P: $\frac{5}{16}$};
+\draw[fill=blue!91!orange!9!white!68!white, draw=white] (4.5908,2) rectangle (5.8263,2.5276);
+\draw (5.208523905935685, 2.26378311281485) node[font=\scriptsize, text=black, align=center] {8.6\%};
+\draw[fill=blue!90!orange!10!white!68!white, draw=white] (4.5908,2.6076) rectangle (5.8263,3.3619);
+\draw (5.208523905935685, 2.984713585791801) node[font=\scriptsize, text=black, align=center] {9.5\%};
+\draw[fill=blue!89!orange!11!white!67!white, draw=white] (4.5908,3.4419) rectangle (5.8263,4.3353);
+\draw (5.208523905935685, 3.8885615152041018) node[font=\scriptsize, text=black, align=center] {D: $\frac{5}{16}$\\ 10.5\%};
+\draw[fill=blue!88!orange!12!white!67!white, draw=white] (4.5908,4.4153) rectangle (5.8263,5.3105);
+\draw (5.208523905935685, 4.862902524338773) node[font=\scriptsize, text=black, align=center] {D: $\frac{7}{16}$\\ 11.5\%};
+\draw[fill=blue!87!orange!13!white!67!white, draw=white] (4.5908,5.3905) rectangle (5.8263,6.1567);
+\draw (5.208523905935685, 5.773601641635292) node[font=\scriptsize, text=black, align=center] {12.5\%};
+\draw[fill=blue!87!orange!13!white!67!white, draw=white] (4.5908,6.2367) rectangle (5.8263,6.7982);
+\draw (5.208523905935685, 6.517421700531244) node[font=\scriptsize, text=black, align=center] {13.5\%};
+\draw[fill=blue!86!orange!14!white!66!white, draw=white] (4.5908,6.8782) rectangle (5.8263,7.2309);
+\draw[fill=blue!85!orange!15!white!66!white, draw=white] (4.5908,7.3109) rectangle (5.8263,7.5);
+\draw (5.208523905935685, 1.6) node[anchor=north, font=\scriptsize, text=white] {11.5\%};
+\draw (5.208523905935685, {1.6 + \DFractionOffset}) node[anchor=north, font=\scriptsize, text=white] {P: $\frac{7}{16}$};
+\draw[fill=blue!90!orange!10!white!68!white, draw=white] (5.9263,2) rectangle (7.0734,2.2612);
+\draw[fill=blue!89!orange!11!white!67!white, draw=white] (5.9263,2.3412) rectangle (7.0734,2.7927);
+\draw (6.499852931581506, 2.566928308355638) node[font=\scriptsize, text=black, align=center] {10.5\%};
+\draw[fill=blue!88!orange!12!white!67!white, draw=white] (5.9263,2.8727) rectangle (7.0734,3.5332);
+\draw (6.499852931581506, 3.2029762462534883) node[font=\scriptsize, text=black, align=center] {11.5\%};
+\draw[fill=blue!87!orange!13!white!67!white, draw=white] (5.9263,3.6132) rectangle (7.0734,4.4383);
+\draw (6.499852931581506, 4.025794939208058) node[font=\scriptsize, text=black, align=center] {D: $\frac{7}{16}$\\ 12.5\%};
+\draw[fill=blue!87!orange!13!white!67!white, draw=white] (5.9263,4.5183) rectangle (7.0734,5.4011);
+\draw (6.499852931581506, 4.959717507394233) node[font=\scriptsize, text=black, align=center] {D: $\frac{9}{16}$\\ 13.5\%};
+\draw[fill=blue!86!orange!14!white!66!white, draw=white] (5.9263,5.4811) rectangle (7.0734,6.2906);
+\draw (6.499852931581506, 5.885844236240057) node[font=\scriptsize, text=black, align=center] {14.4\%};
+\draw[fill=blue!85!orange!15!white!66!white, draw=white] (5.9263,6.3706) rectangle (7.0734,7.004);
+\draw (6.499852931581506, 6.68729840939305) node[font=\scriptsize, text=black, align=center] {15.4\%};
+\draw[fill=blue!84!orange!16!white!66!white, draw=white] (5.9263,7.084) rectangle (7.0734,7.5);
+\draw (6.499852931581506, 7.292001008514638) node[font=\scriptsize, text=black, align=center] {16.3\%};
+\draw (6.499852931581506, 1.6) node[anchor=north, font=\scriptsize, text=white] {13.2\%};
+\draw (6.499852931581506, {1.6 + \DFractionOffset}) node[anchor=north, font=\scriptsize, text=white] {P: $\frac{9}{16}$};
+\draw[fill=blue!89!orange!11!white!67!white, draw=white] (7.1734,2) rectangle (8.2453,2.1064);
+\draw[fill=blue!88!orange!12!white!67!white, draw=white] (7.1734,2.1864) rectangle (8.2453,2.4137);
+\draw[fill=blue!87!orange!13!white!67!white, draw=white] (7.1734,2.4937) rectangle (8.2453,2.9081);
+\draw (7.709391144079074, 2.700855157511202) node[font=\scriptsize, text=black, align=center] {12.5\%};
+\draw[fill=blue!87!orange!13!white!67!white, draw=white] (7.1734,2.9881) rectangle (8.2453,3.6353);
+\draw (7.709391144079074, 3.3116679523303123) node[font=\scriptsize, text=black, align=center] {13.5\%};
+\draw[fill=blue!86!orange!14!white!66!white, draw=white] (7.1734,3.7153) rectangle (8.2453,4.5816);
+\draw (7.709391144079074, 4.1484494773611225) node[font=\scriptsize, text=black, align=center] {D: $\frac{9}{16}$\\ 14.4\%};
+\draw[fill=blue!85!orange!15!white!66!white, draw=white] (7.1734,4.6616) rectangle (8.2453,5.6511);
+\draw (7.709391144079074, 5.156374026871713) node[font=\scriptsize, text=black, align=center] {D: $\frac{11}{16}$\\ 15.4\%};
+\draw[fill=blue!84!orange!16!white!66!white, draw=white] (7.1734,5.7311) rectangle (8.2453,6.6797);
+\draw (7.709391144079074, 6.205428990104945) node[font=\scriptsize, text=black, align=center] {D: $\frac{13}{16}$\\ 16.3\%};
+\draw[fill=blue!83!orange!17!white!66!white, draw=white] (7.1734,6.7597) rectangle (8.2453,7.5);
+\draw (7.709391144079074, 7.129866450711412) node[font=\scriptsize, text=black, align=center] {17.1\%};
+\draw (7.709391144079074, 1.6) node[anchor=north, font=\scriptsize, text=white] {14.9\%};
+\draw (7.709391144079074, {1.6 + \DFractionOffset}) node[anchor=north, font=\scriptsize, text=white] {P: $\frac{11}{16}$};
+\draw[fill=blue!88!orange!12!white!67!white, draw=white] (8.3453,2) rectangle (9.3025,2.0384);
+\draw[fill=blue!87!orange!13!white!67!white, draw=white] (8.3453,2.1184) rectangle (9.3025,2.2205);
+\draw[fill=blue!87!orange!13!white!67!white, draw=white] (8.3453,2.3005) rectangle (9.3025,2.5336);
+\draw[fill=blue!86!orange!14!white!66!white, draw=white] (8.3453,2.6136) rectangle (9.3025,3.0689);
+\draw (8.823911135517648, 2.841218271874731) node[font=\scriptsize, text=black, align=center] {14.4\%};
+\draw[fill=blue!85!orange!15!white!66!white, draw=white] (8.3453,3.1489) rectangle (9.3025,3.9081);
+\draw (8.823911135517648, 3.528467545500168) node[font=\scriptsize, text=black, align=center] {15.4\%};
+\draw[fill=blue!84!orange!16!white!66!white, draw=white] (8.3453,3.9881) rectangle (9.3025,5.0504);
+\draw (8.823911135517648, 4.519226028868097) node[font=\scriptsize, text=black, align=center] {D: $\frac{11}{16}$\\ 16.3\%};
+\draw[fill=blue!83!orange!17!white!66!white, draw=white] (8.3453,5.1304) rectangle (9.3025,6.3405);
+\draw (8.823911135517648, 5.735432658512861) node[font=\scriptsize, text=black, align=center] {D: $\frac{13}{16}$\\ 17.1\%};
+\draw[fill=blue!82!orange!18!white!66!white, draw=white] (8.3453,6.4205) rectangle (9.3025,7.5);
+\draw (8.823911135517648, 6.9602324085606515) node[font=\scriptsize, text=black, align=center] {D: $\frac{15}{16}$\\ 17.8\%};
+\draw (8.823911135517648, 1.6) node[anchor=north, font=\scriptsize, text=white] {16.3\%};
+\draw (8.823911135517648, {1.6 + \DFractionOffset}) node[anchor=north, font=\scriptsize, text=white] {P: $\frac{13}{16}$};
+\draw[fill=blue!87!orange!13!white!67!white, draw=white] (9.4025,2) rectangle (10.15,2.0135);
+\draw[fill=blue!87!orange!13!white!67!white, draw=white] (9.4025,2.0935) rectangle (10.15,2.1385);
+\draw[fill=blue!86!orange!14!white!66!white, draw=white] (9.4025,2.2185) rectangle (10.15,2.3468);
+\draw[fill=blue!85!orange!15!white!66!white, draw=white] (9.4025,2.4268) rectangle (10.15,2.7393);
+\draw[fill=blue!84!orange!16!white!66!white, draw=white] (9.4025,2.8193) rectangle (10.15,3.4577);
+\draw (9.77624007575732, 3.138539891659286) node[font=\scriptsize, text=black, align=center] {16.3\%};
+\draw[fill=blue!83!orange!17!white!66!white, draw=white] (9.4025,3.5377) rectangle (10.15,4.5992);
+\draw (9.77624007575732, 4.068494589892602) node[font=\scriptsize, text=black, align=center] {17.1\%};
+\draw[fill=blue!82!orange!18!white!66!white, draw=white] (9.4025,4.6792) rectangle (10.15,6.0615);
+\draw (9.77624007575732, 5.370373802364143) node[font=\scriptsize, text=black, align=center] {17.8\%};
+\draw[fill=blue!82!orange!18!white!65!white, draw=white] (9.4025,6.1415) rectangle (10.15,7.5);
+\draw (9.77624007575732, 6.82075102984782) node[font=\scriptsize, text=black, align=center] {18.2\%};
+\draw (9.77624007575732, 1.6) node[anchor=north, font=\scriptsize, text=white] {17.3\%};
+\draw (9.77624007575732, {1.6 + \DFractionOffset}) node[anchor=north, font=\scriptsize, text=white] {P: $\frac{15}{16}$};
+\node[font=\small, text=white] at (5.375, {1.1 + \AxisLabelYAdjust}) {Plaintiff Signals};
+\node[font=\small, text=white, rotate=90] at (-0.050000000000000044, 4.75) {Defendant Signals};
+\draw[draw=white] (10.5,2) rectangle (11.4,7.5);
+\draw (10.95, 7.65) node[font=\scriptsize, text=white] {P win rate};
+\draw[fill=blue!100!orange!0!white!70!white, draw=white] (10.5,2) rectangle (11.4,2.55);
+\draw[fill=blue!89!orange!11!white!67!white, draw=white] (10.5,2.55) rectangle (11.4,3.1);
+\draw[fill=blue!78!orange!22!white!64!white, draw=white] (10.5,3.1) rectangle (11.4,3.65);
+\draw[fill=blue!67!orange!33!white!62!white, draw=white] (10.5,3.65) rectangle (11.4,4.2);
+\draw[fill=blue!56!orange!44!white!59!white, draw=white] (10.5,4.2) rectangle (11.4,4.75);
+\draw[fill=blue!44!orange!56!white!56!white, draw=white] (10.5,4.75) rectangle (11.4,5.3);
+\draw[fill=blue!33!orange!67!white!53!white, draw=white] (10.5,5.3) rectangle (11.4,5.85);
+\draw[fill=blue!22!orange!78!white!51!white, draw=white] (10.5,5.85) rectangle (11.4,6.4);
+\draw[fill=blue!11!orange!89!white!48!white, draw=white] (10.5,6.4) rectangle (11.4,6.95);
+\draw[fill=blue!0!orange!100!white!45!white, draw=white] (10.5,6.95) rectangle (11.4,7.5);
+\draw (11.46, 2) node[anchor=west, font=\tiny, text=white] {0\%};
+\draw (11.46, 3.1) node[anchor=west, font=\tiny, text=white] {20\%};
+\draw (11.46, 4.2) node[anchor=west, font=\tiny, text=white] {40\%};
+\draw (11.46, 5.3) node[anchor=west, font=\tiny, text=white] {60\%};
+\draw (11.46, 6.4) node[anchor=west, font=\tiny, text=white] {80\%};
+\draw (11.46, 7.5) node[anchor=west, font=\tiny, text=white] {100\%};
+
+
+\end{tikzpicture}
+\end{document}
