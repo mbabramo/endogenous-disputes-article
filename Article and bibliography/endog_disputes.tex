@@ -131,8 +131,7 @@ In this section, we will introduce the game by zooming into portions of a miniat
 
 \subsection{Extensive-form game tree}
 
-An extensive-form game tree can fully capture the formal game summarized above for any particular set of parameter values. The game features two strategic players and Chance. The \emph{defendant} (potential injurer) chooses whether to engage in the underlying activity, and, if so, a discrete precaution level. (The choice whether to engage in the activity and thus receive the fruits of that activity has little role in the analysis in this paper, but is included both for analytic completeness and as a source for analysis in future work.) The \emph{plaintiff} (victim) decides whether to file, whether to quit before trial if settlement fails, and which demand to submit in simultaneous offers. The defendant similarly decides whether to answer, whether to quit before trial if settlement fails, and what demand to submit. The \emph{court} is modeled as a chance node that observes a noisy liability signal at trial and applies (under our baseline settings) a probabilistic liability test. Near the level where marginal benefit equals cost, the probability of liability is close to even; further from that level, the probability approaches either $0$ or $1$. 
-
+An extensive-form game tree can fully capture the formal game summarized above for any particular set of parameter values. The game features two strategic players and Chance. The \emph{defendant} (potential injurer) chooses whether to engage in the underlying activity, and, if so, a discrete precaution level. (The choice whether to engage in the activity and thus receive the fruits of that activity has little role in the analysis in this paper, but is included both for analytic completeness and as a source for analysis in future work.) The \emph{plaintiff} (victim) decides whether to file, which demand to submit in simultaneous offers, and whether to abandon in the post-offer exit stage if bargaining fails. The defendant similarly decides whether to answer, which offer to submit, and if bargaining fails, whether to default in the post-offer exit stage. The \emph{court} is modeled as a chance node that observes a noisy liability signal at trial and applies (under our baseline settings) a probabilistic liability test. Near the level where marginal benefit equals cost, the probability of liability is close to even; further from that level, the probability approaches either $0$ or $1$.
 
 In the baseline calibration used for analysis, the number of hidden precaution-power states is $8$, the number of discrete precaution levels is $8$, and each party’s liability signal also has $8$ levels. In addition, the number of possible settlement offers that the plaintiff and defendant, respectively, may make, is also $8$. In the miniaturized version of the game tree explored here, all of these eights become twos (for the hidden state, precaution levels, and the plaintiff/defendant signals and offers). Otherwise, parameters are set to the baseline values that we use in the simulation with the larger tree. 
 
@@ -173,11 +172,11 @@ The accident probabilities listed reflect the sum of the probability that the de
 \begin{figure}[t]
   \centering
   \includegraphics[width=\textwidth]{../Figures/smalltree_mid.pdf}
-  \caption{Stage II: filing, answer/default, and a single round of simultaneous offers.}
+  \caption{Stage II: filing, answering, and a single round of simultaneous offers.}
   \label{fig:smalltree_mid}
 \end{figure}
 
-As illustrated in Figure \ref{fig:smalltree_mid}, if an accident occurs, the plaintiff decides whether to file suit after observing the plaintiff's private signal. If the plaintiff does file suit, the defendant then decides whether to answer (contest) or to default. A default ends the case immediately with a damages transfer per the liability rule; answering moves the case into bargaining. 
+As illustrated in Figure \ref{fig:smalltree_mid}, if an accident occurs, the plaintiff decides whether to file suit after observing the plaintiff's private signal. If the plaintiff does file suit, the defendant then decides whether to answer (contest). Answering imposes a cost at baseline of $0.10$ and moves the case into bargaining; default is then not available until the post-offer exit stage described in Figure~\ref{fig:smalltree_end}.
 
 Bargaining then proceeds as in Abramowicz (2025a, 2025b).  The parties make a single round of simultaneous monetary offers on finite grids: the plaintiff states a minimum demand (“P Offer”) and the defendant a maximum payment (“D Offer”). Although the diagram prints P Offer before D Offer, the choices are simultaneous—the defendant does not observe the plaintiff’s demand when setting its own offer. If the offers meet or cross, the case settles at the midpoint of the two amounts. The damages multiplier applies to this settlement amount; fee‑shifting does not. Each party pays filing/answering and bargaining costs but avoids trial. In the baseline, stakes are normalized to $1$ and the per‑party cost of filing (or answering), bargaining, and trial is $0.10$, so a case that goes to trial costs each side $0.30$ in stage costs.
 
@@ -186,7 +185,7 @@ If the offers do \emph{not} meet, the model then enters a post‑offer exit stag
 \begin{figure}[t]
   \centering
   \includegraphics[width=\textwidth]{../Figures/smalltree_end.pdf}
-  \caption{Stage III: post‑offer exit decisions (plaintiff abandon / defendant default) and judicial resolution.}
+  \caption{Stage III: post-offer exit stage (abandon/default), symmetric both-quit chance node, and trial only if neither quits.}
   \label{fig:smalltree_end}
 \end{figure}
 
@@ -595,11 +594,8 @@ Note that while the share of wrongful cases rises with care, the level of attrib
 
 Although defendants choose from the discrete grid $k\in\{0,\dots,n_K-1\}$ with $\tau_k=k/n_K$, the court may apply the continuous marginal test or one of two discrete “next‑step” variants: a safe‑harbor option (defining the top increment as $0$) or a phantom‑level option (evaluating the next‑step difference even at the top by positing $k+1$). As $n_K$ increases, the discrete grid approximates the continuous ideal, and results under all three conventions converge as the action space becomes finer.
 
-
-\paragraph{Filing, answering, and quitting.}
-Following an accident realization, the plaintiff, who has observed $s_P$, chooses whether to \emph{file}, incurring $c_{file}=0.10$ if she does so. If the plaintiff files, the defendant observes $s_D$ and chooses whether to \emph{answer} or \emph{default}. Answering imposes $c_{answer}=0.10$ and moves the case into bargaining. Default ends the case immediately with a plaintiff judgment for normalized damages $\mu$, without any bargaining or trial costs.
-
-If the defendant answers, each party makes a one–time \emph{quit commitment} that is implemented if bargaining fails: the plaintiff may precommit to \emph{abandon} (ending the case with no judgment), and the defendant may precommit to \emph{default} (ending the case with a judgment of $\mu$ for the plaintiff). If both precommit to quit and no settlement occurs, a symmetric chance node resolves which commitment is implemented; if neither precommits, the case proceeds to trial if bargaining fails. These commitments are made once, at the entry to bargaining, and cannot be revised thereafter.
+\paragraph{Filing and answering.}
+Following an accident realization, the plaintiff, who has observed $s_P$, chooses whether to \emph{file}, incurring $c_{file}=0.10$ if she does so. If the plaintiff files, the defendant observes $s_D$ and chooses whether to \emph{answer}. Answering imposes $c_{answer}=0.10$ and moves the case into bargaining. 
 
 \paragraph{Bargaining (simultaneous offers).}
 Bargaining consists of a single round of \emph{simultaneous} monetary offers on finite grids $\mathcal{O}_P\subset[0,1]$ and $\mathcal{O}_D\subset[0,1]$. The plaintiff demands $\mathcal{o}_P\in\mathcal{O}_P$ and the defendant offers $\mathcal{o}_D\in\mathcal{O}_D$ simultaneously. The per–party bargaining stage cost $c_{bargain}=0.10$ is incurred by any party that participates in this round.
@@ -608,7 +604,10 @@ A settlement occurs if and only if the offers meet: $\mathcal{o}_D\ge \mathcal{o
 \[
 T \;=\; \mu \times \frac{\mathcal{o}_P+\mathcal{o}_D}{2}\in[0,\mu],
 \]
-and the case terminates without trial. Although damages multipliers apply to settlements (which are conceived as being negotiated between $0$ and $1$, fee-shifting does not. No Rule 68 or offer–of–judgment mechanism is considered here. If the offers do not meet, the game implements the previously recorded quit commitments (abandon or default); if neither party precommitted, the case proceeds to trial.
+and the case terminates without trial. Although damages multipliers apply to settlements (which are conceived as being negotiated between $0$ and $1$), fee-shifting does not. No Rule 68 or offer–of–judgment mechanism is considered here. 
+
+\paragraph{Exits.}
+If the offers do not meet, the game enters the post-offer exit stage: the plaintiff and defendant then simultaneously choose whether to abandon or default; if both quit, a symmetric chance node selects which quit occurs; if neither quits, the case proceeds to trial.
 
 \paragraph{Trial.}
 When bargaining fails, the court draws a discrete precaution–power signal
@@ -755,21 +754,21 @@ W_D^{(0)} - k\,c_{\mathrm{prec}} - C_D - J + \phi\bigl((1-V)\,C_D - V\,C_P\bigr)
 \]
 In the baseline with $\mu=1$ and $\phi=0$, these reduce to $W_P^{(0)}-Z-C_P+V$ and $W_D^{(0)}-k\,c_{\mathrm{prec}}-C_D-V$.
 
-\emph{Default and Defendant quit.} If the defendant defaults—either immediately at the answering stage or later through a quit commitment after bargaining fails—the plaintiff receives a judgment of $\mu$, reflecting the damages multiplier, and fee–shifting does not apply. Final wealths are
+\emph{Default and Defendant quit.} If the defendant defaults at the post-offer exit stage, the plaintiff receives a judgment of $\mu$, reflecting the damages multiplier, and fee-shifting does not apply. Final wealths are
 \[
 W_P^{\mathrm{final}} \;=\; W_P^{(0)} - Z - C_P + \mu,
 \qquad
 W_D^{\mathrm{final}} \;=\; W_D^{(0)} - k\,c_{\mathrm{prec}} - C_D - \mu,
 \]
-with $C_P$ and $C_D$ including only filing costs if default occurs at answering, or also bargaining costs (but not trial costs) if default occurs after bargaining fails.
+where $C_P$ and $C_D$ include the stage costs incurred up to that point (filing for the plaintiff; answering for the defendant; and bargaining for both), but not trial costs.
 
-\emph{Abandon.} If the plaintiff abandons through a quit commitment, no judgment is entered. Neither damages multipliers nor fee–shifting apply. Final wealths are
+\emph{Abandon.} If the plaintiff abandons at the post-offer exit stage, no judgment is entered. Neither damages multipliers nor fee-shifting apply. Final wealths are
 \[
 W_P^{\mathrm{final}} \;=\; W_P^{(0)} - Z - C_P,
 \qquad
 W_D^{\mathrm{final}} \;=\; W_D^{(0)} - k\,c_{\mathrm{prec}} - C_D,
 \]
-where $C_P$ and $C_D$ include all stage costs already incurred along the realized path.
+where $C_P$ and $C_D$ include all stage costs already incurred along the realized path (filing and answering where applicable, and bargaining), but not trial costs.
 
 \paragraph{Final utilities.}
 Let $W_i^{\mathrm{final}}$ denote party $i$'s final wealth after the litigation path has concluded.
@@ -818,7 +817,7 @@ While in the full game the distribution of the defendant's private signal is cal
 
 With this approach, any equilibrium of the original extensive form game tree is equivalently an equilibrium of the collapsed game, and vice versa, because certain conditions hold. In particular, the equivalence requires that the eliminated chance variable never enters any player’s information set, that players have perfect recall, and that all downstream chance distributions are updated via Bayes using whatever signals and actions are observed. Under these conditions, the collapsed and full trees induce the same distribution over terminal histories and therefore share the same equilibria.
 
-Figure \ref{fig:smalltree_collapsed_beginning} illustrates the beginning of the extensive form game in which the node selecting precaution power is omitted. The first node now represents the defendant's signal. Because this is not conditioned on the hidden state, in this particular miniaturized calibration the defendant has equal probability of receiving a low or a high signal. In the general model, the distribution across signals depends on the noise parameters chosen. Instead of immediately calculating the plaintiff's signal, the defendant makes its decisions on whether to engage in the activity and if so, what relative level of precaution to take. The next node then represents the accident, and the accident probabilities are calculated by integrating over both possible hidden states in this miniaturized game. Finally, the plaintiff's signal node now follows the accident node. The probability that the plaintiff will receive each of the two possible signals takes into account the defendant's signal, the defendant's precaution level, and the occurrence of the accident, integrating again over both possible hidden states. Note that in this case, the plaintiff is much more likely to receive the low signal, because that is the signal that the defendant received. It would equivalently be possible to position the plaintiff's signal node immediately after the defendant signal and then condition the accident probability on the parties' joint signals, but this approach produces a smaller game tree.
+Figure \ref{fig:smalltree_collapsed_beginning} illustrates the beginning of the extensive form game in which the node selecting precaution power is omitted. The first node now represents the defendant's signal. Because this is not conditioned on the hidden state, in this particular miniaturized calibration the defendant has equal probability of receiving a low or a high signal. In the general model, the distribution across signals depends on the noise parameters chosen. Instead of immediately calculating the plaintiff's signal, the defendant makes its decisions on whether to engage in the activity and if so, what relative level of precaution to take. The next node then represents the accident, and the accident probabilities are calculated by integrating over both possible hidden states in this miniaturized game. Finally, the plaintiff's signal node now follows the accident node. The probability that the plaintiff will receive each of the two possible signals takes into account the defendant's signal, the defendant's precaution level, and the occurrence of the accident, integrating again over both possible hidden states. Note that in this case, the plaintiff is much more likely to receive the low signal, because that is the signal that the defendant received. It would equivalently be possible to position the plaintiff's signal node immediately after the defendant signal and then condition the accident probability on the parties' joint signals, but this approach produces a smaller game tree. In the collapsed representation, as in the full tree, abandon/default occurs only after the bargaining round fails in the post-offer exit stage.
 
   \begin{figure}[t]
     \centering
